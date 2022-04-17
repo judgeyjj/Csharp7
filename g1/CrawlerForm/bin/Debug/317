@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>架构摆渡人 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/bluesky/bundle-bluesky.min.css?v=XE2fk78_g236UfcEq84zHWzv_2tOhFkONfEE4JfJvbU" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/bluesky/bundle-bluesky-mobile.min.css?v=tr_MzP0zjEBjMFAPqb4u9j-7QlQbSBo-6z4-CTR7_Pw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jiagoubaiduren/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jiagoubaiduren/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jiagoubaiduren/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 704747;
+        var currentBlogApp = 'jiagoubaiduren';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlueSky';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-bluesky has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jiagoubaiduren/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jiagoubaiduren/">架构摆渡人</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jiagoubaiduren/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9E%B6%E6%9E%84%E6%91%86%E6%B8%A1%E4%BA%BA">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/jiagoubaiduren/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16155089">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/16155089.html">
+    <span>
+        消息队列为何如此重要？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16155089">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是消息队列的第一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 不知道大家平时是否有使用过Queue相关的类，比如ArrayBlockingQueue，DelayQueue等队列。如果你说你平时写业务代码都没        <a href="https://www.cnblogs.com/jiagoubaiduren/p/16155089.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-17 10:05
+架构摆渡人
+<span data-post-id="16155089" class="post-view-count">阅读(82)</span> 
+<span data-post-id="16155089" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16155089" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16155089" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16099160">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/04/04.html">2022年4月4日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/16099160.html">
+    <span>
+        分库分表实现方式Client和Proxy，性能和维护性该怎么选？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16099160">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是分库分表系列的第一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 其实这个系列有录过视频给大家学习，但很多读者反馈说看视频太慢了。也不好沉淀为文档资料，希望能有一系列文字版本的讲解，要用的时候可以快速浏览关        <a href="https://www.cnblogs.com/jiagoubaiduren/p/16099160.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-04 14:49
+架构摆渡人
+<span data-post-id="16099160" class="post-view-count">阅读(206)</span> 
+<span data-post-id="16099160" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16099160" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16099160" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16060814">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/03/26.html">2022年3月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/16060814.html">
+    <span>
+        分库分表系列: 到底该怎么拆分？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16060814">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是分库分表系列的第一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 其实这个系列有录过视频给大家学习，但很多读者反馈说看视频太慢了。也不好沉淀为文档资料，希望能有一系列文字版本的讲解，要用的时候可以快速浏览关        <a href="https://www.cnblogs.com/jiagoubaiduren/p/16060814.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-26 20:50
+架构摆渡人
+<span data-post-id="16060814" class="post-view-count">阅读(321)</span> 
+<span data-post-id="16060814" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16060814" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16060814" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16027948">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/03/19.html">2022年3月19日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/16027948.html">
+    <span>
+        分库分表系列：分库分表的前世今生
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16027948">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是分库分表系列的第一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 其实这个系列有录过视频给大家学习，但很多读者反馈说看视频太慢了。也不好沉淀为文档资料，希望能有一系列文字版本的讲解，要用的时候可以快速浏览关        <a href="https://www.cnblogs.com/jiagoubaiduren/p/16027948.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-19 20:59
+架构摆渡人
+<span data-post-id="16027948" class="post-view-count">阅读(367)</span> 
+<span data-post-id="16027948" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16027948" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16027948" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15998276">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/03/12.html">2022年3月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15998276.html">
+    <span>
+        无论是异常监控还是业务监控，通通搞定
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15998276">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是实践经验系列的第十二篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 监控三板斧 在监控领域，最常用的三种方式就是Metrics, Tracing，Logging，可以称之为三板斧。 Metrics 系统度量        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15998276.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-12 20:15
+架构摆渡人
+<span data-post-id="15998276" class="post-view-count">阅读(339)</span> 
+<span data-post-id="15998276" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15998276" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15998276" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15972084">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/03/06.html">2022年3月6日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15972084.html">
+    <span>
+        听说：分布式ID不能全局递增？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15972084">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿。这是实践经验系列的第十一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 前面有篇文章我们讲到用时间来代替自增ID进行分页排序，原因是因为接入了分布式ID，但是分布式ID不能够保证有序，只能保证全局唯一。 那么今        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15972084.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-06 14:32
+架构摆渡人
+<span data-post-id="15972084" class="post-view-count">阅读(441)</span> 
+<span data-post-id="15972084" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15972084" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15972084" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15929595">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/02/23.html">2022年2月23日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15929595.html">
+    <span>
+        Redis实现访问次数限流，这有难点吗？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15929595">
+摘要：            
+大家好，我是【架构摆渡人】，一只十年的程序猿，这是流量治理系列的第11篇原创文章，如果有收获，还请分享给更多的朋友。 假设我们要做一个业务需求，这个需求就是限制用户的访问频次。比如1分钟内只能访问20次，10分钟内只能访问200次。因为是用户维度的场景，性能肯定是要首先考虑，那么适合这个场景的非Re        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15929595.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-23 22:52
+架构摆渡人
+<span data-post-id="15929595" class="post-view-count">阅读(23)</span> 
+<span data-post-id="15929595" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15929595" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15929595" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15915020">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/02/20.html">2022年2月20日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15915020.html">
+    <span>
+        深度分页，我都是这么玩的
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15915020">
+摘要：            
+大家好，我是架构摆渡人。这是实践经验系列的第十一篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 分页查询，无论是在B端的系统，还是C端的应用，都有着广泛的应用。只不过是应用方式和对性能的要求不一样而已。 在B端的系统中一般都是一个列表，下面有一个分页的组件        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15915020.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-20 10:59
+架构摆渡人
+<span data-post-id="15915020" class="post-view-count">阅读(273)</span> 
+<span data-post-id="15915020" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15915020" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15915020" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15887522">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiagoubaiduren/archive/2022/02/12.html">2022年2月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15887525.html">
+    <span>
+        流量治理最大的痛点-资源利用率上不去
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15887525">
+摘要：            
+大家好，我是架构摆渡人，这是流量治理系列的第9篇原创文章，如果有收获，还请分享给更多的朋友。 曾经有人问过我，限流有痛点吗？我当时的回答是：限流阀值不太好评估以及限流降低了用户的体验，这是我认为的痛点。 限流阀值到底怎么评估还是得有压测的动作，特别是现在电商平台，在大促前都会进行全链路压测，将问题暴        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15887525.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-12 21:47
+架构摆渡人
+<span data-post-id="15887525" class="post-view-count">阅读(179)</span> 
+<span data-post-id="15887525" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15887525" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15887525" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiagoubaiduren/p/15887522.html">
+    <span>
+        ON UPDATE CURRENT_TIMESTAMP请慎用
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15887522">
+摘要：            
+大家好，我是架构摆渡人。这是实践经验系列的第七篇文章，这个系列会给大家分享很多在实际工作中有用的经验，如果有收获，还请分享给更多的朋友。 今天给大家分享一个容易忽略的问题，正是因为容易忽略，所以才要重视。 我们的业务表中有两个字段是必不可少的，分别是创建时间和修改时间，这样就知道数据是什么时候创建的        <a href="https://www.cnblogs.com/jiagoubaiduren/p/15887522.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-12 21:46
+架构摆渡人
+<span data-post-id="15887522" class="post-view-count">阅读(79)</span> 
+<span data-post-id="15887522" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15887522" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15887522" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jiagoubaiduren/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 架构摆渡人
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nj80FeAFzl0mmX8J55WCgnnklgJQQNCTaECc48lr_4zgZwX4ytwlY5ZQXAYfV5y_yrOydeK-CQZyBj6WZ44742rMyLRpuom_nDpgh0GvOJ1Ma3vPH8PvGc-QFBLxn455Y" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>【5min+】 对象映射只有AutoMapper？试试Mapster - 句幽 - 博客园</title>
+    <meta property="og:description" content="一谈到如何在.Net中进行对象映射，可能大部分同学都会脱口而出：“使用AutoMapper！”。 是的，AutoMapper 是一个非常成熟的对象映射器。截至到写这篇文章，您能在Nuget上下载到的A" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/401017.css?v=TZbXpieXQG%2f10X3L0iBgILcLZKA%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/Custom/bundle-Custom-mobile.css?v=_msYCBCTPwxsehifP8ZdBI6kxamcIjzp-IKwPnrrPeg1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/uoyo/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/uoyo/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/uoyo/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=401017;var currentBlogApp='uoyo',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/uoyo/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/uoyo/">句幽</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/uoyo/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%8F%A5%E5%B9%BD">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/uoyo/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/uoyo/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 27&nbsp; </span>
+<span id="stats_article_count">文章 - 1&nbsp; </span>
+<span id="stats-comment_count">评论 - 406</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/uoyo/p/12342290.html">【5min+】 对象映射只有AutoMapper？试试Mapster</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown"><h2 id="系列介绍"><strong>系列介绍</strong></h2>
+<p>【五分钟的dotnet】是一个利用您的碎片化时间来学习和丰富.net知识的博文系列。它所包含了.net体系中可能会涉及到的方方面面，比如C#的小细节，AspnetCore，微服务中的.net知识等等。<br>
+5min+不是超过5分钟的意思，&quot;+&quot;是知识的增加。so，它是让您花费5分钟以下的时间来提升您的知识储备量。</p>
+<h2 id="正文"><strong>正文</strong></h2>
+<p>一谈到如何在.Net中进行对象映射，可能大部分同学都会脱口而出：“使用AutoMapper！”。 是的，AutoMapper 是一个非常成熟的<strong>对象映射器</strong>。截至到写这篇文章，您能在Nuget上下载到的AutoMapper包的版本为：v9.0.0，而对应的 Github 的 star 已经高达7K。</p>
+<p>对了，谈到AutoMapper就不得不谈起它的作者（之一）：“JIMMY BOGARD”。也许您没有听过这个名字，但是您一定听过他的另一个作品：<strong>MediatR</strong>（在微软的官方示例EShop中也使用了MediatR）。同时，“JIMMY BOGARD” 也是提出“将领域事件附加在聚合根”上的人，为领域驱动设计（DDD）做出了很大的贡献。在微软官方文档中，您可以看到该处提及到了“JIMMY BOGARD”：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200221081831QQ%E5%9B%BE%E7%89%8720200221161806.png" alt="x"></p>
+<p>好吧，优秀的人总是优秀😭。还是回到今天的正文，对象映射工具。当然，对于AutoMapper大家可能再熟悉不过了，而且它的知名度和热度也居高不下，看一看百度搜索结果就知道了：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200221082131QQ%E6%88%AA%E5%9B%BE20200221162118.png" alt="x"></p>
+<p>然后再来看一看，咱们今天要介绍的主角：<strong>Mapster</strong>。 不知道有多少同学听过它？应该很少吧，这一点从百度搜索也可以看出来：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200221082355QQ%E6%88%AA%E5%9B%BE20200221162343.png" alt="x"></p>
+<p>额………………好像差距有点大哈。而且在这些搜索结果中，有用的信息只有那么几条，其中能看的文章就只有一条，而且还是出自于博客园。 来自 “dudu” 大佬去年的一篇文章： <a href="https://www.cnblogs.com/dudu/p/10449485.html">EF Core 相关的千倍性能之差： AutoMapper ProjectTo VS Mapster ProjectToType</a>。 再来看一看Github的情况，距离我写这一篇稿子的时候，Star数只有 518 个。</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_20022108275820190818atxqvbrhw2j.jpg" alt="x"></p>
+<h2 id="一个契机"><strong>一个契机</strong></h2>
+<p>咱们先来回顾一下AutoMapper是怎么使用的：</p>
+<p>现在有两个类，一个叫做MyEntity ，一个叫做 MyDto。 在咱们书写应用层代码的时候，将数据转换为Dto是很常见的一种操作，所以这也是我们需要对象映射器的原因。 假设，这两个类的结构是酱紫的：</p>
+<pre><code class="language-c#">public class MyEntity
+{
+    public string Name { get; set; }
+
+    public int No { get; set; }
+}
+
+public class MyDto
+{
+    public string Name { get; set; }
+
+    public int No { get; set; }
+}
+</code></pre>
+<p>很普遍，也是很常见的类型。那么如果我们要用AutoMapper来完成两者之间的转换呢？</p>
+<pre><code class="language-c#">var configuration = new MapperConfiguration(cfg =&gt;
+{
+    cfg.CreateMap&lt;MyEntity, MyDto&gt;();
+});
+
+var mapper = configuration.CreateMapper();
+
+var r = mapper.Map&lt;MyDto&gt;(new MyEntity() { Name = &quot;xxx&quot;, No = 111 });
+</code></pre>
+<p>这是9.0的版本，如果您用过以前的版本可能会有点差异，比如老版本会使用Initialize方法来配置。但是思路都是一样的，也就是说，咱们需要先配置对象与对象之间的相互关系，然后创建一个Mapper，在.NET core中咱们一般会在Configura配置好之后，将mapper注册为一个单例，以后使用的话通过依赖注入就可以使用了。</p>
+<p>是的，这种写法逻辑清晰没有一点问题。那么是什么契机让我选择放弃AutoMapper呢？ 可能您会认为是性能问题，毕竟在上面 dudu 的那篇文章的标题真的很有吸引力。 但这只是很小的一部分原因。</p>
+<p>当我在写一些库的时候，我需要用到对象转换的功能，如果自己造轮子写一个的话也不现实（<em>可以看看AutoMapper的源码，里面有多少的表达式树写法</em>😞），所以我尝试引入第三方的映射工具，和大家一样我第一反应就是AutoMapper。但是在评估的时候，我发现：一般来说，mapper对象全局只需要一个，那么这个mapper对象是在我写的库中使用，还是交由用户来创建呢？ 如果在库中创建，那么用户必须在使用库的时候进行配置，比如库公开一个委托来配置：</p>
+<pre><code class="language-c#">service.AddMyLibary(config=&gt;
+{
+    //config wrap automapper
+})
+</code></pre>
+<p>就好比上面的写法。可能您现在正在使用的框架中就是使用了这种方式。 当然也不是说这样不好，但是我个人感觉很奇怪。</p>
+<p>还有一点就是，AutoMapper必须要在进行了配置之后才能完成映射，如果我不提供配置的话，就是抛出一个异常。</p>
+<p>所以，基于这两点，我就想有没有 1：简单的映射不需要配置 2：可以在任何地方进行配置 的对象映射工具。</p>
+<p>是的，后来我采用了Mapster，很早之前就已听闻该工具，但是一直没有对比着使用过它。</p>
+<p>如果将上面AutoMapper进行映射的代码修改一下，转换为Mapster的版本，是这样的：</p>
+<pre><code class="language-c#">var entity = new MyEntity() { Name = &quot;xxx&quot;, No = 111 };
+var r = entity.Adapt&lt;MyDto&gt;();
+</code></pre>
+<p>是的，没有看错，只有一句代码。（<em>虽然我写了两句</em>😜）。 当我们安装了Mapster之后，object对象就会拥有一个 Adapt() 的扩展方法。只需要调用该方法就可以直接完成转换。对于简单的关系，我们根本都不需要进行配置。</p>
+<p>那么对于复杂的映射呢？ Mapster 提供了一个 <strong>TypeAdapterConfig&lt;T,T&gt;</strong> 的静态泛型类型来进行配置，所以我们可以在任何地方书写配置:</p>
+<pre><code class="language-c#">TypeAdapterConfig&lt;MyEntity, MyDto&gt;
+    .NewConfig()
+    .Map(s =&gt; s.Name, d =&gt; d.Name + &quot;_Mapster&quot;);
+</code></pre>
+<p>就像这样，我们就完成了这组对象的复杂映射关系。（Name里面加上&quot;_Mapster&quot;后缀）。</p>
+<h2 id="小试牛刀"><strong>小试牛刀</strong></h2>
+<p>当然，上面的例子只是一个很基础的类型，但是我们经常会遇到类型里面拥有另外的类型，这种嵌套关系能行吗？ 所以我们把上面的实体进行更改：</p>
+<pre><code class="language-c#">public class MyDto
+{
+    public string Name { get; set; }
+
+    public int No { get; set; }
+
+    public string UoyoName { get; set; }
+}
+
+public class MyEntity
+{
+    public string Name { get; set; }
+
+    public int No { get; set; }
+
+    public ChildEntity UoyoCSharp { get; set; }
+}
+
+public class ChildEntity
+{
+    public string Name { get; set; }
+}
+</code></pre>
+<p>在MyEntity里面拥有一个ChildEntity的类型。 “什么？您问我为什么不好好命名，比如ChildEntity就命名为Child呀，为什么要命名成读不懂的东西。” 因为……您命名规范了，根本都不用写配置，Mapster会自动完成映射。   所以基于这个不规则的命名，我们只需要进行下面的配置就行了：</p>
+<pre><code class="language-c#">TypeAdapterConfig&lt;MyEntity, MyDto&gt;
+           .NewConfig()
+           .Map(s =&gt; s.UoyoName, d =&gt; d.UoyoCSharp.Name);
+</code></pre>
+<p>就是这么简单。那么其它的高级映射呢？？？ 请自行跳转自<a href="https://github.com/MapsterMapper/Mapster/wiki">文档页</a>查询。  因为本文不是教程篇所以就偷懒了哈。当然官方的文档也很少，只需要半个小时，可能您就学完了😜。</p>
+<p>最后，再来说一说大家很关心的一个问题吧：它和AutoMapper比较，性能有什么差距呢？ 由于选型评估的时候我也并没有太考虑性能这个因素，所以就没有进行测试，但是在Github的说明页，官方给了一个测试比较：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200221091402QQ%E6%88%AA%E5%9B%BE20200221171340.png" alt="x"></p>
+<p>好吧，差距相对来说还是挺大的。但是毕竟我没有进行确切的验证，也不会对它进行无脑吹。详细情况还请各位大佬自行测试。</p>
+<p><em>最后，小声说一句：点个推荐吧.....</em></p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1635918/o_200221093942dw-23.png" alt="x"></p>
+</div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-02-21 17:42</span> <a href='https://www.cnblogs.com/uoyo/'>句幽</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12342290" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12342290);return false;">收藏</a></div>
+	</div>
+	<script src="//common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script><script>markdown_highlight();</script><script type="text/javascript">var allowComments=true,cb_blogId=401017,cb_entryId=12342290,cb_blogApp=currentBlogApp,cb_blogUserGuid='4660842a-34b1-4866-476c-08d52fc34315',cb_entryCreatedDate='2020/2/21 17:42:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=true;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 句幽
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<div class="Snow">
+    <canvas id="Snow"></canvas>
+</div>
+
+<!--下雪特效-->
+<script src="https://blog-static.cnblogs.com/files/uoyo/snoweffects.js"></script>
+
+<script type="text/javascript" language="javascript"> 
+//为右下角推荐推荐区域添加关注按钮
+window.onload = function () {
+    $('#div_digg').prepend('<div style="padding-bottom: 5px" id="please_follow"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'4660842a-34b1-4866-476c-08d52fc34315\');" href="javascript:void(0);" style="font-weight: bold; padding-left:5px;font-size: 14px; vertical-align: super;color: #ff5d47;">关注一下楼主吧</a> </div>');
+}
+</script>
+
+<!--代码复制-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+<!--主题-->
+<script src="https://blog-static.cnblogs.com/files/uoyo/gshang.2019.10.27.1.js"></script>
+
+<!-- zoom.js 的样式 -->
+<link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/uoyo/zoom.css">
+<!-- Bootstrap 的 transition.js cdn（过渡动画插件）-->
+<script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+<!-- zoom.js 核心代码 -->
+<script src="https://blog-static.cnblogs.com/files/uoyo/zoom.js"></script>
+<script type='text/javascript'>$('#cnblogs_post_body img').attr('data-action', 'zoom');</script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

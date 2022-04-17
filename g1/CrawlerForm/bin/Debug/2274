@@ -1,0 +1,465 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>【论文笔记】张航和李沐等提出：ResNeSt: Split-Attention Networks（ResNet改进版本） - 西西嘛呦 - 博客园</title>
+    <meta property="og:description" content="github地址：https://github.com/zhanghang1989/ResNeSt 论文地址：https://hangzhang.org/files/resnest.pdf 核心就是：" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.css?v=EjExWsdi8Ql8RA7Wdq4_YaeuMVhIAL6d2BSGbilapWY1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/465208.css?v=D4IoKl%2b7PkjpfB3bILTAl2I92ns%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.css?v=UDjqx7Witj15lOavDDvYAPs4X-lKVDD-U7PDSLg1cK81"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiximayou/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiximayou/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiximayou/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=465208;var currentBlogApp='xiximayou',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--PageBeginHtml Block Begin-->
+<script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤JAVA❤","❤C++❤","❤C❤","❤PYTHON❤","❤GO❤","❤LINUX❤","❤HTML❤","❤CSS❤","❤JS❤","❤PYTORCH❤","❤MXNET❤","❤TF❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/xiximayou/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/xiximayou/">西西嘛呦</a></h1>
+<h2><br/>
+从自己能做到的开始，一件件来，缓慢而坚定地前进，尽力而为
+</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiximayou/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E8%A5%BF%E8%A5%BF%E5%98%9B%E5%91%A6">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 884&nbsp; </span>
+<span id="stats_article_count">文章 - 9&nbsp; </span>
+<span id="stats-comment_count">评论 - 116</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/xiximayou/p/12728644.html">【论文笔记】张航和李沐等提出：ResNeSt: Split-Attention Networks（ResNet改进版本）</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>github地址：<a href="https://github.com/zhanghang1989/ResNeSt" target="_blank">https://github.com/zhanghang1989/ResNeSt</a></p>
+<p>论文地址：<a href="https://hangzhang.org/files/resnest.pdf%20" target="_blank">https://hangzhang.org/files/resnest.pdf&nbsp;</a></p>
+<p>&nbsp;</p>
+<p>核心就是：Split-attention blocks</p>
+<p>先看一组图：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418213817952-879645391.png" alt="" /></p>
+<p>ResNeSt在图像分类上中ImageNet数据集上超越了其前辈ResNet、ResNeXt、SENet以及EfficientNet。使用ResNeSt-50为基本骨架的Faster-RCNN比使用ResNet-50的mAP要高出3.08%。使用ResNeSt-50为基本骨架的DeeplabV3比使用ResNet-50的mIOU要高出3.02%。涨点效果非常明显。</p>
+<p><span style="color: #ff0000; font-size: 18px;"><strong>1、提出的动机</strong></span></p>
+<p>他们认为像ResNet等一些基础卷积神经网络是针对于图像分类而设计的。由于<span style="color: #0000ff;"><strong>有限的感受野大小</strong></span>以及<strong><span style="color: #0000ff;">缺乏跨通道之间的相互作用</span></strong>，这些网络可能不适合于其它的一些领域像目标检测、图像分割等。这意味着要提高给定计算机视觉任务的性能，需要&ldquo;网络手术&rdquo;来修改ResNet，以使其对特定任务更加有效。 例如，某些方法添加了金字塔模块[8，69]或引入了远程连接[56]或使用跨通道特征图注意力[15，65]。 虽然这些方法确实可以提高某些任务的学习性能，但由此而提出了一个问题：我们是否可以创建具有通用改进功能表示的通用骨干网，从而同时提高跨多个任务的性能？跨通道信息在下游应用中已被成功使用 [56，64，65]，而最近的图像分类网络更多地关注组或深度卷积[27，28，54，60]。 尽管它们在分类任务中具有出色的计算能力和准确性，但是这些模型无法很好地转移到其他任务，因为它们的孤立表示无法捕获跨通道之间的关系[27、28]。因此，具有<strong><span style="color: #0000ff;">跨通道表示</span></strong>的网络是值得做的。</p>
+<p><span style="font-size: 18px;"><strong><span style="color: #ff0000;">2、本文的贡献点</span></strong></span></p>
+<p>第一个贡献点：提出了split-attention blocks构造的ResNeSt，与现有的ResNet变体相比，不需要增加额外的计算量。而且ResNeSt可以作为其它任务的骨架。</p>
+<p>第二个贡献点：图像分类和迁移学习应用的大规模基准。 利用ResNeSt主干的模型能够在几个任务上达到最先进的性能，即：图像分类，对象检测，实例分割和语义分割。 与通过神经架构搜索生成的最新CNN模型[55]相比，所提出的ResNeSt性能优于所有现有ResNet变体，并且具有相同的计算效率，甚至可以实现更好的速度精度折衷。单个Cascade-RCNN [3]使用ResNeSt-101主干的模型在MS-COCO实例分割上实现了48.3％的box mAP和41.56％的mask mAP。 单个DeepLabV3 [7]模型同样使用ResNeSt-101主干，在ADE20K场景分析验证集上的mIoU达到46.9％，比以前的最佳结果高出1％mIoU以上。</p>
+<p><span style="font-size: 18px;"><strong><span style="color: #ff0000;">3、相关工作就不介绍了</span></strong></span></p>
+<p><span style="font-size: 18px;"><strong><span style="color: #ff0000;">4、Split-Attention网络</span></strong></span></p>
+<p>直接看ResNeSt block：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418213847824-757645072.png" alt="" /></p>
+<p>首先是借鉴了ResNeXt网络的思想，将输入分为<span style="color: #0000ff;"><strong>K个，每一个记为Cardinal1-k</strong></span>&nbsp;，然后又将每个Cardinal拆分成<span style="color: #0000ff;"><strong>R个，每一个记为Split1-r</strong><span style="color: #000000;">，所以总共有<span style="color: #0000ff;"><strong>G=KR</strong></span>个组。</span></span></p>
+<p><span style="color: #0000ff;"><span style="color: #000000;">然后是对于每一个Cardinal中具体是什么样的：</span></span></p>
+<p><span style="color: #0000ff;"><span style="color: #000000;"><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418213924932-1549629534.png" alt="" /></span></span></p>
+<p>这里借鉴了squeeze-and-excitation network(SENet) 中的思想，也就是基于通道的注意力机制，对通道赋予不同的权重以建模通道的重要程度。SE block的基础块如下所示：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200422104928217-1486305278.png" alt="" /></p>
+<p>回到原文，对于每一个Cardinal输入是：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418214703514-2018065566.png" alt="" /></p>
+<p>通道权重统计量可以通过全局平均池化获得：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418214808612-1913002351.png" alt="" /></p>
+<p>用Vk表示携带了通道权重后的Cardinal输出：<img src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418215053865-513168227.png" alt="" /></p>
+<p>那么最终每个Cardinal的输出就是：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418215419676-790747734.png" alt="" /></p>
+<p>而其中的<img src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418215914795-1971733927.png" alt="" />是经过了softmax之后计算所得的权重：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418215952405-683547868.png" alt="" /></p>
+<p>如果R=1的话就是对该Cardinal中的所有通道视为一个整体。</p>
+<p>接着将每一个Cardinal的输出拼接起来：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418220141220-1143880534.png" alt="" /></p>
+<p>假设每个ResNeSt block的输出是Y，那么就有：</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418220218654-1045056281.png" alt="" /></p>
+<p>其中T表示的是跳跃连接映射。这样的形式就和ResNet中的残差块输出计算就一致了。</p>
+<p><span style="color: #ff0000; font-size: 18px;"><strong>5、残差网络存在的问题&nbsp;</strong></span></p>
+<p>（1）残差网络使用带步长的卷积，比如3&times;3卷积来减少图像的空间维度，这样会损失掉很多空间信息。对于像目标检测和分割领域，空间信息是至关重要的。而且卷积层一般使用0来填充图像边界，这在迁移到密集预测的其它问题时也不是最佳选择。<span style="color: #0000ff;"><strong>因此本文使用的是核大小为3&times;3的平均池化来减少空间维度</strong></span>。</p>
+<p>（2）</p>
+<ul>
+<li>将残差网络中的<strong><span style="color: #0000ff;">7&times;7卷积用3个3&times;3的卷积代替</span></strong>，拥有同样的感受野。</li>
+<li>将跳跃连接中的步长为2的1&times;1卷积<strong><span style="color: #0000ff;">用2&times;2的平均池化</span></strong>代替。</li>
+</ul>
+<p><span style="color: #ff0000; font-size: 18px;"><strong>6、训练策略</strong></span></p>
+<p>这里就简单地列下，相关细节可以去看论文。</p>
+<p>（1）大的min batch，使用cosine学习率衰减策略。warm up。BN层参数设置。</p>
+<p>（2）标签平滑</p>
+<p>（3）自动增强</p>
+<p>（4）mixup训练</p>
+<p>（5）大的切割设置</p>
+<p>（6）正则化</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418221915737-657932745.png" alt="" /></p>
+<p><span style="color: #ff0000; font-size: 18px;"><strong>6、相关结果&nbsp;</strong></span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418222024970-1508367476.png" alt="" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418222129153-1646951994.png" alt="" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418222147947-810631251.png" alt="" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418222205733-938599594.png" alt="" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418222219905-845875678.png" alt="" /></p>
+<p>附录中还有一些结果，就不再贴了。&nbsp;</p>
+<p>最后是split attention block的实现代码，可以结合看一看：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">import</span><span style="color: #000000;"> torch
+</span><span style="color: #0000ff;">from</span> torch <span style="color: #0000ff;">import</span><span style="color: #000000;"> nn
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> torch.nn.functional as F
+</span><span style="color: #0000ff;">from</span> torch.nn <span style="color: #0000ff;">import</span><span style="color: #000000;"> Conv2d, Module, Linear, BatchNorm2d, ReLU
+</span><span style="color: #0000ff;">from</span> torch.nn.modules.utils <span style="color: #0000ff;">import</span><span style="color: #000000;"> _pair
+
+</span><span style="color: #800080;">__all__</span> = [<span style="color: #800000;">'</span><span style="color: #800000;">SKConv2d</span><span style="color: #800000;">'</span><span style="color: #000000;">]
+
+</span><span style="color: #0000ff;">class</span><span style="color: #000000;"> DropBlock2D(object):
+    </span><span style="color: #0000ff;">def</span> <span style="color: #800080;">__init__</span>(self, *args, **<span style="color: #000000;">kwargs):
+        </span><span style="color: #0000ff;">raise</span><span style="color: #000000;"> NotImplementedError
+
+</span><span style="color: #0000ff;">class</span><span style="color: #000000;"> SplAtConv2d(Module):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;">Split-Attention Conv2d
+    </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">def</span> <span style="color: #800080;">__init__</span>(self, in_channels, channels, kernel_size, stride=(1, 1), padding=<span style="color: #000000;">(0, 0),
+                 dilation</span>=(1, 1), groups=1, bias=<span style="color: #000000;">True,
+                 radix</span>=2, reduction_factor=4<span style="color: #000000;">,
+                 rectify</span>=False, rectify_avg=False, norm_layer=<span style="color: #000000;">None,
+                 dropblock_prob</span>=0.0, **<span style="color: #000000;">kwargs):
+        super(SplAtConv2d, self).</span><span style="color: #800080;">__init__</span><span style="color: #000000;">()
+        padding </span>=<span style="color: #000000;"> _pair(padding)
+        self.rectify </span>= rectify <span style="color: #0000ff;">and</span> (padding[0] &gt; 0 <span style="color: #0000ff;">or</span> padding[1] &gt;<span style="color: #000000;"> 0)
+        self.rectify_avg </span>=<span style="color: #000000;"> rectify_avg
+        inter_channels </span>= max(in_channels*radix//reduction_factor, 32<span style="color: #000000;">)
+        self.radix </span>=<span style="color: #000000;"> radix
+        self.cardinality </span>=<span style="color: #000000;"> groups
+        self.channels </span>=<span style="color: #000000;"> channels
+        self.dropblock_prob </span>=<span style="color: #000000;"> dropblock_prob
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> self.rectify:
+            </span><span style="color: #0000ff;">from</span> rfconv <span style="color: #0000ff;">import</span><span style="color: #000000;"> RFConv2d
+            self.conv </span>= RFConv2d(in_channels, channels*<span style="color: #000000;">radix, kernel_size, stride, padding, dilation,
+                                 groups</span>=groups*radix, bias=bias, average_mode=rectify_avg, **<span style="color: #000000;">kwargs)
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            self.conv </span>= Conv2d(in_channels, channels*<span style="color: #000000;">radix, kernel_size, stride, padding, dilation,
+                               groups</span>=groups*radix, bias=bias, **<span style="color: #000000;">kwargs)
+        self.use_bn </span>= norm_layer <span style="color: #0000ff;">is</span> <span style="color: #0000ff;">not</span><span style="color: #000000;"> None
+        self.bn0 </span>= norm_layer(channels*<span style="color: #000000;">radix)
+        self.relu </span>= ReLU(inplace=<span style="color: #000000;">True)
+        self.fc1 </span>= Conv2d(channels, inter_channels, 1, groups=<span style="color: #000000;">self.cardinality)
+        self.bn1 </span>=<span style="color: #000000;"> norm_layer(inter_channels)
+        self.fc2 </span>= Conv2d(inter_channels, channels*radix, 1, groups=<span style="color: #000000;">self.cardinality)
+        </span><span style="color: #0000ff;">if</span> dropblock_prob &gt; 0.0<span style="color: #000000;">:
+            self.dropblock </span>= DropBlock2D(dropblock_prob, 3<span style="color: #000000;">)
+
+    </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> forward(self, x):
+        x </span>=<span style="color: #000000;"> self.conv(x)
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> self.use_bn:
+            x </span>=<span style="color: #000000;"> self.bn0(x)
+        </span><span style="color: #0000ff;">if</span> self.dropblock_prob &gt; 0.0<span style="color: #000000;">:
+            x </span>=<span style="color: #000000;"> self.dropblock(x)
+        x </span>=<span style="color: #000000;"> self.relu(x)
+
+        batch, channel </span>= x.shape[:2<span style="color: #000000;">]
+        </span><span style="color: #0000ff;">if</span> self.radix &gt; 1<span style="color: #000000;">:
+            splited </span>= torch.split(x, channel//self.radix, dim=1<span style="color: #000000;">)
+            gap </span>=<span style="color: #000000;"> sum(splited) 
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            gap </span>=<span style="color: #000000;"> x
+        gap </span>= F.adaptive_avg_pool2d(gap, 1<span style="color: #000000;">)
+        gap </span>=<span style="color: #000000;"> self.fc1(gap)
+
+        </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> self.use_bn:
+            gap </span>=<span style="color: #000000;"> self.bn1(gap)
+        gap </span>=<span style="color: #000000;"> self.relu(gap)
+
+        atten </span>=<span style="color: #000000;"> self.fc2(gap).view((batch, self.radix, self.channels))
+        </span><span style="color: #0000ff;">if</span> self.radix &gt; 1<span style="color: #000000;">:
+            atten </span>= F.softmax(atten, dim=1).view(batch, -1, 1, 1<span style="color: #000000;">)
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            atten </span>= F.sigmoid(atten, dim=1).view(batch, -1, 1, 1<span style="color: #000000;">)
+
+        </span><span style="color: #0000ff;">if</span> self.radix &gt; 1<span style="color: #000000;">:
+            atten </span>= torch.split(atten, channel//self.radix, dim=1<span style="color: #000000;">)
+            out </span>= sum([att*split <span style="color: #0000ff;">for</span> (att, split) <span style="color: #0000ff;">in</span><span style="color: #000000;"> zip(atten, splited)])
+        </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+            out </span>= atten *<span style="color: #000000;"> x
+        </span><span style="color: #0000ff;">return</span> out.contiguous()</pre>
+</div>
+<p>&nbsp;</p>
+<p>如有错误，欢迎指出。</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-04-18 22:27</span> <a href='https://www.cnblogs.com/xiximayou/'>西西嘛呦</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12728644" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12728644);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=465208,cb_entryId=12728644,cb_blogApp=currentBlogApp,cb_blogUserGuid='6d698895-197f-4e15-9014-08d627f4443f',cb_entryCreatedDate='2020/4/18 22:27:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 西西嘛呦
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 100,
+            "height": 200,
+            "hOffset": -17,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.3
+        }
+    });
+</script>
+
+<script type="text/javascript">
+   window.onload = function () {
+                var minSize = 10; //最小字体
+                var maxSize = 20;//最大字体
+                var newOne = 600; //生成雪花间隔
+                var flakColor = "#f5f5f5fa"; //雪花颜色
+                var flak = $("<div></div>").css({position:"absolute","top":"0px"}).html("✽");//定义一个雪花
+                var dhight = $(window).height(); //定义视图高度
+                var dw =$(window).width()-80; //定义视图宽度
+                setInterval(function(){
+                var sizeflak = minSize+Math.random()*maxSize; //产生大小不等的雪花
+                var startLeft = Math.random()*dw; //雪花生成是随机的left值
+                var startOpacity = 0.7+Math.random()*0.3; //随机透明度
+                var endTop= dhight-100; //雪花停止top的位置
+                var endLeft= Math.random()*dw; //雪花停止的left位置
+                var durationfull = 5000+Math.random()*3000; //雪花飘落速度不同
+                flak.clone().appendTo($("body")).css({
+                "left":startLeft ,
+                "opacity":startOpacity,
+                "font-size":sizeflak,
+                "color":flakColor
+                }).animate({
+                "top":endTop,
+                "left":endLeft,
+                "apacity":0.1
+                },durationfull,function(){
+                $(this).remove()
+                });
+                },newOne);
+            }
+ </script>
+<script language="javascript" type="text/javascript">
+//生成目录索引列表
+function GenerateContentList()
+{
+    var jquery_h3_list = $('#cnblogs_post_body h3');//如果你的章节标题不是h3,只需要将这里的h3换掉即可
+    if(jquery_h3_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content    += '<div id="navCategory">';
+        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content    += '<ul>';
+        for(var i =0;i<jquery_h3_list.length;i++)
+        {
+            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            $(jquery_h3_list[i]).before(go_to_top);
+            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
+            content += li_content;
+        }
+        content    += '</ul>';
+        content    += '</div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }    
+}
+GenerateContentList();
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    //$('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+<span id="back-to-top"><a href="#top"><img id="mypic" src="https://images.cnblogs.com/cnblogs_com/xiximayou/1643158/t_200207035556top.png" /></a></span>
+<!--PageEndHtml Block End-->
+</body>
+</html>

@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="目录 一.简介 二.效果演示 三.源码下载 四.猜你喜欢 零基础 OpenGL (ES) 学习路线推荐 : OpenGL (ES) 学习目录 &amp;gt;&amp;gt; OpenGL ES 基础 零基础 Ope" />
+    <meta property="og:description" content="目录 一.简介 二.效果演示 三.源码下载 四.猜你喜欢 零基础 OpenGL (ES) 学习路线推荐 : OpenGL (ES) 学习目录 &amp;gt;&amp;gt; OpenGL ES 基础 零基础 Ope" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter - 猿说编程 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/summergarden/bundle-summergarden.min.css?v=0hfMVKHqJ2JDOgFMCs4_0Nhvs98HPVrWEXz0ro16nFU" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/summergarden/bundle-summergarden-mobile.min.css?v=qrOX9YH0tQFwGQbr03GORfoMJxtYReV7WrFH2T-dXi0" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/shuopython/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/shuopython/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/shuopython/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 537806;
+        var currentBlogApp = 'shuopython';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'summerGarden';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-17 08:29';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-summergarden has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a href="https://www.cnblogs.com/shuopython/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/shuopython/">猿说编程</a>
+</h1>
+<h2>个人博客：www.codersrc.com
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+
+			<ul id="navList">
+				<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+				<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/shuopython/">
+首页</a>
+</li>
+				<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+				<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%8C%BF%E8%AF%B4%E7%BC%96%E7%A8%8B">
+联系</a></li>
+				<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+				<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/shuopython/rss/">
+订阅</a>
+				
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/shuopython/rss/">
+    <img src="/skins/summergarden/images/xml.gif" alt="订阅" />
+</a></li>
+			</ul>
+
+
+
+		<div class="blogStats">
+			
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class="post">
+		<h1 class = "postTitle">
+			
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/shuopython/p/16154958.html">
+    <span role="heading" aria-level="2">IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter</span>
+    
+</a>
+
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<p>目录</p>
+<ul>
+<li><a href="#%E4%B8%80%E7%AE%80%E4%BB%8B" title="一.简介" rel="noopener">一.简介</a></li>
+<li><a href="#%E4%BA%8C%E6%95%88%E6%9E%9C%E6%BC%94%E7%A4%BA" title="二.效果演示" rel="noopener">二.效果演示</a></li>
+<li><a href="#%E4%B8%89%E6%BA%90%E7%A0%81%E4%B8%8B%E8%BD%BD" title="三.源码下载" rel="noopener">三.源码下载</a></li>
+<li><a href="#%E5%9B%9B%E7%8C%9C%E4%BD%A0%E5%96%9C%E6%AC%A2" title="四.猜你喜欢" rel="noopener">四.猜你喜欢</a></li>
+</ul>
+<blockquote>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-es-%e5%9f%ba%e7%a1%80" target="_blank" rel="noopener">OpenGL ES 基础</a></p>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-es-%e8%bd%ac%e5%9c%ba" target="_blank" rel="noopener">OpenGL ES 转场</a></p>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-es-%e7%89%b9%e6%95%88" target="_blank" rel="noopener">OpenGL ES 特效</a></p>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-es-%e5%87%bd%e6%95%b0" target="_blank" rel="noopener">OpenGL ES 函数</a></p>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-gpuimage" target="_blank" rel="noopener">OpenGL ES GPUImage 使用</a></p>
+<p>零基础 OpenGL (ES) 学习路线推荐 : <a href="https://www.codersrc.com/opengl-es" target="_blank" rel="noopener">OpenGL (ES) 学习目录</a> &gt;&gt; <a href="https://www.codersrc.com/opengl-glsl" target="_blank" rel="noopener">OpenGL ES GLSL 编程</a></p>
+</blockquote>
+<h2 id="一简介">一.简介</h2>
+<p><a href="https://www.codersrc.com/opengl-gpuimage" target="_blank" rel="noopener">GPUImage</a> 共 125 个滤镜, 分为四类</p>
+<blockquote>
+<p>1、Color adjustments : 31 filters , 颜色处理相关<br>
+2、Image processing : 40 filters , 图像处理相关.<br>
+3、Blending modes : 29 filters , 混合模式相关.<br>
+4、Visual effects : 25 filters , 视觉效果相关.</p>
+</blockquote>
+<p><strong><a href="https://www.codersrc.com/archives/15830.html" target="_blank" rel="noopener">GPUImageWhiteBalanceFilter</a> 属于 GPUImage 颜色处理相关，用来处理图片白平衡/色温</strong></p>
+<blockquote>
+<p><strong>温度：</strong>以 ºK 调整图像的温度。4000 的值非常酷，7000 非常温暖。默认值为 5000.请注意，4000 和 5000 之间的刻度几乎与 5000 到 7000 之间的视觉显着性相当。</p>
+<p><strong>色调：</strong>通过调整图像的色调。值-200 是非常绿色，200 是非常粉红色。默认值为 0</p>
+</blockquote>
+<p>shader 源码如下：</p>
+<pre><code>/******************************************************************************************/
+//@Author:猿说编程
+//@Blog(个人博客地址): www.codersrc.com
+//@File:IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter
+//@Time:2022/04/08 07:30
+//@Motto:不积跬步无以至千里，不积小流无以成江海，程序人生的精彩需要坚持不懈地积累！
+/******************************************************************************************/
+
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+NSString *const kGPUImageWhiteBalanceFragmentShaderString = SHADER_STRING
+(
+uniform sampler2D inputImageTexture;
+varying highp vec2 textureCoordinate;
+
+uniform lowp float temperature;
+uniform lowp float tint;
+
+const lowp vec3 warmFilter = vec3(0.93, 0.54, 0.0);
+
+const mediump mat3 RGBtoYIQ = mat3(0.299, 0.587, 0.114, 0.596, -0.274, -0.322, 0.212, -0.523, 0.311);
+const mediump mat3 YIQtoRGB = mat3(1.0, 0.956, 0.621, 1.0, -0.272, -0.647, 1.0, -1.105, 1.702);
+
+void main()
+{
+	lowp vec4 source = texture2D(inputImageTexture, textureCoordinate);
+
+	mediump vec3 yiq = RGBtoYIQ * source.rgb; //adjusting tint
+	yiq.b = clamp(yiq.b + tint*0.5226*0.1, -0.5226, 0.5226);
+	lowp vec3 rgb = YIQtoRGB * yiq;
+
+	lowp vec3 processed = vec3(
+		(rgb.r &lt; 0.5 ? (2.0 * rgb.r * warmFilter.r) : (1.0 - 2.0 * (1.0 - rgb.r) * (1.0 - warmFilter.r))), //adjusting temperature
+		(rgb.g &lt; 0.5 ? (2.0 * rgb.g * warmFilter.g) : (1.0 - 2.0 * (1.0 - rgb.g) * (1.0 - warmFilter.g))),
+		(rgb.b &lt; 0.5 ? (2.0 * rgb.b * warmFilter.b) : (1.0 - 2.0 * (1.0 - rgb.b) * (1.0 - warmFilter.b))));
+
+	gl_FragColor = vec4(mix(rgb, processed, temperature), source.a);
+}
+);
+#else
+NSString *const kGPUImageWhiteBalanceFragmentShaderString = SHADER_STRING
+(
+ uniform sampler2D inputImageTexture;
+ varying vec2 textureCoordinate;
+
+ uniform float temperature;
+ uniform float tint;
+
+ const vec3 warmFilter = vec3(0.93, 0.54, 0.0);
+
+ const mat3 RGBtoYIQ = mat3(0.299, 0.587, 0.114, 0.596, -0.274, -0.322, 0.212, -0.523, 0.311);
+ const mat3 YIQtoRGB = mat3(1.0, 0.956, 0.621, 1.0, -0.272, -0.647, 1.0, -1.105, 1.702);
+
+ void main()
+{
+	vec4 source = texture2D(inputImageTexture, textureCoordinate);
+
+	vec3 yiq = RGBtoYIQ * source.rgb; //adjusting tint
+	yiq.b = clamp(yiq.b + tint*0.5226*0.1, -0.5226, 0.5226);
+	vec3 rgb = YIQtoRGB * yiq;
+
+	vec3 processed = vec3(
+                               (rgb.r &lt; 0.5 ? (2.0 * rgb.r * warmFilter.r) : (1.0 - 2.0 * (1.0 - rgb.r) * (1.0 - warmFilter.r))), //adjusting temperature
+                               (rgb.g &lt; 0.5 ? (2.0 * rgb.g * warmFilter.g) : (1.0 - 2.0 * (1.0 - rgb.g) * (1.0 - warmFilter.g))),
+                               (rgb.b &lt; 0.5 ? (2.0 * rgb.b * warmFilter.b) : (1.0 - 2.0 * (1.0 - rgb.b) * (1.0 - warmFilter.b))));
+
+	gl_FragColor = vec4(mix(rgb, processed, temperature), source.a);
+}
+);
+#endif
+</code></pre>
+<h2 id="二效果演示">二.效果演示</h2>
+<p>使用<strong><a href="https://www.codersrc.com/archives/15830.html" target="_blank" rel="noopener">GPUImageWhiteBalanceFilter</a>** 处理图片</strong>白平衡/色温**，原图：</p>
+<p><img src="https://img2022.cnblogs.com/other/641604/202204/641604-20220417082903380-1942307123.png" alt="" loading="lazy"></p>
+<p>GPUImageWhiteBalanceFilter 效果图：</p>
+<p><img src="https://img2022.cnblogs.com/other/641604/202204/641604-20220417082922929-1656862843.gif" alt="" loading="lazy"></p>
+<h2 id="三源码下载">三.源码下载</h2>
+<p>OpenGL ES Demo 下载地址 :<a href="https://www.codersrc.com/archives/15830.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter</a></p>
+<p><img src="https://img2022.cnblogs.com/other/641604/202204/641604-20220417082928194-1091831524.png" alt="" loading="lazy"></p>
+<h2 id="四猜你喜欢">四.猜你喜欢</h2>
+<ul>
+<li><a href="https://www.codersrc.com/archives/15342.html" target="_blank" rel="noopener">IOS – OPenGL ES 设置图像亮度 GPUImageBrightnessFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15407.html" target="_blank" rel="noopener">IOS – OPenGL ES 调节图像曝光度 GPUImageExposureFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15422.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像对比度 GPUImageContrastFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15438.html" target="_blank" rel="noopener">IOS – OPenGL ES 调节图像饱和度 GPUImageSaturationFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15453.html" target="_blank" rel="noopener">IOS – OPenGL ES 调节图像伽马线 GPUImageGammaFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15468.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像反色 GPUImageColorInvertFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15484.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像褐色 GPUImageSepiaFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15498.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像灰色 GPUImageGrayscaleFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15521.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像 RGB 通道 GPUImageRGBFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15546.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像不透明度 GPUImageOpacityFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15557.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像阴影 GPUImageHighlightShadowFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15571.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像色彩替换 GPUImageFalseColorFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15602.html" target="_blank" rel="noopener">GPUImage – 色彩直方图 GPUImageHistogramFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15609.html" target="_blank" rel="noopener">GPUImage – 色彩直方图 GPUImageHistogramGenerator</a></li>
+<li><a href="https://www.codersrc.com/archives/15617.html" target="_blank" rel="noopener">GPUImage – 像素平均色值 GPUImageAverageColor</a></li>
+<li><a href="https://www.codersrc.com/archives/15625.html" target="_blank" rel="noopener">GPUImage – 亮度平均 GPUImageLuminosity</a></li>
+<li><a href="https://www.codersrc.com/archives/15791.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像色度 GPUImageHueFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15808.html" target="_blank" rel="noopener">IOS – OpenGL ES 指定颜色抠图 GPUImageChromaKeyFilter</a></li>
+<li><a href="https://www.codersrc.com/archives/15830.html" target="_blank" rel="noopener">IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter</a></li>
+</ul>
+<blockquote>
+<p>本文由博客 - 猿说编程 <a href="https://www.codersrc.com/" target="_blank" rel="noopener">猿说编程</a> 发布！</p>
+</blockquote>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+		</div>
+		<div class="postDesc">posted @ 
+<span id="post-date">2022-04-17 08:29</span>&nbsp;
+<a href="https://www.cnblogs.com/shuopython/">猿说编程</a>&nbsp;
+阅读(<span id="post_view_count">0</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154958" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16154958);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16154958', targetLink: 'https://www.cnblogs.com/shuopython/p/16154958.html', title: 'IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter' })">举报</a></div>
+	</div>
+	
+	
+</div>
+
+<script>
+    var cb_entryId = 16154958, cb_entryCreatedDate = '2022-04-17 08:29', cb_postType = 1, cb_postTitle = 'IOS – OpenGL ES 调节图像白平衡/色温 GPUImageWhiteBalanceFilter';
+    var allowComments = true, cb_blogId = 537806, cb_blogApp = 'shuopython', cb_blogUserGuid = 'edf0f4c5-88f0-e311-8d02-90b11c0b17d6';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+</div>
+
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="calendar"><div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 猿说编程
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4ndqfDS41994ySBRbU9FttI4oNSt4rgDdGhqxCQCtF4SeQ9VMvh5bbdRJS3nL7Ubm5J77abks7IxXqLVylbQhKOxshUZiIMjJaO0TvGZg1I6nnRdRdxgjbq9kf7vZgdsH4" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

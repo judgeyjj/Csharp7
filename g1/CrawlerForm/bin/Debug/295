@@ -1,0 +1,605 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="我们知道在RPT里，所有组播数据流都会通过RP转发到接收者；对于一个RP来说，它可以同时服务于多个组播组，但一个组播组只能对应一个唯一的RP；所谓RP就是RPT（Rendezvous Point Tr" />
+    <meta property="og:description" content="我们知道在RPT里，所有组播数据流都会通过RP转发到接收者；对于一个RP来说，它可以同时服务于多个组播组，但一个组播组只能对应一个唯一的RP；所谓RP就是RPT（Rendezvous Point Tr" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HCNP Routing&amp;Switching之组播技术PIM-SM RP  - Linux-1874 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/custom/bundle-custom.min.css?v=URnzNOcYasaxFfc79Balq6aK60x2WaH4sa2e1Ty6OO4" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/qiuhom-1874/custom.css?v=k3WZeZSOnNsbQQowPVi/zR&#x2B;i3ic=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=WIiV_j5YxY6rt2_bcg1WyHYyTSCpsPcXyaA7POmlI5U" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/qiuhom-1874/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/qiuhom-1874/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/qiuhom-1874/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 465299;
+        var currentBlogApp = 'qiuhom-1874';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Custom';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-17 01:25';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-custom no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/qiuhom-1874/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/qiuhom-1874/">1874</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/qiuhom-1874/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Linux-1874">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/qiuhom-1874/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/qiuhom-1874/p/16154347.html">
+    <span role="heading" aria-level="2">HCNP Routing&amp;Switching之组播技术PIM-SM RP </span>
+    
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                    <div id="cnblogs_post_description" style="display: none">
+        <img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416213728348-345544436.png" alt="HCNP Routing&amp;amp;Switching之组播技术PIM-SM RP " class="desc_img" />
+        我们知道在RPT里，所有组播数据流都会通过RP转发到接收者；对于一个RP来说，它可以同时服务于多个组播组，但一个组播组只能对应一个唯一的RP；所谓RP就是RPT（Rendezvous Point Tree）里的RP（Rendezvous Point），即汇合点；所有的组播源和接收者都是以该点为树根所形成的数据转发路径（RPT）来转发报文，组播源先向树根发送数据报文，之后的报文再向下转发到达所有接收者；
+    </div>
+<div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>　　前文我们了解了组播技术中，组播路由协议PIM的稀疏模式相关话题，回顾请参考<a href="https://www.cnblogs.com/qiuhom-1874/p/16142795.html" target="_blank" rel="noopener">https://www.cnblogs.com/qiuhom-1874/p/16142795.html</a>；今天我们来聊一聊组播路由协议PIM稀疏模式中RP相关话题；</p>
+<p>　　我们知道在RPT里，所有组播数据流都会通过RP转发到接收者；对于一个RP来说，它可以同时服务于多个组播组，但一个组播组只能对应一个唯一的RP；所谓RP就是RPT（Rendezvous Point Tree）里的RP（Rendezvous Point），即汇合点；所有的组播源和接收者都是以该点为树根所形成的数据转发路径（RPT）来转发报文，组播源先向树根发送数据报文，之后的报文再向下转发到达所有接收者；</p>
+<p>　　RP发现</p>
+<p>　　RP发现有两种方式，一种是静态RP，即通过人工手动指定静态RP的ip地址，在所有PIM路由器上配置；另一种就是动态RP，所谓动态RP就是通过几台PIM路由器配置C-RP（Candidate-RP，候选RP），最后从C-RP中竞选产生RP；在竞选RP之前，首先要配置C-BSR（Candidate-BootStrap Router，候选自举RP），从C-BSR中先选出BSR；BSR负责收集C-RP的通告信息，并发布到整个PIM-SM网络，让所有路由器知道RP的位置；简单讲动态RP是在众多C-BSR中先选举BSR，然后有选举的BSR收集C-RP的通告信息，然后再从多个C-RP中竞选出RP，然后再由BSR通告给PIM-SM整个网络路由器让其知道RP的位置；静态和动态是可以同时配置的，默认情况下静态比动态优先级更低，但是静态可以配置更高；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416212357659-2025624821.png" alt="" loading="lazy"></p>
+<p>　　提示：首先在PIM-SM网络中通过多个C-BSR中竞选出BSR，然后由BSR收集C-RP发出的通告信息，再从多个C-RP中竞选出RP；然后再由BSR将其竞选出RP的结果通告给整个PIM-SM网络中的所有路由器，让所有路由器知道RP的位置；</p>
+<p>　　BSR选举规则</p>
+<p>　　1、在多个C-BSR中先比较其优先级，优先级数字越大，优先级越高，即优先级越大越有限成为BSR；</p>
+<p>　　2、如果优先级一样，则比较接口ip地址，ip地址大者成为BSR；</p>
+<p>　　RP选举规则</p>
+<p>　　1、如果只有一个C-RP，那么该节点就是域里的RP；如果有多个C-RP，首先比较C-RP的优先级，优先级较高（数字越小）者称为RP；</p>
+<p>　　2、如果优先级相同，者使用哈希（hash）函数计算哈希值，该值较大者称为RP；</p>
+<p>　　3、如果优先级和哈希值都相同，则比较C-RP接口ip地址，ip地址大者成为RP；</p>
+<p>　　实验：如下拓扑，配置PIM-SM</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416223344075-354139812.png" alt="" loading="lazy"></p>
+<p>　　pc1、pc2、msc1的配置</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416223523861-1032273998.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416223606679-589358418.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416223646729-1065019381.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416223727787-404878488.png" alt="" loading="lazy"></p>
+<p>　　各路由器配置</p>
+<p>　　R1的配置</p>
+<div class="cnblogs_code"><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" id="code_img_closed_671da009-1da9-454f-8817-af94490ed81b" class="code_img_closed"><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" id="code_img_opened_671da009-1da9-454f-8817-af94490ed81b" class="code_img_opened" style="display: none">
+<div id="cnblogs_code_open_671da009-1da9-454f-8817-af94490ed81b" class="cnblogs_code_hide">
+<pre><span style="color: rgba(0, 0, 0, 1)">sys
+sys R1
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">21.1</span> <span style="color: rgba(128, 0, 128, 1)">24</span>
+<span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">11.1</span> <span style="color: rgba(128, 0, 128, 1)">24</span><span style="color: rgba(0, 0, 0, 1)">
+q
+
+ospf </span><span style="color: rgba(128, 0, 128, 1)">1234</span> router-<span style="color: rgba(0, 0, 255, 1)">id</span> <span style="color: rgba(128, 0, 128, 1)">1.1</span>.<span style="color: rgba(128, 0, 128, 1)">1.1</span><span style="color: rgba(0, 0, 0, 1)">
+area </span><span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">21.1</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">11.1</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+q
+q
+
+multicast routing</span>-<span style="color: rgba(0, 0, 0, 1)">enable
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>　　R2的配置</p>
+<div class="cnblogs_code"><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" id="code_img_closed_392c5b2e-2291-4b9a-b8f3-2893b8092d26" class="code_img_closed"><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" id="code_img_opened_392c5b2e-2291-4b9a-b8f3-2893b8092d26" class="code_img_opened" style="display: none">
+<div id="cnblogs_code_open_392c5b2e-2291-4b9a-b8f3-2893b8092d26" class="cnblogs_code_hide">
+<pre><span style="color: rgba(0, 0, 0, 1)">sys
+sys R2
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">32.2</span> <span style="color: rgba(128, 0, 128, 1)">24</span>
+<span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">42.2</span> <span style="color: rgba(128, 0, 128, 1)">24</span>
+<span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">21.2</span> <span style="color: rgba(128, 0, 128, 1)">24</span><span style="color: rgba(0, 0, 0, 1)">
+q
+
+ospf </span><span style="color: rgba(128, 0, 128, 1)">1234</span> router-<span style="color: rgba(0, 0, 255, 1)">id</span> <span style="color: rgba(128, 0, 128, 1)">2.2</span>.<span style="color: rgba(128, 0, 128, 1)">2.2</span><span style="color: rgba(0, 0, 0, 1)">
+area </span><span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">32.2</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">42.2</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">21.2</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+q
+q
+
+multicast routing</span>-<span style="color: rgba(0, 0, 0, 1)">enable
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">2</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>　　R3的配置</p>
+<div class="cnblogs_code"><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" id="code_img_closed_4d0e5ce2-f673-4f54-b51f-3bb95526139c" class="code_img_closed"><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" id="code_img_opened_4d0e5ce2-f673-4f54-b51f-3bb95526139c" class="code_img_opened" style="display: none">
+<div id="cnblogs_code_open_4d0e5ce2-f673-4f54-b51f-3bb95526139c" class="cnblogs_code_hide">
+<pre><span style="color: rgba(0, 0, 0, 1)">sys
+sys R3
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">13.254</span> <span style="color: rgba(128, 0, 128, 1)">24</span>
+<span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">32.3</span> <span style="color: rgba(128, 0, 128, 1)">24</span><span style="color: rgba(0, 0, 0, 1)">
+q
+
+ospf </span><span style="color: rgba(128, 0, 128, 1)">1234</span> router-<span style="color: rgba(0, 0, 255, 1)">id</span> <span style="color: rgba(128, 0, 128, 1)">3.3</span>.<span style="color: rgba(128, 0, 128, 1)">3.3</span><span style="color: rgba(0, 0, 0, 1)">
+area </span><span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">13.254</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">32.3</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+q
+q
+
+multicast routing</span>-<span style="color: rgba(0, 0, 0, 1)">enable
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm
+igmp en
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm </span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>　　R4的配置</p>
+<div class="cnblogs_code"><img src="https://images.cnblogs.com/OutliningIndicators/ContractedBlock.gif" id="code_img_closed_6522ef29-bb39-4b0f-8e7b-300784842730" class="code_img_closed"><img src="https://images.cnblogs.com/OutliningIndicators/ExpandedBlockStart.gif" id="code_img_opened_6522ef29-bb39-4b0f-8e7b-300784842730" class="code_img_opened" style="display: none">
+<div id="cnblogs_code_open_6522ef29-bb39-4b0f-8e7b-300784842730" class="cnblogs_code_hide">
+<pre><span style="color: rgba(0, 0, 0, 1)">sys
+sys R4
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">24.254</span> <span style="color: rgba(128, 0, 128, 1)">24</span>
+<span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+ip add </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">42.4</span> <span style="color: rgba(128, 0, 128, 1)">24</span><span style="color: rgba(0, 0, 0, 1)">
+q
+
+ospf </span><span style="color: rgba(128, 0, 128, 1)">1234</span> router-<span style="color: rgba(0, 0, 255, 1)">id</span> <span style="color: rgba(128, 0, 128, 1)">4.4</span>.<span style="color: rgba(128, 0, 128, 1)">4.4</span><span style="color: rgba(0, 0, 0, 1)">
+area </span><span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">24.254</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+net </span><span style="color: rgba(128, 0, 128, 1)">192.168</span>.<span style="color: rgba(128, 0, 128, 1)">42.4</span> <span style="color: rgba(128, 0, 128, 1)">0.0</span>.<span style="color: rgba(128, 0, 128, 1)">0.0</span><span style="color: rgba(0, 0, 0, 1)">
+q
+q
+
+multicast routing</span>-<span style="color: rgba(0, 0, 0, 1)">enable
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">0</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm
+igmp en
+</span><span style="color: rgba(0, 0, 255, 1)">int</span> g0/<span style="color: rgba(128, 0, 128, 1)">0</span>/<span style="color: rgba(128, 0, 128, 1)">1</span><span style="color: rgba(0, 0, 0, 1)">
+pim sm</span></pre>
+</div>
+<span class="cnblogs_code_collapse">View Code</span></div>
+<p>　　在R2上验证pim邻居</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416224847869-1085563542.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到R2有三个邻居，分别是R1、R3和R4；和我们的拓扑是符合的；</p>
+<p>　　在R2的g0/0/2口抓包，让组播源发送数据，看看对应是否会生成组播路由？会不会像dm那样先扩散呢？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416225203307-2106409561.png" alt="" loading="lazy"></p>
+<p>　　提示：通过抓包，并没有发现有组播udp，只有pim的hello包；</p>
+<p>　　验证，看看R2上是否有组播路由产生呢？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416225301618-1847552194.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到R2上并没有组播路由产生；</p>
+<p>　　在R1上验证是否有组播路由产生呢？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416225354545-1299852613.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到R1上有组播路由产生，并且是（s,g）的形式；但是该路由信息只有上游接口，并没有下游接口；这是因为该路由器直连组播源，对应并没有接收者，所以只会有上游接口；通过上述截图我们也可以看到对应RP也是空；</p>
+<p>　　手动配置静态RP为2.2.2.2</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416225850089-240311159.png" alt="" loading="lazy"></p>
+<p>　　提示：在其他路由器上也需要配置同样的RP；同时其他路由器单播网络必须能够到达对应RP；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416230122658-2039220686.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416230301485-856271734.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416230331679-249436939.png" alt="" loading="lazy"></p>
+<p>　　提示：我们这里选择R2为RP，所以在R2上必须有一个接口的ip地址为RP的ip地址，并且该ip需要在ospf中宣告，便于其他路由器学习到到达RP的路由；</p>
+<p>　　在任意路由器上验证RP信息</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416230430736-1186375087.png" alt="" loading="lazy"></p>
+<p>　　提示：验证RP信息，后面需要更对应组播地址，表示查看对应组播组里RP信息；默认情况下我们配置的静态RP信息是匹配所有组播组；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416230648271-1866905031.png" alt="" loading="lazy"></p>
+<p>　　提示：当然我们需要给某个组播组配置一个单独的RP，我们可以对应RP地址后面加ACL，表示ACL匹配到的地址都是对应的RP；prefered这个参数是配置静态RP信息优于动态RP，即当同时配置静态RP和动态RP后，静态RP上加上prefered这个参数后，对应静态RP的优先级就高于动态RP；</p>
+<p>　　在pc2上加入对应组播组，在R4上抓包看看对应过程</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416231233514-983138708.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416231326340-1651642799.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到PC2 点加入对应组播组的时候，首先R4会发送igmp 查询，pc2报告有成员加入；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416231642273-911564550.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到随后R4会发送加入消息给整个pim网络；</p>
+<p>　　查看R4的路由表，看看对应路由是否生成？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416231824309-402583876.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到对应组播路由已经产生，并且是以（*,G）的形式，并不是（S，G）；对应路由的下游接口也产生了；</p>
+<p>　　在R1上抓包，然后组播源发送数据</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416232619573-2099386283.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到在R1上抓包能够抓到组播源向RP的注册包，这个包是通过在udp里封装了一个Pim包头来携带组播源的注册信息；</p>
+<p>　　在RP上查看对应组播路由</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416233654090-734014526.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到RP上的路由有源树和共享树两种形式，这是因为RP到组播源走SPT，RP到接收者走RPT；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220416234223149-1464284939.png" alt="" loading="lazy"></p>
+<p>　　提示：同时我们在R2上也能抓到R4向R2发送到加入消息，对应是发送给RP所配置的地址；</p>
+<p>　　配置动态RP</p>
+<p>　　在R1和R2上新建lo接口，并配置c-bsr ，看看对应bsr的竞选过程</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417002036293-338266681.png" alt="" loading="lazy"></p>
+<p>　　将lo1接口宣告在ospf里</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417003619077-1794485263.png" alt="" loading="lazy"></p>
+<p>　　提示：将lo1接口宣告在ospf里，是让其他路由器学习到相应接口的路由；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417002414100-634716049.png" alt="" loading="lazy"></p>
+<p>　　提示：对应接口注意要先开启pim sm 然后才能配置对应角色；</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417002743495-1170248679.gif" alt="" loading="lazy"></p>
+<p>　　提示：可以看到在默认优先级的情况下，在R1配置成C-bsr以后，对应抓包会看到R1会周期性的发送bootstrap消息告诉其他路由自己是bsr;当R2配置c-bsr以后，对应R1看自己和R2的优先级一样，且R2的ip地址比自己大，此后R1就被抑制，取而代之的是R2成为BSR周期性的发送bootstrap消息告诉其他路由器自己是bsr;当然我们可以修改R1的优先级来来影响竞选结果；</p>
+<p>　　修改R1c-bsr的优先级为5</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417003151321-1230245383.png" alt="" loading="lazy"></p>
+<p>　　再次查看bsr,看看谁是bsr?</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417003802690-560697952.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417003821447-8911974.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到当R1更改优先级以后，对应bsr就成为了R1；这是因为R1的优先级大于R2；</p>
+<p>　　配置R1和R2对应lo接口为c-rp接口</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417004004235-605295583.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417004121557-1898050931.png" alt="" loading="lazy"></p>
+<p>　　抓包查看交互过程</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417005306865-1573956146.png" alt="" loading="lazy"></p>
+<p>　　提示：从抓包的信息可以看到R2在向R1通告，R1向其他路由器发送bootstrap消息，说明BSR是R1；但RP是谁还不知道；</p>
+<p>　　验证：查看RP信息，看看谁竞选为RP了？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417005537631-713679806.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417005610890-1906096390.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到R2成为了RP；</p>
+<p>　　修改R2的C-RP的优先级为10，看看对应RP会不会被R1竞选？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417005743229-88904711.png" alt="" loading="lazy"></p>
+<p>　　查看RP信息</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417005839480-196659734.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到把R2的c-RP的优先级加大以后，对应RP就变成了R1，这是因为RP选举首先看优先级，优先级数字越小则成为RP ；</p>
+<p>　　播放组播源，然后查看R4的路由表，看看对应是否发生了RPT向SPT切换了呢？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417011038436-300905888.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到R4上也有了SPT，说明发生了RPT向SPT切换；</p>
+<p>　　在R4上修改永不向SPT切换</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417011239398-157896759.png" alt="" loading="lazy"></p>
+<p>　　再次查看R4的路由表，看看对应是否还会有SPT呢？</p>
+<p><img src="https://img2022.cnblogs.com/blog/1503305/202204/1503305-20220417011321311-188902715.png" alt="" loading="lazy"></p>
+<p>　　提示：可以看到此时R4的路由表中就只有RPT，并没有SPT；说明RPT没有向SPT切换；</p>
+<p>　　PIM-DM和PIM-SM比较</p>
+<p>　　PIM-DM适用于规模较小、组成员相对比较密集的网络中，工作机制是通过周期性“扩散-剪枝”维护一棵连接组播源和组播成员的单向无环SPT；</p>
+<p>　　PIM-SM适用于组成员相对比较稀疏，分布广泛的大型网络中；工作机制采用接收者主动加入的方式建立组播分发树，需要维护RP、构建RPT、注册组播源；</p>
+</div>
+<div id="MySignature" role="contentinfo">
+    <div id="AllanboltSignature">    
+        <div>作者：<a href="https://www.cnblogs.com/qiuhom-1874/" target="_blank">Linux-1874</a></div>
+        <div>出处：<a href="https://www.cnblogs.com/qiuhom-1874/" target="_blank">https://www.cnblogs.com/qiuhom-1874/</a></div>
+        <div>本文版权归作者和博客园共有，欢迎转载，但未经作者同意必须保留此段声明，且在文章页面明显位置给出原文连接，否则保留追究法律责任的权利.</div>  
+    </div>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2022-04-17 01:25</span>&nbsp;
+<a href="https://www.cnblogs.com/qiuhom-1874/">Linux-1874</a>&nbsp;
+阅读(<span id="post_view_count">27</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154347" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16154347);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16154347', targetLink: 'https://www.cnblogs.com/qiuhom-1874/p/16154347.html', title: 'HCNP Routing&amp;amp;Switching之组播技术PIM-SM RP ' })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var cb_entryId = 16154347, cb_entryCreatedDate = '2022-04-17 01:25', cb_postType = 1, cb_postTitle = 'HCNP Routing&amp;Switching之组播技术PIM-SM RP ';
+    var allowComments = true, cb_blogId = 465299, cb_blogApp = 'qiuhom-1874', cb_blogUserGuid = 'c59550a8-b7e6-4fd5-7bec-08d6284f5a10';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 Linux-1874
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <!--评论带头像 -->
+<!--<script type="text/javascript" src="https://blog-static.cnblogs.com/files/qiuhom-1874/Comments.js"></script>-->
+
+<!--评论像微信样式 -->
+<!--
+<link  type="text/css" rel="stylesheet" href="https://blog-static.cnblogs.com/files/qiuhom-1874/comment.css">
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮    $('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+-->
+<!--回到顶部小火箭 -->
+<link href="https://blog-static.cnblogs.com/files/qiuhom-1874/scroller.css" type="text/css" rel="stylesheet">
+ <script src="https://blog-static.cnblogs.com/files/qiuhom-1874/scrollspy.js" type="text/javascript"></script>
+ <script src="https://blog-static.cnblogs.com/files/qiuhom-1874/stickUp.min.js" type="text/javascript"></script>
+<style>
+#back-top {
+     position: fixed;
+     bottom: 10px;
+     right: 5px;
+     z-index: 99;
+}
+#back-top span {
+     width: 50px;
+     height: 64px;
+     display: block;
+     background:url(https://images.cnblogs.com/cnblogs_com/qiuhom-1874/1640280/o_200201115539hj.png) no-repeat center center;
+}
+#back-top a{outline:none}
+</style>
+<script type="text/javascript">
+$(function() {
+    // hide #back-top first
+    $("#back-top").hide();
+    // fade in #back-top
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 500) {
+            $('#back-top').fadeIn();
+        } else {
+            $('#back-top').fadeOut();
+        }
+    });
+    // scroll body to 0px on click
+    $('#back-top a').click(function() {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+});
+</script>
+<p id="back-top" style="display:none"><a rel="nofollow noopener"  href="#top"><span></span></a></p>
+
+<!-- lightbox的样式 -->
+<link href="https://blog-static.cnblogs.com/files/qiuhom-1874/lightbox.css" rel="stylesheet">
+<!-- lightbox.js核心代码 -->
+<script src="https://blog-static.cnblogs.com/files/qiuhom-1874/lightbox-plus-jquery.js"></script>
+<script type='text/javascript'>$('#cnblogs_post_body img').wrap(function(){return "<a rel="nofollow noopener"  href='"+$(this).attr("src")+"' data-lightbox='example-set'></a>"});</script>
+<script type='text/javascript'>$(".code_img_closed").unwrap();</script>
+<script type='text/javascript'>$(".code_img_opened").unwrap();</script>
+
+
+
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kvcZBQ_gl13IrFm4Srzbom8-Qg6IfPcq1DDbI68LWM8f-d88v6G4HUpY4dv2--1WffHpjR_IxDgPkv5wLLrRbKurTuvsDY_SVViR2V9IMIFXxoy6RoQeqIIcMRAnFvSpI" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

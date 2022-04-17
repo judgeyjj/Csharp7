@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>【java 数据结构】还不会二叉树？一篇搞定二叉树 - lomtom - 博客园</title>
+    <meta property="og:description" content="二叉树是我们常见的数据结构之一，在学习二叉树之前我们需要知道什么是树，什么是二叉树，本篇主要讲述了二叉树，以及二叉树的遍历。 你能get到的知识点？ 1、树的介绍 2、二叉树的介绍 3、二叉树遍历的四" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/579514.css?v=BJE9Mly77MA6esabncjwocGWjG8%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.css?v=C8rNZMN1xUcogg2mnN6C_ci7S2vGnJTt9TmfmncHzEA1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/lomtom/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/lomtom/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/lomtom/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=579514;var currentBlogApp='lomtom',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/lomtom/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/lomtom/">lomtom</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lomtom/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/lomtom">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 26&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 6</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lomtom/p/12717936.html">【java 数据结构】还不会二叉树？一篇搞定二叉树</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown"><p>二叉树是我们常见的数据结构之一，在学习二叉树之前我们需要知道什么是树，什么是二叉树，本篇主要讲述了二叉树，以及二叉树的遍历。</p>
+<h2 id="你能get到的知识点？">你能get到的知识点？</h2>
+<p>1、树的介绍<br>
+2、二叉树的介绍<br>
+3、二叉树遍历的四种方法<br>
+4、牛客题目：反转二叉树</p>
+<p><div class="toc"><div class="toc-container-header">目录</div><ul><li><a href="#你能get到的知识点？">你能get到的知识点？</a></li><li><a href="#一、知识预备">一、知识预备</a><ul><li><a href="#1、树">1、树</a></li><li><a href="#2、树的相关术语介绍">2、树的相关术语介绍</a></li><li><a href="#1、二叉树">1、二叉树</a></li><li><a href="#2、二叉树类型">2、二叉树类型</a></li></ul></li><li><a href="#二、二叉树实操（我没有说脏话）">二、二叉树实操（我没有说脏话）</a><ul><li><a href="#1、定义二叉树的结点">1、定义二叉树的结点</a></li><li><a href="#2、遍历二叉树（四种方法）">2、遍历二叉树（四种方法）</a></li></ul></li><li><a href="#三、小试牛刀">三、小试牛刀</a><ul><li><a href="#leetcode题目：反转二叉树">leetcode题目：反转二叉树</a></li></ul></li></ul></div></p>
+<h2 id="一、知识预备">一、知识预备</h2>
+<h3 id="1、树">1、树</h3>
+<p><strong>树</strong>（Tree）是n（n&gt;=0)个结点的有限集。</p>
+<p>数据结构中的树可以看作一个倒立的树，他的‘根’在上面，他的'叶子'在下面。</p>
+<div class="mermaid">graph TD
+4--&gt;2
+4--&gt;7
+2--&gt;1
+2--&gt;3
+7--&gt;6
+7--&gt;9 
+</div><h3 id="2、树的相关术语介绍">2、树的相关术语介绍</h3>
+<ul>
+<li>1、树的结点（node）：包含一个数据元素及若干指向子树的分支；</li>
+<li>2、孩子结点（child node）：结点的子树的根称为该结点的孩子，对于结点4来说，结点2和结点7就是结点4的孩子结点；</li>
+<li>3、双亲结点：B 结点是A 结点的孩子，则A结点是B 结点的双亲；</li>
+<li>4、兄弟结点：同一双亲的孩子结点； 堂兄结点：同一层上结点；</li>
+<li>5、祖先结点: 从根到该结点的所经分支上的所有结点</li>
+<li>6、子孙结点：以某结点为根的子树中任一结点都称为该结点的子孙</li>
+<li>7、结点层：根结点的层定义为1；根的孩子为第二层结点，依此类推；</li>
+<li>8、树的深度：树中最大的结点层，该树的深度为三，因为他只有三层。</li>
+<li>9、结点的度：结点子树的个数</li>
+<li>10、树的度： 树中最大的结点度。</li>
+<li>11、叶子结点：也叫终端结点，是度为 0 的结点，例如结点1、2、6、9，都是叶子结点；</li>
+<li>12、分枝结点：度不为0的结点；</li>
+<li>13、有序树：子树有序的树，如：家族树；</li>
+<li>14、无序树：不考虑子树的顺序；</li>
+</ul>
+<h3 id="1、二叉树">1、二叉树</h3>
+<p><strong>二叉树</strong>（Binary Tree）是每个结点最多有两个子树的树结构。所以二叉树也是一种特殊的树。</p>
+<p>通常我们将二叉树的子树被称作“左子树”（left subtree）和“右子树”（right subtree）。</p>
+<p>二叉树常被用于实现二叉查找树和二叉堆。<br>
+<img src="https://img-blog.csdnimg.cn/20200415095939408.png" alt=""><br>
+由此可以看出，一棵二叉树，他的每个节点最多只有两个结点，也就是结点的度小于等于二，即取0、1、2。</p>
+<h3 id="2、二叉树类型">2、二叉树类型</h3>
+<ol>
+<li>
+<p>满二叉树：除了叶结点外每一个结点都有左右子叶且叶子结点都处在最底层的二叉树。<br>
+<img src="https://img-blog.csdnimg.cn/20200415100335118.png#pic_center" alt=""></p>
+</li>
+<li>
+<p>完全二叉树：若设二叉树的高度为h，除第 h 层外，其它各层 (1～h-1) 的结点数都达到最大个数，第h层有叶子结点，并且叶子结点都是从左到右依次排布，这就是完全二叉树。<br>
+简单来说：如果二叉树中除去最后一层节点为满二叉树，且最后一层的结点依次从左到右分布，则此二叉树被称为完全二叉树。<br>
+<img src="https://img-blog.csdnimg.cn/20200415100407802.png#pic_center" alt=""></p>
+</li>
+<li>
+<p>平衡二叉树：平衡二叉树又被称为AVL树（区别于AVL算法），它是一棵二叉排序树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。</p>
+</li>
+</ol>
+<h2 id="二、二叉树实操（我没有说脏话）">二、二叉树实操（我没有说脏话）</h2>
+<h3 id="1、定义二叉树的结点">1、定义二叉树的结点</h3>
+<p>定义二叉树每一个节点的结构，他拥有左右子叶，并且本身拥有一个值val,定义一个构造函数，多个结点组合在一起就是一个二叉树。</p>
+<pre><code class="language-java">    /**
+     * Definition for binary tree
+     */
+    public static class TreeNode {
+      //定义该结点值
+      int val;
+      //定义左结点
+      TreeNode left;
+      //定义右结点
+      TreeNode right;
+
+	  //定义一个构造函数
+      TreeNode(int x) { val = x; }
+    }
+</code></pre>
+<p>例图：以下将以该例图进行解说</p>
+<div class="mermaid">graph TD
+4--&gt;2
+4--&gt;7
+2--&gt;1
+2--&gt;3
+7--&gt;6
+7--&gt;9
+</div><h3 id="2、遍历二叉树（四种方法）">2、遍历二叉树（四种方法）</h3>
+<p>遍历二叉树主要有四种方法：①：前序遍历 ②：中序遍历 ③：后序遍历 ④：层序遍历</p>
+<p>需要事先说明的就是前三种遍历，就是根节点的访问顺序不同，但是访问左右节点的顺序仍然是先访问左结点，再访问右结点。</p>
+<p>①：前序遍历</p>
+<blockquote>
+<p>1、访问根节点；<br>
+2、访问当前节点的左子树；<br>
+3、访问当前节点的右子树；<br>
+就是先从根节点出发，先访问根节点，然后访问根结点的左子树，若该左子树的根节点上存在左子树，则访问其左子树，否则，访问其右子树，依次类推。</p>
+</blockquote>
+<p>以上图为例，</p>
+<ol>
+<li>先找到根节点，读取4，</li>
+<li>该结点还有左子树，访问其左子树的根节点，读取2，</li>
+<li>结点2，还有左子树，读取1，</li>
+<li>结点1没有左子树也没有右子树，返回上一层，访问结点2的右子树，读取3，</li>
+<li>这时候应该访问3的左右子树，但是没有，返回上一层，此时结点2的左右子树都已经读取完，返回上一层，读取结点4的右子树，读取7，</li>
+<li>访问结点7的左子树，读取6，</li>
+<li>结点6没有左右子树，返回上一层，访问结点7的右子树，读取9，</li>
+<li>结点9没有左右子树，这时候该二叉树已经遍历完成。</li>
+</ol>
+<p>所以访问到的顺序为：<code>4	2	1	3	7	6	9</code></p>
+<p>②：中序遍历</p>
+<blockquote>
+<p>1、访问当前节点的左子树；<br>
+2、访问根节点；<br>
+3、访问当前节点的右子树；<br>
+遍历思想与前序差不多，只不过将读取根节点放在读取左结点之后、右结点之前</p>
+</blockquote>
+<p>③：后序遍历</p>
+<blockquote>
+<p>1、访问当前节点的左子树；<br>
+2、访问当前节点的右子树；<br>
+3、访问根节点；<br>
+遍历思想与前序差不多，只不过将读取根节点放在读取左结点之后、右结点之后</p>
+</blockquote>
+<p>④：层序遍历</p>
+<blockquote>
+<p>按照二叉树的层级结构从左至右依次遍历结点<br>
+<strong>算法思路</strong>：定义一个队列，从树的根结点开始，依次将其左孩子和右孩子入队。而后每次队列中一个结点出队，都将其左孩子和右孩子入队，直到树中所有结点都出队，出队结点的先后顺序就是层次遍历的最终结果。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20200415100654515.png#pic_center" alt=""></p>
+<ol>
+<li>根节点4入队，</li>
+<li>根节点4出队，访问结点4的左右结点（2，7），依次入队，</li>
+<li>结点2出队，访问结点2的左右结点（1，3），依次入队，</li>
+<li>结点1出队，无子结点，无需入队，</li>
+<li>结点3出队，无子结点，无需入队，</li>
+<li>结点6出队，无子结点，无需入队，</li>
+<li>结点9出队，无子结点，无需入队，</li>
+<li>队列为空，遍历完成。</li>
+</ol>
+<p>最后访问顺序为：<code>4	2	7	1	3	6	9	</code></p>
+<p>代码实现：</p>
+<pre><code class="language-java">    /**
+     * 先序遍历（递归）
+     * @param node
+     */
+    public void previous(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        System.out.print(node.val+&quot;\t&quot;);
+        this.previous(node.left);
+        this.previous(node.right);
+    }
+    /**
+     * 中序遍历（递归）
+     * @param node
+     */
+    public void middle(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        this.middle(node.left);
+        System.out.print(node.val+&quot;\t&quot;);
+        this.middle(node.right);
+    }
+    /**
+     * 后序遍历（递归）
+     * @param node
+     */
+    public void next(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        this.next(node.left);
+        this.next(node.right);
+        System.out.print(node.val+&quot;\t&quot;);
+    }
+	    
+	 /**
+     * 遍历二叉树
+     * 层序遍历（非递归）
+     * @param node
+     */
+    public void bfs(TreeNode node){
+        if (node == null) {
+            return;
+        }
+        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();
+        queue.add(node);
+        while (!queue.isEmpty()){
+            TreeNode current = queue.poll();
+            System.out.print(current.val + &quot;\t&quot;);
+            //如果当前节点的左节点不为空入队
+            if(current.left != null)
+            {
+                queue.offer(current.left);
+            }
+            //如果当前节点的右节点不为空，把右节点入队
+            if(current.right != null)
+            {
+                queue.offer(current.right);
+            }
+        }
+    }
+</code></pre>
+<pre><code>遍历结果：
+1、前序遍历：4	2	1	3	7	6	9	
+2、中序遍历：1	2	3	4	6	7	9	
+3、后序遍历：1	3	2	6	9	7	4	
+4、层序遍历：4	2	7	1	3	6	9	
+</code></pre>
+<p>在这里附上前三种方法的非递归方法，感兴趣的小伙伴可以研究研究。<br>
+<strong>附：非递归方法</strong><br>
+主要实现是依靠<strong>栈</strong>来实现</p>
+<pre><code class="language-java">    /**
+     * 先序遍历非递归
+     * @param node
+     */
+    public void previous1(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+        Stack&lt;TreeNode&gt; queue = new Stack&lt;&gt;();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            TreeNode current = queue.pop();
+            while(current!=null) {
+                System.out.print(current.val + &quot;\t&quot;);
+                if (current.right!=null){
+                    queue.push(current.right);
+                }
+                current = current.left;
+            }
+        }
+    } 
+
+
+	/**
+     * 中序遍历（非递归）
+     * @param node
+     */
+    public void middle1(TreeNode node) {
+        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();
+        while (!stack.isEmpty() || node !=null) {
+            while (node != null){
+                stack.push(node);
+                node = node.left;
+            }
+            node = stack.pop();
+            System.out.print(node.val + &quot;\t&quot;);
+            node = node.right;
+        }
+    }
+
+	/**
+     * 后序遍历（非递归）
+     * @param node
+     */
+    public void next1(TreeNode node) {
+        Stack&lt;TreeNode&gt; stack = new Stack&lt;&gt;();
+        Stack&lt;Integer&gt; stack1 = new Stack&lt;&gt;();
+        while (!stack.isEmpty() || node !=null) {
+            while (node != null){
+                stack.push(node);
+                stack1.push(0);
+                node = node.left;
+            }
+            while (!stack.isEmpty() &amp;&amp; stack1.peek() == 1) {
+                stack1.pop();
+                System.out.print(stack.pop().val + &quot;\t&quot;);
+            }
+            if (!stack.isEmpty()) {
+                stack1.pop();
+                stack1.push(1);
+                node = stack.peek();
+                node = node.right;
+            }
+        }
+    }
+
+</code></pre>
+<h2 id="三、小试牛刀">三、小试牛刀</h2>
+<h3 id="leetcode题目：反转二叉树">leetcode题目：反转二叉树</h3>
+<p>原来的二叉树：</p>
+<div class="mermaid">graph TD
+4--&gt;2
+4--&gt;7
+2--&gt;1
+2--&gt;3
+7--&gt;6
+7--&gt;9
+</div><p>经过算法，需要转换为：</p>
+<div class="mermaid">graph TD
+4--&gt;7
+4--&gt;2
+2--&gt;3
+2--&gt;1
+7--&gt;9
+7--&gt;6
+</div><p><strong>解法：</strong><br>
+二叉树的遍历有四种方法，那么，该题解法也至少有四种，如果读懂了上面的遍历算法，那么这道题简直轻而易举。</p>
+<p>主要思路：就是遍历某一结点时，也就是在原来输出该节点的操作换成将其结点的左右结点交换位置。</p>
+<pre><code class="language-java">/**
+     * 反转二叉树
+     * 前序反转
+     * @param node
+     */
+    public void invertTree_previous(TreeNode node){
+        if (node == null){
+            return;
+        }
+        TreeNode node1 = node.left;
+        node.left = node.right;
+        node.right = node1;
+        this.invertTree_previous(node.left);
+        this.invertTree_previous(node.right);
+    }
+
+    /**
+     * 反转二叉树
+     * 中序反转
+     * @param node
+     */
+    public void invertTree_middle(TreeNode node){
+        if (node == null){
+            return;
+        }
+        this.invertTree_middle(node.left);
+        TreeNode node1 = node.left;
+        node.left = node.right;
+        node.right = node1;
+        this.invertTree_middle(node.left);
+    }
+
+    /**
+     * 反转二叉树
+     * 后序序反转
+     * @param node
+     */
+    public void invertTree_next(TreeNode node){
+        if (node == null){
+            return;
+        }
+        this.invertTree_next(node.left);
+        this.invertTree_next(node.right);
+        TreeNode node1 = node.left;
+        node.left = node.right;
+        node.right = node1;
+    }
+
+
+    /**
+     * 反转二叉树
+     * 层序反转
+     * @param node
+     */
+    public void invertTree_bfs(TreeNode node){
+        if (node == null) {
+            return;
+        }
+        Queue&lt;TreeNode&gt; queue = new LinkedList&lt;&gt;();
+        queue.add(node);
+        while (!queue.isEmpty()){
+            TreeNode current = queue.poll();
+            TreeNode node1 = current.left;
+            current.left = current.right;
+            current.right = node1;
+            //如果当前节点的左节点不为空入队
+            if(current.left != null)
+            {
+                queue.offer(current.left);
+            }
+            //如果当前节点的右节点不为空，把右节点入队
+            if(current.right != null)
+            {
+                queue.offer(current.right);
+            }
+        }
+    }
+</code></pre>
+<p>答案：</p>
+<pre><code class="language-java">1、转换前
+前序遍历：4	2	1	3	7	6	9	
+中序遍历：1	2	3	4	6	7	9	
+后序遍历：1	3	2	6	9	7	4	
+层次遍历：4	2	7	1	3	6	9	
+
+2、转换后
+前序遍历：4	7	9	6	2	3	1	
+中序遍历：9	7	6	4	3	2	1	
+后序遍历：9	6	7	3	1	2	4	
+层次遍历：4	7	2	9	6	3	1	
+</code></pre>
+<p>源码获取：关注公众号：<strong>博奥思园</strong>，回复：<strong>数据结构二叉树</strong></p>
+<p><strong>你的支持是我前进的最大动力</strong></p>
+<blockquote>
+<p>参考：<br>
+1、 <a href="https://www.cnblogs.com/ysocean/p/8032642.htm">Java数据结构和算法（十）——二叉树</a><br>
+2、<a href="https://blog.csdn.net/bingfeilongxin/article/details/88422192">二叉树的四种遍历算法</a><br>
+3、<a href="https://www.cnblogs.com/liuyang0/p/6271331.html">Java实现二叉树的前序、中序、后序、层序遍历（非递归方法）</a></p>
+</blockquote>
+</div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-04-17 10:00</span> <a href='https://www.cnblogs.com/lomtom/'>lomtom</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12717936" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12717936);return false;">收藏</a></div>
+	</div>
+	<script src="//common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script><script>markdown_highlight();</script><script type="text/javascript">var allowComments=true,cb_blogId=579514,cb_entryId=12717936,cb_blogApp=currentBlogApp,cb_blogUserGuid='4b3d8cec-3421-4935-1731-08d7b5fb2c66',cb_entryCreatedDate='2020/4/17 10:00:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=true;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 lomtom
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+</body>
+</html>

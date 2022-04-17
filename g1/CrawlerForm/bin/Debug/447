@@ -1,0 +1,613 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>^_^肥仔John - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=uknaX_hejnSu-njQgx4Hj1R0JiPLwUhFPUlwWNmWyB4" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/fsjohnhuang/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/fsjohnhuang/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/fsjohnhuang/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 100828;
+        var currentBlogApp = 'fsjohnhuang';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'foundation';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simplememory has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/fsjohnhuang/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/fsjohnhuang/">^_^肥仔John</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/fsjohnhuang/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%5E_%5E%E8%82%A5%E4%BB%94John">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/fsjohnhuang/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16147725">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/16147725.html">
+    <span>
+        petite-vue源码剖析-逐行解读@vue-reactivity之Map和Set的reactive
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16147725">
+摘要：            
+本篇我们会继续探索reactive函数中对Map/WeakMap/Set/WeakSet对象的代理实现。 Map/WeakMap/Set/WeakSet的操作 由于WeakMap和WeakSet分别是Map和Set的不影响GC执行垃圾回收的版本，这里我们只研究Map和Set即可。 Set的属性和方法        <a href="https://www.cnblogs.com/fsjohnhuang/p/16147725.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 09:58
+^_^肥仔John
+<span data-post-id="16147725" class="post-view-count">阅读(63)</span> 
+<span data-post-id="16147725" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16147725" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147725" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16037690">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/22.html">2022年3月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/16037690.html">
+    <span>
+        petite-vue源码剖析-逐行解读@vue/reactivity之reactive
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16037690">
+摘要：            
+在petite-vue中我们通过reactive构建上下文对象，并将根据状态渲染UI的逻辑作为入参传递给effect，然后神奇的事情发生了，当状态发生变化时将自动触发UI重新渲染。那么到底这是怎么做到的呢？ @vue/reactivity功能十分丰富，而petite-vue仅使用到reactive和        <a href="https://www.cnblogs.com/fsjohnhuang/p/16037690.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-22 08:11
+^_^肥仔John
+<span data-post-id="16037690" class="post-view-count">阅读(145)</span> 
+<span data-post-id="16037690" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16037690" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16037690" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16011271">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/16.html">2022年3月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/16011271.html">
+    <span>
+        petite-vue源码剖析-优化手段template详解
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16011271">
+摘要：            
+什么是&lt;template&gt;元素？ &lt;template&gt;是2013年定稿用于提供一种更统一、功能更强大的模板本存放方式。具体表现为 通过&lt;template&gt;元素属性content获取已实例化的HTML元素(不是字符串而已) &lt;template id=&quot;tpl&quot;&gt; &lt;div&gt;a&lt;/div&gt; &lt;div&gt;b        <a href="https://www.cnblogs.com/fsjohnhuang/p/16011271.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-16 06:30
+^_^肥仔John
+<span data-post-id="16011271" class="post-view-count">阅读(203)</span> 
+<span data-post-id="16011271" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16011271" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16011271" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16006899">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/15.html">2022年3月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/16006899.html">
+    <span>
+        petite-vue源码剖析-ref的工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16006899">
+摘要：            
+ref内部的工作原理十分简单，其实就是将指令ref、:ref或v-bind:ref标识的元素实例存储到当前作用域的$refs对象中，那么我们就可以通过this.$refs获取对应的元素实例。但由于作用域继承上有点小窍门，所以我们能从this.$refs获取的元素实例还是需要注意一下。下面让我为你一一        <a href="https://www.cnblogs.com/fsjohnhuang/p/16006899.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-15 08:04
+^_^肥仔John
+<span data-post-id="16006899" class="post-view-count">阅读(154)</span> 
+<span data-post-id="16006899" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16006899" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16006899" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16004134">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/14.html">2022年3月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/16004134.html">
+    <span>
+        petite-vue源码剖析-双向绑定`v-model`的工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16004134">
+摘要：            
+前言 双向绑定v-model不仅仅是对可编辑HTML元素(select, input, textarea和附带[contenteditable=true])同时附加v-bind和v-on，而且还能利用通过petite-vue附加给元素的_value、_trueValue和_falseValue属性提        <a href="https://www.cnblogs.com/fsjohnhuang/p/16004134.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-14 15:03
+^_^肥仔John
+<span data-post-id="16004134" class="post-view-count">阅读(282)</span> 
+<span data-post-id="16004134" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16004134" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16004134" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15992391">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/11.html">2022年3月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/15992391.html">
+    <span>
+        petite-vue源码剖析-事件绑定`v-on`的工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15992391">
+摘要：            
+在书写petite-vue和Vue最舒服的莫过于通过@click绑定事件，而且在移除元素时框架会帮我们自动解除绑定。省去了过去通过jQuery的累赘。而事件绑定在petite-vue中就是一个指令(directive)，和其他指令类似。 深入v-on的工作原理 walk方法在解析模板时会遍历元素的特        <a href="https://www.cnblogs.com/fsjohnhuang/p/15992391.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-11 09:54
+^_^肥仔John
+<span data-post-id="15992391" class="post-view-count">阅读(48)</span> 
+<span data-post-id="15992391" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15992391" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15992391" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15989941">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/10.html">2022年3月10日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/15989941.html">
+    <span>
+        petite-vue-源码剖析-v-for重新渲染工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15989941">
+摘要：            
+在《petite-vue源码剖析-v-if和v-for的工作原理》我们了解到v-for在静态视图中的工作原理，而这里我们将深入了解在更新渲染时v-for是如何运作的。 逐行解析 // 文件 ./src/directives/for.ts /* [\s\S]*表示识别空格字符和非空格字符若干个，默认为        <a href="https://www.cnblogs.com/fsjohnhuang/p/15989941.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-10 16:03
+^_^肥仔John
+<span data-post-id="15989941" class="post-view-count">阅读(236)</span> 
+<span data-post-id="15989941" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15989941" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15989941" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15981570">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/08.html">2022年3月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/15981570.html">
+    <span>
+        petite-vue源码剖析-属性绑定`v-bind`的工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15981570">
+摘要：            
+关于指令(directive) 属性绑定、事件绑定和v-modal底层都是通过指令(directive)实现的，那么什么是指令呢？我们一起看看Directive的定义吧。 //文件 ./src/directives/index.ts export interface Directive&lt;T = El        <a href="https://www.cnblogs.com/fsjohnhuang/p/15981570.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-08 17:32
+^_^肥仔John
+<span data-post-id="15981570" class="post-view-count">阅读(217)</span> 
+<span data-post-id="15981570" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15981570" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15981570" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15975744">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/07.html">2022年3月7日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/15975744.html">
+    <span>
+        petite-vue源码剖析-v-if和v-for的工作原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15975744">
+摘要：            
+深入v-if的工作原理 &lt;div v-scope=&quot;App&quot;&gt;&lt;/div&gt; &lt;script type=&quot;module&quot;&gt; import { createApp } from &#39;https://unpkg.com/petite-vue?module&#39; createApp({ App: { $templ        <a href="https://www.cnblogs.com/fsjohnhuang/p/15975744.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-07 14:22
+^_^肥仔John
+<span data-post-id="15975744" class="post-view-count">阅读(264)</span> 
+<span data-post-id="15975744" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15975744" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15975744" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15964344">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/fsjohnhuang/archive/2022/03/04.html">2022年3月4日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/fsjohnhuang/p/15964344.html">
+    <span>
+        petite-vue源码剖析-从静态视图开始
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15964344">
+摘要：            
+代码库结构介绍 examples 各种使用示例 scripts 打包发布脚本 tests 测试用例 src directives v-if等内置指令的实现 app.ts createApp函数 block.ts 块对象 context.ts 上下文对象 eval.ts 提供v-if=&quot;count 1        <a href="https://www.cnblogs.com/fsjohnhuang/p/15964344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-04 14:53
+^_^肥仔John
+<span data-post-id="15964344" class="post-view-count">阅读(310)</span> 
+<span data-post-id="15964344" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15964344" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15964344" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/fsjohnhuang/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 ^_^肥仔John
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nWbWhSYYPXGUOYVdMiB2Z07OZHwEkH-pd1ehPC5_8e7mgWBOa1PwHejOSfzgei7Kmhmyfc0xcKqRLt7UN-Ry8iUThxRxOYsI1be9jaiY9gBTaU8I4spi25h_FHpmcgA7g" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

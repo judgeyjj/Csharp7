@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>LewisYoung - 博客园</title>
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/LessIsMore/bundle-LessIsMore.css?v=K-SPbyFTmacJSNw1O1LzZFcIaS56dT8uEKlXYOxLR9k1"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/LessIsMore/bundle-LessIsMore-mobile.css?v=Go8Bj0ZU9gZXuPSKWcSQabps3E1njgJKYz4DiOq6-N41"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/lewisyoung/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/lewisyoung/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/lewisyoung/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=566763;var currentBlogApp='lewisyoung',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/lewisyoung/">LewisYoung</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lewisyoung/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/LewisYoung">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lewisyoung/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/lewisyoung/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-3&nbsp;
+文章-0&nbsp;
+评论-0&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        
+<!--done-->
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" href="http://www.cnblogs.com/lewisyoung/archive/2020/04/24.html">2020年4月24日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/lewisyoung/p/12769084.html">Java的自动装箱和拆箱</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 如需转载请私信或者表明转载地址 https://www.cnblogs.com/lewisyoung/p/12769084.html 目录 "一、什么是自动装箱自动拆箱" "二、自动装箱自动拆箱的实质" "三、需要注意的点" "四、其他一些问题" "五、总结" 一、什么是自动装箱自动拆箱 自动装箱自<a href="https://www.cnblogs.com/lewisyoung/p/12769084.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-24 17:51 LewisYoung 阅读(86) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12769084" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/lewisyoung/p/12766421.html">牛客网 - vivo2020届春季</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 牛客网 vivo2020届春季 1、[编程题]手机屏幕解锁模式 时间限制：C/C++ 1秒，其他语言2秒 空间限制：C/C++ 256M，其他语言512M 现有一个 3x3 规格的 Android 智能手机锁屏程序和两个正整数 m 和 n ，请计算出使用最少m 个键和最多 n个键可以解锁该屏幕的所有<a href="https://www.cnblogs.com/lewisyoung/p/12766421.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-24 11:48 LewisYoung 阅读(14) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12766421" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl01_ImageLink" href="http://www.cnblogs.com/lewisyoung/archive/2019/12/15.html">2019年12月15日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl01_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/lewisyoung/p/12043932.html">创建新模块时遇到的几个问题</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 这几天在创建一个新模块的时候碰到了几个问题，记下来以免再犯。 1、编译时出现 org.hibernate.AnnotationException: @OneToOne or @ManyToOne on x xx references an unknown entity yyy。 原因： 在项目组件扫<a href="https://www.cnblogs.com/lewisyoung/p/12043932.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2019-12-15 13:48 LewisYoung 阅读(27) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12043932" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="topicListFooter"></div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 LewisYoung
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+</body>
+</html>

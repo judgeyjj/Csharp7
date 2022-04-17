@@ -1,0 +1,1894 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <link rel="canonical" href="https://blog.csdn.net/shangsongwww/category_9287157.html"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="report" content='{"pid": "blog", "spm":"1001.2014"}'>
+    <meta name="referrer" content="always">
+    <meta http-equiv="Cache-Control" content="no-siteapp" /><link rel="alternate" media="handheld" href="#" />
+    <meta name="shenma-site-verification" content="5a59773ab8077d4a62bf469ab966a63b_1497598848">
+    <meta name="applicable-device" content="pc">
+    <link  href="https://g.csdnimg.cn/static/logo/favicon32.ico"  rel="shortcut icon" type="image/x-icon" />
+    <title>共识算法_跨链技术践行者的博客-CSDN博客</title>
+    <meta name="description" content="共识算法分析,共识算法：raft和pbft算法,什么是区块链共识算法？">
+    <script src="//g.csdnimg.cn/tingyun/1.8.5/blog.js" type='text/javascript'></script>
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/css/column_enter-26bb572d66.min.css">
+        <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/release/blogv2/dist/pc/themesSkin/skin-ai/skin-ai-3ade011873.min.css">
+    <script src="https://csdnimg.cn/public/common/libs/jquery/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        var isCorporate = false;//注释删除enterprise
+        var username =  "shangsongwww";
+        var skinImg = "white";
+        var blog_address = "https://blockchain-fans.blog.csdn.net";
+        var currentUserName = "";
+        var isOwner = false;
+        var loginUrl = "http://passport.csdn.net/account/login?from=https://blog.csdn.net/shangsongwww/category_9287157.html";
+        var blogUrl = "https://blog.csdn.net/";
+        var avatar = "https://profile.csdnimg.cn/E/8/F/3_shangsongwww";
+        var articleTitle = "跨链技术践行者";
+        var articleDesc = "共识算法分析,共识算法：raft和pbft算法,什么是区块链共识算法？";
+        var articleTitles = "共识算法_跨链技术践行者的博客-CSDN博客";
+        var nickName = "跨链技术践行者";
+        var articleDetailUrl = "";
+        if(window.location.host.split('.').length == 3) {
+            blog_address = blogUrl + username;
+        }
+        var skinStatus = "White";
+        var blogStaticHost = "https://csdnimg.cn/release/blogv2/"
+        var isShowConcision = false;
+        var isCookieConcision = false
+        var isHasDirectoryModel = false
+        var isShowSideModel = false
+        var isShowDirectoryModel = true
+        function getCookieConcision(sName){
+            var allCookie = document.cookie.split("; ");
+            for (var i=0; i < allCookie.length; i++){
+                var aCrumb = allCookie[i].split("=");
+                if (sName == aCrumb[0])
+                    return aCrumb[1];
+            }
+            return null;
+        }
+        if (getCookieConcision('blog_details_concision') && getCookieConcision('blog_details_concision') == 0){
+            isCookieConcision = true
+            isShowSideModel = true
+            isShowDirectoryModel = false
+        }
+    </script>
+    <script src="https://g.csdnimg.cn/??fixed-sidebar/1.1.6/fixed-sidebar.js" type="text/javascript"></script>
+    <script src='//g.csdnimg.cn/common/csdn-report/report.js' type='text/javascript'></script>
+    <link rel="stylesheet" type="text/css" href="https://csdnimg.cn/public/sandalstrap/1.4/css/sandalstrap.min.css">
+    <style>
+        .MathJax, .MathJax_Message, .MathJax_Preview{
+            display: none
+        }
+    </style>
+    <script src="https://dup.baidustatic.com/js/ds.js"></script>
+</head>
+  <body class="nodata " style="">
+    <script src="https://g.csdnimg.cn/common/csdn-toolbar/csdn-toolbar.js" type="text/javascript"></script>
+    <script>
+    (function(){
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        }
+        else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+<link rel="stylesheet" href="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.css">
+<script src="https://g.csdnimg.cn/lib/cropper/3.1.6/cropper.js"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/user-login/3.0.1/user-login.js"></script>
+<script>
+	$("#msgToastText").hide()
+</script>
+<div class="skin-boxshadow"></div>
+<div id="userSkin">
+	<div class="user-skin-box">
+		<p class="user-skin-title">
+        <span>自定义博客皮肤<span class="vip-get">VIP专享<span></span>
+        <span class="close-bt bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="user-skin-item">
+			<div class="user-skin-left"><span>*</span>博客头图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadHeaderimg" style="display:none" value="">
+				<label for="uploadHeaderimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" alt="">
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p  class="user-skin-tip">格式为PNG、JPG，宽度*高度大于1920*100像素，不超过2MB，主视觉建议放在右侧，请参照线上博客头图</p>
+			    <p  class="user-skin-color">请上传大于1920*100像素的图片！</p>
+			</div>
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>博客底图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadBgimg" style="display:none" value="">
+				<label for="uploadBgimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" alt="">					
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，不超过1MB，可上下左右平铺至整个背景</p>
+			</div>
+		</div>
+		<div class="user-skin-item">
+            <div class="user-skin-left"><span></span>栏目图：</div>
+			<div class="user-skin-right">
+				<input type="file" class="upload-skin-img" id="uploadColumnimg" style="display:none" value="">
+				<label for="uploadColumnimg" class="upload-img">
+					<div class="icon-box">
+					<img class="upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImage.png" alt="">
+					<img style="display:none" class="success-upload-icon" src="https://csdnimg.cn/release/blogv2/dist/pc/img/upLoadImageWhite.png" alt="">					
+					<p class="tip-massage">点击选择上传的图片</p>
+					</div>
+				</label>
+                <p class="user-skin-tip">图片格式为PNG、JPG，图片宽度*高度为300*38像素，不超过0.5MB</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>主标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>Hover：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="topicHoverColor" placeholder="#ffffff">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-item user-skin-item-input">
+            <div class="user-skin-left"><span></span>副标题颜色：</div>
+			<div class="user-skin-right">
+				<input type="text" class="skin-input" id="subTopicColor" placeholder="#b8b8b8">
+                <p class="user-skin-tip">RGB颜色，例如：#AFAFAF</p>
+			</div>
+			
+		</div>
+		<div class="user-skin-bt">
+			<a href="javascript:;" class="user-skin-preview bt">预览</a>
+			<a href="javascript:;" class="user-skin-cancel bt bt-back">取消</a>
+			<a href="javascript:;" class="user-skin-refer bt">提交</a>
+		</div>
+	</div>
+</div>
+<div id="cropBox">
+	<div class="crop-box">
+		<p class="crop-box-title">
+        	<span>自定义博客皮肤</span>
+        	<span class="close-bt  bt-back"><svg t="1567152543821" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10924" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12"><defs><style type="text/css"></style></defs><path d="M512 438.378667L806.506667 143.893333a52.032 52.032 0 1 1 73.6 73.621334L585.621333 512l294.485334 294.485333a52.074667 52.074667 0 0 1-73.6 73.642667L512 585.621333 217.514667 880.128a52.053333 52.053333 0 1 1-73.621334-73.642667L438.378667 512 143.893333 217.514667a52.053333 52.053333 0 1 1 73.621334-73.621334L512 438.378667z" fill="" p-id="10925"></path></svg></span>
+        </p>
+		<div class="crop-img-before">
+			<img src="" alt="" id="cropImg">
+		</div>
+		<div class="crop-zoom">
+			<a href="javascript:;" class="bt-reduce">-</a><a href="javascript:;" class="bt-add">+</a>
+		</div>
+		<div class="crop-img-after">
+			<div  class="final-img"></div>
+		</div>
+		<div class="crop-bt">
+			<a href="javascript:;" class="bt-prev bt-back">上一步</a><a href="javascript:;" class="bt-next">保存</a>
+		</div>
+	</div>
+</div>
+<header>
+	<div class="container d-flex clearfix">
+		<div class="header-content-box " style=" padding:0;">
+		<div class="title-box">
+			<h1 class="title-blog ">
+				<a href="https://blockchain-fans.blog.csdn.net" style="">跨链技术践行者</a>
+			</h1>
+			<p class="description " style="">爱好生活和大自然，向往无头绪的研究</p>
+		</div>
+		<div class="opt-box d-flex justify-content-end">
+		</div>
+		</div>
+	</div>
+</header>
+<div class="container clearfix pt0 " id="mainBox">
+<aside class="blog_container_aside">
+<div id="asideProfile" class="aside-box">
+    <div class="profile-intro d-flex">
+        <div class="avatar-box d-flex justify-content-center flex-column">
+            <a href="https://blockchain-fans.blog.csdn.net" target="_blank" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4121","dest":"https://blockchain-fans.blog.csdn.net","ab":"new"}'>
+                <img src="https://profile.csdnimg.cn/E/8/F/3_shangsongwww" class="avatar_pic">
+            </a>
+        </div>
+        <div class="user-info d-flex flex-column profile-intro-name-box">
+            <div class="profile-intro-name-boxTop">
+                <a href="https://blockchain-fans.blog.csdn.net" target="_blank" class="" id="uid" title="跨链技术践行者" data-report-click='{"mod":"popu_379","spm":"1001.2101.3001.4122","dest":"https://blockchain-fans.blog.csdn.net","ab":"new"}'>
+                    <span class="name " username="shangsongwww">跨链技术践行者</span>
+                </a>
+                <span>
+                </span>
+                <span class="flag expert-blog">
+                <img class="identity" src="https://csdnimg.cn/release/blogv2/dist/mobile/img/expertNew.png" alt="">
+                <span class="bubble">CSDN认证博客专家</span>
+                </span>
+                <span class="flag company-blog">
+                <span class="bubble">CSDN认证企业博客</span>
+                </span>
+            </div>
+            <div class="profile-intro-name-boxFooter">
+                <span class="personal-home-page personal-home-years">码龄13年</span>
+                    <span class="personal-home-page">
+                    <a class="personal-home-certification" href="https://i.csdn.net/#/uc/profile?utm_source=14998968" target="_blank" title="暂无认证">
+                    <img src="https://csdnimg.cn/identity/nocErtification.png" alt="">
+                    暂无认证
+                    </a>
+                    </span>
+            </div>
+        </div>
+    </div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="1105">
+            <a href="https://blockchain-fans.blog.csdn.net" data-report-click='{"mod":"1598321000_001","spm":"1001.2101.3001.4310"}' data-report-query="t=1">  
+                <dt><span class="count">1105</span></dt>
+                <dd class="font">原创</dd>
+            </a>
+        </dl>
+        <dl class="text-center" data-report-click='{"mod":"1598321000_002","spm":"1001.2101.3001.4311"}' title="786">
+            <a href="https://blog.csdn.net/rank/list/weekly" target="_blank">
+                <dt><span class="count">786</span></dt>
+                <dd class="font">周排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" title="1082">
+            <a href="https://blog.csdn.net/rank/list/total" data-report-click='{"mod":"1598321000_003","spm":"1001.2101.3001.4312"}' target="_blank">
+                <dt><span class="count">1082</span></dt>
+                <dd class="font">总排名</dd>
+            </a>
+        </dl>
+        <dl class="text-center" style="min-width:58px" title="12247433">  
+            <dt><span class="count">1224万+</span></dt>
+            <dd>访问</dd>
+        </dl>
+        <dl class="text-center" title="10级,点击查看等级说明">
+            <dt><a href="https://blog.csdn.net/blogdevteam/article/details/103478461" target="_blank">
+                <img class="level" src="https://csdnimg.cn/identity/blog10.png">
+            </a>
+            </dt>
+            <dd>等级</dd>
+        </dl>
+    </div>
+    <div class="item-rank"></div>
+    <div class="data-info d-flex item-tiling">
+        <dl class="text-center" title="122259">
+            <dt><span class="count">12万+</span></dt>
+            <dd>积分</dd>
+        </dl>
+         <dl class="text-center" id="fanBox" title="23046">
+            <dt><span class="count" id="fan">2万+</span></dt>
+            <dd>粉丝</dd>
+        </dl>
+        <dl class="text-center" title="4766">
+            <dt><span class="count">4766</span></dt>
+            <dd>获赞</dd>
+        </dl>
+        <dl class="text-center" title="510">
+            <dt><span class="count">510</span></dt>
+            <dd>评论</dd>
+        </dl>
+        <dl class="text-center" title="3748">
+            <dt><span class="count">3748</span></dt>
+            <dd>收藏</dd>
+        </dl>
+    </div>
+    <div class="aside-box-footer" data-report-view='{"spm":"3001.4296"}'>
+        <div class="badge-box d-flex">
+            <div class="badge d-flex">
+                <div class="icon-badge" title="领英">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/linkedin@240.png" alt="领英">
+                    </div>
+                </div>
+                <div class="icon-badge" title="GitHub">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/github@240.png" alt="GitHub">
+                    </div>
+                </div>
+                <div class="icon-badge" title="脉脉勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/maimai@240.png" alt="脉脉勋章">
+                    </div>
+                </div>
+                <div class="icon-badge" title="签到王者">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qiandao100@240.png" alt="签到王者">
+                    </div>
+                </div>
+                <div class="icon-badge" title="技术圈认证（专家版）">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blog_expert_medal@240.png" alt="技术圈认证（专家版）">
+                    </div>
+                </div>
+                <div class="icon-badge" title="推荐红人">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/blinkrecomment@240.png" alt="推荐红人">
+                    </div>
+                </div>
+                <div class="icon-badge" title="阅读者勋章Lv3">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/yuedu30@240.png" alt="阅读者勋章Lv3">
+                    </div>
+                </div>
+                <div class="icon-badge" title="专栏达人">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/zhuanlandaren@240.png" alt="专栏达人">
+                    </div>
+                </div>
+                <div class="icon-badge" title="持之以恒">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chizhiyiheng@240.png" alt="持之以恒">
+                    </div>
+                </div>
+                <div class="icon-badge" title="1024勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/1024@240.png" alt="1024勋章">
+                    </div>
+                </div>
+                <div class="icon-badge" title="1024超级勋章">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/chaoji1024@240.png" alt="1024超级勋章">
+                    </div>
+                </div>
+                <div class="icon-badge" title="勤写标兵Lv4">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/qixiebiaobing4@240.png" alt="勤写标兵Lv4">
+                    </div>
+                </div>
+                <div class="icon-badge" title="分享王者">
+                    <div class="mouse-box">
+                        <img class="medal-img" data-report-click='{"spm":"3001.4296"}' src="https://csdnimg.cn/medal/fenxiangwangzhe@240.png" alt="分享王者">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-intro-name-boxOpration">
+        <div class="opt-letter-watch-box">
+        <a class="bt-button personal-letter" href="https://im.csdn.net/chat/shangsongwww" target="_blank" rel="noopener">私信</a>
+        </div>
+        <div class="opt-letter-watch-box"> 
+            <a class="personal-watch bt-button" id="btnAttent" >关注</a>  
+        </div>
+    </div>
+</div>
+ <div id="asideSearchArticle" class="aside-box">
+	<div class="aside-content search-comter">
+    <div class="aside-search aside-search-blog">         
+        <input type="text" class="input-serch-blog" name="" autocomplete="off" value="" id="search-blog-words" placeholder="搜博主文章">
+        <a class="btn-search-blog">
+                    <img src="//csdnimg.cn/cdn/content-toolbar/csdn-sou.png?v=1587021042">
+        </a>
+    </div>
+    </div>
+</div>
+
+
+<div id="asideHotArticle" class="aside-box">
+	<h3 class="aside-title">热门文章</h3>
+	<div class="aside-content">
+		<ul class="hotArticle-list">
+			<li>
+				<a href="https://blockchain-fans.blog.csdn.net/article/details/103270039" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blockchain-fans.blog.csdn.net/article/details/103270039","ab":"new"}'>
+				国产操作系统: 盘点8款国产Linux桌面操作系统
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">58920</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blockchain-fans.blog.csdn.net/article/details/89529528" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blockchain-fans.blog.csdn.net/article/details/89529528","ab":"new"}'>
+				重构区块链
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">51215</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blockchain-fans.blog.csdn.net/article/details/90269564" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blockchain-fans.blog.csdn.net/article/details/90269564","ab":"new"}'>
+				什么是 Substrate
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">30259</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blockchain-fans.blog.csdn.net/article/details/89090371" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blockchain-fans.blog.csdn.net/article/details/89090371","ab":"new"}'>
+				区块链：P2P技术是什么
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">29641</span>
+                </a>
+			</li>
+			<li>
+				<a href="https://blockchain-fans.blog.csdn.net/article/details/89493241" target="_blank"  data-report-click='{"mod":"popu_541","spm":"1001.2101.3001.4139","dest":"https://blockchain-fans.blog.csdn.net/article/details/89493241","ab":"new"}'>
+				以太坊 Layer 2 资产桥方案解析：Arbitrum、zkSync 与 DeGate Bridge
+					<img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+					<span class="read">28939</span>
+                </a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div id="asideCategory" class="aside-box flexible-box">
+    <h3 class="aside-title">分类专栏</h3>
+    <div class="aside-content">
+        <ul>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_9287097.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_9287097.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20190327103922381.jpeg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        以太坊
+                    </span>
+                </a>
+                <span class="special-column-num">165篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_10817198.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_10817198.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756738.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        rust
+                    </span>
+                </a>
+                <span class="special-column-num">62篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_9287116.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_9287116.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20190327173749249.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        密码学
+                    </span>
+                </a>
+                <span class="special-column-num">90篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_9286649.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_9286649.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20190318151246590.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        互联网与区块链
+                    </span>
+                </a>
+                <span class="special-column-num">206篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_11110608.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_11110608.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756923.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        虚拟机
+                    </span>
+                </a>
+                <span class="special-column-num">32篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_9287703.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_9287703.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20190408153529393.jpeg?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        P2P网络
+                    </span>
+                </a>
+                <span class="special-column-num">19篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_9287157.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_9287157.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20190328112621616.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        共识算法
+                    </span>
+                </a>
+                <span class="special-column-num">51篇</span>
+            </li>
+            <li>
+                <a class="clearfix special-column-name" target="_blank" href="https://blog.csdn.net/shangsongwww/category_8803229.html" data-report-click='{"mod":"popu_537","spm":"1001.2101.3001.4137","strategy":"pc付费专栏左侧入口","dest":"https://blog.csdn.net/shangsongwww/category_8803229.html","ab":"new"}'>
+                    <div class="special-column-bar "></div>
+                    <img src="https://img-blog.csdnimg.cn/20201014180756928.png?x-oss-process=image/resize,m_fixed,h_64,w_64" alt="" onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    <span class="title oneline">
+                        面试
+                    </span>
+                </a>
+                <span class="special-column-num">33篇</span>
+            </li>
+        </ul>
+    </div>
+    <p class="text-center">
+        <a class="flexible-btn" data-fbox="aside-archive"><img class="look-more" src="https://csdnimg.cn/release/blogv2/dist/pc/img/arrowDownWhite.png" alt=""></a>
+    </p>
+</div>
+<div id="asideNewComments" class="aside-box">
+    <h3 class="aside-title">最新评论</h3>
+    <div class="aside-content">
+        <ul class="newcomment-list">
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blockchain-fans.blog.csdn.net/article/details/90054503#comments_20893923" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90054503#comments_20893923","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90054503#comments_20893923","ab":"new"}'>从哈希锁定到跨链技术</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/qq_39956228" class="user-name" target="_blank">蜀山大侠12138: </a>
+                    <span class="code-comments">非常详细，易于理解，感谢</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blockchain-fans.blog.csdn.net/article/details/88567832#comments_20763433" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/88567832#comments_20763433","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/88567832#comments_20763433","ab":"new"}'>签名算法 - BLS签名算法介绍</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/milierwwn" class="user-name" target="_blank">wuzhi996: </a>
+                    <span class="code-comments">这个网址打不开<img src="https://g.csdnimg.cn/static/face/emoji/010.png" alt='表情包' ></span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blockchain-fans.blog.csdn.net/article/details/90268355#comments_20738969" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90268355#comments_20738969","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90268355#comments_20738969","ab":"new"}'>代理重加密与非对称加密方案对比-NuCypher</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/qq_34826326" class="user-name" target="_blank">Rocky xD: </a>
+                    <span class="code-comments">图片看不见了</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blockchain-fans.blog.csdn.net/article/details/90287565#comments_20565720" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90287565#comments_20565720","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/90287565#comments_20565720","ab":"new"}'>Raft算法原理</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/lml200701158" class="user-name" target="_blank">楼仔: </a>
+                    <span class="code-comments">我直接给你一个最强版本的，比这篇写的要好，《Raft 协议原理详解，10 分钟带你掌握！》：https://mp.weixin.qq.com/s/OLcb0nWLp-Oa1DA6ppFbKQ</span>
+                </p>
+            </li>
+            <li>
+                <a class="title text-truncate" target="_blank" href="https://blockchain-fans.blog.csdn.net/article/details/102519222#comments_20532577" data-report-click='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/102519222#comments_20532577","ab":"new"}' data-report-view='{"mod":"popu_542","spm":"1001.2101.3001.4231","dest":"https://blockchain-fans.blog.csdn.net/article/details/102519222#comments_20532577","ab":"new"}'>随机数对签名的重要性与伪签名的构造</a>
+                <p class="comment ellipsis">
+                    <a href="https://blog.csdn.net/aslk22521112" class="user-name" target="_blank">aslk22521112: </a>
+                    <span class="code-comments">CSPRNG</span>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+<div id="asideArchive" class="aside-box" style="display:block!important; width:300px;">
+    <h3 class="aside-title">最新文章</h3>
+    <div class="aside-content">
+        <ul class="inf_list clearfix">
+            <li class="clearfix">
+            <a href="https://blockchain-fans.blog.csdn.net/article/details/124019069" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blockchain-fans.blog.csdn.net/article/details/124019069","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blockchain-fans.blog.csdn.net/article/details/124019069","ab":"new"}'>EOS合约开发集中博彩游戏合约设计_bedrock_stable</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blockchain-fans.blog.csdn.net/article/details/123925144" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blockchain-fans.blog.csdn.net/article/details/123925144","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blockchain-fans.blog.csdn.net/article/details/123925144","ab":"new"}'>如何在生产环境排查 Rust 内存占用过高问题</a>
+            </li>
+            <li class="clearfix">
+            <a href="https://blockchain-fans.blog.csdn.net/article/details/123798518" target="_blank" data-report-click='{"mod":"popu_382","spm":"1001.2101.3001.4136","dest":"https://blockchain-fans.blog.csdn.net/article/details/123798518","ab":"new"}' data-report-view='{"mod":"popu_382","dest":"https://blockchain-fans.blog.csdn.net/article/details/123798518","ab":"new"}'>TS开发环境准备</a>
+            </li>
+        </ul>
+        <div class="archive-bar"></div>
+        <div class="archive-box">
+                <div class="archive-list-item"><a href="https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2022&amp;month=04" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2022&amp;month=04"}'><span class="year">2022年</span><span class="num">30篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2021&amp;month=12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2021&amp;month=12"}'><span class="year">2021年</span><span class="num">227篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2020&amp;month=12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2020&amp;month=12"}'><span class="year">2020年</span><span class="num">54篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2019&amp;month=12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2019&amp;month=12"}'><span class="year">2019年</span><span class="num">1127篇</span></a></div>
+                <div class="archive-list-item"><a href="https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2018&amp;month=12" target="_blank" data-report-click='{"mod":"popu_538","spm":"1001.2101.3001.4138","ab":"new","dest":"https://blockchain-fans.blog.csdn.net?type=blog&amp;year=2018&amp;month=12"}'><span class="year">2018年</span><span class="num">1篇</span></a></div>
+        </div>
+    </div>
+</div>
+    <!-- 详情页显示目录 -->
+</aside>
+<script>
+	$("a.flexible-btn").click(function(){
+		$(this).parents('div.aside-box').removeClass('flexible-box');
+		$(this).parents("p.text-center").remove();
+	})
+</script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-tooltip/2.5/user-tooltip.js"></script>
+<script type="text/javascript"  src="https://g.csdnimg.cn/user-medal/1.0.7/user-medal.js"></script><main>
+    <div id="column">
+    <div class="column_info_box">
+            <div class="column_info_box_all">
+                <div class="left_mode_box">
+                    <div class="left_img"><img src="https://img-blog.csdnimg.cn/20190328112621616.png?x-oss-process=image/resize,m_fixed,h_224,w_224" alt=""
+                                onerror="this.src='https://img-blog.csdnimg.cn/20201014180756922.png?x-oss-process=image/resize,m_fixed,h_64,w_64'">
+                    </div>
+                    <div class="middle_con">
+                        <div class="column_info clearfix">
+                            <div class="column_info_text">
+                                <div class="column_top_template">
+                                    <h3 class="column_title oneline">共识算法</h3>
+                                            <div class="column_button follow_column_button">
+                                                关注
+                                            </div>
+                                        <!--判断付费专栏是否是更新中的状态 需要后端-->
+                                </div>
+                                <div class="column_text">
+                                    <span class="column_text_desc">介绍各种共识算法的原理</span>
+                                    <span class="management_article_box">
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column_operating">
+                            <span class="column_data">
+                                  <span>关注数：<span class="mumber-color column-subscribe-num">19</span></span>
+                                <span>文章数：<span class="mumber-color">51</span></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_mode_box">
+                </div> 
+           </div>
+        </div>
+        <!--专栏个人简介-->
+        <div class="column_person_box">
+        <div class="column_person_box_bg">
+            <h3 class="column_person_tit"><span class="author text">作者:
+            </span><span class="text">
+                     跨链技术践行者
+            </span>
+            </h3>
+            <div class="column_person_con have__introduce column_introduce_showmore">
+              <div class="column_introduce_height">
+                区块链研究员
+              </div>
+              <span class="bt_showmore"><span class="bt_showmore_l"></span><span class="bt_showmore_r">展开</span></span>
+            </div>
+        </div>
+        </div>
+<ul class="column_article_list">
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89490045" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  关于PoW和PoS
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  priewienv:这种情况下，对于PoS一旦发生分区，如果形成多个链，网络恢复之后将无法判断哪个链是合法的，因为没有一个客观的标尺来判断。首先，并不是所有的 PoS 都会发生分区，形成多条链，譬如一些使用了混合共识的项目；其次，就算有分叉的可能性，已经发表在正规学术会议上的一些知名项目基本都给出了收敛的证明。就算你的说法指的是一些 方案不够成熟的 PoS 的项目，但我并没有看出来 P...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-24 12:02:41
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11371
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89490032" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  关于 ProgPoW：来自芯片工程师的观点
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  我是一名 IC（集成电路）设计工程师，自 2014 年起进入挖矿行业。不过，我不像其他矿工那样拥有一座大矿场，我只有一间小矿房，赚的钱刚好能向老婆交差而已。看到网上有很多人针对 ProgPoW 提出了各种观点，我也想从 IC 设计工程师的角度分享一下我的看法。不管是 ProgPow 算法还是 ETHash 算法，算力都是由外部 DRAM 的存储带宽决定的。也就是说Hashrate = k...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-24 12:01:53
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10777
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89412163" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  关于 PoW 和 PoS
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  之前一直计划写一篇关于PoS和PoW对比的文章，一直由于各种（懒惰）原因迟迟没有落笔，今天看到社区里有人问到PoW/PoS的相关问题，忍不住就回答了。https://talk.nervos.org/t/nervos-pow/1639/3?u=yaning-u2区块链的重要意义在于信任的机器和价值基础，对安全的要求非常高。而这种系统一旦有可能发生重大故障，则其价值基础则会完全丧失。这也是为什么构...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-21 09:46:24
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12326
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89351303" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  【转】突破区块链不可能三角:异步共识组 [Monoxide]
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  我们实现了&quot;异步共识组&quot;模型，可以将一个现有的单链共识算法，横向扩展1000倍以上。这样的扩展将使得吞吐量(TPS)提升1000倍以上，同时也将全网计算能力(CPU)提升2000倍以上，将状态表达的内存空间(RAM)提升2000倍以上。异步共识组系统的性能提升，丝毫没有牺牲去中心化特性，随着全网的横向扩展提升，每一个全节点的工作压力(带宽、计算、内存、磁盘IO)并没有显著的加大，始终保证一台普通...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-19 09:41:45
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8297
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89350551" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-2">转载</span>
+                  [转]王嘉平：Monoxide 原理详解，如何用极简架构突破不可能三角
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  &quot;我们时常遇到一些令人叹为观止的机遇，却一次次地被当成不可能解决的问题”-- 約翰．加德納, 1965年五分钟简版Monoxide是Layer 1的区块链技术，不假设交易结构的任何局部特性，跨共识组的交易再多都无压力。性能提升包括吞吐量和状态容量，由划分的共识组个数决定。n个共识组将带来n/2倍的吞吐量提升和n倍的状态容量提升。在现在的互联网环境中，n最多可以到数万，这个是性能提升的...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-19 09:42:17
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8181
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89311679" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  RChain架构详细介绍
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  动机去中心化运动雄心勃勃，将为新的社会和经济往来提供绝佳的机遇。同时，去中心化制衡了权力集中的大型组织偶尔发生的滥权和腐败。去中心化支持自我决策和权利分散的社区组织。当然，分散的社区组织也将会面临挑战和问题，如国际法律、公共利益和慈善如何兑现等问题。我们非常赞赏比特币，以太坊和其他平台的巨大创新，这些平台大大推进了去中心化组织的发展，迎来了加密货币和智能合约的新时代。但是，我们也看到这些项...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-19 09:46:59
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12161
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89309270" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  RChain的Casper共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  RChain的Casper共识算法是基于Vlad Zamfir的correct-by-construction共识协议和CTOGreg Meredith和其他RChain成员讨论而来的。他们还为Casper开发了一个模拟器：https://github.com/rchain/Casper-Proof-of-Stake/tree/simulation-dev。1、通用预估安全协议一个预估安...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-19 09:46:39
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11805
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89177507" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链 :拜占庭将军问题 [BFT]
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录背景：	什么是拜占庭将军问题：	通俗分析：	问题抽象：	中本聪的解决方案：	经济学分析	REFERENCE正文回到顶部背景：　　拜占庭将军问题很多人可能听过，但不知道具体是什么意思。那么究竟什么是拜占庭将军问题呢? 本文从最通俗的故事讲起，并对该问题进行抽象，并告诉大家拜占庭将军问题为什么在区块链领域作为一个重点研究问题。回到顶部什么是拜占庭将...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-18 09:38:59
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10739
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89092168" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  【转】区块链面试指南--之共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  最近，一张关于区块链高薪职位的招聘照片火爆网络：可以看到，月薪远远高出行业其他工程师一大截，可以说简直完爆！基本覆盖国内一线互联网大公司，最高月薪达100K。当我们还在了解什么是区块链的时候，行业巨头已经开始纷纷招兵买马，布局区块链。不知不觉中，一个新兴的工作岗位正在慢慢诞生：区块链研发工程师。对于普通传统的程序员群体，该怎么向区块链靠齐呢？错过了AI，大数据，人工智能，...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-18 09:32:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10517
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89096993" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  P2P网络节点间如何互访——详解STUN方式NAT穿透
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  P2P网络节点间如何互访——详解STUN方式NAT穿透转载请注明出处：https://www.jzgwind.com/?p=973 by joey一、背景P2P网络的核心原理，是将分布在网络上各个节点的资源都利用起来，本着我为人人、人人为我的思想，达到更快的信息共享的目的。它的应用：1、文件下载——BitTorrent、迅雷2、语音通话——Skype、歪歪语音3、视频共享—...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-08 17:10:25
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11501
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063636" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  HPB BOE 版卡功能介绍
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  BOE功能介绍BOE（Blockchain Offload Engine）系统是区块链卸载引擎的缩写，利用硬件FPGA的并发处理能力对区块链节点上的交易、区块等处理过程进行加速。共识算法也与BOE的伪随机序列深度结合，以保证网络内节点能够快速、稳定、安全的运行。下面分别从交易验签和伪随机序列两个方面详细介绍BOE的工作流程。1 交易验签在HPB中，从整体上看交易的处理流程有下面几步：...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-16 09:38:38
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12501
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063629" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  HPB共识算法选举机制描述
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  简介为了适应BOE技术的要求，同时尽可能的提升安全TPS， HPB共识算法采用了高效的双层选举机制，即外层选举和内层选举。外层选举：由具有BOE板卡的所有用户中选取出。选取周期为3个月。选取方式为通过HPB钱包进行投票选举。内层选举：采用节点贡献值评价指标，从众多候选节点中选出高贡献值节点成员。基于Hash队列记名投票机制，在每次区块生成时，计算高贡献值节点生成区块的优先级，优先级高的...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-16 09:38:24
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10848
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063522" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  ETH-Pow算法分析
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  1. Ethash算法1.1 EthashEthash是以太坊1.0中使用的PoW(工作量证明)算法,它是Hashimoto算法结合Dagger之后产生的一个变种。它的特点是计算的效率基本与CPU无关，却和内存大小和内存带宽正相关。因此通过共享内存的方式大规模部署的矿机芯片并不能在挖矿效率上有线性或者超线性的增长。该算法的一般流程如下：首先根据块信息计算一个种子(seed, c+...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-14 00:07:28
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10913
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063486" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链：POA区块生成机制
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1 名词介绍2 POA区块数据结构3 新区块生成周期4 新区块生成优先级1 名词介绍节点：普通的以太坊节点，没有区块生成的权利。矿工：具有区块生成权利的以太坊节点委员会：所有矿工的集合2 POA区块数据结构POA共识中，区块数据与POW有些区别，主要体现在header结构:			序号			字段			POW			POA					1		...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-13 08:36:03
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    9074
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063483" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链：POA委员会选举机制
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录1 名词介绍2 矿工投票方法3 委员会确定投票流程​ 3.1 关键概念描述​ 3.1.1 Epoch &amp; checkpointInterval​ 3.1.2 Snapshot​ 3.2 投票方法1.名词介绍节点：普通的以太坊节点，没有区块生成的权利。矿工：具有区块生成权利的以太坊节点委员会：所有矿工的集合2.矿工投票方法用户通过RPC...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-13 08:35:48
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10786
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051899" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链中的机制设计挑战
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  第一部分从区块链吸引人的地方切入区块链设计中的挑战：朝向真正去中心化的机制设计。这些设计的目标是让共识层具备一些可欲的属性；为了推进设计，我们也将一些对行为者及其环节的假设归纳为安全模型，并在这些模型上进行进一步的推论。（编者按：这部分从区块链吸引人的地方切入区块链设计中的挑战：朝向真正去中心化的机制设计。这些设计的目标是让共识层具备一些可欲的属性；为了推进设计，我们也将一些对行为者及其...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 09:03:52
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10971
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063168" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链：主流共识算法分析
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  区块链核心框架区块链是一个不断增长的分布式账本[2]，账本用“区块”的形式衔接在一起，区块中包含交易， 时间戳，随机数等元数据，每个区块中含有一个指针指向上一个交易链接，区块链的设计是安 全的，因为其具有良好的拜占庭容错能力。区块链可以概括为一个分布式的高频交易系统，如 下图 1 所示，区块链的核心技术可以总结为四部分：分布式的数据库，密码学相关理论，共识机制和 P2P 网络。中分布式...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 01:00:05
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12316
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063142" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  比较流行的几种区块链共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  在每一种的加密货币背后，都有一种伟大的共识算法。 但没有一种共识算法是完美的，但它们各有优缺点。他们的主要目标是防止双重支出。重要的是要记住，它们都不是绝对完美的，在分散或部分分散化的环境中，不存在任何普遍达成共识的方法。每一个都有它的优点和缺点。这就是为什么算法被不断地更新补并充各种各样的插件的原因。有时，不同共识的方法会混合在一起，形成混合体。目前，有几种不同的协商共识机制。在我们回...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 00:55:54
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    7744
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063137" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  共识算法的比较：Casper vs Tendermint
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  权益证明的漫漫长路1982年，拜占庭将军问题首次被Lamport，Shostak和Pease提出。Cosmos的Ethan Buchman这样描述它：”这是一个在可妥协的通信网络中实现分布式协议的问题，也就是在不可靠的环境中建立一个可靠的系统的问题“。从1982年到1999年，都没有人能够创造一个可以解决拜占庭将军问题系统。长久以来，拜占庭将军问题与计算都是无关的，因为在那个时候，互联网演进出...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 00:55:02
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10570
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063127" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链危机！危险的共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  你有没有想过，区块链的最底层技术，其实是有可能存在安全隐患的？就在几天前，被誉为“中国以太坊”的NEO发生了因为出块失败导致整个平台宕机、全网疑似瘫痪的严重情况。业内爆料称，导致NEO瘫痪的原因是其共识算法机制问题，正是其底层漏洞导致了瘫痪的发生。国外的加密货币研究者Eric Wall指出，NEO的DBFT算法底层设计存在致命的缺憾，甚至吐槽项目方没有设计共识算法的经验。...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 00:53:51
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10659
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063117" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  优化的bft共识算法的设计和使用方式
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  区块链是在点对点网络中对交易具有防篡改功能的共享数据账本，Hyperledger fabric是一个比较知名的开源区块链框架，其中作为分布式系统的核心问题就是共识算法以及共识算法的效率问题。如何既保证这个共识算法能让参与区块链的联盟各方都认可它的安全可信，又能提高联盟成员间的共识效率就是一个所有人都关注的重要问题。本篇活动家为大家分享主题：《区块链服务在华为公有云平台上的重要问题设计实现及解决...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 00:52:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    7915
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89063110" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Obelisk 共识算法设计动机
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  开发更新： 我们想出了混合使用股权证明系统阻止女巫攻击（Sybil attack)的方法。创建节点之前你必须证明你持有这个币，比如说有10个币。你发送10个币到地址A。然后你从地址A发送10个币到地址B。然后你使用地址A的公钥签名在Oblisk区块上的消息。另外，你可以发布地址A的公钥然后使用那个公钥签名消息。节点会在每个时间段发布一个签名，或者在一些保留的币被转移的一些区块数以内...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-07 00:51:28
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10649
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051894" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链的确定性问题
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  结算的确定性问题是最近公有链与许可链之间的一个主要战场。看起来中心化的系统至少有一个优点，即所谓的“确定性”（&quot;finality&quot;）：操作一旦完成，就永远完成了，系统永不可能再回退回去撤销这个操作。而去中心化的系统，根据设计的不同，可能有这个性质，也可能只提供在一定激励范围内的概率性确定，甚至没有确定性，在这一点上公有链和许可链是有很大区别的。确定性的概念在金融业中尤其重要，因为机构们需要以最...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 09:02:53
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10305
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051880" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  PoW共识机制与以太坊的关系、Ghost协议 及 Casper PoS共识机制的变种
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  前序本人版暂名为《区块链以太坊DApp实战开发》一书，即将完成，是一本废话少、讲解通俗、实操性强的技术书籍。本文为书中的小节的部分内容。想涉足这个区块链领域技术开发的同僚可以留意我的博客，届时会发布。目录PoW 共识机制	以太坊目前所使用的共识算法	Ghost 协议	选择最优链		分叉块处理		Casper PoS变种共识机制	如何成为验证人		验证人如何获取保证金...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 09:00:51
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8187
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051865" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链的共识算法：PoS 及其 例子 代码 实现(二)
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录前序	PoS 共识算法	PoS 的特点	编写 PoS 代码	候选块数组		块中的节点地址		进行股权分配		根据股权选出赢家		结束	前序这篇文章是上一篇的序章，上一篇的链接地址是：juejin.im/post/5b78f6…（一）区块链的共识算法：整体介绍 及 分叉 的通俗讲解 本篇文章将会着重介绍 PoS 共识算法和采用代码例子来实在地阐述它关于...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 08:58:09
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12183
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051849" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链的共识算法：整体介绍 及 分叉 的通俗讲解(一)
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  本文不做一般入门的区块链描述讲解。着重简述讲解：区块链的分叉	共识算法目录前言	简单过一下区块链	通俗讲解共识	共识算法	PoW		区块链分叉	硬分叉的出现		软分叉的出现		参考前言由于最近的开发工作是与以太坊公链相关的去中心化交易所，项目两个多月之久，对区块链相关的知识内容了解了一些，故择文以记录之，但求文字通俗易懂，无纰漏。因自身求学过程中所遇坑无数，...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 08:56:03
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11322
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051835" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  共识算法之争（PBFT，Raft，PoW，PoS，DPoS，Ripple）
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  目录一.拜占庭容错技术（Byzantine Fault Tolerance，BFT）	二.PBFT：Practical Byzantine Fault Tolerance，实用拜占庭容错算法。	三.Raft协议。	1.Leader Election　		2.Log Replication		四.POW：Proof of Work，工作证明。	五.POS：Proof of Stak...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 08:54:19
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8858
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051824" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链：共识算法POW
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  首先我们通过介绍一个拜占庭将军问题（Byzantine Generals Problem），来进一步了解共识算法是要干什么。故事：拜占庭帝国，拥有巨大的财富，周围10个邻邦垂诞已久，但拜占庭高墙耸立，没有一个单独的邻邦能够成功入侵。任何单个邻邦入侵的都会失败，同时也有可能自身被其他9个邻邦入侵。拜占庭帝国防御能力如此之强，至少要有十个邻邦中的一半以上同时进攻，才有行。其中的一个或者几个邻...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 08:53:15
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10607
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89051819" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  Insolar共识算法: 实现＞10000 交易/秒
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  共识算法是每个区块链协议的重要组成部分。它基本上构成了区块链协议，并将区块链协议与标准数据库区分开来。共识算法允许网络参与者决定添加到网络中的新记录是否有效。在一些区块链协议中，共识机制还定义了网络中允许哪些节点执行、验证和存储记录、交易和智能合约。最佳共识：神话？在区块链行业的思想领袖中，关于哪种共识算法是最好的一直存在争议。丹·拉里默和维塔利克·布特林之间的讨论第一个映入脑海。然而...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-10-09 11:10:38
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8102
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040877" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链目前的几大共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  共识机制：区块链事务达成分布式共识的算法。区块链是一种去中心化的分布式账本系统，它可以用于登记和发行数字化资产、产权凭证、积分等，并以点对点的方式进行转账、支付和交易。区块链系统与传统的中心化账本系统相比，具有完全公开、不可篡改、防止多重支付等优点，并且不依赖于任何的可信第三方。由于点对点网络下存在较高的网络延迟，各个节点所观察到的事务先后顺序不可能完全一致。因此区块链系统需要设计一种机制...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-06 08:48:06
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8749
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040859" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  什么是区块链共识算法？
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  在加密货币领域中，共识算法是每个区块链网络的关键要素，它们负责维护这些分布式系统的完整性和安全性。第一个被创建出的加密货币共识算法是工作量证明（PoW），它由中本聪设计并在比特币上实现，用于实现拜占庭容错。共识算法共识算法可以被定义为使区块链网络达成共识的机制。公共（去中心化的）区块链是作为分布式系统来构建的，由于它们不依赖于一个中央权威，因此分散的节点需要就交易的有效与否达成...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-10-09 11:11:10
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11341
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040842" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链中五种常见共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  区块链是一种去中心化的分布式账本系统，可以用于登记和发行数字化资产、产权凭证、积分等，并以点对点的方式进行转账、支付和交易。区块链系统与传统中心化系统相比，具有公开透明、不可篡改、防止多重支付等优点，并且不依赖于任何的可信第三方。由于点对点网络下存在较高的网络延迟，各个节点所观察到的事务先后顺序不可能完全一致。因此，区块链系统需要设计一种机制对在差不多时间内发生的事务的先后顺序进行共识。这种对...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:33:50
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11155
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040828" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  区块链共识算法简介
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  共识算法是区块链项目中最核心的部分。有分布式，就需要达成共识。目前为止，对于区块链项目争议最大的之一也是共识算法，比如EOS的DPoS机制。回到共识机制本身，我们如何来理解背后的本质呢？而不是人云亦云呢？从蓝狐笔记的角度，共识算法是一个不断演进的过程，也是治理机制的一部分，无须一概否定。共识算法的使用是去中心化加密货币最重要的一个特征。共识算法对于加密货币而言至关重要的，因为它可以防止...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:32:55
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8666
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040823" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  30 种共识算法完全列表
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  共识算法是所有区块链 /DAG 的基础，它们构成了区块链 /DAG 平台中的最重要部分。如果没有共识算法，我们得到只是一个不可写的哑（dummy）数据库。我将在本文中尽可能列出所有主要的共识算法，评估各自的优劣之处。如果读者发现有所遗漏，或是存在错误，希望能通过评论指出。此外，我个人也在逐步深入研究共识算法及其对经济的影响，为此本文也将做定期的更新。另：本文假定读者理解共识算法及其在区...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:32:02
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11168
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89040807" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  共识算法（consensus）#peer节点启动的时候根据配置文件core.yaml文件配置项peer.validator.consensus.plugin选择采用哪种共识算法。目前Fabric实现了两种共识算法NOOPS和PBFT，默认是NOOPS：NOOPS：是一个供开发和测试使用的插件，会处理所有收到的消息。	PBFT：PBFT算法实现。0x01 插件接口Consenter...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:30:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    8108
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89022359" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  共识算法分析
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  POW：Proof of Work，工作证明。比特币在Block的生成过程中使用了POW机制，一个符合要求的Block Hash由N个前导零构成，零的个数取决于网络的难度值。要得到合理的Block Hash需要经过大量尝试计算，计算时间取决于机器的哈希运算速度。当某个节点提供出一个合理的Block Hash值，说明该节点确实经过了大量的尝试计算，当然，并不能得出计算次数的绝对值，因为寻找合理ha...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2021-05-19 17:14:49
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    10925
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89022291" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  UTXO 与账户余额模型
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  分布式一致性与共识算法	UTXO 与账户余额模型从写上一篇介绍区块链共识算法的文章分布式一致性与共识算法到现在已经过去了三个多月的时间；虽然整个行业内有非常多的变化，但是区块链技术，尤其是底层技术却没有太多的改变。这篇文章将要介绍的就是 Bitcoin 以及众多的加密货币，比如 Ethereum、NEO 和 Qtum 的底层结构究竟是什么样的。目前的绝大多数区块链项目不是使用UTXO...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:27:39
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12485
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    2
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89022258" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  分布式一致性与共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  分布式一致性与共识算法	UTXO 与账户余额模型区块链技术是近几年逐渐变得非常热门的技术，以比特币为首的密码货币其实已经被无数人所知晓，但是却很少有人会去研究它们的底层技术，也就是作为一个分布式网络比特币等加密货币是如何工作的。无论是 Bitcoin、Ethereum 还是 EOS，作为一个分布式网络，首先需要解决分布式一致性的问题，也就是所有的节点如何对同一个提案或者值达成共识...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:28:08
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    11153
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/89021915" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  什么是共识算法
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  本文尝试从源头开始，告诉大家区块链共识算法的来龙去脉。包含以下三部分：什么是共识算法著名的共识设计理论经典的共识算法设计什么是共识算法背景分布式系统集群设计中面临着一个不可回避的问题，一致性问题对于系统中的多个服务节点，给定一系列操作，如何试图使全局对局部处理结果达成某种程度的一致？这个一致性问题大致有如下的场景：节点之间通讯不可靠的，延迟和阻塞节点的处理可...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-04-05 10:28:26
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    28242
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    1
+                  </span>
+              </div>
+          </a>
+      </li>
+      <li>
+          <a href="https://blockchain-fans.blog.csdn.net/article/details/88558846" target="_blank" rel="noopener">
+              <div class="column_article_title">
+                  <h2 class="title">
+                  <span class="article-type type-1">原创</span>
+                  VRF共识算法设计与实现
+                      <!--####试读-->
+                      <!--####试读--></h2>
+
+              </div>
+              <div class="column_article_desc">
+                  1 BUMO-VRF实现图3-2 BUMO的多链采用的是主子链结构，每个节点存储当前子链和主链的状态，所以子链的节点必然是主链节点。主链和子链通过把子链的区块头信息写入到主链进行关联。整个Firework共识算法都依赖于主链的全状态。子链的验证节点是在主链中进行产生，主链通过随机洗牌和分配算法决定验证节点进入那条子链参与共识。每条链在不同阶段Phase，验证节点都不一样。具体的...
+              </div>
+              <div class="column_article_data">
+                  <span>
+                  2019-03-14 18:45:37
+                  </span>
+                  <span>
+                  <img src="https://csdnimg.cn/release/blogv2/dist/pc/img/readCountWhite.png" alt="">
+                    12982
+                  </span>
+                  </span>
+                  <span><img src="https://csdnimg.cn/release/blogv2/dist/pc/img/commentCountWhite.png" alt="">
+                    0
+                  </span>
+              </div>
+          </a>
+      </li>
+</ul>
+<div class="pagination-box" id="pageBox"></div>
+<div class="blog-footer-bottom" style="margin-top:10px;"></div>
+<script src="https://g.csdnimg.cn/common/csdn-footer/csdn-footer.js" data-isfootertrack="false" type="text/javascript"></script>
+<script type="text/javascript">
+    window.csdn.csdnFooter.options = {
+        el: '.blog-footer-bottom',
+        type: 2
+    }
+</script>    </div>
+</main>
+</div>
+<div class="skin-boxshadow"></div>
+<script type="text/javascript">
+    var currentPage = 1;
+    var baseUrl = 'https://blockchain-fans.blog.csdn.net/category_9287157'
+    var pageSize = 40;
+    var listTotal = 51;
+    function getAllUrl(page) {
+        if (page > 1) {
+            return baseUrl + "_" + page + ".html";
+        }
+        return baseUrl + ".html";
+    }
+</script>
+<script>window._bd_share_config = {
+        "common": {
+            "bdSnsKey": {},
+            "bdText": "",
+            "bdMini": "1",
+            "bdMiniList": false,
+            "bdPic": "",
+            "bdStyle": "0",
+            "bdSize": "16"
+        }, "share": {}
+    };
+    with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = '//csdnimg.cn/static/api/js/share.js?v=89860594'];</script>
+</body>
+<script type="text/javascript">
+    $(function () {
+        $(document).on('click', '.follow_column_button', function () {
+          if (!currentUserName) {
+              window.csdn.loginBox.show();
+              return false;
+          }
+          var url = "https://blog.csdn.net/" + "phoenix/web/v1/subscribe/subscribe";
+          var columnId = "9287157";
+          var info = {columnId: columnId};
+          $.ajax({
+            url: url,
+            type: 'post',
+            dataType: 'json',
+            data: info,
+            xhrFields: {
+                withCredentials: true
+            },
+            success: function (data) {
+              if (data.code === 200 && data.data.status) {
+                  $('.column_button').removeClass('follow_column_button').addClass('unfollow_column_button').text('已关注')
+                  var columnNum = parseInt($('.column-subscribe-num').text()) + 1;
+                  $('.column-subscribe-num').text(columnNum)
+              }
+            }
+          })
+        });
+        $(document).on('click', '.unfollow_column_button', function () {
+            var url = "https://blog.csdn.net/" + "phoenix/web/v1/subscribe/un-subscribe";
+            var columnId = "9287157";
+            var info = {columnId: columnId};
+            $.ajax({
+              url: url,
+              type: 'post',
+              dataType: 'json',
+              data: info,
+              xhrFields: {
+                  withCredentials: true
+              },
+              success: function (data) {
+                if (data.code === 200 && data.data.status) {
+                  $('.column_button').removeClass('unfollow_column_button').addClass('follow_column_button').text('关注')
+                  var columnNum = parseInt($('.column-subscribe-num').text()) - 1;
+                  $('.column-subscribe-num').text(columnNum < 0 ? 0 : columnNum)
+                }
+              }
+            })
+        })
+
+        $(document).on('mouseenter mouseleave', '.unfollow_column_button', function (e) {
+            if (e.type === 'mouseenter') {
+                $(this).text('取消关注')
+            } else if (e.type === 'mouseleave') {
+                $(this).text('已关注')
+            }
+        })
+        if ($('.column_introduce_showmore').height() < $('.column_introduce_height').height()) {
+            $('.column_introduce_showmore .bt_showmore').fadeIn();
+        }
+        $('.column_introduce_showmore .bt_showmore').on('click', function () {
+            $(this).css({ "display": "none" })
+            $('.column_introduce_showmore').css({ "max-height": "100%" })
+        })
+    })
+</script>
+<script type="text/javascript">
+    if (localStorage.getItem("isReload") != null) {
+        window.location.reload();
+        localStorage.removeItem("isReload")
+	  }
+     $(document).on('click','#edit',function(){
+        localStorage.setItem("isReload","true");
+     })
+</script>
+<script src="https://csdnimg.cn/release/download/old_static/js/qrcode.js"></script>
+<script src="https://g.csdnimg.cn/lib/qrcode/1.0.0/qrcode.min.js"></script>
+<script src="https://g.csdnimg.cn/user-ordercart/3.0.0/user-ordercart.js"></script>
+<script src="https://g.csdnimg.cn/user-ordertip/4.1.3/user-ordertip.js" type="text/javascript" ></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/common-a1dfbf1dc3.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/column-021ccc1be7.min.js" type="text/javascript"></script>
+<script src="https://csdnimg.cn/release/blogv2/dist/pc/js/list-21a1edca01.min.js" type="text/javascript"></script>
+<script src="https://g.csdnimg.cn/side-toolbar/3.1/side-toolbar.js" type="text/javascript"></script>
+<script type="text/javascript" crossorigin src="https://g.csdnimg.cn/common/csdn-login-box/csdn-login-box.js"></script></body>
+</html>

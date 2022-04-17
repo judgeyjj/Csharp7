@@ -1,0 +1,596 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>【python实现卷积神经网络】开始训练 - 西西嘛呦 - 博客园</title>
+    <meta property="og:description" content="代码来源：https://github.com/eriklindernoren/ML-From-Scratch 卷积神经网络中卷积层Conv2D（带stride、padding）的具体实现：https" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.css?v=EjExWsdi8Ql8RA7Wdq4_YaeuMVhIAL6d2BSGbilapWY1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/465208.css?v=D4IoKl%2b7PkjpfB3bILTAl2I92ns%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.css?v=UDjqx7Witj15lOavDDvYAPs4X-lKVDD-U7PDSLg1cK81"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiximayou/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiximayou/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiximayou/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=465208;var currentBlogApp='xiximayou',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--PageBeginHtml Block Begin-->
+<script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤JAVA❤","❤C++❤","❤C❤","❤PYTHON❤","❤GO❤","❤LINUX❤","❤HTML❤","❤CSS❤","❤JS❤","❤PYTORCH❤","❤MXNET❤","❤TF❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/xiximayou/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/xiximayou/">西西嘛呦</a></h1>
+<h2><br/>
+从自己能做到的开始，一件件来，缓慢而坚定地前进，尽力而为
+</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiximayou/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E8%A5%BF%E8%A5%BF%E5%98%9B%E5%91%A6">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 884&nbsp; </span>
+<span id="stats_article_count">文章 - 9&nbsp; </span>
+<span id="stats-comment_count">评论 - 116</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/xiximayou/p/12726362.html">【python实现卷积神经网络】开始训练</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p>代码来源：<strong><a href="https://github.com/eriklindernoren/ML-From-Scratch" target="_blank">https://github.com/eriklindernoren/ML-From-Scratch</a></strong></p>
+<p>卷积神经网络中卷积层Conv2D（带stride、padding）的具体实现：<a href="https://www.cnblogs.com/xiximayou/p/12706576.html">https://www.cnblogs.com/xiximayou/p/12706576.html</a></p>
+<p>激活函数的实现（sigmoid、softmax、tanh、relu、leakyrelu、elu、selu、softplus）：<a href="https://www.cnblogs.com/xiximayou/p/12713081.html">https://www.cnblogs.com/xiximayou/p/12713081.html</a></p>
+<p>损失函数定义（均方误差、交叉熵损失）：<a href="https://www.cnblogs.com/xiximayou/p/12713198.html">https://www.cnblogs.com/xiximayou/p/12713198.html</a></p>
+<p>优化器的实现（SGD、Nesterov、Adagrad、Adadelta、RMSprop、Adam）：<a href="https://www.cnblogs.com/xiximayou/p/12713594.html">https://www.cnblogs.com/xiximayou/p/12713594.html</a></p>
+<p>卷积层反向传播过程：<a href="https://www.cnblogs.com/xiximayou/p/12713930.html">https://www.cnblogs.com/xiximayou/p/12713930.html</a></p>
+<p>全连接层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720017.html">https://www.cnblogs.com/xiximayou/p/12720017.html</a></p>
+<p>批量归一化层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720211.html">https://www.cnblogs.com/xiximayou/p/12720211.html</a></p>
+<p>池化层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720324.html">https://www.cnblogs.com/xiximayou/p/12720324.html</a></p>
+<p>padding2D实现：<a href="https://www.cnblogs.com/xiximayou/p/12720454.html">https://www.cnblogs.com/xiximayou/p/12720454.html</a></p>
+<p>Flatten层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720518.html">https://www.cnblogs.com/xiximayou/p/12720518.html</a></p>
+<p>上采样层UpSampling2D实现：<a href="https://www.cnblogs.com/xiximayou/p/12720558.html">https://www.cnblogs.com/xiximayou/p/12720558.html</a></p>
+<p>Dropout层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720589.html">https://www.cnblogs.com/xiximayou/p/12720589.html</a></p>
+<p>激活层实现：<a href="https://www.cnblogs.com/xiximayou/p/12720622.html">https://www.cnblogs.com/xiximayou/p/12720622.html</a></p>
+<p>定义训练和测试过程：<a href="https://www.cnblogs.com/xiximayou/p/12725873.html">https://www.cnblogs.com/xiximayou/p/12725873.html</a></p>
+<p>&nbsp;</p>
+<p>代码在mlfromscratch/examples/convolutional_neural_network.py 中：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">from</span> <span style="color: #800080;">__future__</span> <span style="color: #0000ff;">import</span><span style="color: #000000;"> print_function
+</span><span style="color: #0000ff;">from</span> sklearn <span style="color: #0000ff;">import</span><span style="color: #000000;"> datasets
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> matplotlib.pyplot as plt
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> math
+</span><span style="color: #0000ff;">import</span><span style="color: #000000;"> numpy as np
+
+</span><span style="color: #008000;">#</span><span style="color: #008000;"> Import helper functions</span>
+<span style="color: #0000ff;">from</span> mlfromscratch.deep_learning <span style="color: #0000ff;">import</span><span style="color: #000000;"> NeuralNetwork
+</span><span style="color: #0000ff;">from</span> mlfromscratch.utils <span style="color: #0000ff;">import</span><span style="color: #000000;"> train_test_split, to_categorical, normalize
+</span><span style="color: #0000ff;">from</span> mlfromscratch.utils <span style="color: #0000ff;">import</span><span style="color: #000000;"> get_random_subsets, shuffle_data, Plot
+</span><span style="color: #0000ff;">from</span> mlfromscratch.utils.data_operation <span style="color: #0000ff;">import</span><span style="color: #000000;"> accuracy_score
+</span><span style="color: #0000ff;">from</span> mlfromscratch.deep_learning.optimizers <span style="color: #0000ff;">import</span><span style="color: #000000;"> StochasticGradientDescent, Adam, RMSprop, Adagrad, Adadelta
+</span><span style="color: #0000ff;">from</span> mlfromscratch.deep_learning.loss_functions <span style="color: #0000ff;">import</span><span style="color: #000000;"> CrossEntropy
+</span><span style="color: #0000ff;">from</span> mlfromscratch.utils.misc <span style="color: #0000ff;">import</span><span style="color: #000000;"> bar_widgets
+</span><span style="color: #0000ff;">from</span> mlfromscratch.deep_learning.layers <span style="color: #0000ff;">import</span><span style="color: #000000;"> Dense, Dropout, Conv2D, Flatten, Activation, MaxPooling2D
+</span><span style="color: #0000ff;">from</span> mlfromscratch.deep_learning.layers <span style="color: #0000ff;">import</span><span style="color: #000000;"> AveragePooling2D, ZeroPadding2D, BatchNormalization, RNN
+
+
+
+</span><span style="color: #0000ff;">def</span><span style="color: #000000;"> main():
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;">----------</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> Conv Net</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;">----------</span>
+<span style="color: #000000;">
+    optimizer </span>=<span style="color: #000000;"> Adam()
+
+    data </span>=<span style="color: #000000;"> datasets.load_digits()
+    X </span>=<span style="color: #000000;"> data.data
+    y </span>=<span style="color: #000000;"> data.target
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> Convert to one-hot encoding</span>
+    y = to_categorical(y.astype(<span style="color: #800000;">"</span><span style="color: #800000;">int</span><span style="color: #800000;">"</span><span style="color: #000000;">))
+
+    X_train, X_test, y_train, y_test </span>= train_test_split(X, y, test_size=0.4, seed=1<span style="color: #000000;">)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> Reshape X to (n_samples, channels, height, width)</span>
+    X_train = X_train.reshape((-1,1,8,8<span style="color: #000000;">))
+    X_test </span>= X_test.reshape((-1,1,8,8<span style="color: #000000;">))
+
+    clf </span>= NeuralNetwork(optimizer=<span style="color: #000000;">optimizer,
+                        loss</span>=<span style="color: #000000;">CrossEntropy,
+                        validation_data</span>=<span style="color: #000000;">(X_test, y_test))
+
+    clf.add(Conv2D(n_filters</span>=16, filter_shape=(3,3), stride=1, input_shape=(1,8,8), padding=<span style="color: #800000;">'</span><span style="color: #800000;">same</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+    clf.add(Activation(</span><span style="color: #800000;">'</span><span style="color: #800000;">relu</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+    clf.add(Dropout(</span>0.25<span style="color: #000000;">))
+    clf.add(BatchNormalization())
+    clf.add(Conv2D(n_filters</span>=32, filter_shape=(3,3), stride=1, padding=<span style="color: #800000;">'</span><span style="color: #800000;">same</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+    clf.add(Activation(</span><span style="color: #800000;">'</span><span style="color: #800000;">relu</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+    clf.add(Dropout(</span>0.25<span style="color: #000000;">))
+    clf.add(BatchNormalization())
+    clf.add(Flatten())
+    clf.add(Dense(</span>256<span style="color: #000000;">))
+    clf.add(Activation(</span><span style="color: #800000;">'</span><span style="color: #800000;">relu</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+    clf.add(Dropout(</span>0.4<span style="color: #000000;">))
+    clf.add(BatchNormalization())
+    clf.add(Dense(</span>10<span style="color: #000000;">))
+    clf.add(Activation(</span><span style="color: #800000;">'</span><span style="color: #800000;">softmax</span><span style="color: #800000;">'</span><span style="color: #000000;">))
+
+    </span><span style="color: #0000ff;">print</span><span style="color: #000000;"> ()
+    clf.summary(name</span>=<span style="color: #800000;">"</span><span style="color: #800000;">ConvNet</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+
+    train_err, val_err </span>= clf.fit(X_train, y_train, n_epochs=50, batch_size=256<span style="color: #000000;">)
+
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> Training and validation error plot</span>
+    n =<span style="color: #000000;"> len(train_err)
+    training, </span>= plt.plot(range(n), train_err, label=<span style="color: #800000;">"</span><span style="color: #800000;">Training Error</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+    validation, </span>= plt.plot(range(n), val_err, label=<span style="color: #800000;">"</span><span style="color: #800000;">Validation Error</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+    plt.legend(handles</span>=<span style="color: #000000;">[training, validation])
+    plt.title(</span><span style="color: #800000;">"</span><span style="color: #800000;">Error Plot</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+    plt.ylabel(</span><span style="color: #800000;">'</span><span style="color: #800000;">Error</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    plt.xlabel(</span><span style="color: #800000;">'</span><span style="color: #800000;">Iterations</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+    plt.show()
+
+    _, accuracy </span>=<span style="color: #000000;"> clf.test_on_batch(X_test, y_test)
+    </span><span style="color: #0000ff;">print</span> (<span style="color: #800000;">"</span><span style="color: #800000;">Accuracy:</span><span style="color: #800000;">"</span><span style="color: #000000;">, accuracy)
+
+
+    y_pred </span>= np.argmax(clf.predict(X_test), axis=1<span style="color: #000000;">)
+    X_test </span>= X_test.reshape(-1, 8*8<span style="color: #000000;">)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> Reduce dimension to 2D using PCA and plot the results</span>
+    Plot().plot_in_2d(X_test, y_pred, title=<span style="color: #800000;">"</span><span style="color: #800000;">Convolutional Neural Network</span><span style="color: #800000;">"</span>, accuracy=accuracy, legend_labels=range(10<span style="color: #000000;">))
+
+</span><span style="color: #0000ff;">if</span> <span style="color: #800080;">__name__</span> == <span style="color: #800000;">"</span><span style="color: #800000;">__main__</span><span style="color: #800000;">"</span><span style="color: #000000;">:
+    main()</span></pre>
+</div>
+<p>我们还是一步步进行分析：</p>
+<p>1、优化器使用Adam()</p>
+<p>2、数据集使用的是sklearn.datasets中的手写数字，其部分数据如下：</p>
+<div class="cnblogs_code">
+<pre>(1797, 64<span style="color: #000000;">)
+(</span>1797<span style="color: #000000;">,)
+[[ 0.  0.  </span>5. 13.  9.  1.  0.  0.  0.  0. 13. 15. 10. 15.  5.  0.  0.  3<span style="color: #000000;">.
+  </span>15.  2.  0. 11.  8.  0.  0.  4. 12.  0.  0.  8.  8.  0.  0.  5.  8<span style="color: #000000;">.  0.
+   0.  </span>9.  8.  0.  0.  4. 11.  0.  1. 12.  7.  0.  0.  2. 14.  5. 10. 12<span style="color: #000000;">.
+   0.  0.  0.  0.  </span>6. 13. 10<span style="color: #000000;">.  0.  0.  0.]
+ [ 0.  0.  0. </span>12. 13.  5.  0.  0.  0.  0.  0. 11. 16.  9<span style="color: #000000;">.  0.  0.  0.  0.
+   </span>3. 15. 16.  6.  0.  0.  0.  7. 15. 16. 16.  2.  0.  0.  0.  0.  1. 16<span style="color: #000000;">.
+  </span>16.  3.  0.  0.  0.  0.  1. 16. 16.  6.  0.  0.  0.  0.  1. 16. 16.  6<span style="color: #000000;">.
+   0.  0.  0.  0.  0. </span>11. 16. 10<span style="color: #000000;">.  0.  0.]
+ [ 0.  0.  0.  </span>4. 15. 12.  0.  0.  0.  0.  3. 16. 15. 14<span style="color: #000000;">.  0.  0.  0.  0.
+   </span>8. 13.  8. 16.  0.  0.  0.  0.  1.  6. 15. 11.  0.  0.  0.  1.  8. 13<span style="color: #000000;">.
+  </span>15.  1.  0.  0.  0.  9. 16. 16.  5.  0.  0.  0.  0.  3. 13. 16. 16. 11<span style="color: #000000;">.
+   </span>5.  0.  0.  0.  0.  3. 11. 16.  9<span style="color: #000000;">.  0.]
+ [ 0.  0.  </span>7. 15. 13.  1.  0.  0.  0.  8. 13.  6. 15.  4.  0.  0.  0.  2<span style="color: #000000;">.
+   </span>1. 13. 13.  0.  0.  0.  0.  0.  2. 15. 11.  1.  0.  0.  0.  0.  0.  1<span style="color: #000000;">.
+  </span>12. 12.  1.  0.  0.  0.  0.  0.  1. 10.  8.  0.  0.  0.  8.  4.  5. 14<span style="color: #000000;">.
+   </span>9.  0.  0.  0.  7. 13. 13.  9<span style="color: #000000;">.  0.  0.]
+ [ 0.  0.  0.  </span>1. 11.  0.  0.  0.  0.  0.  0.  7.  8<span style="color: #000000;">.  0.  0.  0.  0.  0.
+   </span>1. 13.  6.  2.  2.  0.  0.  0.  7. 15.  0.  9.  8.  0.  0.  5. 16. 10<span style="color: #000000;">.
+   0. </span>16.  6.  0.  0.  4. 15. 16. 13. 16.  1.  0.  0.  0.  0.  3. 15. 10<span style="color: #000000;">.
+   0.  0.  0.  0.  0.  </span>2. 16.  4<span style="color: #000000;">.  0.  0.]
+ [ 0.  0. </span>12. 10.  0.  0.  0.  0.  0.  0. 14. 16. 16. 14<span style="color: #000000;">.  0.  0.  0.  0.
+  </span>13. 16. 15. 10.  1.  0.  0.  0. 11. 16. 16.  7.  0.  0.  0.  0.  0.  4<span style="color: #000000;">.
+   </span>7. 16.  7.  0.  0.  0.  0.  0.  4. 16.  9.  0.  0.  0.  5.  4. 12. 16<span style="color: #000000;">.
+   </span>4.  0.  0.  0.  9. 16. 16. 10<span style="color: #000000;">.  0.  0.]
+ [ 0.  0.  0. </span>12. 13.  0.  0.  0.  0.  0.  5. 16.  8<span style="color: #000000;">.  0.  0.  0.  0.  0.
+  </span>13. 16.  3.  0.  0.  0.  0.  0. 14. 13.  0.  0.  0.  0.  0.  0. 15. 12<span style="color: #000000;">.
+   </span>7.  2.  0.  0.  0.  0. 13. 16. 13. 16.  3.  0.  0.  0.  7. 16. 11. 15<span style="color: #000000;">.
+   </span>8.  0.  0.  0.  1.  9. 15. 11.  3<span style="color: #000000;">.  0.]
+ [ 0.  0.  </span>7.  8. 13. 16. 15.  1.  0.  0.  7.  7.  4. 11. 12<span style="color: #000000;">.  0.  0.  0.
+   0.  0.  </span>8. 13.  1.  0.  0.  4.  8.  8. 15. 15.  6.  0.  0.  2. 11. 15<span style="color: #000000;">.
+  </span>15.  4.  0.  0.  0.  0.  0. 16.  5.  0.  0.  0.  0.  0.  9. 15.  1<span style="color: #000000;">.  0.
+   0.  0.  0.  0. </span>13.  5<span style="color: #000000;">.  0.  0.  0.  0.]
+ [ 0.  0.  </span>9. 14.  8.  1.  0.  0.  0.  0. 12. 14. 14. 12<span style="color: #000000;">.  0.  0.  0.  0.
+   </span>9. 10.  0. 15.  4.  0.  0.  0.  3. 16. 12. 14.  2.  0.  0.  0.  4. 16<span style="color: #000000;">.
+  </span>16.  2.  0.  0.  0.  3. 16.  8. 10. 13.  2.  0.  0.  1. 15.  1.  3. 16<span style="color: #000000;">.
+   </span>8.  0.  0.  0. 11. 16. 15. 11.  1<span style="color: #000000;">.  0.]
+ [ 0.  0. </span>11. 12.  0.  0.  0.  0.  0.  2. 16. 16. 16. 13.  0.  0.  0.  3<span style="color: #000000;">.
+  </span>16. 12. 10. 14.  0.  0.  0.  1. 16.  1. 12. 15.  0.  0.  0.  0. 13. 16<span style="color: #000000;">.
+   </span>9. 15.  2.  0.  0.  0.  0.  3.  0.  9. 11.  0.  0.  0.  0.  0.  9. 15<span style="color: #000000;">.
+   </span>4.  0.  0.  0.  9. 12. 13.  3<span style="color: #000000;">.  0.  0.]]
+[0 </span>1 2 3 4 5 6 7 8 9]</pre>
+</div>
+<p>3、接着有一个to_categorical()函数，在mlfromscratch.utils下的data_manipulation.py中：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">def</span> to_categorical(x, n_col=<span style="color: #000000;">None):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;"> One-hot encoding of nominal values </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">if</span> <span style="color: #0000ff;">not</span><span style="color: #000000;"> n_col:
+        n_col </span>= np.amax(x) + 1<span style="color: #000000;">
+    one_hot </span>=<span style="color: #000000;"> np.zeros((x.shape[0], n_col))
+    one_hot[np.arange(x.shape[0]), x] </span>= 1
+    <span style="color: #0000ff;">return</span> one_hot</pre>
+</div>
+<p>用于将标签转换为one-hot编码。</p>
+<p>4、划分训练集和测试集：train_test_split()，在mlfromscratch.utils下的data_manipulation.py中：</p>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">def</span> train_test_split(X, y, test_size=0.5, shuffle=True, seed=<span style="color: #000000;">None):
+    </span><span style="color: #800000;">"""</span><span style="color: #800000;"> Split the data into train and test sets </span><span style="color: #800000;">"""</span>
+    <span style="color: #0000ff;">if</span><span style="color: #000000;"> shuffle:
+        X, y </span>=<span style="color: #000000;"> shuffle_data(X, y, seed)
+    </span><span style="color: #008000;">#</span><span style="color: #008000;"> Split the training data from test data in the ratio specified in</span>
+    <span style="color: #008000;">#</span><span style="color: #008000;"> test_size</span>
+    split_i = len(y) - int(len(y) // (1 /<span style="color: #000000;"> test_size))
+    X_train, X_test </span>=<span style="color: #000000;"> X[:split_i], X[split_i:]
+    y_train, y_test </span>=<span style="color: #000000;"> y[:split_i], y[split_i:]
+
+    </span><span style="color: #0000ff;">return</span> X_train, X_test, y_train, y_test</pre>
+</div>
+<p>5、由于卷积神经网络的输入是[batchsize,channel,wheight,width]的维度，因此要将原始数据进行转换，即将(1797,64)转换为(1797,1,8,8)格式的数据。这里batchsize就是样本的数量。</p>
+<p>6、定义卷积神经网络的训练和测试过程：包括优化器、损失函数、测试数据</p>
+<p>7、定义模型结构</p>
+<p>8、输出模型每层的类型、参数数量以及输出大小</p>
+<p>9、将数据输入到模型中，设置epochs的大小以及batch_size的大小</p>
+<p>10、计算训练和测试的错误，并绘制成图</p>
+<p>11、计算准确率</p>
+<p>12、绘制测试集中每一类预测的结果，这里有一个plot_in_2d()函数，位于mlfromscratch.utils下的misc.py中</p>
+<div class="cnblogs_code">
+<pre> <span style="color: #008000;">#</span><span style="color: #008000;"> Plot the dataset X and the corresponding labels y in 2D using PCA.</span>
+    <span style="color: #0000ff;">def</span> plot_in_2d(self, X, y=None, title=None, accuracy=None, legend_labels=<span style="color: #000000;">None):
+        X_transformed </span>= self._transform(X, dim=2<span style="color: #000000;">)
+        x1 </span>=<span style="color: #000000;"> X_transformed[:, 0]
+        x2 </span>= X_transformed[:, 1<span style="color: #000000;">]
+        class_distr </span>=<span style="color: #000000;"> []
+
+        y </span>=<span style="color: #000000;"> np.array(y).astype(int)
+
+        colors </span>= [self.cmap(i) <span style="color: #0000ff;">for</span> i <span style="color: #0000ff;">in</span> np.linspace(0, 1<span style="color: #000000;">, len(np.unique(y)))]
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> Plot the different class distributions</span>
+        <span style="color: #0000ff;">for</span> i, l <span style="color: #0000ff;">in</span><span style="color: #000000;"> enumerate(np.unique(y)):
+            _x1 </span>= x1[y ==<span style="color: #000000;"> l]
+            _x2 </span>= x2[y ==<span style="color: #000000;"> l]
+            _y </span>= y[y ==<span style="color: #000000;"> l]
+            class_distr.append(plt.scatter(_x1, _x2, color</span>=<span style="color: #000000;">colors[i]))
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> Plot legend</span>
+        <span style="color: #0000ff;">if</span> <span style="color: #0000ff;">not</span> legend_labels <span style="color: #0000ff;">is</span><span style="color: #000000;"> None: 
+            plt.legend(class_distr, legend_labels, loc</span>=1<span style="color: #000000;">)
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> Plot title</span>
+        <span style="color: #0000ff;">if</span><span style="color: #000000;"> title:
+            </span><span style="color: #0000ff;">if</span><span style="color: #000000;"> accuracy:
+                perc </span>= 100 *<span style="color: #000000;"> accuracy
+                plt.suptitle(title)
+                plt.title(</span><span style="color: #800000;">"</span><span style="color: #800000;">Accuracy: %.1f%%</span><span style="color: #800000;">"</span> % perc, fontsize=10<span style="color: #000000;">)
+            </span><span style="color: #0000ff;">else</span><span style="color: #000000;">:
+                plt.title(title)
+
+        </span><span style="color: #008000;">#</span><span style="color: #008000;"> Axis labels</span>
+        plt.xlabel(<span style="color: #800000;">'</span><span style="color: #800000;">Principal Component 1</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+        plt.ylabel(</span><span style="color: #800000;">'</span><span style="color: #800000;">Principal Component 2</span><span style="color: #800000;">'</span><span style="color: #000000;">)
+
+        plt.show()</span></pre>
+</div>
+<p>接下来就可以实际进行操作了，我是在谷歌colab中，首先使用：</p>
+<div class="cnblogs_code">
+<pre>!git clone https://github.com/eriklindernoren/ML-From-Scratch.git</pre>
+</div>
+<p>将相关代码复制下来。</p>
+<p>然后进行安装：在ML-From-Scratch目录下输入：</p>
+<div class="cnblogs_code">
+<pre>!python setup.py install</pre>
+</div>
+<p>最后输入：</p>
+<div class="cnblogs_code">
+<pre> !python mlfromscratch/examples/convolutional_neural_network.py</pre>
+</div>
+<p>最终结果：</p>
+<div class="cnblogs_code">
+<pre>+---------+
+| ConvNet |
++---------+<span style="color: #000000;">
+Input Shape: (</span>1, 8, 8<span style="color: #000000;">)
+</span>+----------------------+------------+--------------+
+| Layer Type           | Parameters | Output Shape |
++----------------------+------------+--------------+
+| Conv2D               | 160        | (16, 8, 8)   |
+| Activation (ReLU)    | 0          | (16, 8, 8)   |
+| Dropout              | 0          | (16, 8, 8)   |
+| BatchNormalization   | 2048       | (16, 8, 8)   |
+| Conv2D               | 4640       | (32, 8, 8)   |
+| Activation (ReLU)    | 0          | (32, 8, 8)   |
+| Dropout              | 0          | (32, 8, 8)   |
+| BatchNormalization   | 4096       | (32, 8, 8)   |
+| Flatten              | 0          | (2048,)      |
+| Dense                | 524544     | (256,)       |
+| Activation (ReLU)    | 0          | (256,)       |
+| Dropout              | 0          | (256,)       |
+| BatchNormalization   | 512        | (256,)       |
+| Dense                | 2570       | (10,)        |
+| Activation (Softmax) | 0          | (10,)        |
++----------------------+------------+--------------+<span style="color: #000000;">
+Total Parameters: </span>538570<span style="color: #000000;">
+
+Training: </span>100% [------------------------------------------------] Time:  0:01:32
+&lt;Figure size 640x480 with 1 Axes&gt;<span style="color: #000000;">
+Accuracy: </span>0.9846796657381616
+&lt;Figure size 640x480 with 1 Axes&gt;</pre>
+</div>
+<p><img src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418160049433-78144948.png" alt="" /></p>
+<p>&nbsp;<img src="https://img2020.cnblogs.com/blog/1503039/202004/1503039-20200418160118082-1879434143.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>至此，结合代码一步一步看卷积神经网络的整个实现过程就完成了。通过结合代码的形式，可以加深对深度学习中卷积神经网络相关知识的理解。&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-04-18 16:02</span> <a href='https://www.cnblogs.com/xiximayou/'>西西嘛呦</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12726362" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12726362);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=465208,cb_entryId=12726362,cb_blogApp=currentBlogApp,cb_blogUserGuid='6d698895-197f-4e15-9014-08d627f4443f',cb_entryCreatedDate='2020/4/18 16:02:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 西西嘛呦
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 100,
+            "height": 200,
+            "hOffset": -17,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.3
+        }
+    });
+</script>
+
+<script type="text/javascript">
+   window.onload = function () {
+                var minSize = 10; //最小字体
+                var maxSize = 20;//最大字体
+                var newOne = 600; //生成雪花间隔
+                var flakColor = "#f5f5f5fa"; //雪花颜色
+                var flak = $("<div></div>").css({position:"absolute","top":"0px"}).html("✽");//定义一个雪花
+                var dhight = $(window).height(); //定义视图高度
+                var dw =$(window).width()-80; //定义视图宽度
+                setInterval(function(){
+                var sizeflak = minSize+Math.random()*maxSize; //产生大小不等的雪花
+                var startLeft = Math.random()*dw; //雪花生成是随机的left值
+                var startOpacity = 0.7+Math.random()*0.3; //随机透明度
+                var endTop= dhight-100; //雪花停止top的位置
+                var endLeft= Math.random()*dw; //雪花停止的left位置
+                var durationfull = 5000+Math.random()*3000; //雪花飘落速度不同
+                flak.clone().appendTo($("body")).css({
+                "left":startLeft ,
+                "opacity":startOpacity,
+                "font-size":sizeflak,
+                "color":flakColor
+                }).animate({
+                "top":endTop,
+                "left":endLeft,
+                "apacity":0.1
+                },durationfull,function(){
+                $(this).remove()
+                });
+                },newOne);
+            }
+ </script>
+<script language="javascript" type="text/javascript">
+//生成目录索引列表
+function GenerateContentList()
+{
+    var jquery_h3_list = $('#cnblogs_post_body h3');//如果你的章节标题不是h3,只需要将这里的h3换掉即可
+    if(jquery_h3_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content    += '<div id="navCategory">';
+        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content    += '<ul>';
+        for(var i =0;i<jquery_h3_list.length;i++)
+        {
+            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            $(jquery_h3_list[i]).before(go_to_top);
+            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
+            content += li_content;
+        }
+        content    += '</ul>';
+        content    += '</div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }    
+}
+GenerateContentList();
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    //$('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+<span id="back-to-top"><a href="#top"><img id="mypic" src="https://images.cnblogs.com/cnblogs_com/xiximayou/1643158/t_200207035556top.png" /></a></span>
+<!--PageEndHtml Block End-->
+</body>
+</html>

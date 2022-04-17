@@ -1,0 +1,651 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>阿政想暴富 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=7g5gOKcn7oN77JERPfnHYGtKZZ_9q-gZn4Sp6JkXL2w" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=qHpes9Ca8ImIRFkdtZRqyMOEED5ihHCnvYUfc-vbsbw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/kongyijilafumi/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/kongyijilafumi/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/kongyijilafumi/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 591217;
+        var currentBlogApp = 'kongyijilafumi';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-codinglife has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/kongyijilafumi/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/kongyijilafumi/">阿政想暴富</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/kongyijilafumi/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%98%BF%E6%94%BF%E6%83%B3%E6%9A%B4%E5%AF%8C">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/kongyijilafumi/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14695044">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/04/23.html">2021年4月23日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/kongyijilafumi/p/14695044.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        react-ant-admin后台管理系统，用于快速创建后台项目模板
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14695044">
+摘要：            
+TypeScript 版GitHub(国外地址) | TypeScript 版码云(国内镜像) JavaScript 版GitHub(国外地址) | JavaScript 版码云(国内镜像) 此框架使用与二次开发，前端框架使用 react，UI 框架使用 ant-design，全局数据状态管理使用         <a href="https://www.cnblogs.com/kongyijilafumi/p/14695044.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-04-23 18:07
+阿政想暴富
+<span data-post-id="14695044" class="post-view-count">阅读(3190)</span> 
+<span data-post-id="14695044" class="post-comment-count">评论(2)</span> 
+<span data-post-id="14695044" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14695044" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16149434">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/16149434.html">
+    <span>
+        github ations 入门使用
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16149434">
+摘要：            
+在使用之前，我们了解一下什么是 Github Actions。 在 GitHub Actions 的仓库中自动化、自定义和执行软件开发工作流程。 您可以发现、创建和共享操作以执行您喜欢的任何作业（包括 CI/CD），并将操作合并到完全自定义的工作流程中。 点击开始入门如果打不开的小伙伴按照一下步骤一        <a href="https://www.cnblogs.com/kongyijilafumi/p/16149434.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 15:40
+阿政想暴富
+<span data-post-id="16149434" class="post-view-count">阅读(14)</span> 
+<span data-post-id="16149434" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16149434" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16149434" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15849780">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2022/01/27.html">2022年1月27日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/15849780.html">
+    <span>
+        使用 electron 和 electron-forge 加载 本地磁盘资源 img 的问题
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15849780">
+摘要：            
+最近在学习使用 electron 进行桌面开发一款图片压缩的软件。遇到了加载本地磁盘文件的问题。记录一下其解决方案。 使用 electron 加载本地磁盘文件 第一种方法 设置webPreferences.webSecurity值为false 使用这个方法就是设置Chromium的启动安全参数，允许        <a href="https://www.cnblogs.com/kongyijilafumi/p/15849780.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-27 14:32
+阿政想暴富
+<span data-post-id="15849780" class="post-view-count">阅读(235)</span> 
+<span data-post-id="15849780" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15849780" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15849780" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15495246">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/11/01.html">2021年11月1日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/15495246.html">
+    <span>
+        nodejs 连接 mysql 查询事务处理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15495246">
+摘要：            
+自己用 mysql 很多次的，然后又是主玩nodejs的.专门写一篇文章来说说nodejs连接mysql数据库。在使用之前，请检查计算机是否具有一下环境! nodejs 执行环境。 mysql数据库环境（下载地址）。 navicat 连接 mysql 数据库的图形化操作软件。（非必要） 进入正题 m        <a href="https://www.cnblogs.com/kongyijilafumi/p/15495246.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-01 18:09
+阿政想暴富
+<span data-post-id="15495246" class="post-view-count">阅读(251)</span> 
+<span data-post-id="15495246" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15495246" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15495246" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15219063">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/09/02.html">2021年9月2日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/15219063.html">
+    <span>
+        使用 antd 的 form 组件来自定义提交的数据格式
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15219063">
+摘要：            
+最近使用antd UI 的表单提交数据,数据里面有的是数组，有的是对象。提交的时候还要去校验参数，让人非常头疼。在我仔细看完文档之后，发现 antd 的 form 组件做的非常不错，这些需求通通不是问题。现在来总结一下。 如图所示，提交的表单信息 有需要填写多个的东西。数据类型为：数组(Array)        <a href="https://www.cnblogs.com/kongyijilafumi/p/15219063.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-09-02 15:41
+阿政想暴富
+<span data-post-id="15219063" class="post-view-count">阅读(734)</span> 
+<span data-post-id="15219063" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15219063" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15219063" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15109944">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/08/06.html">2021年8月6日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/15109944.html">
+    <span>
+        c 语言学习第六天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15109944">
+摘要：            
+数组 语法： 类型 数组名[元素个数]; int a[6]; // 4*6 字节 char b[24]; // 1*24 字节 double c[2]; // 2*8 字节 访问数组中的元素 语法： 数组名[元素下标] a[2]; b[4]; c[1]; 注意 int a[6]; a[0]; //         <a href="https://www.cnblogs.com/kongyijilafumi/p/15109944.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-08-06 18:30
+阿政想暴富
+<span data-post-id="15109944" class="post-view-count">阅读(28)</span> 
+<span data-post-id="15109944" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15109944" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15109944" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15009389">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/07/14.html">2021年7月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/15009389.html">
+    <span>
+        c 语言学习第五天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15009389">
+摘要：            
+break 语句 在循环体中使用 break，可以跳出循环 打印 10 以内的数。 #include&lt;stdio.h&gt; int main(){ int i,j = 20; for(i = 0;i &lt;= j;i++){ if(i&gt;10){ break; } printf(&quot;i:%d\n&quot;,i); }         <a href="https://www.cnblogs.com/kongyijilafumi/p/15009389.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-07-14 09:33
+阿政想暴富
+<span data-post-id="15009389" class="post-view-count">阅读(39)</span> 
+<span data-post-id="15009389" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15009389" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15009389" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14979785">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/07/07.html">2021年7月7日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/14979785.html">
+    <span>
+        c 语言学习第四天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14979785">
+摘要：            
+if 语句 格式： // 1 // 其他语句... if(表达式){ // 其他语句... } // 其他语句... // 2 if(表达式){ }else{ } // 3 if(表达式1){ }else if(表达式2){ }else if(表达式3){ }else{ } // 4 if(表达式1        <a href="https://www.cnblogs.com/kongyijilafumi/p/14979785.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-07-07 07:25
+阿政想暴富
+<span data-post-id="14979785" class="post-view-count">阅读(27)</span> 
+<span data-post-id="14979785" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14979785" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14979785" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14945272">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/06/28.html">2021年6月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/14945272.html">
+    <span>
+        c 语言学习第三天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14945272">
+摘要：            
+字符和字符串 字符 当我们定义了一个字符变量 c 为a时，打印的时候让它使整数形式显示。会出现怎么一个情况？ #include&lt;stdio.h&gt; int main(){ char c = &#39;a&#39;; printf(&quot;c show number is %d \n&quot;,c); return 0; } c s        <a href="https://www.cnblogs.com/kongyijilafumi/p/14945272.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-06-28 16:57
+阿政想暴富
+<span data-post-id="14945272" class="post-view-count">阅读(45)</span> 
+<span data-post-id="14945272" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14945272" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14945272" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14932117">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/06/25.html">2021年6月25日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/14932117.html">
+    <span>
+        c 语言学习第二天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14932117">
+摘要：            
+常量 字符串常量 字符 例如：&#39;f&#39;,&#39;i&#39;,&#39;z&#39;,&#39;a&#39;编译器为每个字符分配空间。 &#39;f&#39; &#39;i&#39; &#39;z&#39; &#39;a&#39; 字符串 例如：&quot;hello&quot;编译器为字符串里的每个字符分配空间以&#39;\0&#39;结束。 &#39;h&#39; &#39;e&#39; &#39;l&#39; &#39;l&#39; &#39;o&#39; &#39;\0&#39; 基本类型 整数型： short int,int,l        <a href="https://www.cnblogs.com/kongyijilafumi/p/14932117.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-06-25 18:15
+阿政想暴富
+<span data-post-id="14932117" class="post-view-count">阅读(46)</span> 
+<span data-post-id="14932117" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14932117" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14932117" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14920072">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/kongyijilafumi/archive/2021/06/22.html">2021年6月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/kongyijilafumi/p/14920072.html">
+    <span>
+        c 语言学习第一天
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14920072">
+摘要：            
+编辑器：Dev-C++ 变量命名(标识符) 变量名只能是英文字母[A-Z,a-z]和数字[0-9]或者下划线[_]组成。 第一个字母必须是字母或者下划线开头。 变量名区分大小写。例如：Fish≠fish. 不能使用关键字命名 关键词 关键字 说明 auto 声明自动变量 break 跳出当前循环 c        <a href="https://www.cnblogs.com/kongyijilafumi/p/14920072.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-06-22 19:53
+阿政想暴富
+<span data-post-id="14920072" class="post-view-count">阅读(28)</span> 
+<span data-post-id="14920072" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14920072" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14920072" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/kongyijilafumi/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 阿政想暴富
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4m7ZhJUZgT0xIaz4i7rlDlHdxfTpr6HuUL6n0-8rCR4MAShLccq1ZCmoi4PoYXelFF8CaMy6OCEUN3fQCQ2qg-XuYBHuYHKyGS3jABYCR7RGm19QMRY-U4pqP0ilplC8TY" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

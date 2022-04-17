@@ -1,0 +1,202 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>STM32CubeMx——ADC多通道采集 - 来来就来 - 博客园</title>
+    <meta property="og:description" content="1.配置STM32CUBEMX （1）使用的是PB0和PB1，对应的通道是IN8和IN9。 （2）ADC的配置 2.代码部分 （1）定义存储变量 uint32_t ADC_Value[2];//ADC" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/LoveIsIntheAir/bundle-LoveIsIntheAir.css?v=1a1njKMb9NXq0SiMQC1DxNR7neAOH_-_T7CqiC-KPw41"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/LoveIsIntheAir/bundle-LoveIsIntheAir-mobile.css?v=2vKssTQro2c1xn1VJpQlerpUCrPsZu0FDfkhm7xMpkY1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/lailai-laird/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/lailai-laird/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/lailai-laird/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=549037;var currentBlogApp='lailai-laird',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<!--done-->
+<center>
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/lailai-laird/"><img id="blogLogo" src="/Skins/LoveIsIntheAir/images/logo.gif" alt="" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/lailai-laird/">来来就来</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+	<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+	<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/lailai-laird/">首页</a></li>
+	<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+	<li><a id="blog_nav_contact" accesskey="9" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E6%9D%A5%E6%9D%A5%E5%B0%B1%E6%9D%A5">联系</a></li>
+	<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+	<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/lailai-laird/rss">订阅</a>
+	<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/lailai-laird/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔- 12&nbsp;
+文章- 0&nbsp;
+评论- 0&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div class="clear"></div>
+	<div id="topicList">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/lailai-laird/p/12768130.html">STM32CubeMx——ADC多通道采集</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><h1>1.配置STM32CUBEMX</h1>
+<h2>（1）使用的是PB0和PB1，对应的通道是IN8和IN9。</h2>
+<p><img src="https://img2020.cnblogs.com/blog/1821661/202004/1821661-20200424160309969-723609437.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2>&nbsp;（2）ADC的配置</h2>
+<p><img src="https://img2020.cnblogs.com/blog/1821661/202004/1821661-20200424160403278-37286877.png" alt="" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h1>&nbsp;2.代码部分</h1>
+<h2>（1）定义存储变量</h2>
+<div class="cnblogs_code">
+<pre>uint32_t ADC_Value[<span style="color: #800080;">2</span>];<span style="color: #008000;">//</span><span style="color: #008000;">ADC采集存储</span>
+<span style="color: #000000;">uint8_t i;
+</span><span style="color: #0000ff;">float</span> ad1,ad2;存储转化为电压的变量</pre>
+</div>
+<h2>（2）主函数while内代码</h2>
+<div class="cnblogs_code">
+<pre><span style="color: #0000ff;">for</span>(i=<span style="color: #800080;">0</span>;i&lt;<span style="color: #800080;">2</span>;i++<span style="color: #000000;">)
+      {
+          HAL_ADC_Start(</span>&amp;<span style="color: #000000;">hadc1);
+          HAL_ADC_PollForConversion(</span>&amp;hadc1,<span style="color: #800080;">0xffff</span><span style="color: #000000;">);
+          ADC_Value[i]</span>=HAL_ADC_GetValue(&amp;<span style="color: #000000;">hadc1);
+      }
+      HAL_ADC_Stop(</span>&amp;<span style="color: #000000;">hadc1);
+      ad1 </span>= (<span style="color: #0000ff;">float</span>)(ADC_Value[<span style="color: #800080;">0</span>]&amp;<span style="color: #800080;">0xFFF</span>)*<span style="color: #800080;">3.3</span>/<span style="color: #800080;">4096</span><span style="color: #000000;">;
+      ad2 </span>= (<span style="color: #0000ff;">float</span>)(ADC_Value[<span style="color: #800080;">1</span>]&amp;<span style="color: #800080;">0xFFF</span>)*<span style="color: #800080;">3.3</span>/<span style="color: #800080;">4096</span>;</pre>
+</div>
+<p>转化后的AD电压值可用串口或者显示屏查看。</p>
+<p>&nbsp;</p></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-04-24 16:11</span> <a href='https://www.cnblogs.com/lailai-laird/'>来来就来</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12768130" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12768130);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=549037,cb_entryId=12768130,cb_blogApp=currentBlogApp,cb_blogUserGuid='085774a9-0c8c-4dbe-baaf-08d7431a305b',cb_entryCreatedDate='2020/4/24 16:11:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: topicList 文章列表容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<DIV id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</DIV>
+			
+		</div><!--end: sideBarMain -->
+		<div class="clear"></div>
+		<div id="footer">
+			
+<!--done-->
+Copyright &copy;2020 来来就来
+		</div><!--end: footer -->
+	</div><!--end: sideBar 侧边栏容器 -->
+</div><!--end: home 自定义的最大容器 -->
+</center>
+
+</body>
+</html>

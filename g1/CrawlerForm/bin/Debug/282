@@ -1,0 +1,1353 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>MicrosoftReactor - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=7g5gOKcn7oN77JERPfnHYGtKZZ_9q-gZn4Sp6JkXL2w" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=qHpes9Ca8ImIRFkdtZRqyMOEED5ihHCnvYUfc-vbsbw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/MSReactor/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/MSReactor/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/MSReactor/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 658098;
+        var currentBlogApp = 'MSReactor';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-codinglife has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/MSReactor/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/MSReactor/">MicrosoftReactor</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/MSReactor/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/MicrosoftReactor">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/MSReactor/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16148054">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16148054.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        .NET 7 预览版2 中的 ASP.NET Core 更新
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16148054">
+摘要：            
+.NET 7 预览版2 现已推出，其中包括对ASP.NET Core 的许多重大改进。 以下是此预览版中新增内容的摘要： 推断来自服务的API 控制器操作参数 SignalR 集线器方法的依赖注入 为minimal API 提供端点描述和摘要 在最小的API 中绑定来自标头和查询字符串的数组和Str        <a href="https://www.cnblogs.com/MSReactor/p/16148054.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 10:51
+MicrosoftReactor
+<span data-post-id="16148054" class="post-view-count">阅读(473)</span> 
+<span data-post-id="16148054" class="post-comment-count">评论(2)</span> 
+<span data-post-id="16148054" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148054" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16115172">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/04/08.html">2022年4月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15987195.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        ASP.NET Core 6 的性能改进
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15987195">
+摘要：            
+受到 由Stephen Toub 发布的关于 .NET 性能的博客的启发，我们正在写一篇类似的文章来强调ASP.NET Core 在6.0 中所做的性能改进。 基准设置 我们整个过程中大部分的实例使用的是BenchmarkDotNet。在https://github.com/BrennanConro        <a href="https://www.cnblogs.com/MSReactor/p/15987195.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-08 12:16
+MicrosoftReactor
+<span data-post-id="15987195" class="post-view-count">阅读(108)</span> 
+<span data-post-id="15987195" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15987195" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15987195" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16115172.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        .NET 6 史上最全攻略
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16115172">
+摘要：            
+欢迎使用.NET 6。今天的版本是.NET 团队和社区一年多努力的结果。C# 10 和F# 6 提供了语言改进，使您的代码更简单、更好。性能大幅提升，我们已经看到微软降低了托管云服务的成本。.NET 6 是第一个原生支持Apple Silicon (Arm64) 的版本，并且还针对Windows A        <a href="https://www.cnblogs.com/MSReactor/p/16115172.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-08 07:47
+MicrosoftReactor
+<span data-post-id="16115172" class="post-view-count">阅读(2743)</span> 
+<span data-post-id="16115172" class="post-comment-count">评论(12)</span> 
+<span data-post-id="16115172" class="post-digg-count">推荐(27)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16115172" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16047859">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/24.html">2022年3月24日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16047859.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        VS Code Java 3月更新｜代码补全、Maven 以及 Java 插件预览版本新升级！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16047859">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202203/2170493-20220324002413776-324898451.png" alt="VS Code Java 3月更新｜代码补全、Maven 以及 Java 插件预览版本新升级！" class="desc_img" />
+这次我们将为您带来一些关于我们代码补全的优化、Maven 改进以及我们最新的 Java 插件预览版本的最新更新。        <a href="https://www.cnblogs.com/MSReactor/p/16047859.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-24 00:25
+MicrosoftReactor
+<span data-post-id="16047859" class="post-view-count">阅读(336)</span> 
+<span data-post-id="16047859" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16047859" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16047859" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16041673">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/22.html">2022年3月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16041673.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Dapr 官方文档中文翻译 v1.5 版本正式发布
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16041673">
+摘要：            
+作者：敖小剑 - Dapr Approver 经过 Dapr 中国社区十余位贡献者一个多月的努力，Dapr 官方文档中文翻译 v1.5 版本完成翻译和审校，正式发布并上线 Dapr 官网。 访问方式 v1.5 版本的中文文档在3月19日已经正式发布并上线 Dapr 官网，请打开 Dapr 文档的官方        <a href="https://www.cnblogs.com/MSReactor/p/16041673.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-22 21:57
+MicrosoftReactor
+<span data-post-id="16041673" class="post-view-count">阅读(415)</span> 
+<span data-post-id="16041673" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16041673" class="post-digg-count">推荐(8)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16041673" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16032446">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/20.html">2022年3月20日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16032446.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        官宣 .NET 7 Preview 2
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16032446">
+摘要：            
+今天，我们很高兴发布 .NET 7 预览版 2。.NET 7 的第二个预览版包括对 RegEx 源生成器的增强、将 NativeAOT 从实验状态转移到运行时的进展，以及对&quot;dotnet new&quot;CLI 的一系列重大改进经验。这些可供您立即获取_并_开始尝试新功能，例如： 在编译时使用源生成器而不是        <a href="https://www.cnblogs.com/MSReactor/p/16032446.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-20 22:21
+MicrosoftReactor
+<span data-post-id="16032446" class="post-view-count">阅读(1000)</span> 
+<span data-post-id="16032446" class="post-comment-count">评论(4)</span> 
+<span data-post-id="16032446" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16032446" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16015664">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/17.html">2022年3月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/16015664.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        宇宙最強的IDE - Visual Studio 25岁生日快乐
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16015664">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202203/2170493-20220317013301707-834533178.png" alt="宇宙最強的IDE - Visual Studio 25岁生日快乐" class="desc_img" />
+每位开发者从入门开始或多或少都会接触过 Visual Studio ， 现今的 Visual Studio 除了支持传统的 C++ , C# , Visual Basic.NET ,F# 的编程语言外，还可以做 Python , Node.js 的开发。在应用场景上也从单一的桌面应用，延伸到 Web        <a href="https://www.cnblogs.com/MSReactor/p/16015664.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-17 01:33
+MicrosoftReactor
+<span data-post-id="16015664" class="post-view-count">阅读(1721)</span> 
+<span data-post-id="16015664" class="post-comment-count">评论(13)</span> 
+<span data-post-id="16015664" class="post-digg-count">推荐(8)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16015664" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15962636">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/15.html">2022年3月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15962636.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        CA周记 2022年的第一课 - Rust
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15962636">
+摘要：            
+现代编程语言有很多，在我的编程学习里面有小学阶段的 LOGO , 中学阶段的 Pascal ，也有大学阶段的 C/C++、Java、.NET，再到工作的 Objective-C 、Swift、Go、Kotlin，以及 Rust 。2021年，4个月的人工智能课程结束后，我在想有什么技能可以带给各位         <a href="https://www.cnblogs.com/MSReactor/p/15962636.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-15 09:38
+MicrosoftReactor
+<span data-post-id="15962636" class="post-view-count">阅读(256)</span> 
+<span data-post-id="15962636" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15962636" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15962636" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15939342">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/02/26.html">2022年2月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15939342.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        你所不知道的 C# 10新特性
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15939342">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202202/2170493-20220226172338663-1482608664.png" alt="你所不知道的 C# 10新特性" class="desc_img" />
+我们很高兴地宣布 C# 10 作为 .NET 6 和 Visual Studio 2022 的一部分已经发布了。在这篇文章中，我们将介绍 C# 10 的许多新功能，这些功能使您的代码更漂亮、更具表现力和更快。        <a href="https://www.cnblogs.com/MSReactor/p/15939342.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-26 17:24
+MicrosoftReactor
+<span data-post-id="15939342" class="post-view-count">阅读(716)</span> 
+<span data-post-id="15939342" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15939342" class="post-digg-count">推荐(7)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15939342" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15906994">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/02/18.html">2022年2月18日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15906994.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        VS Code Java 2 月更新！教育特别版：单元测试、GUI开发支持、Gradle项目创建、以及更多！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15906994">
+摘要：            
+新春快乐！欢迎来到 Visual Studio Code Java 的 2 月更新，这个月我们给大家带来了一期教育特别版。每年的年初是许多学校开学的时间，为了给学生和教师提供在 Visual Studio Code 上带来更好的 Java 的开发体验，我们在单元测试、GUI 项目开发以及Gralde        <a href="https://www.cnblogs.com/MSReactor/p/15906994.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-18 00:12
+MicrosoftReactor
+<span data-post-id="15906994" class="post-view-count">阅读(426)</span> 
+<span data-post-id="15906994" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15906994" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15906994" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15834745">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/01/22.html">2022年1月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15834745.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Java on Visual Studio Code的更新 – 2022年1月
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15834745">
+摘要：            
+Nick zhu Senior Program Manager, Developer Division at Microsoft 大家好，欢迎来到 Visual Studio Code Java 更新 1 月版！这是我们新年的第一篇博客，我们将回顾 2021 年的亮点，并分享我们 2022 年的产品        <a href="https://www.cnblogs.com/MSReactor/p/15834745.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-22 18:38
+MicrosoftReactor
+<span data-post-id="15834745" class="post-view-count">阅读(311)</span> 
+<span data-post-id="15834745" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15834745" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15834745" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15706093">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/12/18.html">2021年12月18日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15706093.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Java on Visual Studio Code的更新 – 2021年11月
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15706093">
+摘要：            
+Nick zhu Senior Program Manager, Developer Division at Microsoft ​大家好，欢迎来到 11 月版的 Visual Studio Code Java 更新！在这篇年终博客中，我们将分享一些与Java基础开发相关的最新功能以及与应对编码问题        <a href="https://www.cnblogs.com/MSReactor/p/15706093.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-18 21:29
+MicrosoftReactor
+<span data-post-id="15706093" class="post-view-count">阅读(297)</span> 
+<span data-post-id="15706093" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15706093" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15706093" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15568512">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/11/17.html">2021年11月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15568512.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        VS Code Java 更新 – 全新Gradle for Java插件，更方便的代码操作, 1.0 语言支持发布
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15568512">
+摘要：            
+大家好，欢迎来到 9 月版的 Visual Studio Code Java 更新。在这篇文章中，我们将分享我们最新的Gradle插件，更加方便的代码操作(Getter/Setter等等），以及最近的1.0 Language Server发布。 Language Server for Java™ 1        <a href="https://www.cnblogs.com/MSReactor/p/15568512.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-17 17:55
+MicrosoftReactor
+<span data-post-id="15568512" class="post-view-count">阅读(509)</span> 
+<span data-post-id="15568512" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15568512" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15568512" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15535679">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/11/10.html">2021年11月10日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15535679.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+         .NET 6 如期而至
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15535679">
+摘要：            
+大家好，经过多个月的迭代，.NET 6正式版如期和大家见面了！你安装好了吗？还是等等党？希望看完这篇文章你会对.NET 6有更多了解。 自2014年11月12日宣布开源后，.NET就成为了一个跨平台、面向多场景的技术。换句话说，你可以在传统的Windows上安装.NET,也可以在Linux,macO        <a href="https://www.cnblogs.com/MSReactor/p/15535679.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-10 21:06
+MicrosoftReactor
+<span data-post-id="15535679" class="post-view-count">阅读(144)</span> 
+<span data-post-id="15535679" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15535679" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15535679" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15527148">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/11/09.html">2021年11月9日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15527148.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Visual Studio 2022 发布了，我最爱的5大特性在这里！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15527148">
+摘要：            
+今天 Visual Studio 2022 终于发布了，你只需要按下面地址就可以快速安装你所需要的 Visual Studio 2022 版本，包括了企业版本，专业版本，以及社区版本。 请输入以下网址安装最新的 Visual Studio 2022 https://aka.ms/InstallVS         <a href="https://www.cnblogs.com/MSReactor/p/15527148.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-09 07:47
+MicrosoftReactor
+<span data-post-id="15527148" class="post-view-count">阅读(421)</span> 
+<span data-post-id="15527148" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15527148" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15527148" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15526465">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/11/08.html">2021年11月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15526465.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        官宣 .NET RC 2
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15526465">
+摘要：            
+我们很高兴发布 .NET 6 RC(Release Candidate) 2。它是生产环境中支持的两个&quot;go live&quot;候选版本中的第二个。 在过去的几个月里，团队一直专注于质量的改进。这个版本中有很多的新特性，但在接近尾声时我们才会把他们完全整合在一起。该团队目前正在验证端到端工作流，以找到设计意        <a href="https://www.cnblogs.com/MSReactor/p/15526465.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-08 22:07
+MicrosoftReactor
+<span data-post-id="15526465" class="post-view-count">阅读(1322)</span> 
+<span data-post-id="15526465" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15526465" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15526465" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15505886">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/11/03.html">2021年11月3日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15505886.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Language Server for Java™ 1.0 在VS Code上正式发布！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15505886">
+摘要：            
+Nick Zhu form Senior Program Manager, Developer Division at Microsoft 今天，我们很高兴与大家宣布：Language Server for Java™ 的1.0版本在 Visual Studio Code上正式发布了！这是 Java        <a href="https://www.cnblogs.com/MSReactor/p/15505886.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-03 21:46
+MicrosoftReactor
+<span data-post-id="15505886" class="post-view-count">阅读(451)</span> 
+<span data-post-id="15505886" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15505886" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15505886" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15472997">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/10/27.html">2021年10月27日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15472997.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        GitHub Universe 2021｜MS Reactor 邀你共聚年度盛会
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15472997">
+摘要：            
+GitHub Universe 2021 将于2021年10月27-28日（PDT）在线直播，MS Reactor 将与 CSDN 合作进行转播，与你一同观看这场全球开发者盛会。 关于 GitHub Universe GitHub Universe 是 GitHub 面向全球开发者社区举办的年度重要        <a href="https://www.cnblogs.com/MSReactor/p/15472997.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-27 21:15
+MicrosoftReactor
+<span data-post-id="15472997" class="post-view-count">阅读(97)</span> 
+<span data-post-id="15472997" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15472997" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15472997" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15404143">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/10/16.html">2021年10月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15404143.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        最新.NET MAUI有什么惊喜？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15404143">
+摘要：            
+.NET 6 Preview 7 现已发布啦，我们为 .NET 多平台应用程序 UI (MAUI) 引入了所有的新布局。这是性能和可靠性的重大变化。我们很高兴我们还增加了一些关于accessibility方面的基于新的SemanticService、字体缩放选项和对Xamarin.Forms 效果的        <a href="https://www.cnblogs.com/MSReactor/p/15404143.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-16 10:32
+MicrosoftReactor
+<span data-post-id="15404143" class="post-view-count">阅读(1907)</span> 
+<span data-post-id="15404143" class="post-comment-count">评论(6)</span> 
+<span data-post-id="15404143" class="post-digg-count">推荐(6)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15404143" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15321817">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2021/09/22.html">2021年9月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/MSReactor/p/15321817.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Java on Visual Studio Code的更新 – 2021年8月
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15321817">
+摘要：            
+Nick Senior Program Manager, Developer Division at Microsoft 大家好，欢迎来到 8 月版的 Visual Studio Code Java 更新。在这篇文章中，我们将分享 SpringOne 2021 大会的一些激动人心的更新以及各种用户体        <a href="https://www.cnblogs.com/MSReactor/p/15321817.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-09-22 21:28
+MicrosoftReactor
+<span data-post-id="15321817" class="post-view-count">阅读(398)</span> 
+<span data-post-id="15321817" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15321817" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15321817" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16148054">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16148054.html">
+    <span>
+        .NET 7 预览版2 中的 ASP.NET Core 更新
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16148054">
+摘要：            
+.NET 7 预览版2 现已推出，其中包括对ASP.NET Core 的许多重大改进。 以下是此预览版中新增内容的摘要： 推断来自服务的API 控制器操作参数 SignalR 集线器方法的依赖注入 为minimal API 提供端点描述和摘要 在最小的API 中绑定来自标头和查询字符串的数组和Str        <a href="https://www.cnblogs.com/MSReactor/p/16148054.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 10:51
+MicrosoftReactor
+<span data-post-id="16148054" class="post-view-count">阅读(473)</span> 
+<span data-post-id="16148054" class="post-comment-count">评论(2)</span> 
+<span data-post-id="16148054" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148054" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16115172">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/04/08.html">2022年4月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/15987195.html">
+    <span>
+        ASP.NET Core 6 的性能改进
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15987195">
+摘要：            
+受到 由Stephen Toub 发布的关于 .NET 性能的博客的启发，我们正在写一篇类似的文章来强调ASP.NET Core 在6.0 中所做的性能改进。 基准设置 我们整个过程中大部分的实例使用的是BenchmarkDotNet。在https://github.com/BrennanConro        <a href="https://www.cnblogs.com/MSReactor/p/15987195.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-08 12:16
+MicrosoftReactor
+<span data-post-id="15987195" class="post-view-count">阅读(108)</span> 
+<span data-post-id="15987195" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15987195" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15987195" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16115172.html">
+    <span>
+        .NET 6 史上最全攻略
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16115172">
+摘要：            
+欢迎使用.NET 6。今天的版本是.NET 团队和社区一年多努力的结果。C# 10 和F# 6 提供了语言改进，使您的代码更简单、更好。性能大幅提升，我们已经看到微软降低了托管云服务的成本。.NET 6 是第一个原生支持Apple Silicon (Arm64) 的版本，并且还针对Windows A        <a href="https://www.cnblogs.com/MSReactor/p/16115172.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-08 07:47
+MicrosoftReactor
+<span data-post-id="16115172" class="post-view-count">阅读(2743)</span> 
+<span data-post-id="16115172" class="post-comment-count">评论(12)</span> 
+<span data-post-id="16115172" class="post-digg-count">推荐(27)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16115172" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16047859">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/24.html">2022年3月24日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16047859.html">
+    <span>
+        VS Code Java 3月更新｜代码补全、Maven 以及 Java 插件预览版本新升级！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16047859">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202203/2170493-20220324002413776-324898451.png" alt="VS Code Java 3月更新｜代码补全、Maven 以及 Java 插件预览版本新升级！" class="desc_img" />
+这次我们将为您带来一些关于我们代码补全的优化、Maven 改进以及我们最新的 Java 插件预览版本的最新更新。        <a href="https://www.cnblogs.com/MSReactor/p/16047859.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-24 00:25
+MicrosoftReactor
+<span data-post-id="16047859" class="post-view-count">阅读(336)</span> 
+<span data-post-id="16047859" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16047859" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16047859" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16041673">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/22.html">2022年3月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16041673.html">
+    <span>
+        Dapr 官方文档中文翻译 v1.5 版本正式发布
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16041673">
+摘要：            
+作者：敖小剑 - Dapr Approver 经过 Dapr 中国社区十余位贡献者一个多月的努力，Dapr 官方文档中文翻译 v1.5 版本完成翻译和审校，正式发布并上线 Dapr 官网。 访问方式 v1.5 版本的中文文档在3月19日已经正式发布并上线 Dapr 官网，请打开 Dapr 文档的官方        <a href="https://www.cnblogs.com/MSReactor/p/16041673.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-22 21:57
+MicrosoftReactor
+<span data-post-id="16041673" class="post-view-count">阅读(415)</span> 
+<span data-post-id="16041673" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16041673" class="post-digg-count">推荐(8)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16041673" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16032446">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/20.html">2022年3月20日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16032446.html">
+    <span>
+        官宣 .NET 7 Preview 2
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16032446">
+摘要：            
+今天，我们很高兴发布 .NET 7 预览版 2。.NET 7 的第二个预览版包括对 RegEx 源生成器的增强、将 NativeAOT 从实验状态转移到运行时的进展，以及对&quot;dotnet new&quot;CLI 的一系列重大改进经验。这些可供您立即获取_并_开始尝试新功能，例如： 在编译时使用源生成器而不是        <a href="https://www.cnblogs.com/MSReactor/p/16032446.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-20 22:21
+MicrosoftReactor
+<span data-post-id="16032446" class="post-view-count">阅读(1000)</span> 
+<span data-post-id="16032446" class="post-comment-count">评论(4)</span> 
+<span data-post-id="16032446" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16032446" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16015664">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/17.html">2022年3月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/16015664.html">
+    <span>
+        宇宙最強的IDE - Visual Studio 25岁生日快乐
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16015664">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202203/2170493-20220317013301707-834533178.png" alt="宇宙最強的IDE - Visual Studio 25岁生日快乐" class="desc_img" />
+每位开发者从入门开始或多或少都会接触过 Visual Studio ， 现今的 Visual Studio 除了支持传统的 C++ , C# , Visual Basic.NET ,F# 的编程语言外，还可以做 Python , Node.js 的开发。在应用场景上也从单一的桌面应用，延伸到 Web        <a href="https://www.cnblogs.com/MSReactor/p/16015664.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-17 01:33
+MicrosoftReactor
+<span data-post-id="16015664" class="post-view-count">阅读(1721)</span> 
+<span data-post-id="16015664" class="post-comment-count">评论(13)</span> 
+<span data-post-id="16015664" class="post-digg-count">推荐(8)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16015664" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15962636">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/03/15.html">2022年3月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/15962636.html">
+    <span>
+        CA周记 2022年的第一课 - Rust
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15962636">
+摘要：            
+现代编程语言有很多，在我的编程学习里面有小学阶段的 LOGO , 中学阶段的 Pascal ，也有大学阶段的 C/C++、Java、.NET，再到工作的 Objective-C 、Swift、Go、Kotlin，以及 Rust 。2021年，4个月的人工智能课程结束后，我在想有什么技能可以带给各位         <a href="https://www.cnblogs.com/MSReactor/p/15962636.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-15 09:38
+MicrosoftReactor
+<span data-post-id="15962636" class="post-view-count">阅读(256)</span> 
+<span data-post-id="15962636" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15962636" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15962636" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15939342">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/02/26.html">2022年2月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/15939342.html">
+    <span>
+        你所不知道的 C# 10新特性
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15939342">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2170493/202202/2170493-20220226172338663-1482608664.png" alt="你所不知道的 C# 10新特性" class="desc_img" />
+我们很高兴地宣布 C# 10 作为 .NET 6 和 Visual Studio 2022 的一部分已经发布了。在这篇文章中，我们将介绍 C# 10 的许多新功能，这些功能使您的代码更漂亮、更具表现力和更快。        <a href="https://www.cnblogs.com/MSReactor/p/15939342.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-26 17:24
+MicrosoftReactor
+<span data-post-id="15939342" class="post-view-count">阅读(716)</span> 
+<span data-post-id="15939342" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15939342" class="post-digg-count">推荐(7)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15939342" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15906994">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/MSReactor/archive/2022/02/18.html">2022年2月18日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/MSReactor/p/15906994.html">
+    <span>
+        VS Code Java 2 月更新！教育特别版：单元测试、GUI开发支持、Gradle项目创建、以及更多！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15906994">
+摘要：            
+新春快乐！欢迎来到 Visual Studio Code Java 的 2 月更新，这个月我们给大家带来了一期教育特别版。每年的年初是许多学校开学的时间，为了给学生和教师提供在 Visual Studio Code 上带来更好的 Java 的开发体验，我们在单元测试、GUI 项目开发以及Gralde        <a href="https://www.cnblogs.com/MSReactor/p/15906994.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-18 00:12
+MicrosoftReactor
+<span data-post-id="15906994" class="post-view-count">阅读(426)</span> 
+<span data-post-id="15906994" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15906994" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15906994" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/MSReactor/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 MicrosoftReactor
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nJwGgRnY0Yz-nKLh9T60uB4HrcRLm7YD4XF0evWnlSP1tgEeNpWvbQRvnE_LUxEF7F01HDc9qFopxlbmrf8c0nM_56hHzwiL1upzcKoqSdaAZQVh-Ez7AykROBbIduZeE" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

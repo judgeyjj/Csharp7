@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>《Windows内核分析》专题-索引目录 - OneTrainee - 博客园</title>
+    <meta property="og:description" content="这里整理了《Windows内核分析》专题的各篇博文，方便查找。 二进制中的数学换算 常用汇编指令集合 驱动内核函数汇总 windbg 常调用指令 滴水视频汇总 PE文件 系统调用 APC 进程与线程 " />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=0qK9u742QhZ2ygXQ2XvDKUpwAJ6TPVAq3vGGNZD4Qx81"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=HkJKKbba4iGCuppu8zvm9csLqR-eZz_MIbDYkUT6eGM1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/onetrainee/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/onetrainee/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/onetrainee/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=550226;var currentBlogApp='onetrainee',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/onetrainee/">OneTrainee</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/onetrainee/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/OneTrainee">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/onetrainee/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/onetrainee/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-196&nbsp;
+文章-0&nbsp;
+评论-14&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/11675224.html">《Windows内核分析》专题-索引目录</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body"><p><strong><img src="https://img2020.cnblogs.com/blog/1827556/202004/1827556-20200409051629115-476020007.png" alt="" /></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>这里整理了《Windows内核分析》专题的各篇博文，方便查找。</strong></p>
+<p><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/12165810.html" target="_blank">二进制中的数学换算</a> </strong></p>
+<p><a href="https://www.cnblogs.com/onetrainee/p/12567790.html" target="_blank"><strong>常用汇编指令集合</strong></a></p>
+<p><strong><a href="https://www.cnblogs.com/onetrainee/p/12594384.html" target="_blank"><span style="font-size: 14px;">驱动内核函数汇总</span></a></strong></p>
+<p><strong><span style="font-size: 14px;"><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12664477.html">windbg 常调用指令</a></span></strong></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><strong>滴水视频汇总</strong></p>
+<ol>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12642510.html" target="_blank"><strong>PE文件</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12599328.html" target="_blank"><strong>系统调用</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12600409.html" target="_blank"><strong>APC</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12602302.html" target="_blank"><strong>进程与线程</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12606946.html" target="_blank"><strong>等待对象</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12611120.html" target="_blank"><strong>异常(1)</strong></a></li>
+<li><span style="font-size: 14px;"><a href="https://www.cnblogs.com/onetrainee/p/12622785.html" target="_blank"><strong>异常(2) --- 编译器对于SEH异常的拓展</strong></a></span></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12627607.html" target="_blank"><span style="font-size: 14px;"><strong>软件调试</strong></span></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12638823.html" target="_blank"><span style="font-size: 14px;"><strong>消息机制</strong></span></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12641284.html" target="_blank"><span style="font-size: 14px;"><strong>内存管理</strong></span></a></li>
+</ol>
+<p><strong>一、保护模式</strong></p>
+<ol>
+<li><strong><a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12165170.html">GDT表与段描述符 </a></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12364694.html" target="_blank"><strong>D/B位与向下拓展的实验</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12430549.html" target="_blank"><strong>调用门</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12436327.html" target="_blank"><strong>中断门与陷阱门</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12436412.html" target="_blank"><strong>任务段与任务门</strong></a></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11721946.html" target="_blank">保护模式101012分页机制</a></strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12512847.html">10-10-12 分页机制[2]</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11722352.html" target="_blank">保护模式中的PDE与PTE</a></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12577208.html" target="_blank"><strong>控制寄存器</strong></a></li>
+<li><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/12738275.html" target="_blank">TLB机制</a> </strong></li>
+</ol>
+<p><strong>二、驱动开发</strong></p>
+<ol>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11677628.html" target="_blank">Windows下第一个驱动程序</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11677917.html" target="_blank">Windows下如何调试驱动程序</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11676833.html" target="_blank">Windows内核编程时的习惯与注意事项</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11679359.html" target="_blank">内核空间与内核模块</a></strong></li>
+<li style="text-align: left;"><strong><a href="https://www.cnblogs.com/onetrainee/p/11681335.html" target="_blank">零环与三环通讯方式</a></strong></li>
+<li style="text-align: left;"><a href="https://www.cnblogs.com/onetrainee/p/12568568.html" target="_blank"><strong>使用驱动来编写调用门</strong></a></li>
+<li style="text-align: left;"><a href="https://www.cnblogs.com/onetrainee/p/12574584.html" target="_blank"><strong>驱动中常见的字符串操作</strong></a></li>
+<li style="text-align: left;"><a href="https://www.cnblogs.com/onetrainee/p/12579245.html" target="_blank"><strong>驱动对象（驱动隐藏技术）</strong></a></li>
+<li style="text-align: left;"><a href="https://www.cnblogs.com/onetrainee/p/12664330.html" target="_blank"><strong>InlineHook 通过Hook NtOpenProcess 达到反调试的目的</strong></a></li>
+</ol>
+<p><strong>三、系统调用</strong></p>
+<ol>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11704626.html" target="_blank">Windows系统调用中API的三环部分(依据分析重写ReadProcessMemory函数)</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11705191.html" target="_blank">Windows系统调用中API从三环到零环(上)</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11706384.html" target="_blank">Windows系统调用中API从三环到零环(下)</a></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/11707130.html" target="_blank"><span style="font-size: 14px;"><strong>三环进入零环的细节（KiFastCallEntry函数分析）</strong></span></a></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11713969.html" target="_blank">Windows系统调用中的系统服务表</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11717309.html" target="_blank">Windows系统调用中的系统服务表描述符(SSDT)</a></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12688186.html" target="_blank"><span style="font-size: 14px;"><strong>从零环返回三环(KiServiceExit函数分析)</strong></span></a></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12685804.html">SSDT HOOK 框架设计思路</a></strong></li>
+</ol>
+<p><strong>四、进程与线程</strong></p>
+<ol>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12701135.html" target="_blank"><strong>进程的本质</strong></a></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12713268.html">KPCR</a></strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12717862.html">线程</a></strong></li>
+<li><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/12720943.html" target="_blank">线程链表与线程切换</a> </strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12752183.html">KiFindReadyThread分析 - 查找下一个就绪线程</a></strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12755998.html">线程被动切换（时间碎片） - KiReadyThread函数详细分析</a></strong></li>
+</ol>
+<p><strong>五、句柄表</strong></p>
+<ol>
+<li><a href="https://www.cnblogs.com/onetrainee/p/11764117.html" target="_blank"><strong>句柄表(私有句柄表)</strong></a></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/11764974.html" target="_blank"><strong>私有句柄表</strong></a></li>
+</ol>
+<p><strong>六、APC机制</strong></p>
+<ol>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11785210.html" target="_blank">APC的本质</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11785233.html" target="_blank">备用APC队列（没写完，占坑）</a></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/11788097.html" target="_blank"><strong>用户APC的执行过程</strong></a></li>
+</ol>
+<p><strong>七、内存管理</strong></p>
+<ol>
+<li><span style="font-size: 14px;"><strong><a href="https://www.cnblogs.com/onetrainee/p/11730451.html" target="_blank"><strong>Windows内存布局 / MmPfnDataBase页帧数据库</strong></a></strong></span></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11741909.html" target="_blank">VAD树的属性及其遍历</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11748885.html" target="_blank">R3环申请内存时页面保护与_MMVAD_FLAGS位的对应关系</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11749140.html" target="_blank">通过修改VAD属性破除锁页机制</a></strong></li>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11750274.html" target="_blank">内存在0环的两种内存隐藏方式(基于VAD树)</a></strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/12763011.html">无处不在的页异常</a></strong></li>
+</ol>
+<p><strong>八、异常</strong></p>
+<ol>
+<li><strong><span style="font-size: 14px;"><a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12765370.html">两种异常(CPU异常、用户模拟异常)的收集</a></span></strong></li>
+<li><span style="text-decoration: line-through;"><strong><a href="https://www.cnblogs.com/onetrainee/p/11788685.html" target="_blank">[废弃]CPU异常的记录(以trap00为例)</a></strong></span></li>
+<li><span style="text-decoration: line-through;"><a href="https://www.cnblogs.com/onetrainee/p/11790225.html" target="_blank"><strong>[废弃]用户模拟异常的记录(以thorw 1 为例)</strong></a></span></li>
+<li><span style="text-decoration: line-through;"><strong><a href="https://www.cnblogs.com/onetrainee/p/11797640.html" target="_blank"><strong>[</strong></a></strong></span><span style="text-decoration: line-through;"><strong><a href="https://www.cnblogs.com/onetrainee/p/11797640.html" target="_blank"><strong>废弃]</strong></a></strong><a href="https://www.cnblogs.com/onetrainee/p/11797640.html" target="_blank"><strong>用户异常与CPU异常的派发</strong></a></span></li>
+<li><span style="text-decoration: line-through;"><a href="https://www.cnblogs.com/onetrainee/p/11801059.html" target="_blank"><strong><strong>[废弃]</strong></strong></a><a href="https://www.cnblogs.com/onetrainee/p/11801059.html" target="_blank"><strong>初识VEH链(用户异常派发的进一步研究)</strong></a></span></li>
+</ol>
+<p><strong>九、调试</strong></p>
+<ol>
+<li><strong><a href="https://www.cnblogs.com/onetrainee/p/11891614.html" target="_blank">调试对象的构建</a></strong></li>
+<li><strong><a class="link-post-title" href="https://www.cnblogs.com/onetrainee/p/11894032.html">调试事件的派发</a></strong></li>
+<li><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/11961237.html" target="_blank">调试事件的收集</a></strong></li>
+<li><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/11982111.html" target="_blank">调试事件的处理结束</a></strong></li>
+<li><strong><a class="entry" href="https://www.cnblogs.com/onetrainee/p/11984191.html" target="_blank">INT 3 中断调试处理流程</a>&nbsp; </strong></li>
+<li><strong><a class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/11987083.html">内存断点与硬件断点 </a></strong>　</li>
+</ol>
+<p><strong>十、自建调试体系</strong></p>
+<p>&nbsp;</p>
+<p><strong>十一、x64</strong></p>
+<p>&nbsp;</p>
+<p><strong>十二、VT调试</strong></p>
+<ol>
+<li><strong><span style="font-size: 14px;"><a class="entrylistItemTitle" href="https://www.cnblogs.com/onetrainee/p/12114082.html">VT 调试环境搭建</a></span></strong></li>
+<li><strong><span style="font-size: 14px;"><a class="entrylistItemTitle" href="https://www.cnblogs.com/onetrainee/p/12114194.html">一顿操作之后成功在win7 64版本输出VT是否可用</a></span></strong></li>
+<li><a href="https://www.cnblogs.com/onetrainee/p/12121100.html" target="_blank"><strong><span style="font-size: 14px;">VT开启前的检测与开启</span></strong></a></li>
+</ol></div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2019-10-19 23:59</span> <a href='https://www.cnblogs.com/onetrainee/'>OneTrainee</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=11675224" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(11675224);return false;">收藏</a></div>
+	</div>
+	<script type="text/javascript">var allowComments=true,cb_blogId=550226,cb_entryId=11675224,cb_blogApp=currentBlogApp,cb_blogUserGuid='589460dc-e936-4cad-545f-08d74caabfe3',cb_entryCreatedDate='2019/10/19 23:59:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=false;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 OneTrainee
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+</body>
+</html>

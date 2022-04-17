@@ -1,0 +1,648 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>wuch - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    <link id="MainCss" rel="stylesheet" href="/skins/cornflowerblue/bundle-cornflowerblue.min.css?v=I4LLe_5BT0jI1eucrNueyOdWARjHwVCAEb_5tJ9F8jE" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/cornflowerblue/bundle-cornflowerblue-mobile.min.css?v=FhLPLBWI5M_IOqw3kszvHGrqRzokfZb2O38VbyWIt1g" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/haozi0804/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/haozi0804/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/haozi0804/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 56977;
+        var currentBlogApp = 'haozi0804';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CornflowerBlue';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="top">
+
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/haozi0804/">浩的博客</a>
+</h1>
+<p id="tagline"></p>
+
+
+</div>
+<div id="main">
+	
+
+
+
+
+
+		
+<p class="date">
+	2021年5月27日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/05/27.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14798099.html">
+    <span>
+        python工业互联网应用实战16-前后端分离模式之edit和delete
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="cnblogs-post-body" id="postlist_postbody_14798099">
+        正文内容加载中...
+    </div>
+    <script type="text/javascript">getBlogPostBody(14798099);</script>
+
+
+        <p class="postfoot">
+            posted @ 2021-05-27 07:08
+wuch
+<span data-post-id="14798099" class="post-view-count">阅读(14)</span> 
+<span data-post-id="14798099" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14798099" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14798099" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年5月20日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/05/20.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14784996.html">
+    <span>
+        python工业互联网应用实战15-前后端分离模式之GET
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：通过本章节内容，我们阐述了如何实现服务端与客户端分离的写法，并仍然采用稳步的渐进式改造方案，采用小步快跑的方式完成本次迭代。最后，我们在功能不变的前提下，完成了技术栈的迁移，把基于模板页渲染的django变成了基于模板框架js异步渲染的主流编程模式，下一章节我们将演示如何如何把编辑页面也进阶到前端渲染。        <a href="https://www.cnblogs.com/haozi0804/p/14784996.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-05-20 10:22
+wuch
+<span data-post-id="14784996" class="post-view-count">阅读(207)</span> 
+<span data-post-id="14784996" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14784996" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14784996" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年5月12日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/05/12.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14716631.html">
+    <span>
+        python工业互联网应用实战14—单元测试覆盖率
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本章节我们介绍一个统计测试代码覆盖率的利器Coverage，Coverage.py （以下简称 Coverage）是 Python 测试界最为流行的一个库之一，用来统计测试覆盖率。测试覆盖率可以从一个角度衡量代码的质量，覆盖率越高，说明测试越充分，代码出现 bug 的几率相对也就越小。当然需要明确的是，测试覆盖率仅仅只是衡量代码质量的一个角度，即是否有代码未经过单元测试验证，不能说100% 的覆盖率的代码就没有 bug 了。        <a href="https://www.cnblogs.com/haozi0804/p/14716631.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-05-12 12:04
+wuch
+<span data-post-id="14716631" class="post-view-count">阅读(26)</span> 
+<span data-post-id="14716631" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14716631" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14716631" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年4月23日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/04/23.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14691080.html">
+    <span>
+        python工业互联网应用实战13—基于selenium的功能测试
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本章节我们再来说说测试，单元测试和功能测试。单元测试我们在数据验证章节简单提过了，本章我们进一步如何用单元测试来测试view的功能代码；同时，也涉及一下基于selenium的功能测试做法。笔者过去的项目上常规的功能测试都是由测试人员通过人工点击按钮的方式来完成的，这里我们利用selenium来完成，大家体会一下当功能测试可以回归的时候是啥赶脚。        <a href="https://www.cnblogs.com/haozi0804/p/14691080.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-04-23 08:51
+wuch
+<span data-post-id="14691080" class="post-view-count">阅读(266)</span> 
+<span data-post-id="14691080" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14691080" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14691080" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年4月15日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/04/15.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14657502.html">
+    <span>
+        python工业互联网应用实战12—客户端操作
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本章我们详细的说明了如何实现客户端操作，读者可以自己试一试增加处理操作，从而实现对未处理状态的任务进行作业分解。客户端的操作会存在两种一种就是直接改变任务的状态，另外一种就是类似查看详情操作，这个种操作我们需要通过模板把数据加载处理，任务分解和下达之类的操作，更新完数据后重新加载数据即可。django对于这两种模式可以都是使用url和view组合来完成，这样在技术上两种模式就不存区别了，大大提高了开发效率。        <a href="https://www.cnblogs.com/haozi0804/p/14657502.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-04-15 11:49
+wuch
+<span data-post-id="14657502" class="post-view-count">阅读(280)</span> 
+<span data-post-id="14657502" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14657502" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14657502" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年4月9日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/04/09.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14635599.html">
+    <span>
+        python工业互联网应用实战11—客户端UI
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：这个章节我们将演示用户端界面的开发，当前演示界面还是采用先实现基本功能再逐步完善的“敏捷”模式。首先聚焦在功能逻辑方面实现普通用户与系统的交互，普通用户通过url能查看到当前任务的执行情况列表。总结，编程过程的每一个成功的一小步最终累积成一个完整的功能的编程模式和思路是我们面对不确定性（新技术、新框架、新业务、复杂业务）非常好的一种方式，通过每一小步的成功推进编码进程，同时及时获得反馈，运行错误反馈让我们及纠偏，运行正确继续推进。从而避免走到最后推倒重来的情况。笔者的编程生涯里，身边无数次发生的让人抓耳挠腮的实战案例。        <a href="https://www.cnblogs.com/haozi0804/p/14635599.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-04-09 08:34
+wuch
+<span data-post-id="14635599" class="post-view-count">阅读(574)</span> 
+<span data-post-id="14635599" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14635599" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14635599" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年3月26日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/03/26.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14531837.html">
+    <span>
+        python工业互联网应用实战10—数据校验model层的clean()
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本小节通过讲述如何数据校验以及为了提高数据验证代码的重用性，我们把验证尽量放到model层进行，好处就是为了再对外提供webAPI等其它接口时，不会再有大量的重复性开发工作。同时，也演示了编写单元测试对代码改进方面的好处。通过单元测试我们能发现很多传统通过功能测试或者集成测试才会发现的问题，从而在开发过程中就能优化我们的代码结构和设计，所以用好单元测试对于企业应用开发来说是“事半功倍”的效果。        <a href="https://www.cnblogs.com/haozi0804/p/14531837.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-03-26 08:43
+wuch
+<span data-post-id="14531837" class="post-view-count">阅读(84)</span> 
+<span data-post-id="14531837" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14531837" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14531837" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年3月17日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/03/17.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14495710.html">
+    <span>
+        python工业互联网应用实战9—使用Vue.js
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：从上面的代码可以看出，完成data属性与组件的绑定后后面编码无须再关注控件id或者class，所有的代码只关注data属性值即可，这一分层逻辑带了极大的好处，编写业务的时候把精力集中关注业务即可，不用再担心是否哪儿少了一个赋值操作语句，页面的布局与css等则可以放到另外的时间去完成。Vue.js前端页面的处理模式给企业开发方面带来了实质性的“一大步”。        <a href="https://www.cnblogs.com/haozi0804/p/14495710.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-03-17 10:03
+wuch
+<span data-post-id="14495710" class="post-view-count">阅读(70)</span> 
+<span data-post-id="14495710" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14495710" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14495710" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年3月11日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/03/11.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14489507.html">
+    <span>
+        python工业互联网应用实战8—django-simpleui
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本章我们把admin迁移到了django-simpleui，组件很好的兼容性，迁移非常简单方便就完成了，然后，完成了监控界面的集成，这样在基于django-admin就实现了一个简单的管理软件原型出现。后面我们会演示通过django-admin和django-simpleui逐步的完成和丰富这个原型的功能。        <a href="https://www.cnblogs.com/haozi0804/p/14489507.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-03-11 09:29
+wuch
+<span data-post-id="14489507" class="post-view-count">阅读(342)</span> 
+<span data-post-id="14489507" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14489507" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14489507" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+		
+<p class="date">
+	2021年3月5日		  
+	<a href="https://www.cnblogs.com/haozi0804/archive/2021/03/05.html"></a>
+</p>
+
+
+    <div class="post">
+        <h2>
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/haozi0804/p/14484174.html">
+    <span>
+        python工业互联网应用实战7—业务层
+    </span>
+    
+
+
+
+</a>
+
+        </h2>
+
+        
+
+    <div class="c_b_p_desc">
+摘要：本章我们演示代码是如何“进化”的，实战的企业日常开发过程中，系统功能总伴随着业务的不断增加，早期简单的代码慢慢的越来越复杂，敏捷编程中的“禅”——简单设计、快速发布、获得反馈、快速开发的迭代循环过程，如何保证迭代过程持续交互合格的代码，代码重构和单元测试是非常重要的手段。        <a href="https://www.cnblogs.com/haozi0804/p/14484174.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+
+        <p class="postfoot">
+            posted @ 2021-03-05 09:03
+wuch
+<span data-post-id="14484174" class="post-view-count">阅读(244)</span> 
+<span data-post-id="14484174" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14484174" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14484174" rel="nofollow">
+    编辑
+</a>
+
+        </p>
+    </div>
+
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/haozi0804/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+</div>
+<div id="rightmenu">
+
+	<h3>导航</h3>
+<ul>
+    <li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/haozi0804/">
+首页</a>
+</li>
+    <li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/wuch">
+联系</a></li>
+    <li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/haozi0804/rss/">
+订阅</a> 
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/haozi0804/rss/">
+    <img src="/skins/cornflowerblue/images/xml.gif" alt="订阅" />
+</a></li>
+    <li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+	<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+	<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+	<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+
+</div>
+
+<p id="footer">
+	Powered by: 
+	<br />
+	
+	<a href="https://www.cnblogs.com/" id="footer_site_link">博客园</a>
+	<br />
+	Copyright &copy; 2021 wuch
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+</p>
+
+
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjv4u-c0sAc6PySvaDw3jETubEXoHmUe4-c1jCDNWOx_pt9E4ZpShoxfcTj1SzgaHSvrcICJ6mQmnlNvxtSL980Q6xaRcfsjCER7BcWN-HmEziZu1h56Qfunl2apK_n-j0Q" />
+</body>
+</html>

@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>简直😓 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=2uJkpdACLVfstRQ7zeCFK19brTwKuDEaNBLgKz9nm3A" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=DwDRKMd1bmjnJZ4iQqrTCO9QLlYb6OZaUAzHoHIIihg" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jianzihao/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jianzihao/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jianzihao/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 675427;
+        var currentBlogApp = 'jianzihao';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jianzihao/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jianzihao/">简直😓</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jianzihao/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%AE%80%E7%9B%B4%F0%9F%98%93">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/jianzihao/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/27.html">2021年5月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14814838.html">
+    <span>
+        IO多路复用机制详解
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：服务端编程需要构建高性能的IO模型，常见的IO模型主要有以下四种 同步阻塞IO 同步非阻塞IO 默认创建的socket都是阻塞的，非阻塞IO要求socket设置为NONBLOCK IO多路复用 经典Reactor设计模式，异步阻塞IO，select epoll 异步IO 异步非阻塞IO 同步与异步         <a href="https://www.cnblogs.com/jianzihao/p/14814838.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-27 10:55
+简直😓
+<span data-post-id="14814838" class="post-view-count">阅读(23)</span> 
+<span data-post-id="14814838" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14814838" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14814838" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/26.html">2021年5月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14809864.html">
+    <span>
+        nginx 的基础知识（二）  
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Nginx 多进程网络模型 进程模型 nginx启动后以daemon的方式在后台运行，后台进程包括一个master进程和多个worker进程 master进程主要作用，接收来自外界的信号；向各worker进程发送信号；监控worker进程的运行状态；当worker进程退出后，会自动重新启动新的wor        <a href="https://www.cnblogs.com/jianzihao/p/14809864.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-26 17:20
+简直😓
+<span data-post-id="14809864" class="post-view-count">阅读(2)</span> 
+<span data-post-id="14809864" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14809864" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14809864" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/25.html">2021年5月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14805893.html">
+    <span>
+        nginx 的基础知识（一）
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Nginx HTTP 和 反向代理web服务器 epoll 占用少的系统资源、支持更多的并发连接 负载均衡 安装简单、配置灵活 热部署、启动快、不间断服务情况下对软件配置进行升级 反向代理 反向代理 客户端-&gt; 代理&lt;-&gt;服务器 Nginx 没有自己的地址，它的地址就是服务器的地址 Nginx 明确        <a href="https://www.cnblogs.com/jianzihao/p/14805893.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-25 17:10
+简直😓
+<span data-post-id="14805893" class="post-view-count">阅读(4)</span> 
+<span data-post-id="14805893" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14805893" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14805893" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/19.html">2021年5月19日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14787080.html">
+    <span>
+        为何存在uwsgi还要使用nginx
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：nginx是对外的服务接口，外部浏览器通过url访问nginx，nginx接收到浏览器发送过来的http请求，将包解析分析url，如果是静态文件则直接访问用户给nginx配置的静态文件目录，直接返回用户请求的静态文件。 若不是静态文件，动态请求的话，nginx将请求转发给uwsgi，uwsgi接收到        <a href="https://www.cnblogs.com/jianzihao/p/14787080.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-19 19:47
+简直😓
+<span data-post-id="14787080" class="post-view-count">阅读(5)</span> 
+<span data-post-id="14787080" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14787080" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14787080" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14787017.html">
+    <span>
+        http keep-alive 的一些理解
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在日常的工作中涉及到了关于检测用户是否在线的功能需求，在方案设计过程中考虑过使用http-keepalive的方式，由于我们获取到的keepalive是经过nginx转发的keep-alive，所以最后选择了实时更新数据库的方案，借此机会总结一下关于http-alive的一些问题。 http kee        <a href="https://www.cnblogs.com/jianzihao/p/14787017.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-19 19:26
+简直😓
+<span data-post-id="14787017" class="post-view-count">阅读(4)</span> 
+<span data-post-id="14787017" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14787017" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14787017" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/16.html">2021年5月16日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14775214.html">
+    <span>
+        RabbitMQ 集群原理
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：RabbitMQ默认集群原理 rabbitmq 本身是基于erlang编写，erlang语言天生具备分布式的特性（通过同步Erlang集群各节点的erlang cookie实现），RabbiteMQ天然支持集群，集群是保证可靠性的一种方式，同时可以通过水平扩展可达到增加消息吞吐量能力的目的 上图为三        <a href="https://www.cnblogs.com/jianzihao/p/14775214.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-16 22:50
+简直😓
+<span data-post-id="14775214" class="post-view-count">阅读(7)</span> 
+<span data-post-id="14775214" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14775214" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14775214" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14774824.html">
+    <span>
+        构成交替字符串需要的最小交换次数
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：        <a href="https://www.cnblogs.com/jianzihao/p/14774824.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-16 20:57
+简直😓
+<span data-post-id="14774824" class="post-view-count">阅读(3)</span> 
+<span data-post-id="14774824" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14774824" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14774824" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14774740.html">
+    <span>
+        python 中的nonlocal
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：python 中nonloal 关键字用来在函数或其他作用域中使用外层变量(非全局)，也可使用global需要在函数外部        <a href="https://www.cnblogs.com/jianzihao/p/14774740.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-16 20:25
+简直😓
+<span data-post-id="14774740" class="post-view-count">阅读(3)</span> 
+<span data-post-id="14774740" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14774740" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14774740" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/14.html">2021年5月14日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14768701.html">
+    <span>
+        关于RabbitMQ的一些问题总结
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：消息中间件在工作中一般都不会采用单机模式的，该篇其实是对mq的高可用等等常见问题做一些归纳。 消息队列的高可用 普通集群与镜像集群模式，此处不做深究，另开一篇专门讲述此处 如何保证消息不被重复消费 保证消息队列幂等性，为什么会造成重复消费，正常消费时消费者在消费消息时候，消费完毕会发送一个确认信息给        <a href="https://www.cnblogs.com/jianzihao/p/14768701.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-14 15:17
+简直😓
+<span data-post-id="14768701" class="post-view-count">阅读(14)</span> 
+<span data-post-id="14768701" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14768701" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14768701" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jianzihao/archive/2021/05/13.html">2021年5月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jianzihao/p/14765995.html">
+    <span>
+        RabbitMQ基础知识
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在工作中常常会用到消息中间件RabbitMQ，但是自己却一直没合适的机会总结一些关于rabbitmq的知识，今天就总结一下这方面的知识 消息队列 消息，在应用间传送的数据。消息队列，应用间的通信方式，消息发送后可以立即返回，由消息队列来确保消息的可靠传递，发布者只负责讲消息发布到MQ中，消费者只管从        <a href="https://www.cnblogs.com/jianzihao/p/14765995.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-13 19:58
+简直😓
+<span data-post-id="14765995" class="post-view-count">阅读(8)</span> 
+<span data-post-id="14765995" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14765995" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14765995" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jianzihao/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2021 简直&#x1F613;
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjshqJfhTkay_wBmKVOfHXbpao5I6Jb5jJGA_8e5F6gE6fPEcpPcNrNRt5Y0oiLFeilsG-RL6WyRtgR7_pdAAz1msPP8f5rAeAVW-rna0u2bLeqR48QQOn9kL-AtcpMiKi8" />
+</body>
+</html>

@@ -1,0 +1,366 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>【5min+】AspNet Core中的全局异常处理 - 句幽 - 博客园</title>
+    <meta property="og:description" content="其实一说到AspNet Core里面的全局异常，其实大家都不会陌生。因为这玩意儿用的非常频繁，好的异常处理方案能够帮助开发者更快速的定位问题，也能够给用户更好的用户体验。那么在AspNet Core中" />
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/401017.css?v=TZbXpieXQG%2f10X3L0iBgILcLZKA%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/Custom/bundle-Custom-mobile.css?v=_msYCBCTPwxsehifP8ZdBI6kxamcIjzp-IKwPnrrPeg1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="http://www.cnblogs.com/uoyo/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="http://www.cnblogs.com/uoyo/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="http://www.cnblogs.com/uoyo/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=401017;var currentBlogApp='uoyo',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="http://www.cnblogs.com/uoyo/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/uoyo/">句幽</a></h1>
+<h2></h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/uoyo/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%8F%A5%E5%B9%BD">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/uoyo/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/uoyo/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 27&nbsp; </span>
+<span id="stats_article_count">文章 - 1&nbsp; </span>
+<span id="stats-comment_count">评论 - 406</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        <div id="post_detail">
+<!--done-->
+<div id="topics">
+	<div class = "post">
+		<h1 class = "postTitle">
+			<a id="cb_post_title_url" class="postTitle2" href="https://www.cnblogs.com/uoyo/p/12450205.html">【5min+】AspNet Core中的全局异常处理</a>
+		</h1>
+		<div class="clear"></div>
+		<div class="postBody">
+			<div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown"><h2 id="系列介绍"><strong>系列介绍</strong></h2>
+<p>【五分钟的dotnet】是一个利用您的碎片化时间来学习和丰富.net知识的博文系列。它所包含了.net体系中可能会涉及到的方方面面，比如C#的小细节，AspnetCore，微服务中的.net知识等等。<br>
+5min+不是超过5分钟的意思，&quot;+&quot;是知识的增加。so，它是让您花费5分钟以下的时间来提升您的知识储备量。</p>
+<h2 id="正文"><strong>正文</strong></h2>
+<p>其实一说到AspNet Core里面的全局异常，其实大家都不会陌生。因为这玩意儿用的非常频繁，好的异常处理方案能够帮助开发者更快速的定位问题，也能够给用户更好的用户体验。</p>
+<p>比如，当您访问到一个网页，突然，它喵的报错了！您没有看错，它报错了！！！然后显示了这样的一个错误页面：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200309082456QQ%E6%88%AA%E5%9B%BE20200309162017%E5%89%AF%E6%9C%AC.png" alt="x"></p>
+<p>请问，此刻电脑屏幕前的您会什么感受。（<em>真想掏出那传说中的95级史诗巨剑！</em>）</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200309082951QQ%E6%88%AA%E5%9B%BE20200309163007.png" alt="x"></p>
+<p>但是，假若我们稍微处理一下这个异常，比如用咱们腾讯爸爸的手段，换个皮肤：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_2003090827341.png" alt="x"></p>
+<p>用户马上就会想：“哎呀，错误就错误嘛，孰能无过，程序员锅锅也挺辛苦的。”</p>
+<p>由此可见！！！全局异常的捕获和处理是有多么的重要。</p>
+<h2 id="aspnet-core-中的全局处理"><strong>AspNet Core 中的全局处理</strong></h2>
+<h3 id="iasyncexceptionfilter"><strong>IAsyncExceptionFilter</strong></h3>
+<p>那么在AspNet Core中我们该如何捕获和处理异常呢？ 可能很多同学都知道：<code>IExceptionFilter</code> 。 这个过滤器应该算是AspNet里面的老牌过滤器了，从很早就延续至今，它允许咱们捕获AspNet Core的控制器中的错误。不过，对于使用 <code>IExceptionFilter</code>，其实我更建议您考虑它的异步版本： <code>IAsyncExceptionFilter</code>。（<em>别问为什么，问就是爱的供养</em>）。</p>
+<p>那么我们来看看该过滤器是怎么使用的呢？ 下面以 <code>IAsyncExceptionFilter</code> 为例，对于同步版本其实也是一样的：</p>
+<pre><code class="language-csharp">public class MyCustomerExceptionFilter : IAsyncExceptionFilter
+{
+    public Task OnExceptionAsync(ExceptionContext context)
+    {
+        if (context.ExceptionHandled == false)
+        {
+            string msg = context.Exception.Message;
+            context.Result = new ContentResult
+            {
+                Content = msg,
+                StatusCode = StatusCodes.Status200OK,
+                ContentType = &quot;text/html;charset=utf-8&quot;
+            };
+        }
+        context.ExceptionHandled = true; //异常已处理了
+
+        return Task.CompletedTask;
+    }
+}
+</code></pre>
+<p>上面咱们新建了一个自定义的异常过滤器，代码很简单，就是报错了之后依旧让Http返回状态码为200的结果。并且将错误信息返回到客户端。</p>
+<p>然后还需要在 <code>Startup.cs</code> 中，告诉 <code>MVC</code> 咱们新加的这个过滤器：</p>
+<pre><code class="language-csharp">services.AddControllers(options =&gt; options.Filters.Add(new MyCustomerExceptionFilter()));
+</code></pre>
+<p>然后就完了，是不是so easy？  来看看结果：</p>
+<pre><code class="language-csharp"> [HttpGet]
+public IEnumerable&lt;WeatherForecast&gt; Get()
+{
+    throw new Exception(&quot;has error!&quot;);
+}
+</code></pre>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200309084727QQ%E6%88%AA%E5%9B%BE20200309164736.png" alt="x"></p>
+<p>如果不增加该过滤器，我们将得到Http状态码为500的响应。这对于某些不致命的意外操作来说，有点杀鸡用牛刀的感觉，对于前端用户来说也不是很友好（明明输错了一个字符，就直接被告知网站崩溃，并且出现乔殿下）。</p>
+<p>而咱们捕获了异常，进行特殊处理之后就显得很友好了。（返回200，并且告诉用户输错了某字符等）。</p>
+<p>在上面的代码中，您会看到有一行 <code>context.ExceptionHandled = true;</code>。<strong>注意！！！</strong> 这很关键，当您处理完异常之后，请记得将此属性更改为true，表明异常已经处理过了。如果不更改的话，嘿嘿🤪。会有什么结果呢？ 请看下面↓</p>
+<h2 id="中间件处理异常"><strong>中间件处理异常</strong></h2>
+<p>由于AspNet Core管道的层层传递的特点，咱们就有机会在管道中实现全局异常捕获。 新建一个中间件来试试吧：</p>
+<pre><code class="language-csharp">public class MyExceptionMiddleware
+{
+    private readonly RequestDelegate _next;
+    public MyExceptionMiddleware(RequestDelegate next)
+    {
+        _next = next;
+    }
+    public async Task Invoke(HttpContext httpContext)
+    {
+        try
+        {
+            await _next(httpContext);
+        }
+        catch (Exception ex)
+        {
+            httpContext.Response.ContentType = &quot;application/problem+json&quot;;
+
+            var title = &quot;An error occured: &quot; + ex.Message;
+            var details = ex.ToString();
+
+            var problem = new ProblemDetails
+            {
+                Status = 200,
+                Title = title,
+                Detail = details
+            };
+
+            //Serialize the problem details object to the Response as JSON (using System.Text.Json)
+            var stream = httpContext.Response.Body;
+            await JsonSerializer.SerializeAsync(stream, problem);
+        }
+    }
+}
+</code></pre>
+<p>然后在 <code>Startup.cs</code> 中，注册管道：</p>
+<pre><code class="language-csharp">app.UseMiddleware&lt;MyExceptionMiddleware&gt;();
+</code></pre>
+<p>来看看效果：</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200309085823QQ%E6%88%AA%E5%9B%BE20200309165825.png" alt="x"></p>
+<p>还是原来的味道，还是熟悉的配方，爽歪歪！</p>
+<p>管道的添加顺序决定了它的执行顺序，所以如果您想扩大异常捕获的范围，可以将该管道放置在 <code>Configure</code> 的第一行。 <strong>但是！！</strong> 您会发现，这个默认的AspNet Core项目不是已经在第一行弄了一个异常处理么？ 我*&amp;&amp;……&amp;。</p>
+<pre><code class="language-csharp">if (env.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandler(&quot;/Error&quot;);
+}
+</code></pre>
+<p>这行代码大家在初始化新AspNetCore项目时就会看到，也有可能您只有上半段，这和模板有关系。不过这都没有关系，它的作用就是捕获和处理异常而已。关于 <code>UseDeveloperExceptionPage</code> 该扩展咱们就不多说了，它的意思是：对于开发模式，一旦报错就会跳转到错误堆栈页面。 而第二个 <code>UseExceptionHandler</code> 就很有意思了，从它命名就可以看出，它肯定是个错误拦截程序。那么它和咱们自定义的异常处理管道有什么区别呢？</p>
+<p>“不指定肯定有个默认吧！” 是的，它就是默认的错误处理。所以，它其实也是一个中间件，它的真身叫做 <code>ExceptionHandlerMiddleware</code>。在使用 <code>UseExceptionHandler</code> 方法时，我们可以选填各种参数。比如上方的代码，填入了 <code>&quot;/Error&quot;</code> 参数，表示当产生异常的时候，将定向到对应路径，此处就定位的是: &quot;<a href="http://localhost:5001/Error">http://localhost:5001/Error</a>&quot; 。当然您也可以随意指定页面，比如 漂亮的乔殿下页面。😝</p>
+<p>还有指定 <code>ExceptionHandlerOptions</code> 参数的方法，该参数是<code>ExceptionHandlerMiddleware</code>中间件的重要参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ExceptionHandlingPath</td>
+<td>重定向的路径，比如刚才的 &quot;&quot;/Error&quot;&quot;  实际上就是指定的该参数</td>
+</tr>
+<tr>
+<td>ExceptionHandler</td>
+<td>错误拦截处理程序</td>
+</tr>
+</tbody>
+</table>
+<p><code>ExceptionHandler</code> 允许我们在 <code>ExceptionHandlerMiddleware</code> 内部指定咱们自有的异常处理逻辑。而该参数的类型为 <code>RequestDelegate</code>，是否很眼熟，没错，管道处理！因此<code>UseExceptionHandler</code> 提供了一个简便的写法，可以让我们在<code>ExceptionHandlerMiddleware</code> 中又新建自定义的错误拦截管道来作为处理程序：</p>
+<pre><code class="language-csharp">//in Configure()
+app.UseExceptionHandler(appbuilder =&gt; appbuilder.Use(ExceptionHandlerDemo));
+
+//该内容会在AspNetCore的管道返回结果至ExceptionHandlerMiddleware时，如果中间件捕获到了异常时调用
+private async Task ExceptionHandlerDemo(HttpContext httpContext, Func&lt;Task&gt; next)
+{
+    //该信息由ExceptionHandlerMiddleware中间件提供，里面包含了ExceptionHandlerMiddleware中间件捕获到的异常信息。
+    var exceptionDetails = httpContext.Features.Get&lt;IExceptionHandlerFeature&gt;();
+    var ex = exceptionDetails?.Error;
+
+    if (ex != null)
+    {
+        httpContext.Response.ContentType = &quot;application/problem+json&quot;;
+
+        var title = &quot;An error occured: &quot; + ex.Message;
+        var details = ex.ToString();
+
+        var problem = new ProblemDetails
+        {
+            Status = 500,
+            Title = title,
+            Detail = details
+        };
+
+        var stream = httpContext.Response.Body;
+        await JsonSerializer.SerializeAsync(stream, problem);
+    }
+}
+</code></pre>
+<h2 id="管道-vs-过滤器"><strong>管道 VS 过滤器</strong></h2>
+<p>那么上面两个方法有什么区别呢？ 回答：拦截范围。</p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1627547/o_200309095416QQ%E6%88%AA%E5%9B%BE20200309175407.png" alt="x"></p>
+<p>IExceptionFilter 作为MVC中间件之间的内容，它需要MVC在发现错误之后将错误信息提交给它处理，因此它的错误处理范围仅限于MVC中间件。所以，假如我们需要捕获MVC中间件之前的一些错误，其实是捕获不到的。 而对于<code>ExceptionHandlerMiddleware</code>中间件来说就很简单了，它作为第一个中间件，凡是在它之后的所有错误它都能够捕获得到。</p>
+<p>那么这么看来是否<code>IExceptionFilter</code>就毫无用武之地了呢？ 非也，假如您想在MVC发生异常时快速捕获和处理，使用过滤器其实是您不错得选择，如果您仅仅关心控制器之间的异常，那么过滤器也是很好的选择。</p>
+<p>还记得刚开始我们在过滤器中说过的这一行代码吗：<code>context.ExceptionHandled = true;</code>。如果在<code>IExceptionFilter</code>中将异常标记为已经处理之后，则第一道异常处理中间件就认为没有错误了，不会进入到处理逻辑中。所以，如果咱们不把该属性改为 <code>true</code>，很有可能出现拦截结果被覆盖的情况。</p>
+<p><em>最后，偷偷说一句：创作不易，点个推荐吧.....</em></p>
+<p><img src="https://images.cnblogs.com/cnblogs_com/uoyo/1635918/o_200221093942dw-23.png" alt="x"></p>
+</div><div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+<div id="BlogPostCategory"></div>
+<div id="EntryTag"></div>
+<div id="blog_post_info">
+</div>
+<div class="clear"></div>
+<div id="post_next_prev"></div>
+</div>
+
+
+		</div>
+		<div class = "postDesc">posted @ <span id="post-date">2020-03-09 18:21</span> <a href='https://www.cnblogs.com/uoyo/'>句幽</a> 阅读(<span id="post_view_count">...</span>) 评论(<span id="post_comment_count">...</span>)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12450205" rel="nofollow">编辑</a> <a href="#" onclick="AddToWz(12450205);return false;">收藏</a></div>
+	</div>
+	<script src="//common.cnblogs.com/highlight/9.12.0/highlight.min.js"></script><script>markdown_highlight();</script><script type="text/javascript">var allowComments=true,cb_blogId=401017,cb_entryId=12450205,cb_blogApp=currentBlogApp,cb_blogUserGuid='4660842a-34b1-4866-476c-08d52fc34315',cb_entryCreatedDate='2020/3/9 18:21:00';loadViewCount(cb_entryId);var cb_postType=1;var isMarkdown=true;</script>
+	
+</div><!--end: topics 文章、评论容器-->
+</div><a name="!comments"></a><div id="blog-comments-placeholder"></div><script type="text/javascript">var commentManager = new blogCommentManager();commentManager.renderComments(0);</script>
+<div id='comment_form' class='commentform'>
+<a name='commentform'></a>
+<div id='divCommentShow'></div>
+<div id='comment_nav'><span id='span_refresh_tips'></span><a href='javascript:void(0);' onclick='return RefreshCommentList();' id='lnk_RefreshComments' runat='server' clientidmode='Static'>刷新评论</a><a href='#' onclick='return RefreshPage();'>刷新页面</a><a href='#top'>返回顶部</a></div>
+<div id='comment_form_container'></div>
+<div class='ad_text_commentbox' id='ad_text_under_commentbox'></div>
+<div id='ad_t2'></div>
+<div id='opt_under_post'></div>
+<script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+<script>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+</script>
+<script>
+  googletag.cmd.push(function() {
+        googletag.defineSlot('/1090369/C1', [300, 250], 'div-gpt-ad-1546353474406-0').addService(googletag.pubads());
+        googletag.defineSlot('/1090369/C2', [468, 60], 'div-gpt-ad-1539008685004-0').addService(googletag.pubads());
+        googletag.pubads().enableSingleRequest();
+        googletag.enableServices();
+  });
+</script>
+<div id='cnblogs_c1' class='c_ad_block'>
+    <div id='div-gpt-ad-1546353474406-0' style='height:250px; width:300px;'></div>
+</div>
+<div id='under_post_news'></div>
+<div id='cnblogs_c2' class='c_ad_block'>
+    <div id='div-gpt-ad-1539008685004-0' style='height:60px; width:468px;'></div>
+</div>
+<div id='under_post_kb'></div>
+<div id='HistoryToday' class='c_ad_block'></div>
+<script type='text/javascript'>
+ if(enablePostBottom()) {
+    codeHighlight();
+    fixPostBody();
+    setTimeout(function () { incrementViewCount(cb_entryId); }, 50);
+    deliverT2();
+    deliverC1();
+    deliverC2();    
+    loadNewsAndKb();
+    loadBlogSignature();
+    LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+    GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+    loadOptUnderPost();
+    GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);  
+}
+</script>
+</div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 句幽
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<div class="Snow">
+    <canvas id="Snow"></canvas>
+</div>
+
+<!--下雪特效-->
+<script src="https://blog-static.cnblogs.com/files/uoyo/snoweffects.js"></script>
+
+<script type="text/javascript" language="javascript"> 
+//为右下角推荐推荐区域添加关注按钮
+window.onload = function () {
+    $('#div_digg').prepend('<div style="padding-bottom: 5px" id="please_follow"><span class="icon_favorite" style="padding-top: 2px"></span><a onclick="follow(\'4660842a-34b1-4866-476c-08d52fc34315\');" href="javascript:void(0);" style="font-weight: bold; padding-left:5px;font-size: 14px; vertical-align: super;color: #ff5d47;">关注一下楼主吧</a> </div>');
+}
+</script>
+
+<!--代码复制-->
+<script src="https://cdn.bootcss.com/clipboard.js/2.0.4/clipboard.min.js"></script>
+
+<!--主题-->
+<script src="https://blog-static.cnblogs.com/files/uoyo/gshang.2019.10.27.1.js"></script>
+
+<!-- zoom.js 的样式 -->
+<link rel="stylesheet" type="text/css" href="https://blog-static.cnblogs.com/files/uoyo/zoom.css">
+<!-- Bootstrap 的 transition.js cdn（过渡动画插件）-->
+<script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/transition.js"></script>
+<!-- zoom.js 核心代码 -->
+<script src="https://blog-static.cnblogs.com/files/uoyo/zoom.js"></script>
+<script type='text/javascript'>$('#cnblogs_post_body img').attr('data-action', 'zoom');</script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

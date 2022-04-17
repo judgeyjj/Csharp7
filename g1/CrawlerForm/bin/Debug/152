@@ -1,0 +1,653 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Silent丿丶黑羽 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/jiakecong/custom.css?v=7MKwNk9BuDspFVQ5LKcRpIwcbog=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jiakecong/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jiakecong/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jiakecong/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 658912;
+        var currentBlogApp = 'jiakecong';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="no-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jiakecong/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jiakecong/">修炼之路</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jiakecong/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Silent%E4%B8%BF%E4%B8%B6%E9%BB%91%E7%BE%BD">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/jiakecong/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/02/22.html">2021年2月22日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14431625.html">
+    <span>
+            <span>[置顶]</span>
+        费曼学习法
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：费曼学习法 我的理解：费曼学习法就是把学好的东西用简洁易懂的语言，传授给别人 举例：你学完微积分，然后自己去培训班，自己做老师，传授给学生们，并且学生们都能听懂 费曼学习法的四个步骤： 1.确定目标 2.模拟教学 3.重复回顾 4.概念简化 1.确定目标 什么叫做确定目标？比如：我想开发一个自动化平        <a href="https://www.cnblogs.com/jiakecong/p/14431625.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-02-22 17:30
+Silent丿丶黑羽
+<span data-post-id="14431625" class="post-view-count">阅读(167)</span> 
+<span data-post-id="14431625" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14431625" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14431625" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/27.html">2021年5月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14817137.html">
+    <span>
+        Django（35）Django请求生命周期分析(超详细)
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：Django请求生命周期分析 1.客户端发送请求 在浏览器输入url地址，例如www.baidu.com，浏览器会自动补全协议(http)，变为http://www.baidu.com，现在部分网站都实现了HSTS机制，服务器自动从http协议重定向到https协议 在网页中点击超链接或javasc        <a href="https://www.cnblogs.com/jiakecong/p/14817137.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-27 11:19
+Silent丿丶黑羽
+<span data-post-id="14817137" class="post-view-count">阅读(26)</span> 
+<span data-post-id="14817137" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14817137" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14817137" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/26.html">2021年5月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14809957.html">
+    <span>
+        Django（34）Django操作session(超详细)
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 session: session和cookie的作用有点类似，都是为了存储用户相关的信息。不同的是，cookie是存储在本地浏览器，session是一个思路、一个概念、一个服务器存储授权信息的解决方案，不同的服务器，不同的框架，不同的语言有不同的实现。虽然实现不一样，但是他们的目的都是服务器为        <a href="https://www.cnblogs.com/jiakecong/p/14809957.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-26 10:46
+Silent丿丶黑羽
+<span data-post-id="14809957" class="post-view-count">阅读(12)</span> 
+<span data-post-id="14809957" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14809957" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14809957" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/25.html">2021年5月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14808050.html">
+    <span>
+        Django（33）Django操作cookie
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 cookie：在网站中，http请求是无状态的。也就是说即使第一次和服务器连接后并且登录成功后，第二次请求服务器依然不能知道当前请求是哪个用户。cookie的出现就是为了解决这个问题，第一次登录后服务器返回一些数据（cookie）给浏览器，然后浏览器保存在本地，当该用户发送第二次请求的时候，就        <a href="https://www.cnblogs.com/jiakecong/p/14808050.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-25 11:37
+Silent丿丶黑羽
+<span data-post-id="14808050" class="post-view-count">阅读(149)</span> 
+<span data-post-id="14808050" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14808050" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14808050" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14803809.html">
+    <span>
+        Django（32）自定义过滤器
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 虽然DTL给我们内置了许多好用的过滤器。但是有些时候还是不能满足我们的需求。因此Django给我们提供了一个接口，可以让我们自定义过滤器，实现自己的需求。 自定义过滤器 首先在某个app中，创建一个python包，叫做templatetags，注意，这个包的名字必须为templatetags，        <a href="https://www.cnblogs.com/jiakecong/p/14803809.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-25 09:13
+Silent丿丶黑羽
+<span data-post-id="14803809" class="post-view-count">阅读(30)</span> 
+<span data-post-id="14803809" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14803809" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14803809" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/24.html">2021年5月24日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14803751.html">
+    <span>
+        Django（31）模板中常用的过滤器
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：模版常用过滤器 在模版中，有时候需要对一些数据进行处理以后才能使用。一般在Python中我们是通过函数的形式来完成的。而在模版中，则是通过过滤器来实现的。过滤器使用的是|来使用。 add 将传进来的参数添加到原来的值上面。这个过滤器会尝试将值和参数转换成整形然后进行相加。如果转换成整形过程中失败了，        <a href="https://www.cnblogs.com/jiakecong/p/14803751.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-24 11:47
+Silent丿丶黑羽
+<span data-post-id="14803751" class="post-view-count">阅读(122)</span> 
+<span data-post-id="14803751" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14803751" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14803751" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14803346.html">
+    <span>
+        Django（30）Django常用的模板标签
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：常用的模板标签 if标签 if标签相当于Python中的if语句，有elif和else相对应，但是所有的标签都需要用标签符号（{%%}）进行包裹。if标签中可以使用==、!=、&lt;、&lt;=、&gt;、&gt;=、in、not in、is、is not等判断运算符。示例代码如下： {% if &quot;张三&quot; in pers        <a href="https://www.cnblogs.com/jiakecong/p/14803346.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-24 10:33
+Silent丿丶黑羽
+<span data-post-id="14803346" class="post-view-count">阅读(13)</span> 
+<span data-post-id="14803346" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14803346" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14803346" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/23.html">2021年5月23日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14801391.html">
+    <span>
+        Django（29）模板变量
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：变量 模板中可以包含变量，Django在渲染模板的时候，可以传递变量对应的值过去进行替换。变量的命名规范和Python非常类似，只能是阿拉伯数字和英文字符以及下划线的组合，不能出现标点符号等特殊字符。变量需要通过视图函数渲染，视图函数在使用render或者render_to_string的时候可以传        <a href="https://www.cnblogs.com/jiakecong/p/14801391.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-23 16:16
+Silent丿丶黑羽
+<span data-post-id="14801391" class="post-view-count">阅读(8)</span> 
+<span data-post-id="14801391" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14801391" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14801391" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14801035.html">
+    <span>
+        Django（28）Django模板介绍
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：前言 目前市面上有非常多的模板系统，其中最知名最好用的就是DTL和Jinja2。DTL是Django Template Language三个单词的缩写，也就是Django自带的模板语言。当然也可以配置Django支持Jinja2等其他模板引擎，但是作为Django内置的模板语言，和Django可以达        <a href="https://www.cnblogs.com/jiakecong/p/14801035.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-23 13:45
+Silent丿丶黑羽
+<span data-post-id="14801035" class="post-view-count">阅读(8)</span> 
+<span data-post-id="14801035" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14801035" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14801035" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14800468.html">
+    <span>
+        Django（27）Django类视图添加装饰器
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：类视图 在写视图的时候，Django除了使用函数作为视图，也可以使用类作为视图。使用类视图可以使用类的一些特性，比如继承等。 View django.views.generic.base.View是主要的类视图，所有的类视图都是继承自他。如果我们写自己的类视图，也可以继承自他。然后再根据当前请求的m        <a href="https://www.cnblogs.com/jiakecong/p/14800468.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-23 09:16
+Silent丿丶黑羽
+<span data-post-id="14800468" class="post-view-count">阅读(50)</span> 
+<span data-post-id="14800468" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14800468" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14800468" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jiakecong/archive/2021/05/21.html">2021年5月21日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jiakecong/p/14794481.html">
+    <span>
+        Django（26）HttpResponse对象和JsonResponse对象
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：HttpResponse对象 Django服务器接收到客户端发送过来的请求后，会将提交上来的这些数据封装成一个HttpRequest对象传给视图函数。那么视图函数在处理完相关的逻辑后，也需要返回一个响应给浏览器。而这个响应，我们必须返回HttpResponseBase或者他的子类的对象。而HttpR        <a href="https://www.cnblogs.com/jiakecong/p/14794481.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-21 16:45
+Silent丿丶黑羽
+<span data-post-id="14794481" class="post-view-count">阅读(143)</span> 
+<span data-post-id="14794481" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14794481" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14794481" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/jiakecong/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2021 Silent丿丶黑羽
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <div id="cnzzProtocol"  style="display: none;">
+    <span class="id_cnzz_stat_icon" id='cnzz_stat_icon_1279624884'></span>
+    <script src='https://v1.cnzz.com/z_stat.php?id=1279624884&online=1&show=line' type='text/javascript'></script>
+    <script type="text/javascript">document.write(unescape("%3Cspan id='cnzz_stat_icon_1279624884'%3E%3C/span%3E%3Cscript src='https://s9.cnzz.com/z_stat.php%3Fid%3D1279624884%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js
+        auto="https://y.qq.com/n/yqq/song/001DEjRI0ihriN.html"
+        lrc-type="0"
+        fixed="true"
+        volumn="0.5"
+        list-olded="true">
+</meting-js>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjsjWaiEOHMaM9oqT00EWpIr0f2_hKRWLMMjUGis2dPZ9sd5nrzlanBTEGt0IcUvWcmB9_O9PwRhsz-DkIZAhBRuEQV-tTbr7JRtH-xJpJjrj1GOtiqYrTkTHxCpsfQP15w" />
+</body>
+</html>

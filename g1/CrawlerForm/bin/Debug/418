@@ -1,0 +1,835 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>编程一生 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=4W7JFeW6yawmSvuAPXAMgmONTEeyjPHEBIN7uU-h2oo" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=LOyhPk4LkjVgRjtP5CM7JRyi-Xi6LwDvnFflAjNT9jE" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiexj/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiexj/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiexj/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 334942;
+        var currentBlogApp = 'xiexj';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'LessIsMoreRight';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'default';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-lessismoreright has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xiexj/">编程一生</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiexj/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%BC%96%E7%A8%8B%E4%B8%80%E7%94%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/xiexj/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16082559">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/03/31.html">2022年3月31日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/xiexj/p/16082559.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        系列文章分类汇总
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16082559">
+摘要：            
+尤娜系列 从前，有一个简单的通道系统叫尤娜…… 尤娜系统的第一次飞行中换引擎的架构垂直拆分改造 四种常用的微服务架构拆分方式 尤娜，我去面试了 专业课回顾 白话linux操作系统原理 白话TCP/IP原理 温故知新-什么是软件工程 温故知新-软件生存周期和过程模型 面试类 面试题总结 干活很6，面试        <a href="https://www.cnblogs.com/xiexj/p/16082559.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-31 16:40
+编程一生
+<span data-post-id="16082559" class="post-view-count">阅读(39)</span> 
+<span data-post-id="16082559" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16082559" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16082559" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16146142">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/16146142.html">
+    <span>
+        系统架构的11条原则
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16146142">
+摘要：            
+基本原则 原则一：价值为王 解析： 价值为王的另一种说法叫做YAGNI。YAGNI 是 You aren’t gonna need it 的缩写。该原则的基本含义就是，不应该开发任何当前不使用的功能。因为这些占用开发成本的功能，可能根本没有人用。而且不仅仅是开发成本打了水漂，你还要不断投入维护成本，        <a href="https://www.cnblogs.com/xiexj/p/16146142.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:34
+编程一生
+<span data-post-id="16146142" class="post-view-count">阅读(298)</span> 
+<span data-post-id="16146142" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16146142" class="post-digg-count">推荐(4)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16146142" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16099092">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/04/04.html">2022年4月4日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/16099092.html">
+    <span>
+        手撕spring核心源码，彻底搞懂spring流程
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16099092">
+摘要：            
+引子 十几年前，刚工作不久的程序员还能过着很轻松的日子。记得那时候公司里有些开发和测试的女孩子，经常有问题解决不了的，不管什么领域的问题找到我，我都能帮她们解决。但是那时候我没有主动学习技术的意识，只是满足于解决问题，错过了能力提升最好的阶段。 老公是个截然相反的类型，我就看他天天在宿舍里学习。学来        <a href="https://www.cnblogs.com/xiexj/p/16099092.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-04 14:36
+编程一生
+<span data-post-id="16099092" class="post-view-count">阅读(349)</span> 
+<span data-post-id="16099092" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16099092" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16099092" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16095395">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/04/03.html">2022年4月3日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/16095395.html">
+    <span>
+        消息中间件MQ的学习境界和路线
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16095395">
+摘要：            
+在《深入理解Java类加载机制，再也不用死记硬背了》里我提到了对于一门语言的“会”的三个层次。本篇将以知识地图的形式展现学习消息中间件MQ各个层次要掌握的内容。 知识地图是一种知识导航系统，并显示不同的知识存储之间重要的动态联系。所以本篇重点不是介绍某个知识点，而是介绍掌握消息中间件，需要看哪些文章        <a href="https://www.cnblogs.com/xiexj/p/16095395.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-03 11:07
+编程一生
+<span data-post-id="16095395" class="post-view-count">阅读(437)</span> 
+<span data-post-id="16095395" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16095395" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16095395" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16081436">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/03/31.html">2022年3月31日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/16082559.html">
+    <span>
+        系列文章分类汇总
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16082559">
+摘要：            
+尤娜系列 从前，有一个简单的通道系统叫尤娜…… 尤娜系统的第一次飞行中换引擎的架构垂直拆分改造 四种常用的微服务架构拆分方式 尤娜，我去面试了 专业课回顾 白话linux操作系统原理 白话TCP/IP原理 温故知新-什么是软件工程 温故知新-软件生存周期和过程模型 面试类 面试题总结 干活很6，面试        <a href="https://www.cnblogs.com/xiexj/p/16082559.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-31 16:40
+编程一生
+<span data-post-id="16082559" class="post-view-count">阅读(39)</span> 
+<span data-post-id="16082559" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16082559" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16082559" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/16081436.html">
+    <span>
+        网络通信知识地图
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16081436">
+摘要：            
+我在之前一段时间做过网络通信的系列文章，但是文章还是偏散，没有一个整体脉络，本篇就以知识地图的形式来进行梳理。 知识地图是一种知识导航系统，并显示不同的知识存储之间重要的动态联系。本篇主要就是从更高的视角将之前的文章的结构思路展现出来。文章结构的思路实际上也是达到架构师程度要掌握的网络通信知识学习路        <a href="https://www.cnblogs.com/xiexj/p/16081436.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-31 13:43
+编程一生
+<span data-post-id="16081436" class="post-view-count">阅读(306)</span> 
+<span data-post-id="16081436" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16081436" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16081436" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15996646">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/03/12.html">2022年3月12日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15996646.html">
+    <span>
+        尤娜，我去面试了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15996646">
+摘要：            
+前情回顾 从前，有一个简单的通道系统叫尤娜…… 尤娜系统的第一次飞行中换引擎的架构垂直拆分改造 四种常用的微服务架构拆分方式 面试前几天 尤娜系统经过一次拆分改造，又过去几个月了。目前系统运行稳定。但是并未向尤娜所说的有其他业务接入。在《提高用户体验的三种技术》中，我印象最深的是说学习要学一些工作中        <a href="https://www.cnblogs.com/xiexj/p/15996646.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-12 18:05
+编程一生
+<span data-post-id="15996646" class="post-view-count">阅读(489)</span> 
+<span data-post-id="15996646" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15996646" class="post-digg-count">推荐(7)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15996646" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15979929">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/03/08.html">2022年3月8日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15979929.html">
+    <span>
+        从前，有一个简单的通道系统叫尤娜……
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15979929">
+摘要：            
+从前，有个女生宿舍，住着小A、小B、尤娜和我4个人。有天，小A不小心把小B的床板坐塌了。小B非常生气，当场和小A翻脸。不论人缘最好的尤娜怎么中间调解都不管用。一直到毕业，小A和小B再没有说过一句话。 后来，小A、小B和尤娜都成了公司老板，只有我一事无成。小A公司需要使用小B公司的系统，小A还记着当年        <a href="https://www.cnblogs.com/xiexj/p/15979929.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-08 12:38
+编程一生
+<span data-post-id="15979929" class="post-view-count">阅读(1408)</span> 
+<span data-post-id="15979929" class="post-comment-count">评论(3)</span> 
+<span data-post-id="15979929" class="post-digg-count">推荐(4)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15979929" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15949745">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/03/01.html">2022年3月1日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15949745.html">
+    <span>
+        深入理解Java类加载机制，再也不用死记硬背了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15949745">
+摘要：            
+谈谈“会”的三个层次 在《说透分布式事务》中，我举例里说明了会与会的差别。对一门语言的学习，这里谈谈我理解的“会”的三个层次： 第一层：了解这门语言的语法、写法，我把它叫做 hello world 级别； 第二层：了解这门语言的优劣势以及它的生态，了解这门语言的能力范围，我把它叫做&#160;应用 级别； 第        <a href="https://www.cnblogs.com/xiexj/p/15949745.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-01 13:20
+编程一生
+<span data-post-id="15949745" class="post-view-count">阅读(1099)</span> 
+<span data-post-id="15949745" class="post-comment-count">评论(3)</span> 
+<span data-post-id="15949745" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15949745" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15912650">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/02/19.html">2022年2月19日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15912650.html">
+    <span>
+        趣谈IO多路复用的本质
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15912650">
+摘要：            
+在《轻松搞懂5种IO模型》中，我发起了一个投票。 答案是【同步IO多路复用】。目前，60%的朋友答对了。原因这里解释一下。 同步和异步的概念区别 同步：线程自己去获取结果。(一个线程) 异步：线程自己不去获取结果，而由其他线程送结果。(至少两个线程) 异步执行如下图所示，除非不需要知道结果，否则一般        <a href="https://www.cnblogs.com/xiexj/p/15912650.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-19 15:10
+编程一生
+<span data-post-id="15912650" class="post-view-count">阅读(253)</span> 
+<span data-post-id="15912650" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15912650" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15912650" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15885740">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/02/12.html">2022年2月12日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15885740.html">
+    <span>
+        小公司比较吃亏的两道微服务面试题
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15885740">
+摘要：            
+其实选择工作的时候，很多技术牛人都会选择一些小而美的公司，技术全面，能够以一个更全面的视角看整个公司的运作，人和人之间的相处也很简单。但是，有两道微服务的面试题，小公司的朋友们会比较吃亏。 题一：你们上下游通信用的是什么协议？ 题二：你们服务拆分成了几个子服务？ 为什么吃亏，咱们来分析一下。 题一：        <a href="https://www.cnblogs.com/xiexj/p/15885740.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-12 11:19
+编程一生
+<span data-post-id="15885740" class="post-view-count">阅读(1352)</span> 
+<span data-post-id="15885740" class="post-comment-count">评论(6)</span> 
+<span data-post-id="15885740" class="post-digg-count">推荐(15)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15885740" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15863108">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/02/04.html">2022年2月4日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15863108.html">
+    <span>
+        [编程一生]历史文章分类汇总
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15863108">
+摘要：            
+2021年过去了，总结一下我的239篇原创。方便大家利用自带的搜索功能当智能机器人来用。 面试类 CURD系统怎么做出技术含量惊艳面试官完善版 面试官问我：你做事仔细吗？ CURD系统怎么做出技术含量惊艳面试官 CURD系统怎么做出技术含量--怎样引导面试 面试中一个暴露能力等级的问题 社招面试的架        <a href="https://www.cnblogs.com/xiexj/p/15863108.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-04 17:22
+编程一生
+<span data-post-id="15863108" class="post-view-count">阅读(135)</span> 
+<span data-post-id="15863108" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15863108" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15863108" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15860613">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/02/02.html">2022年2月2日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15860613.html">
+    <span>
+        Windows 是最安全的操作系统
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15860613">
+摘要：            
+建了一个用户交流群，我在群里说：“Windows 是最安全的操作系统。” 立刻引发了很多有意思的观点。我在群里一个人说不过大家，先篇文章把自己的论点罗列一下。 对操作系统攻击的方式 有5类基本的攻击方式： 1、 系统口令攻击：猜测攻击、字典攻击、穷举攻击、混合攻击、直接破译攻击、网络嗅探、键盘记录、        <a href="https://www.cnblogs.com/xiexj/p/15860613.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-02 22:22
+编程一生
+<span data-post-id="15860613" class="post-view-count">阅读(2173)</span> 
+<span data-post-id="15860613" class="post-comment-count">评论(13)</span> 
+<span data-post-id="15860613" class="post-digg-count">推荐(7)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15860613" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15854376">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/01/29.html">2022年1月29日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15854376.html">
+    <span>
+        HTTP状态码1XX深入理解
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15854376">
+摘要：            
+前段时间看了《御赐小仵作》，里面有很多细节很有心。看了一些评论都是：终于在剧里能够看到真正在搞事业、发了工资第一时间还钱的正常人了。我印象比较深的是王府才能吃上的葡萄。觉得非常合理。剧里说的明明白白，是唐朝中晚期唐宣宗的时候，那时候丝绸之路刚刚开通，西域（现在的新疆以及更西的地方）的葡萄终于能吃上了        <a href="https://www.cnblogs.com/xiexj/p/15854376.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-01-29 10:33
+编程一生
+<span data-post-id="15854376" class="post-view-count">阅读(542)</span> 
+<span data-post-id="15854376" class="post-comment-count">评论(10)</span> 
+<span data-post-id="15854376" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15854376" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15838241">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/01/24.html">2022年1月24日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15838241.html">
+    <span>
+        会计学包含的两种程序设计思想
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15838241">
+摘要：            
+下班路上坐地铁的时候看了一本会计学的书，目前看了50多页。过程中，发现会计学和程序设计在思想上有惊人的相似之处。今天举两个例子做说明。 CR设计和账簿 CR设计介绍 CR设计就是只有创建和查询，没有更新和删除。咱们后台人工操作，设计数据变更都需要有历史记录。历史记录和数据变更的最终结果区别在于历史记        <a href="https://www.cnblogs.com/xiexj/p/15838241.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-01-24 09:36
+编程一生
+<span data-post-id="15838241" class="post-view-count">阅读(401)</span> 
+<span data-post-id="15838241" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15838241" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15838241" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15825930">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xiexj/archive/2022/01/20.html">2022年1月20日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xiexj/p/15825930.html">
+    <span>
+        白话linux操作系统原理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15825930">
+摘要：            
+虽然计算机相关专业，操作系统和计算机组成原理是必修课。但是大学时和真正从事相关专业工作之后，对于知识的认知自然会发生变化。还很有可能，一辈子呆在学校的老师们只是照本宣科，自己的理解也不深。所以今天我站在真正排查解决问题时的需要层面，用白话说一说linux操作系统的那些知识。 本文整体采用的是类似递归        <a href="https://www.cnblogs.com/xiexj/p/15825930.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-01-20 12:43
+编程一生
+<span data-post-id="15825930" class="post-view-count">阅读(648)</span> 
+<span data-post-id="15825930" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15825930" class="post-digg-count">推荐(4)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15825930" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xiexj/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2022 编程一生
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4lKoW0J_1KH7KsxwSuRX2cQgwDyO6c8NsUKDqmumfmpAm8y9-wQ3pfNb2lfo7evZOnuBCgF7URge1b9xZ35oqqnvvu_yYkaDQZZwMay1ZZhBGi-mibDEBGwbIoH-vEDD9I" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

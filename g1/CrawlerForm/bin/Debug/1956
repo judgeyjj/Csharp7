@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>随笔列表第2页 - OneTrainee - 博客园</title>
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue.css?v=0qK9u742QhZ2ygXQ2XvDKUpwAJ6TPVAq3vGGNZD4Qx81"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleBlue/bundle-SimpleBlue-mobile.css?v=HkJKKbba4iGCuppu8zvm9csLqR-eZz_MIbDYkUT6eGM1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/onetrainee/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/onetrainee/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/onetrainee/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=550226;var currentBlogApp='onetrainee',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+		
+<!--done-->
+<div class="title"><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/onetrainee/">OneTrainee</a></div>
+<div class="subtitle"></div>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li id="nav_myhome"><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/onetrainee/">首页</a></li>
+<li id="nav_newpost"><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li id="nav_contact"><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/OneTrainee">联系</a></li>
+<li id="nav_rss"><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/onetrainee/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/onetrainee/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li id="nav_admin"><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<!--done-->
+随笔-196&nbsp;
+文章-0&nbsp;
+评论-14&nbsp;
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        
+<!--done-->
+<div id="homepage_top_pager" class="topicListFooter"><div class="pager">
+	共20页:&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=1">上一页</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=1">1</a>&nbsp;2&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=3">3</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=4">4</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=5">5</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=6">6</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=7">7</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=8">8</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=9">9</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=3">下一页</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=20">末页</a>&nbsp;
+</div></div>
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" href="https://www.cnblogs.com/onetrainee/archive/2020/04/19.html">2020年4月19日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12733475.html">[设计模式]桥模式</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: [设计模式]桥模式 1. 桥模式的设计理念 “桥模式”与“装饰模式”一样，是对于设计模式中的“单一职责”来进行修改的，其中“装饰模式”是对于很多附加功能的修改，而桥模式是针对多维度。 桥模式是针对多维度实现装配组合的，举个例子，两个维度，m*n，则要至少实现m*n个类；而如果使用桥模式，在编译时去自<a href="https://www.cnblogs.com/onetrainee/p/12733475.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-19 21:15 OneTrainee 阅读(9) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12733475" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12732402.html">[设计模式]装饰模式</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: [设计模式]装饰模式 1. “单一职责原则” 设计模式中八大设计原则中有一个“单一职责原则”，一个类一般只有一个职责，如果职责过多，随着类的派生，其会越来越混乱。 我们现在通过Stream派生出FileStream,MemoryStram；同时对流又存在加密，缓冲，既加密又缓冲等等，未来还会存在更多<a href="https://www.cnblogs.com/onetrainee/p/12732402.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-19 17:34 OneTrainee 阅读(8) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12732402" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_2" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12730584.html">[设计模式]观察者模式</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: [设计模式]观察者模式 1. 观察者模式解决什么问题 观察者模式解决“通知依赖问题”，比如一个文件过滤器，你要显示进度，如何解决？我们最先想到的是里面生成一个通知方法，然后有关行为调用这个方法来进行通知。 如下面一个代码，是一个文件分割器，将一个大文件分割成很多小文件；我们现在对其提出一个进度条需求<a href="https://www.cnblogs.com/onetrainee/p/12730584.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-19 12:16 OneTrainee 阅读(10) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12730584" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_3" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12730562.html">C语言实现进度条</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: C语言实现进度条 学观察者模式时想实现一个进度条通知实例，花了一些时间，记录下来吧。 #include &lt;stdio.h&gt; #include &lt;iostream&gt; #include &lt;windows.h&gt; void DoProgress(int t, int n) { putchar(&#39;[&#39;); f<a href="https://www.cnblogs.com/onetrainee/p/12730562.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-19 10:54 OneTrainee 阅读(11) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12730562" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl01_ImageLink" href="https://www.cnblogs.com/onetrainee/archive/2020/04/18.html">2020年4月18日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl01_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12729208.html">[设计模式]策略模式</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: [设计模式]策略模式 所谓策略模式，就是一个类的行为或算法可以在运行时更改。 常见的策略模式是在if&#183;&#183;else if&#183;&#183;&#183; 这种语句下，且其if的需求是不断变动的。 1. 反例代码 这是一个税率计算器，根据各国的税率进行计算。说实话，如果我没学设计模式，我很可能就是写出如下代码，但是在使用设计模式<a href="https://www.cnblogs.com/onetrainee/p/12729208.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-18 23:50 OneTrainee 阅读(7) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12729208" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl01_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12720943.html">线程链表与线程切换</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 线程链表与线程切换 1. 线程等待链表与调度链表 1）在XP操作系统上，其是全局变量 KiWaitListHead - 等待链表 比如：线程调用了Sleep()或者W<a href="https://www.cnblogs.com/onetrainee/p/12720943.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-18 18:18 OneTrainee 阅读(21) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12720943" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl02_ImageLink" href="https://www.cnblogs.com/onetrainee/archive/2020/04/17.html">2020年4月17日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl02_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12717862.html">线程</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 线程 1. _ETHREAD中重要的数据结构 2. 进程与线程的位置关系 3. ETHREAD+0x218 StartAddress 4. 几个重要的知识点 1. _<a href="https://www.cnblogs.com/onetrainee/p/12717862.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-17 15:52 OneTrainee 阅读(8) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12717862" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl03_ImageLink" href="https://www.cnblogs.com/onetrainee/archive/2020/04/16.html">2020年4月16日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl03_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12713268.html">KPCR</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html KPCR 1. IRQL 2. nt!KeNumberProcessors与nt!KiProcessorBlock 3. KPCR+0x34 KdVersionBlo<a href="https://www.cnblogs.com/onetrainee/p/12713268.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-16 19:45 OneTrainee 阅读(9) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12713268" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl03_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12701135.html">进程的本质</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html 进程的本质 1. 进程的本质 2. _EPROCESS的重要数据结构 3. 保护进程 4. _PEB+0x10 _RTL_USER_PROCESS_PARAMETER<a href="https://www.cnblogs.com/onetrainee/p/12701135.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-16 12:02 OneTrainee 阅读(18) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12701135" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl04_ImageLink" href="https://www.cnblogs.com/onetrainee/archive/2020/04/12.html">2020年4月12日</a>				  
+	</div>
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl04_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/onetrainee/p/12688186.html">KiServiceExit函数分析</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: Windows内核分析索引目录：https://www.cnblogs.com/onetrainee/p/11675224.html KiServiceExit函数分析 退出函数调用KiServiceExit函数存在三种情况：从三环进入时，从零环进入时，虚拟8086模式。 如果是虚拟8086模式，T<a href="https://www.cnblogs.com/onetrainee/p/12688186.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-12 22:28 OneTrainee 阅读(18) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12688186" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="topicListFooter"></div><div id="homepage1_HomePageDays_homepage_bottom_pager" class="topicListFooter"><div class="pager">
+	共20页:&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=1">上一页</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=1">1</a>&nbsp;2&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=3">3</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=4">4</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=5">5</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=6">6</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=7">7</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=8">8</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=9">9</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=3">下一页</a>&nbsp;<a href="https://www.cnblogs.com/onetrainee/default.html?page=20">末页</a>&nbsp;
+</div></div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script></div>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 OneTrainee
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+</body>
+</html>

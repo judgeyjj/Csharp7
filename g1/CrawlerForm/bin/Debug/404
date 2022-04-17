@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>削微寒 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=1gj9-XJKL9BZFkjdvROYQPiPWjQXk-hsXXZGtqkfaSc" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xueweihan/custom.css?v=RRRtuZg9tgADpy&#x2B;UPLStdn026o0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=zrVn_w7PYXoSvEFaixHbQGlNNXNZ3h27-9PpkXZLYns" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xueweihan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xueweihan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xueweihan/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 228315;
+        var currentBlogApp = 'xueweihan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <a href="https://github.com/521xueweihan/HelloGitHub/"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png" alt="Fork me on GitHub" data-canonical-src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png"></a>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xueweihan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xueweihan/">削微寒的程序员之路</a>
+</h1>
+<h2>谦逊、专注，才能成长。</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xueweihan/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/xueweihan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/03/29.html">2021年3月29日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14590896.html">
+    <span>
+            <span>[置顶]</span>
+        开源项目月刊《HelloGitHub》第 60 期
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：兴趣是最好的老师，HelloGitHub 就是帮你找到兴趣！ 简介 分享 GitHub 上有趣、入门级的开源项目。 这是一个面向编程新手、热爱编程、对开源社区感兴趣 人群的月刊，月刊的内容包括：各种编程语言的项目、让生活变得更美好的工具、书籍、学习笔记、教程等，这些开源项目大多都是非常容易上手，而且        <a href="https://www.cnblogs.com/xueweihan/p/14590896.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-03-29 08:55
+削微寒
+<span data-post-id="14590896" class="post-view-count">阅读(677)</span> 
+<span data-post-id="14590896" class="post-comment-count">评论(1)</span> 
+<span data-post-id="14590896" class="post-digg-count">推荐(6)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14590896" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/03/01.html">2021年3月1日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14457352.html">
+    <span>
+            <span>[置顶]</span>
+        更新啦！第 59 期《HelloGitHub》开源月刊
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：兴趣是最好的老师，HelloGitHub 就是帮你找到兴趣！ 简介 分享 GitHub 上有趣、入门级的开源项目。 这是一个面向编程新手、热爱编程、对开源社区感兴趣 人群的月刊，月刊的内容包括：各种编程语言的项目、让生活变得更美好的工具、书籍、学习笔记、教程等，这些开源项目大多都是非常容易上手，而且        <a href="https://www.cnblogs.com/xueweihan/p/14457352.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-03-01 08:53
+削微寒
+<span data-post-id="14457352" class="post-view-count">阅读(1419)</span> 
+<span data-post-id="14457352" class="post-comment-count">评论(13)</span> 
+<span data-post-id="14457352" class="post-digg-count">推荐(11)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14457352" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2016/02/26.html">2016年2月26日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/5220513.html">
+    <span>
+            <span>[置顶]</span>
+        什么是真正的程序员？
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：什么是真正的程序员 这篇文章的原文来自：A Little Printf Story作者仿照《小王子》中的情节，通过小printf遇见的不同类型的程序员，最后悟出什么才是真正的程序员！第一次翻译有很多不妥，欢迎留言指正。 文章略长，但是耐心读完，你肯定会受益良多！ 第一章 （推荐看完整篇文章，再回过头        <a href="https://www.cnblogs.com/xueweihan/p/5220513.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2016-02-26 15:12
+削微寒
+<span data-post-id="5220513" class="post-view-count">阅读(34651)</span> 
+<span data-post-id="5220513" class="post-comment-count">评论(49)</span> 
+<span data-post-id="5220513" class="post-digg-count">推荐(104)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5220513" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/27.html">2021年5月27日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14816435.html">
+    <span>
+        面试官问：ZooKeeper 有几种节点类型？别再说 4 种啦！
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文作者：HelloGitHub-老荀 好久没更新 ZK 的文章了，我想死你们啦。之前发布的 HelloZooKeeper 系列文章完结后，项目收获了将近 600 个 star。这远远超过了我自己的预期，在这里感谢大家的支持～ 后面会继续 ZooKeeper 的话题，通过单篇的形式就某个 ZK 的话        <a href="https://www.cnblogs.com/xueweihan/p/14816435.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-27 09:07
+削微寒
+<span data-post-id="14816435" class="post-view-count">阅读(168)</span> 
+<span data-post-id="14816435" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14816435" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14816435" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/25.html">2021年5月25日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14807194.html">
+    <span>
+        在？开源社区版的 AirTag 请收下——GitHub 热点速览 v.21.21
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作者：HelloGitHub-小鱼干 在比特币跌到怀疑人生的时候，看着“出血不止”的荷包，是时候来“薅”一波羊毛了。openhaystack 能让你免去购买 AirTag 的费用（200 多块），但一样享有物品追踪的体验。IPTV 则让你无需购买电视机也能看上各式各样的网络电视节目，当然它也是 HG        <a href="https://www.cnblogs.com/xueweihan/p/14807194.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-25 09:05
+削微寒
+<span data-post-id="14807194" class="post-view-count">阅读(354)</span> 
+<span data-post-id="14807194" class="post-comment-count">评论(1)</span> 
+<span data-post-id="14807194" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14807194" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/20.html">2021年5月20日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14778730.html">
+    <span>
+        如闪电划破雨夜，这些开源项目瞬间点亮了命令行
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：我第一次使用 Linux 服务器是漆黑的界面上只有一行白色字母，末尾还有一个孤独闪烁的光标。我小心翼翼地输入第一个命令 ls，然后重复输入了好几遍界面依旧是漆黑一片。这种感觉就像在漆黑的夜空，天上连一颗星星都没有。伸手不见五指，感觉孤独和无力...后来在漫长学习命令行操作的过程中，遇到了一些让我相见        <a href="https://www.cnblogs.com/xueweihan/p/14778730.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-20 08:42
+削微寒
+<span data-post-id="14778730" class="post-view-count">阅读(3425)</span> 
+<span data-post-id="14778730" class="post-comment-count">评论(10)</span> 
+<span data-post-id="14778730" class="post-digg-count">推荐(46)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14778730" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/18.html">2021年5月18日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14779442.html">
+    <span>
+        云空调来自 GitHub 的冷气——GitHub 热点速览 v.21.20
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作者：HelloGitHub-小鱼干 万物皆可上云，air-conditioner 是上周火爆小鱼干朋友圈和公众号信息流的云空调项目。第一眼的时候，你会觉得和这个云空调还挺别致的，第二眼，si~~感到了一丝丝的“冷”，为项目作者的脑洞打了个冷颤。此外，Lima 也有点“冷”，它是一个 macOS L        <a href="https://www.cnblogs.com/xueweihan/p/14779442.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-18 08:57
+削微寒
+<span data-post-id="14779442" class="post-view-count">阅读(793)</span> 
+<span data-post-id="14779442" class="post-comment-count">评论(1)</span> 
+<span data-post-id="14779442" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14779442" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/17.html">2021年5月17日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14775687.html">
+    <span>
+        那些好用的 VS Code 插件，究竟是如何提高编码效率的？
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：在上一篇文章中我们已经对 vscode 插件有了一个初步的认识与了解了，接下去我们就要“揭秘”一下市面上那些好用的 vscode 插件究竟是如何帮我们提高工作效率的。 本文首发于「HelloGitHub」公众号，搜索「HelloGitHub」点击关注解锁更多宝藏！ 一、从「整体」到「局部」 在开始正        <a href="https://www.cnblogs.com/xueweihan/p/14775687.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-17 09:07
+削微寒
+<span data-post-id="14775687" class="post-view-count">阅读(1424)</span> 
+<span data-post-id="14775687" class="post-comment-count">评论(4)</span> 
+<span data-post-id="14775687" class="post-digg-count">推荐(13)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14775687" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/13.html">2021年5月13日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14763088.html">
+    <span>
+        HelloGitHub 小程序上线了，蛋只有一个搜索功能
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作者：HelloGitHub-卤蛋 我是&#129370;&#129370;...蛋蛋啊，本文是我从零开发「HelloGitHub 小程序」的开发日记，不要把这个系列当作技术文章来读，你将会收获更多的乐趣。&#128582;‍♂️ &#129402; 我只是个 Python 程序员，不会写前端（会的那点前端技术停留在 5 年前），就更甭提微信小程序了。选        <a href="https://www.cnblogs.com/xueweihan/p/14763088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-13 09:00
+削微寒
+<span data-post-id="14763088" class="post-view-count">阅读(611)</span> 
+<span data-post-id="14763088" class="post-comment-count">评论(6)</span> 
+<span data-post-id="14763088" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14763088" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/11.html">2021年5月11日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14753823.html">
+    <span>
+        制作 PPT 的新方式出现了——GitHub 热点速览 v.21.19
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：作者：HelloGitHub-小鱼干 想当初 Markdown 的出现，拯救了多少死在 Word 样式调整上的人，现在，slidev 出现了，它让你 Focus 在本该专注的 PPT 内容制作上而不需要花太多精力在样式调整上，你仅仅用 Markdown 语法就可以做出一个高颜值幻灯片。生产力工具除了        <a href="https://www.cnblogs.com/xueweihan/p/14753823.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-11 09:03
+削微寒
+<span data-post-id="14753823" class="post-view-count">阅读(1361)</span> 
+<span data-post-id="14753823" class="post-comment-count">评论(2)</span> 
+<span data-post-id="14753823" class="post-digg-count">推荐(8)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14753823" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/07.html">2021年5月7日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14736415.html">
+    <span>
+        在 GitHub 学习，成长为自己想要的样子｜HelloGitHub 访谈
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：万事开头难，我们经过长期的策划和筹备，终于推出了 HelloGitHub 采访系列「开源项目作者的访谈」。这是一个采访个人开源项目作者的栏目，内容侧重于开源项目作者与开源的故事。 我们深知想要做好一个开源项目不是一件简单的事，同时也不止一次遇到过想做一个开源项目却不知道从何下手，那么「HelloGi        <a href="https://www.cnblogs.com/xueweihan/p/14736415.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-07 09:00
+削微寒
+<span data-post-id="14736415" class="post-view-count">阅读(1055)</span> 
+<span data-post-id="14736415" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14736415" class="post-digg-count">推荐(6)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14736415" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/05/04.html">2021年5月4日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14728945.html">
+    <span>
+        学就完事了！万星项目带你做 3D 游戏——GitHub 热点速览 v.21.18
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文首发于「HelloGitHub」微信公众号，搜索「HelloGitHub」点击关注解锁更多宝藏！ 作者：HelloGitHub-小鱼干 新手开始学习的时候，都会遇到一个问题：如何开始学 xx？See，这周的 GitHub 热榜项目们就是带你来学习新技术的，在这个五一假期学习下 3D 游戏的着色、        <a href="https://www.cnblogs.com/xueweihan/p/14728945.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-04 09:48
+削微寒
+<span data-post-id="14728945" class="post-view-count">阅读(861)</span> 
+<span data-post-id="14728945" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14728945" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14728945" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2021/04/30.html">2021年4月30日</a>
+    </div>
+
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14720659.html">
+    <span>
+        推荐个开源在线文档，助道友领悟 Django 之“道”
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc">
+摘要：本文面向有手（需要一点点 Python Django 基础）的小伙伴，急需文档管理者食用最佳。 作者：HelloGitHub-吱吱（首发于 HelloGitHub 公众号） 嗷嗷待哺的小白：“今天又是沉迷花里胡哨博客的一天，我希望归档一类知识或者是连载一些教程，而博客都是一篇篇散落的，没有连贯性，阅        <a href="https://www.cnblogs.com/xueweihan/p/14720659.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-04-30 08:44
+削微寒
+<span data-post-id="14720659" class="post-view-count">阅读(694)</span> 
+<span data-post-id="14720659" class="post-comment-count">评论(2)</span> 
+<span data-post-id="14720659" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14720659" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xueweihan/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2021 削微寒
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjvZJtQ6iPxWoih5I3IsRPDauMbPsBP3Jn7nC5QwkRJn_BgaiyfYdYAHcpOpUO-vXrFn0A_2q2j8GLtINc3HjOPTlp5uwHnDeBrVimTPbO26IGg2UuKOkzrnawh4HwC5zfA" />
+</body>
+</html>

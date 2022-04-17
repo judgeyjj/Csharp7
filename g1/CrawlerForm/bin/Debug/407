@@ -1,0 +1,611 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>敖毛毛 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=FSeEa-rFf0sIksBzbHaXW8Iv0NfilAepvltZw3cr-9k" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=rj2vgM9-SnOpGgktnrBKAhiwG7zaFNNydpmw5HBgjcQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/aoximin/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/aoximin/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/aoximin/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 452033;
+        var currentBlogApp = 'aoximin';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleBlue';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simpleblue has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <link href="https://files.cnblogs.com/files/aoximin/cnblog-scroller.css" type="text/css" rel="stylesheet">
+<script src="https://files.cnblogs.com/files/aoximin/scrollspy.js" type="text/javascript" defer></script>
+<script src="https://files.cnblogs.com/files/aoximin/stickUp.min.js" type="text/javascript" defer></script>
+<script src="https://files.cnblogs.com/files/aoximin/cnblog-scroller.js" type="text/javascript" defer></script>
+    </div>
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/aoximin/">程序员其实就是一个写文档的工作,代码只是文档的一部分,一切皆文档</a>
+</div>
+<div class="subtitle">80亿数据禁军教头</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/aoximin/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%95%96%E6%AF%9B%E6%AF%9B">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/aoximin/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16124196">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/16124196.html">
+    <span>
+        抓包整理————浏览器抓包[一]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16124196">
+摘要：            
+前言 简单介绍一下我为什么要整理这个抓包，因为工作需要吧，以前有网络基础，但是如何应用这些网络基础还是缺乏系统化的应用，所以想整理一些系统化的应用，并且可以提升自己的应用实际水平。 简单点说就是说基础有，但是如何去利用这些基础知识呢？ 如何更好的去使用呢，这个需要一系列话的学习，整理一下。 首先整理        <a href="https://www.cnblogs.com/aoximin/p/16124196.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-17 09:18
+敖毛毛
+<span data-post-id="16124196" class="post-view-count">阅读(1)</span> 
+<span data-post-id="16124196" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16124196" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16124196" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16032436">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/03/23.html">2022年3月23日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/16032436.html">
+    <span>
+        kafka 第一次小整理(草稿篇)————分发的基本思路[三]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16032436">
+摘要：            
+前言 简单整理一下分发的基本思路。 正文 kafka 原本是做日志管理系统，主要是分发这块的。 那么如何做分发呢？ 分发的是什么呢？ 分发的其实是日志，日志是事件状态，kafka 内部就叫做Record，也就是记录哈，也可以叫做事件状态的记录，其实和日志的意思差不多了。 首先需求是有分类的，要给re        <a href="https://www.cnblogs.com/aoximin/p/16032436.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-23 09:58
+敖毛毛
+<span data-post-id="16032436" class="post-view-count">阅读(135)</span> 
+<span data-post-id="16032436" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16032436" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16032436" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16028788">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/03/20.html">2022年3月20日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/16029712.html">
+    <span>
+        kafka 第一次小整理(草稿篇)————演变[二]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16029712">
+摘要：            
+前言 简单整理一些kafka的设计。 正文 前文提及到log 的重要性，以及kafka在其中的作用，起着一个日志管理分发的作用，对于其他服务来说相当于新闻报社，订阅某种主题就会收到某类信息。 当人们意识到事件状态的重要性的时候，当时还没有日志管理系统，可能像下面这样: 他们各自传递着各自的事件状态给        <a href="https://www.cnblogs.com/aoximin/p/16029712.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-20 16:19
+敖毛毛
+<span data-post-id="16029712" class="post-view-count">阅读(189)</span> 
+<span data-post-id="16029712" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16029712" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16029712" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/16028788.html">
+    <span>
+        kafka 第一次小整理(草稿篇)————整理一下自己的认知
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16028788">
+摘要：            
+前言 简单整理一些自己使用kafka的一些感受。 正文 一切都要回到真实的世界上， 计算机世界只是真实事件的一个缩影。 计算机世界有一个重要的东西，那就是数据库。 数据库记录着真实世界发生了什么，准确的说就是这个世界发生了什么然后产生了什么结果。 比如说一辆火车，那么数据库记录这辆火车是开启的开始停        <a href="https://www.cnblogs.com/aoximin/p/16028788.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-20 00:42
+敖毛毛
+<span data-post-id="16028788" class="post-view-count">阅读(284)</span> 
+<span data-post-id="16028788" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16028788" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16028788" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15885829">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/12.html">2022年2月12日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15885829.html">
+    <span>
+        计算机网络再次整理————tcp周边[八]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15885829">
+摘要：            
+前言 tcp的包的格式可以看我以前的计算机网络整理，下面这些周边只是为了开发时候我们能用到一些理论知识。 正文 首先要介绍的就是域名，为啥有域名这东西呢？单纯站在网络的角度上讲这属于应用层的东西了。 如果站在万物互联的角度上讲，把互联网看做是一台大型电脑的话，那么域名就相当于句柄了。 句柄这东西解释        <a href="https://www.cnblogs.com/aoximin/p/15885829.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-12 11:52
+敖毛毛
+<span data-post-id="15885829" class="post-view-count">阅读(169)</span> 
+<span data-post-id="15885829" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15885829" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15885829" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15864326">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/07.html">2022年2月7日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15864326.html">
+    <span>
+        计算机网络再次整理————tcp的关闭[七] 
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15864326">
+摘要：            
+前言 tcp的关闭不是简单粗暴的，相对而言是友好优雅的，好聚好散吧。 那么友好的关闭方式是这样的： 假设这里是客户端请求关闭的，服务端倒过来。 客户端：我要请求关闭 服务端：我接收到你的请求了，等我把要发的数据发完。 服务端：我要发的数据发完了，可以关闭了。 客户端：好的，我已经执行清理工作了，关闭        <a href="https://www.cnblogs.com/aoximin/p/15864326.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-07 14:03
+敖毛毛
+<span data-post-id="15864326" class="post-view-count">阅读(212)</span> 
+<span data-post-id="15864326" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15864326" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15864326" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15864270">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/06.html">2022年2月6日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15864270.html">
+    <span>
+        计算机网络再次整理————UDP例子[六]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15864270">
+摘要：            
+前言 简单的说，UDP 没有 TCP 用的广泛，但是还有很多是基于UDP的程序的，故而简单介绍一下。 正文 秉承节约脑容量的问题，只做简单的介绍和例子，因为自己几乎也没怎么用过UDP。 只是了解和知晓其中的用途，那么设计方案的时候有特定的场景，那么可以参考。 UDP 和 TCP 最大的不同的地方是传        <a href="https://www.cnblogs.com/aoximin/p/15864270.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-06 21:23
+敖毛毛
+<span data-post-id="15864270" class="post-view-count">阅读(286)</span> 
+<span data-post-id="15864270" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15864270" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15864270" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15862327">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/05.html">2022年2月5日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15862327.html">
+    <span>
+        计算机网络再次整理————tcp例子[五]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15862327">
+摘要：            
+前言 本文介绍一些tcp的例子，然后不断完善一下。 正文 服务端: // See https://aka.ms/new-console-template for more information using System.Net; using System.Net.Sockets; var sock        <a href="https://www.cnblogs.com/aoximin/p/15862327.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-05 09:54
+敖毛毛
+<span data-post-id="15862327" class="post-view-count">阅读(172)</span> 
+<span data-post-id="15862327" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15862327" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15862327" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15861993">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/04.html">2022年2月4日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15861993.html">
+    <span>
+        计算机网络再次整理————tcp例子第二前奏[四]
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15861993">
+摘要：            
+前言 前文我们介绍了网络协议的各层，同时也介绍了一下我们在编写代码时候的服务端的accept、bind、listen、connect、send做了什么。 可以说是从宏观的角度，或者代码开发的角度来说的，在此我觉得还不够具体。 同样我想解释一下为什么我说服务端listen之后，客户端已经可以进行tcp        <a href="https://www.cnblogs.com/aoximin/p/15861993.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-04 20:54
+敖毛毛
+<span data-post-id="15861993" class="post-view-count">阅读(172)</span> 
+<span data-post-id="15861993" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15861993" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15861993" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15861591">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/aoximin/archive/2022/02/03.html">2022年2月3日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/aoximin/p/15861591.html">
+    <span>
+        计算机网络再次整理————tcp例子前奏[三] 
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15861591">
+摘要：            
+前言 简单编写一下tcp例子。 正文 我们常说IOS有7层，实际上也只有4层，或者这样说简单的说是4层。 首先是数据链路层，首先这一层解决了什么问题呢？为什么要有这一层呢？ 首先要抛开有操作系统的意识，因为它为我们做了太多东西了，摆在你面前的只有两个终端和一根网线。 数据链路层定义了在单个链路上如何        <a href="https://www.cnblogs.com/aoximin/p/15861591.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-02-03 15:54
+敖毛毛
+<span data-post-id="15861591" class="post-view-count">阅读(99)</span> 
+<span data-post-id="15861591" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15861591" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15861591" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/aoximin/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2022 敖毛毛
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4lR6n1w7mH81cocRL1_QsuoGjgXbmreotSJh3m_ocbePlaLRoMexU6l91NzpBabe_sv8esz0q8-caOkOlB2Zb6dSQQjoa8IjXIgt86Cr7Ju3uSh2Wj9-H2kVsRqbPazh6U" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

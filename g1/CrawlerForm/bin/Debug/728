@@ -1,0 +1,612 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>阿里巴巴云原生 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=00nt3ajQUVX0gvFynxRY-4TOqQaW32yFChuBOrvOqLk" />
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=cSBXSFXCBG9KdnF2sdUs-Rwu75GHG2_Gs50OCy_ecGg" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/alisystemsoftware/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/alisystemsoftware/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/alisystemsoftware/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 435351;
+        var currentBlogApp = 'alisystemsoftware';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'LessIsMoreRight';
+        var visitorUserId = '';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/alisystemsoftware/">阿里系统软件技术</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/alisystemsoftware/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E4%BA%91%E5%8E%9F%E7%94%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/alisystemsoftware/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/26.html">2021年5月26日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14814016.html">
+    <span>
+        阿里云联合中国信通院发布《云计算开放应用架构》标准，加速云原生应用规模化落地进程
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：2021 年 5 月 26 日，由阿里云计算有限公司、中国信息通信研究院等 10 余家单位联合发起的《云计算开放应用架构》标准文件在“云原生产业大会”现场发布。该架构以阿里云、微软云联合发起的开源项目“开放应用架构模型（Open Application Model，以下简称 OAM）”为实现基础，旨在为云端应用管理者提供统一的应用描述规范及开放应用程序能力管理框架，以期推动简洁、高效、可控的云原生应用管理与交付方式在更多行业和企业中的大规模落地。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14814016.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-26 16:30
+阿里巴巴云原生
+<span data-post-id="14814016" class="post-view-count">阅读(10)</span> 
+<span data-post-id="14814016" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14814016" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14814016" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14813974.html">
+    <span>
+        集群镜像：实现高效的分布式应用交付
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：顾名思义，和操作系统 .iso 镜像或 Docker 镜像类似，集群镜像是用一定的技术手段把整个集群的所有文件以一定格式打成的一个资源包。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14813974.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-26 16:23
+阿里巴巴云原生
+<span data-post-id="14813974" class="post-view-count">阅读(4)</span> 
+<span data-post-id="14813974" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14813974" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14813974" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/25.html">2021年5月25日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14809078.html">
+    <span>
+        Kubernetes 稳定性保障手册：洞察+预案
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：稳定性保障是个复杂的话题，需要有效、可迭代、可持续保障集群的稳定性，系统性的方法或许可以解决该问题。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14809078.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-25 15:45
+阿里巴巴云原生
+<span data-post-id="14809078" class="post-view-count">阅读(9)</span> 
+<span data-post-id="14809078" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14809078" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14809078" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/24.html">2021年5月24日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14805248.html">
+    <span>
+        程序员写好技术文章的几点小技巧
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：去年成为了内网技术分享平台的年度作者，受邀写一篇关于“如何写好文章”的文章。我本身并不喜欢写字，去年写的几篇文章，涉及的话题自带流量，所以阅读量多了一些，谈不上有多擅长。不过还是决定分享一下自己在写文章时用到的一些小技巧，希望对大家有帮助。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14805248.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-24 17:13
+阿里巴巴云原生
+<span data-post-id="14805248" class="post-view-count">阅读(9)</span> 
+<span data-post-id="14805248" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14805248" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14805248" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14805173.html">
+    <span>
+        飞猪基于 Serverless 的云+端实践与思考
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：过去两年，飞猪前端一直在积极地进行 Serverless 建设和实践，2019 年 - 2020 年我们和集团 Node 架构组、研发平台一起完成了基础能力的建设和业务试点，成为集团率先落地 Serverless 实践的 BU，2020 年 - 2021 年我们开始大规模地在飞猪推广使用 Serverless 的能力，从导购全链路到核心中后台，都能够看到 Serverless 的身影，这一年我们完成了 Serverless 从业务试点到生产力工具的转变，本文将主要分享飞猪基于 Serverless 的实践成果以及未来想要做的事情。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14805173.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-24 17:03
+阿里巴巴云原生
+<span data-post-id="14805173" class="post-view-count">阅读(10)</span> 
+<span data-post-id="14805173" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14805173" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14805173" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/21.html">2021年5月21日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14793590.html">
+    <span>
+        阿里云原生开源大家族加入中科院软件所开源软件供应链点亮计 - 暑期 2021
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：2021 年，由中国开源软件推进联盟 COPU 牵头发布了《2021 中国开源发展蓝皮书》，涵盖当今全球开源的总体情况分析、开发者分析、项目分析、领域案例，绘制了一副&quot;开源数字生态地图&quot;。让我们全面地看到了开源领域的中国力量。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14793590.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-21 14:18
+阿里巴巴云原生
+<span data-post-id="14793590" class="post-view-count">阅读(22)</span> 
+<span data-post-id="14793590" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14793590" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14793590" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/19.html">2021年5月19日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14785371.html">
+    <span>
+        参与 Apache 顶级开源项目的 N 种方式，Apache Dubbo Samples SIG 成立！
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：一说到参与开源项目贡献，一般大家的反应都是代码级别的贡献，总觉得我的代码被社区合并了，我才算一个贡献者，这是一个常见的错误认知。其实，在一个开源社区中有非常多的角色是 non-code contributor，一个开源社区中的很多关键职责被大家给忽略了。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14785371.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-19 15:42
+阿里巴巴云原生
+<span data-post-id="14785371" class="post-view-count">阅读(17)</span> 
+<span data-post-id="14785371" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14785371" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14785371" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/18.html">2021年5月18日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14780963.html">
+    <span>
+        博睿数据与阿里云签订云原生核心合作伙伴计划，推动企业智能运维落地
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：5 月 13 日，博睿数据与阿里云宣布达成深度合作，重点发力企业智能运维领域。双方签订了云原生核心合作伙伴计划，通过博睿数据领先的拨测网络结合阿里云独特的 AIOps 能力，构建全球领先的 SaaS 产品云拨测，为企业提供领先、专业、全面的智能运维能力。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14780963.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-18 14:54
+阿里巴巴云原生
+<span data-post-id="14780963" class="post-view-count">阅读(19)</span> 
+<span data-post-id="14780963" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14780963" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14780963" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14780864.html">
+    <span>
+        Vineyard 加入 CNCF Sandbox，将继续瞄准云原生大数据分析领域
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：Vineyard 是一个专为云原生环境下大数据分析场景中端到端工作流提供内存数据共享的分布式引擎，我们很高兴宣布 Vineyard 在 2021 年 4 月 27 日被云原生基金会（CNCF）TOC 接受为沙箱（Sandbox）项目。        <a href="https://www.cnblogs.com/alisystemsoftware/p/14780864.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-18 14:38
+阿里巴巴云原生
+<span data-post-id="14780864" class="post-view-count">阅读(22)</span> 
+<span data-post-id="14780864" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14780864" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14780864" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/alisystemsoftware/archive/2021/05/17.html">2021年5月17日</a>
+    </div>
+        <div class="postTitle">
+            
+
+<a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/alisystemsoftware/p/14777390.html">
+    <span>
+        因你不同，2021 阿里云开发者大会重磅开启 @ 所有开发者！
+    </span>
+    
+
+
+
+</a>
+
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc">
+摘要：向你发出入会邀请        <a href="https://www.cnblogs.com/alisystemsoftware/p/14777390.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-05-17 16:13
+阿里巴巴云原生
+<span data-post-id="14777390" class="post-view-count">阅读(152)</span> 
+<span data-post-id="14777390" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14777390" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14777390" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/alisystemsoftware/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2021 阿里巴巴云原生
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjtEhhWTQm9IRUt5a9pNXRVWJhxoW5e4fP6atlH0WmfcltDHR3ZYeyQNQ8LHHXM0NvWUkbS6kWNjTF7wzPYmzhJEqPHEeysyJD-rtHpWtB_Z-vsvDcG_xz5Umggmg5vd3Pw" />
+</body>
+</html>

@@ -1,0 +1,613 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>暴躁PM棠九九 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=FSeEa-rFf0sIksBzbHaXW8Iv0NfilAepvltZw3cr-9k" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=rj2vgM9-SnOpGgktnrBKAhiwG7zaFNNydpmw5HBgjcQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zshsblogs/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zshsblogs/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zshsblogs/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 625881;
+        var currentBlogApp = 'zshsblogs';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleBlue';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simpleblue has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/zshsblogs/">花开可缓归</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zshsblogs/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E6%9A%B4%E8%BA%81PM%E6%A3%A0%E4%B9%9D%E4%B9%9D">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/zshsblogs/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16147927">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/16147927.html">
+    <span>
+        OA办公软件篇（二）—权限管理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16147927">
+摘要：            
+权限管理的背景 权限管理的作用 迭代历程 关键名词释义 权限管理模型 具体实现 写在最后 权限管理的背景 在OA办公软件篇（一）—组织架构一文中，我们说到组织架构是软件系统的权限体系的重要搭建依据，软件根据不同员工在组织中的位置给予不同的权限，比如说普通员工对于软件只有查看和使用的权限，普通管理员对        <a href="https://www.cnblogs.com/zshsblogs/p/16147927.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:32
+暴躁PM棠九九
+<span data-post-id="16147927" class="post-view-count">阅读(141)</span> 
+<span data-post-id="16147927" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16147927" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147927" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15991723">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2022/03/10.html">2022年3月10日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/15991723.html">
+    <span>
+        OA办公软件篇（一）—组织架构
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15991723">
+摘要：            
+OA办公软件篇（一）—组织架构 背景 作用 迭代历程 具体实现 写在最后 背景 在说组织架构之前，我们先来说说OA本身。 百度百科解释OA为：办公自动化（Office&#160;Automation，简称OA），是将现代办公和现代计算机技术结合起来的一种新型办公方式。 钉钉、企业微信都属于市面上比较成熟且用户        <a href="https://www.cnblogs.com/zshsblogs/p/15991723.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-03-10 23:02
+暴躁PM棠九九
+<span data-post-id="15991723" class="post-view-count">阅读(615)</span> 
+<span data-post-id="15991723" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15991723" class="post-digg-count">推荐(4)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15991723" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15790265">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2022/01/11.html">2022年1月11日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/15790265.html">
+    <span>
+        一文看懂B端产品和C端产品
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15790265">
+摘要：            
+大纲 什么是B端产品 什么是C端产品 为什么会产生B端产品和C端产品 怎么判断一个产品是B端还是C端 B端产品和C端产品存在哪些差异 C端产品经理如何向B端产品经理转型 写在最后 什么是B， Business，商业、组织 什么是B端，通常为企业内部或商家使用的系统和平台，如ERP系统、财务管理平台等        <a href="https://www.cnblogs.com/zshsblogs/p/15790265.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-01-11 21:53
+暴躁PM棠九九
+<span data-post-id="15790265" class="post-view-count">阅读(248)</span> 
+<span data-post-id="15790265" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15790265" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15790265" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15738303">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/12/27.html">2021年12月27日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/15738303.html">
+    <span>
+        药店开方审方业务建设
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15738303">
+摘要：            
+大纲 项目背景 药店开方的场景分析 药店开方的形式和流程 药店开方的注意事项 项目背景 药店开方并非指药店自己聘请医师现场进行开方，而是指通过现在远程问诊的技术手段，药店接入第三方平台，由平台统一提供医师开方、药师审方，然后药店就通过这个处方将药卖出去。 在说药店开方这个业务之前，我先说说自己在互联        <a href="https://www.cnblogs.com/zshsblogs/p/15738303.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-12-27 23:08
+暴躁PM棠九九
+<span data-post-id="15738303" class="post-view-count">阅读(491)</span> 
+<span data-post-id="15738303" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15738303" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15738303" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14560040">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/03/26.html">2021年3月26日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14560040.html">
+    <span>
+        从0到1构建上门护理
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14560040">
+摘要：            
+背景介绍 实现意义 框架搭建 详细实现 背景介绍 医护“上门”自古有之，大夫拎着药箱到患者家中进行服务。随着社会的发展，医护上门服务被重新定义及再次细化，我们今天要说的上门护理就是其中一个极其重要的分支。 上门护理，顾名思义就是医护工作人员上门给患者进行护理工作，包含会阴护理、母婴护理、PICC护理        <a href="https://www.cnblogs.com/zshsblogs/p/14560040.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-03-26 09:31
+暴躁PM棠九九
+<span data-post-id="14560040" class="post-view-count">阅读(359)</span> 
+<span data-post-id="14560040" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14560040" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14560040" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14460962">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/02/28.html">2021年2月28日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14460962.html">
+    <span>
+        关于就诊档案
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14460962">
+摘要：            
+什么是就诊档案 就诊档案的作用 就诊档案的创建过程 就诊档案的具体内容 在我的另一篇文章《关于健康档案》里面，讲解了健康档案相关的内容，在这篇文章里，我们来说说就诊档案。同为档案，两者有什么区别和联系呢？ 文章链接： https://www.cnblogs.com/zshcnblogs/p/1428        <a href="https://www.cnblogs.com/zshsblogs/p/14460962.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-02-28 22:32
+暴躁PM棠九九
+<span data-post-id="14460962" class="post-view-count">阅读(484)</span> 
+<span data-post-id="14460962" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14460962" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14460962" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14378622">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/02/05.html">2021年2月5日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14378622.html">
+    <span>
+        互联网医疗之在线咨询
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14378622">
+摘要：            
+什么是在线咨询 业务模式探讨 收费模式探讨 具体业务实现 在线咨询是当下互联网医疗中十分常见的一个业务类型，基本上涉及到医疗相关的都会开通这个业务作为一个十分重点的收益来源或者导流源。 在线咨询的基本场景为 患者存在一些医疗问题需要向医生进行咨询 但又不便、不想或者不能采用问诊方式的时候，就可以使用        <a href="https://www.cnblogs.com/zshsblogs/p/14378622.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-02-05 18:17
+暴躁PM棠九九
+<span data-post-id="14378622" class="post-view-count">阅读(165)</span> 
+<span data-post-id="14378622" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14378622" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14378622" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14318039">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/01/23.html">2021年1月23日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14318039.html">
+    <span>
+        患者管理之服务包
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14318039">
+摘要：            
+为什么要做服务包 服务包包含的服务 服务包的应用场景 怎么做服务包 写在最后 互联网医院在基础功能正常运转之后，就会开始探寻更多的商业模式，以保证企业能够源源不断的注入活力并获得更多的利润，服务包就是其中一种可变现的模式。 服务包，顾名思义，就是将服务打包到一起最终形成一个服务包。服务包的意义在于帮        <a href="https://www.cnblogs.com/zshsblogs/p/14318039.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-01-23 16:32
+暴躁PM棠九九
+<span data-post-id="14318039" class="post-view-count">阅读(237)</span> 
+<span data-post-id="14318039" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14318039" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14318039" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14280538">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/01/15.html">2021年1月15日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14280538.html">
+    <span>
+        关于健康档案
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14280538">
+摘要：            
+什么是健康档案 健康档案的重要意义 健康档案的几个维度 健康档案的一些设想 写在最后 档案是一个很常见的词，上学的时候我们的教育经历会有一份档案，工作之后的工作经历会有一份档案，公安部会有我们的个人档案。档案实际上就是个体详细情况加上个体经历形成的原始记录的一个集合体。那么健康档案是什么呢？百度百科        <a href="https://www.cnblogs.com/zshsblogs/p/14280538.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-01-15 12:48
+暴躁PM棠九九
+<span data-post-id="14280538" class="post-view-count">阅读(311)</span> 
+<span data-post-id="14280538" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14280538" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14280538" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14246928">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/zshsblogs/archive/2021/01/07.html">2021年1月7日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/zshsblogs/p/14246928.html">
+    <span>
+        患者管理之怎么管理患者
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_14246928">
+摘要：            
+&#183; 为什么要管理患者 &#183; 管理患者的作用 &#183; 获得患者的两种途径 &#183; 分类患者的三种方式 &#183; 管理患者的多重手段 &#183; 写在最后 互联网时代，流量为王，各个互联网公司都在积极的建立私域流量池，对于一个医生来说，看诊过的所有患者相当于都进入了这个医生的私域流量池。 患者进入医生的私域流量池后，医生可以选        <a href="https://www.cnblogs.com/zshsblogs/p/14246928.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2021-01-07 18:47
+暴躁PM棠九九
+<span data-post-id="14246928" class="post-view-count">阅读(880)</span> 
+<span data-post-id="14246928" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14246928" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14246928" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/zshsblogs/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2022 暴躁PM棠九九
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4m-Uqb95cvCP8buZ7X6dHlJk9tGqcyjSaYXQTfTid2zCnyp3tc4C_rR165d5daesRYqO-RN9cKpWY7nCbS3sEvcw5nSTDCoulS-qPuAfn9spVGkOL_1ivz_IVecpObT9UA" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

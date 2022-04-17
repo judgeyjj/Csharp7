@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title>张喜龙 - 博客园</title>
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/552028.css?v=8m17XLZP%2bpmSMpV0W6qLZEUvknw%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/BlueSky/bundle-BlueSky-mobile.css?v=tgTI4mJND1W3oSlADG85orpVMk0EVZnMYKnLFkf_k1I1"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/zhangxilong/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/zhangxilong/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/zhangxilong/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=552028;var currentBlogApp='zhangxilong',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<div id="page_begin_html"></div><script>load_page_begin_html();</script>
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/zhangxilong/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/zhangxilong/">张喜龙</a></h1>
+<h2>人的牙齿是硬的，舌头却是软的。到了人生的最后，牙齿都掉光了，舌头却不会掉，所以要柔软，人生才能长久，硬反而会吃亏。</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/zhangxilong/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E5%BC%A0%E5%96%9C%E9%BE%99">联系</a></li>
+<li><a id="blog_nav_rss" class="menu" href="https://www.cnblogs.com/zhangxilong/rss">订阅</a>
+<!--<a id="blog_nav_rss_image" class="aHeaderXML" href="https://www.cnblogs.com/zhangxilong/rss"><img src="//www.cnblogs.com/images/xml.gif" alt="订阅" /></a>--></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 23&nbsp; </span>
+<span id="stats_article_count">文章 - 0&nbsp; </span>
+<span id="stats-comment_count">评论 - 1</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        
+<!--done-->
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_ctl00_ImageLink" href="https://www.cnblogs.com/zhangxilong/">置顶随笔</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12712901.html">[置顶]php调用百度地图接口，根据IP地址获取地区</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 1.登录百度地图开放平台 地址：http://lbsyun.baidu.com/ 2.选择微信登录 3.点击控制台，看下一下界面 3.点击应用管理 4.创建应用，我的是网站应用，所以选择浏览器端 5.里边所有字段要填写准确。注意：（白名单可输入网址，如果都用的话，就是用‘*’号代替） 6.创建好之后<a href="https://www.cnblogs.com/zhangxilong/p/12712901.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-16 14:54 张喜龙 阅读(40) 评论(1)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12712901" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl00_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/24.html">2020年4月24日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12767323.html">PHP实现统计目录文件大小</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: /** * 统计目录文件大小的函数 * @param $dir 文件路径 * @author 65420278@qq.com */ function dirsize($dir) { @$dh = opendir($dir); $size = 0; while($file = @readdir($dh<a href="https://www.cnblogs.com/zhangxilong/p/12767323.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-24 14:36 张喜龙 阅读(4) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12767323" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl01_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/23.html">2020年4月23日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl01_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12760166.html">Centos搭建php环境，集成工具</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: https://oneinstack.com/<a href="https://www.cnblogs.com/zhangxilong/p/12760166.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-23 13:19 张喜龙 阅读(6) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12760166" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl02_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/22.html">2020年4月22日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl02_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12751698.html">Apache禁止ip访问只允许域名访问</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: &lt;VirtualHost 服务器ip&gt; ServerName 服务器ip &lt;Location /&gt; Order Allow,Deny Deny from all &lt;/Location&gt; &lt;/VirtualHost&gt; &lt;VirtualHost 服务器ip&gt; DocumentRoot &quot;/var/www<a href="https://www.cnblogs.com/zhangxilong/p/12751698.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-22 14:03 张喜龙 阅读(11) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12751698" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl03_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/21.html">2020年4月21日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl03_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12744353.html">PHP递归获取文件夹和文件</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: /* * 递归获取文件夹和文件 * @param $path 获取的文件夹路径 * @return $list array * 使用scandir函数可以扫描文件夹下内容 代替while循环读取 */ function scandirFolder($path){ $list = []; $temp_<a href="https://www.cnblogs.com/zhangxilong/p/12744353.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-21 14:21 张喜龙 阅读(12) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12744353" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl03_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12742610.html">利用Google翻译实现网站国际化——js插件</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: &lt;div id=&quot;google_translate_element&quot; style=&quot;position:absolute;bottom:10px;right:10px;z-index:2000;opacity:0.7&quot;&gt;&lt;/div&gt; &lt;script&gt; function googleTranslateE<a href="https://www.cnblogs.com/zhangxilong/p/12742610.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-21 09:59 张喜龙 阅读(6) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12742610" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl04_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/17.html">2020年4月17日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl04_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12721668.html">PHP根据当前日期获取星期</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: /* * 获取日期对应的星期 * 参数$date为输入的日期数据，格式如：2018-6-22 */ function get_week($date){ $date_str=date(&#39;Y-m-d&#39;,$date);//强制转换日期格式 $arr=explode(&quot;-&quot;, $date_str);//封装<a href="https://www.cnblogs.com/zhangxilong/p/12721668.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-17 18:21 张喜龙 阅读(8) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12721668" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl04_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12721651.html">PHP获取真实的IP地址</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: /** * 获取用户真实 IP */ function clientIP() { static $realip; if (isset($_SERVER)){ if (isset($_SERVER[&quot;HTTP_X_FORWARDED_FOR&quot;])){ $realip = $_SERVER[&quot;HTTP_<a href="https://www.cnblogs.com/zhangxilong/p/12721651.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-17 18:19 张喜龙 阅读(14) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12721651" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl04_DayList_TitleUrl_2" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12721053.html">layui框架静态文件</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 链接：https://pan.baidu.com/s/17_J0QFfi53yj45tZ2kMI2A 提取码：skxe<a href="https://www.cnblogs.com/zhangxilong/p/12721053.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-17 16:58 张喜龙 阅读(9) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12721053" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl04_DayList_TitleUrl_3" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12720950.html">一些常用的前端开源框架</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 1.ZUI 介绍：一个基于 Bootstrap 深度定制开源前端实践方案，帮助你快速构建现代跨屏应用。 网址：https://www.openzui.com/ 2.layui 介绍：经典模块化前端框架 网址：https://www.layui.com/ 3.MZUI 介绍：为移动端设计，基于 Fle<a href="https://www.cnblogs.com/zhangxilong/p/12720950.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-17 16:47 张喜龙 阅读(13) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12720950" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="homepage1_HomePageDays_DaysList_ctl05_ImageLink" href="https://www.cnblogs.com/zhangxilong/archive/2020/04/16.html">2020年4月16日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="homepage1_HomePageDays_DaysList_ctl05_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/zhangxilong/p/12714323.html">在Apache服务器上安装阿里云ssl证书</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 阿里云SSL证书服务支持下载证书安装到Apache服务器，从而使Apache服务器支持HTTPS安全访问。本文介绍了证书安装的具体操作。 前提条件： 您的Apache服务器上已经开启了443端口（HTTPS服务的默认端口）。 您的Apache服务器上已安装了mode_ssl.so模块（启用SSL功能<a href="https://www.cnblogs.com/zhangxilong/p/12714323.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-16 17:29 张喜龙 阅读(19) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12714323" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+<div class="topicListFooter"><div id="nav_next_page"><a href="https://www.cnblogs.com/zhangxilong/default.html?page=2">下一页</a></div></div>
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 张喜龙
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<!-- 底部加了小鱼<・)))><<~ -->
+  <div id="jsi-flying-fish-container" class="container"></div>
+  <script src='https://blog-static.cnblogs.com/files/elkyo/fish.js'></script>
+  <style>
+  @media only screen and (max-width: 767px){
+  #sidebar_search_box input[type=text]{width:calc(100% - 24px)}
+  }
+  </style>
+
+  <!--音乐-->
+  <link rel="stylesheet" href="https://blog-static.cnblogs.com/files/elkyo/APlayer.min.css">
+  <div id="player" class="aplayer aplayer-withlist aplayer-fixed" data-id="3025663508" data-server="netease" data-type="playlist" data-order="random" data-fixed="true" data-listfolded="true" data-theme="#2D8CF0"></div>
+  <script src="https://blog-static.cnblogs.com/files/elkyo/APlayer.min.js"></script>
+  <script src="https://blog-static.cnblogs.com/files/elkyo/Meting.min.js"></script>
+
+  <!--看板娘 - 猫-->
+  <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+  <script>
+      L2Dwidget.init({
+          "model": {
+              jsonPath: "https://unpkg.com/live2d-widget-model-haruto@1.0.5/assets/haruto.model.json",<!--这里改模型，前面后面都要改-->
+              "scale": 1
+          },
+          "display": {
+              "position": "left",<!--设置看板娘的上下左右位置-->
+              "width": 150,
+              "height": 250,
+              "hOffset": 70,        
+              "vOffset": 0
+          },
+          "mobile": {
+              "show": true,
+              "scale": 0.5
+          },
+          "react": {
+              "opacityDefault": 0.7,<!--设置透明度-->
+              "opacityOnHover": 0.2
+          }
+      });
+  window.onload = function(){
+       $("#live2dcanvas").attr("style","position: fixed; opacity: 0.7; left: 50px; bottom: 0px; z-index: 1; pointer-events: none;")
+  }
+  </script>
+  <!--点击冒点-->
+  <canvas width="1777" height="841" style="position: fixed; left: 0px; top: 0px; z-index: 2147483647; pointer-events: none;"></canvas><script src="https://blog-static.cnblogs.com/files/elkyo/mouse-click.js"></script>
+<!--PageEndHtml Block End-->
+</body>
+</html>

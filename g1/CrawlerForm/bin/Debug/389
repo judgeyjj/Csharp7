@@ -1,0 +1,710 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="原创不易，求分享、求一键三连 ​ 复盘有卵用？ 「名称解释」：CaseStudy，针对平时工作中爆发的工程或组织问题，需要责任人写CS（CaseStudy）文档，每周二下午，相关人一起做复盘的机制，旨" />
+    <meta property="og:description" content="原创不易，求分享、求一键三连 ​ 复盘有卵用？ 「名称解释」：CaseStudy，针对平时工作中爆发的工程或组织问题，需要责任人写CS（CaseStudy）文档，每周二下午，相关人一起做复盘的机制，旨" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>技术管理进阶——为什么要多总结，如何做总结？ - 叶小钗 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/sea/bundle-sea.min.css?v=YMVQaOhwlnYavMWEPMZ-2vNAjah_YVn4F_TzjxzOEUs" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/yexiaochai/custom.css?v=572fICyaeU767pvURrSzxTPFI0Q=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/sea/bundle-sea-mobile.min.css?v=mb63rUvtjLCbTYZkinWqbrh6r806SySS1CBcdU6M7NM" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/yexiaochai/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/yexiaochai/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/yexiaochai/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 91319;
+        var currentBlogApp = 'yexiaochai';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'sea';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-14 13:41';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-sea no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    <!--done-->
+<div id="header">
+	
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/yexiaochai/">叶小钗</a>
+<br>
+		开始新的旅途
+	</div>
+</div>
+
+
+</div>
+
+<div id="mytopmenu">
+	
+		<div id="mylinks">
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+ &nbsp;
+
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/yexiaochai/">
+首页</a>
+ &nbsp;
+
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+ &nbsp;
+
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8F%B6%E5%B0%8F%E9%92%97">
+联系</a> &nbsp;
+
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/yexiaochai/rss/">
+订阅</a>
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/yexiaochai/rss/">
+    <img src="/skins/sea/images/xml.gif" alt="订阅" />
+</a>&nbsp;
+
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+
+
+</div>
+		<DIV id="mystats"><div id="blog_stats_place_holder"><script>loadBlogStats();</script></div></DIV>
+	
+</div>
+<div id="centercontent">
+	<div id="post_detail">
+<div class="post">
+	<h1 class = "postTitle">
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/yexiaochai/p/16144064.html">
+    <span role="heading" aria-level="2">技术管理进阶——为什么要多总结，如何做总结？</span>
+    
+</a>
+</h1>
+	<div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<blockquote data-tool="mdnice编辑器">
+<p>原创不易，求分享、求一键三连</p>
+</blockquote>
+<p data-tool="mdnice编辑器">​<img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702037-130580571.jpg" width="757" height="2857" class="rich_pages wxw-img" data-ratio="3.774074074074074" data-type="jpeg" data-w="1080" data-imgqrcoded="1"><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702049-236731809.jpg" width="724" height="3251" class="rich_pages wxw-img" data-ratio="4.489814814814815" data-type="jpeg" data-w="1080"><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702040-734607273.jpg" width="726" height="2556" class="rich_pages wxw-img" data-ratio="3.5194444444444444" data-type="jpeg" data-w="1080"><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702036-1903487811.jpg" width="605" height="1665" class="rich_pages wxw-img" data-ratio="2.7509259259259258" data-type="jpeg" data-w="1080"></p>
+<h2 data-tool="mdnice编辑器">复盘有卵用？</h2>
+<blockquote data-tool="mdnice编辑器">
+<blockquote>
+<p>「名称解释」：CaseStudy，针对平时工作中爆发的工程或组织问题，需要责任人写CS（CaseStudy）文档，每周二下午，相关人一起做<strong>复盘</strong>的机制，旨在杜绝类似问题产生；</p>
+</blockquote>
+</blockquote>
+<p data-tool="mdnice编辑器">之前我们在做CaseStudy的时候，有个同学发出了疑问：</p>
+<p data-tool="mdnice编辑器">复盘本意是好的，但我觉得怎样<strong>「付诸实践」</strong>更重要，每次复盘都没有比较实际的案例也没有真实解决问题，这种复盘又有什么意义呢？</p>
+<p data-tool="mdnice编辑器">这个问题是很多同学的疑惑，这个问题其实引申一下就是：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>做了那么多复盘，又有什么用了呢？</p>
+</blockquote>
+<p data-tool="mdnice编辑器">我一不小心就抖了个机灵：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>容易在一个地方跌倒，原因是那个地方就是容易跌倒......</p>
+<p>如果那个地方就是容易跌倒，我们当然要标注<strong>「小心路滑」</strong>的标志吧</p>
+</blockquote>
+<p data-tool="mdnice编辑器"><strong>「抖机灵」</strong>只能让人觉得你聪明，会心一笑往往绕过此事，不能解决问题。</p>
+<p data-tool="mdnice编辑器">所以进一步探讨，一线同学的意识形态比较低，会更关注<strong>具体问题</strong>本身，或者如何解决特定的问题，这个可能会导致一个错觉：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>CS的会上，有很多大佬们基于正确的道德制高点，提出绝对<strong>正确的废话</strong>，这种东西似乎对一线同学指导意义有限</p>
+</blockquote>
+<p data-tool="mdnice编辑器">这种认识在一线同学中是普遍存在的，否则大家都是leader了嘛，比如有多少同学会认为这篇文章是无用的废话呢？但正是因为我们做了很多复盘、CS，才会沉淀更多的方法论。</p>
+<p data-tool="mdnice编辑器">所有这些东西，都是需要大家把自己的视角往上提一个层次才会有用，带有关注的眼光才能发现事物真正的价值。</p>
+<p data-tool="mdnice编辑器">一线同学看到在一个复盘、CS中的一个具体的问题没有解决，但是大家没有意识到，这里主要的原因是解决事件层面的问题多数时候是无效的，比如此图：</p>
+<p><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702058-105155965.png" width="684" height="876" class="rich_pages wxw-img" data-ratio="1.2802547770700636" data-type="png" data-w="1256"></p>
+<p data-tool="mdnice编辑器">规则如此，一旦有外部刺激就一定会出事件，正如红灯停、绿灯行，做项目就一定有BUG一般，这里的点是：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>管理不会解决你看到的这一个问题，管理会设法去解决这一类问题。</p>
+</blockquote>
+<p data-tool="mdnice编辑器">或者一些<strong>路滑地段</strong>被大家忘了，需要重复提醒，所以重复的CaseStudy才会不停的上演。</p>
+<p data-tool="mdnice编辑器">CS以及复盘todo也为团队<strong>宏观建设</strong>提供了<strong>信息输入</strong>，而这一切中很大一部分其实是偏自律、个人问题导致的，当事人自身应尽的责任或义务或规范或标准，<strong>不能</strong>完全期待管理给出解决方案。</p>
+<p data-tool="mdnice编辑器">所以复盘对于个人的意义是什么，这个反而是我们需要思考的。</p>
+<h2 data-tool="mdnice编辑器">复盘的本质</h2>
+<p data-tool="mdnice编辑器">先回答上述问题，复盘对个人的价值是什么：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>CaseStudy类的<strong>强制复盘</strong>本质是一种<strong>打破层级</strong>的<strong>向上汇报</strong></p>
+</blockquote>
+<p data-tool="mdnice编辑器">运用得宜就是一次直面大Leader的<strong>汇报舞台</strong>，如果<strong>傻乎乎</strong>的，那么就是大型<strong>批斗会</strong>。与述职汇报不一样，CS类复盘更为聚焦，属于Case By Case的聊天，核心点有二：</p>
+<ol class=" list-paddingleft-1" data-tool="mdnice编辑器">
+<li>「首先」需要将事情说清楚；</li>
+<li>「其次」能有所感悟最好；</li>
+</ol>
+<p data-tool="mdnice编辑器">这里再进一步，强制出问题的同学做CS复盘，对于团队的意义是：</p>
+<ol class=" list-paddingleft-1" data-tool="mdnice编辑器">
+<li>为团队<strong>宏观建设</strong>提供<strong>信息输入</strong></li>
+<li><strong>帮助</strong>做复盘总结的同学<strong>升维思考</strong></li>
+<li><strong>批斗会</strong>，确定团队红线、底线，塑造<strong>团队复盘文化</strong></li>
+</ol>
+<p data-tool="mdnice编辑器">所以，对个人而言，如果准备得宜，会接收一些大佬的教诲，抛开所谓立场或偏执，这种交流对成长会很有意义；如果准备的不好，或者自己认知差距过大，也就容易演变成鸡同鸭讲、揠苗助长.</p>
+<p data-tool="mdnice编辑器">综上，一线同学很容易有这种想法：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>CS的会上，有很多大佬们基于正确的道德制高点，提出绝对<strong>「正确的废话」</strong>，这种东西似乎对一线同学指导意义是有限的。</p>
+</blockquote>
+<p data-tool="mdnice编辑器">而没有这种想法的同学，可能已经成为Leader了。理解这一切后，可以最终下一个结论：</p>
+<blockquote data-tool="mdnice编辑器">
+<p>总结复盘是帮助自身提高的有效方法</p>
+</blockquote>
+<h1 data-tool="mdnice编辑器">如何复盘</h1>
+<p data-tool="mdnice编辑器">网上关于如何复盘的文章有很多，2W1H是我认为比较好的方法。</p>
+<h2 data-tool="mdnice编辑器">what</h2>
+<p data-tool="mdnice编辑器">“复盘”这个词最早来源于棋类术语，也称“复局”，指对局完毕后，复演该盘棋的记录，以检查对局中对弈者的优劣与得失关键。每天“打谱”，按照棋谱排演，有效地加深对这盘对弈的印象，也可以找出双方攻守的漏洞。</p>
+<p data-tool="mdnice编辑器">复盘被认为是围棋选手增长棋力的「最重要」方法，尤其是自己和高水平者对弈时，可以通过他人的视角看到自己思考不足的地方，从而将别人的经验化为己用。</p>
+<p data-tool="mdnice编辑器">围棋棋手的训练方法很简单：不断下棋，简单复盘，日复一日，年复一年。方法最单调但也最有效。</p>
+<p data-tool="mdnice编辑器">通俗来说，复盘就是把当时“走”的过程重复多遍，并且主动思考为什么这么“走”，下一步应该如何设计，接下来的几步该怎么走。</p>
+<p data-tool="mdnice编辑器">从棋阵来看，复盘是攻守结合的切磋，从心理战来看，能更好地对比双方的心理思维，最终总结出所谓的“套路”。当“套路”熟捻于心，就自然能达到高手的境界了。</p>
+<p data-tool="mdnice编辑器">下棋可以“复盘”，商业模式和个人管理亦如此。差别在于心态和眼界的不同。复盘作为一种常用的工具，几乎可以运用到任何人和事相关联的介质中。</p>
+<p data-tool="mdnice编辑器">它区别于总结，需要去个人化，完全回归到实物原生状态，解剖所有与其相关联的环节，一件一件去回忆、分析，最终需要得到一个更好的可能性。</p>
+<p data-tool="mdnice编辑器">总结起来，复盘的关键在于及时、迅速、有效与反复。</p>
+<h2 data-tool="mdnice编辑器">Why</h2>
+<h3 data-tool="mdnice编辑器">重复犯错</h3>
+<p data-tool="mdnice编辑器">不在同一坑里跌倒，避免重复犯错。</p>
+<p data-tool="mdnice编辑器">虽然每次实践都不可能做到百分百完美，但在复盘的时候，我们知道哪些地方做得不尽如人意，原因是客观还是主观。如果能找到一些之前没有注意的坑，对自己而言也是一个大收获。</p>
+<p data-tool="mdnice编辑器">同样的错误不再犯，是复盘追求的第一层次的目标。</p>
+<p data-tool="mdnice编辑器">战术上的查漏补缺具有历史性和环境因素干扰，不易简单复制。但是有了「战略层面」的「升维」，战术上的「重复犯错」将可以降低甚至「杜绝」。</p>
+<blockquote data-tool="mdnice编辑器">
+<blockquote>
+<p>解释：这里战略层面的升维，也就是我们常说的「悟了」</p>
+</blockquote>
+</blockquote>
+<h3 data-tool="mdnice编辑器">扬长避短</h3>
+<p data-tool="mdnice编辑器">复盘，到底在复什么？其实就是人和事，两者缺一不可。</p>
+<p data-tool="mdnice编辑器">每个人都有自己的强弱项，如果分工合理，长板效应会更突显。反之，短板效应的危害也是有目共睹的。</p>
+<p data-tool="mdnice编辑器">复盘追求的第二层次的目标，在于了解团队中的每个人，实现合理分工，最终的目标，不是彼此牵制，而是彼此融合和互促。</p>
+<h3 data-tool="mdnice编辑器">认知自己</h3>
+<p data-tool="mdnice编辑器">复盘一件事情的来龙去脉，跟下一盘棋一样，都是彼此在斗智斗勇。</p>
+<p data-tool="mdnice编辑器">过程中对自己心理上的成长和锤炼，是复盘第三层次的目标，也是个人和团队在这其中获得的最大收获。</p>
+<h3 data-tool="mdnice编辑器">更好的自己</h3>
+<p data-tool="mdnice编辑器">在全盘当中，存在着各个细微的环节，这些环节环环相扣，最终导致了结果。所以复盘的过程，也是将细节重新暴晒的过程。</p>
+<p data-tool="mdnice编辑器">知道了哪些地方有可能更好，才能在下一次实践中迭代和升级。</p>
+<h2 data-tool="mdnice编辑器">How</h2>
+<h3 data-tool="mdnice编辑器">目标回顾</h3>
+<p data-tool="mdnice编辑器">就是回顾复盘事件的目标。</p>
+<p data-tool="mdnice编辑器">将手段当成目标是我们常见的错误。回顾目标时，需要将目标清晰明确地在某一个地方写出来，以防止参与复盘的人员中途偏离目标。</p>
+<h3 data-tool="mdnice编辑器">结果对比</h3>
+<p data-tool="mdnice编辑器">结果与目标的对比，有四种可能产生的情况：</p>
+<ol class=" list-paddingleft-1" data-tool="mdnice编辑器">
+<li>结果和目标一致，完成所设目标；</li>
+<li>结果超越目标，完成情况比预期还更好；</li>
+<li>结果不如目标，完成情况比预期要差；</li>
+<li>在做事的过程中新添加了预期没有的项目。</li>
+</ol>
+<p data-tool="mdnice编辑器">结果对比的目的不是为了发现差距，而是为了发现问题。</p>
+<h3 data-tool="mdnice编辑器">叙述过程</h3>
+<p data-tool="mdnice编辑器">过程叙述的目的是让所有复盘参与人员都知道事件的过程，这样大家才有共同讨论的基础，不要浪费时间在信息层面。</p>
+<h3 data-tool="mdnice编辑器">自我剖析</h3>
+<p data-tool="mdnice编辑器">自我剖析的时候，要客观，要能够「对自己不留情面」</p>
+<p data-tool="mdnice编辑器">自我剖析是去分辨事情的可控因素，搞清楚到底是因为自己掌控的部分出了问题，还是别的部分出了问题。</p>
+<h3 data-tool="mdnice编辑器">众人设问</h3>
+<p data-tool="mdnice编辑器">通过众人的视角来设问，这样可以突破个人见识的局限。设问要探索多种可能性以及其边界。</p>
+<blockquote data-tool="mdnice编辑器">
+<p>如果没有众人设问的场景，那么就要自己不停的问自己</p>
+</blockquote>
+<h3 data-tool="mdnice编辑器">总结规律</h3>
+<p data-tool="mdnice编辑器">时间是检验规律正确与否的唯一标准。复盘得出的结论是否可靠，一般来说可以通过3个原则来评判：</p>
+<ol class=" list-paddingleft-1" data-tool="mdnice编辑器">
+<li>结论落脚点是否发生在偶然事件上？</li>
+</ol>
+<p data-tool="mdnice编辑器">当复盘的结论落脚在偶然因素上一定是错误的。复盘没有进入到逻辑层面，没经过逻辑验证，结果一定不可信。</p>
+<ol class=" list-paddingleft-1" start="2" data-tool="mdnice编辑器">
+<li>复盘结论是指向人还是指向事？</li>
+</ol>
+<p data-tool="mdnice编辑器">结论如果是指向人则说明复盘没有到位。复盘是要总结客观规律，「人是变量」。</p>
+<p data-tool="mdnice编辑器">指向事，则复盘到规律的可能性更高。复盘的结论是从事物的本质去理解分析，这是验证复盘结论是否可靠的标准之一。</p>
+<ol class=" list-paddingleft-1" start="3" data-tool="mdnice编辑器">
+<li>是否是经过交叉验证得出的结论？</li>
+</ol>
+<p data-tool="mdnice编辑器">「孤证不能定案」是法律上的术语，用来比喻复盘得出的结论通过其他事情交叉验证，也可以为结论的有效性提供一定的保障。</p>
+<h3 data-tool="mdnice编辑器">案例佐证</h3>
+<p data-tool="mdnice编辑器">自我剖析，就是自己对做过的事情进行反省和思考。</p>
+<p data-tool="mdnice编辑器">自我剖析是一个自我成长的机会。</p>
+<blockquote data-tool="mdnice编辑器">
+<blockquote>
+<p>这里的意思是将总结出来的规律或者说方法论，套用到自己之前的案例中，逻辑是否依旧是对的</p>
+</blockquote>
+</blockquote>
+<h3 data-tool="mdnice编辑器">复盘归档</h3>
+<p data-tool="mdnice编辑器">经过上述七步复盘得出的结论，就具有较高的可信度了。</p>
+<p data-tool="mdnice编辑器">这些就是得到了认可和值得传播的观念和规律。有必要进行复盘和归档， 将这些认识知识化，方便传播和查阅。</p>
+<p data-tool="mdnice编辑器">好的经验心得可以让人少走弯路，工作更顺畅。</p>
+<h2 data-tool="mdnice编辑器">诚实的复盘</h2>
+<p data-tool="mdnice编辑器">复盘的要点是<strong>有所思</strong>、<strong>有所得</strong>，而不是<strong>回忆琐事</strong>，如果一年时间自我反思的次数比较少，那么往往是需要再加强的；</p>
+<p data-tool="mdnice编辑器">小钗有时候就像生产队的驴一样，为什么那么<strong>高产</strong>？这里是我的一个复盘方法。我将自己「总结」分为四个部分：</p>
+<h3 data-tool="mdnice编辑器">日常记录</h3>
+<p data-tool="mdnice编辑器">也就是日常的Case积累，一般300字左右，记录事情本身即可。这种属于平时有问题就记录，确实没问题也不用强行创造case。</p>
+<h3 data-tool="mdnice编辑器">周复盘</h3>
+<p data-tool="mdnice编辑器">一般1500字左右，会将日复盘部分作为「材料」使用，这时的文章已经会有进一步思考，往往有些意义；</p>
+<h3 data-tool="mdnice编辑器">季度复盘</h3>
+<p data-tool="mdnice编辑器">月复盘或者季度复盘，一般3000-8000字，会将很多有关联的周复盘串联起来，形成一套更有逻辑更自洽的文章；</p>
+<h3 data-tool="mdnice编辑器">反复阅读，不断更新</h3>
+<p data-tool="mdnice编辑器">也就是对文章本身我自己都会「反复阅读」，「反复论证」，所做这一切无非是加强自己的「认知系统」；</p>
+<p data-tool="mdnice编辑器">以上四个部分做好了，其实个人认知体系会很好的与实践案例结合，最终的表述就会<strong>言之有物</strong>，无论自己还是交流对象，都会更加信服。</p>
+<p data-tool="mdnice编辑器">经过整理才到所谓年度复盘，一般会超过1w字，会将很多的经历、方法论和感悟以相对合理的方式融合到一起；</p>
+<p data-tool="mdnice编辑器">其中日复盘提供的材料是周复盘的基础，周复盘提供的感悟是月复盘的底色，「月复盘」形成的方法论是你「认知体系」最主要的地方：</p>
+<p><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702047-1602010409.png" width="566" height="257" class="rich_pages wxw-img" data-ratio="0.4537037037037037" data-type="png" data-w="1080"></p>
+<p data-tool="mdnice编辑器">综上，万不可认为平时有所谓总结，就不注重复盘，最后不要以为<strong>写日记是做总结</strong>，复盘才没那么简单呢！</p>
+<p data-tool="mdnice编辑器">最后提一句，总结复盘是为自己成长，其他人意见不太重要，所以怎么爽怎么来，<strong>有成长就行</strong>！</p>
+<p data-tool="mdnice编辑器">好了，今天的分享就到这，喜欢的同学可以四连支持：</p>
+<p data-tool="mdnice编辑器"><img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220414125702049-1536208215.png" class="rich_pages wxw-img" data-ratio="0.11333333333333333" data-type="png" data-w="600"></p>
+<p data-tool="mdnice编辑器">想要更多交流可以加微信群：</p>
+<p>&nbsp;<img src="https://img2022.cnblogs.com/blog/294743/202204/294743-20220415140022972-1364358471.png" alt="" width="297" height="386" loading="lazy"></p>
+<p>&nbsp;</p>
+</div>
+<div id="MySignature" role="contentinfo">
+    <img id="view_img" src="https://img2022.cnblogs.com/blog/294743/202202/294743-20220216140902628-1163053035.png" width="80%" alt="" border="0">
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+	<div class="postDesc">posted on 
+<span id="post-date">2022-04-14 13:41</span>&nbsp;
+<a href="https://www.cnblogs.com/yexiaochai/">叶小钗</a>&nbsp;
+阅读(<span id="post_view_count">1086</span>)&nbsp;
+评论(<span id="post_comment_count">14</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144064" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16144064);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16144064', targetLink: 'https://www.cnblogs.com/yexiaochai/p/16144064.html', title: '技术管理进阶——为什么要多总结，如何做总结？' })">举报</a></div>
+</div>
+
+
+
+<script>
+    var cb_entryId = 16144064, cb_entryCreatedDate = '2022-04-14 13:41', cb_postType = 1, cb_postTitle = '技术管理进阶——为什么要多总结，如何做总结？';
+    var allowComments = true, cb_blogId = 91319, cb_blogApp = 'yexiaochai', cb_blogUserGuid = '448efdc8-916d-e011-a53f-842b2b196315';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+</div>
+
+
+</div>
+<div id="leftcontent">
+	
+		<DIV id="leftcontentcontainer">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script><br>
+			<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script></DIV>
+	
+</div>
+<!--done-->
+<div class="footer">
+	Powered by: <a href="http://www.cnblogs.com">博客园</a>
+	Copyright &copy; 2022 叶小钗
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+</div>
+
+
+
+
+
+
+    <div id="page_end_html">
+        <style>
+#sideToolbar {
+	position: fixed;
+bottom: 20px;
+	right: 25px;
+	width: 250px;
+	
+}
+#sideToolbar ul,#sideToolbar ol{
+	padding: 0px;
+}
+#sideToolbar li{
+	list-style: none;
+}
+#sideCatalog{
+	background-color:#fff;
+	padding-bottom:10px;
+	border-radius:5px;
+}
+#sideCatalog-sidebar {
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-top-colors: none;
+	background-color: #eaeaea;
+	border-color: -moz-use-text-color #eaeaea;
+	border-image: none;
+	border-left: 1px solid #eaeaea;
+	border-right: 1px solid #eaeaea;
+	border-style: none solid;
+	border-width: 0 1px;
+	height: 353px;
+	left: 5px;
+	position: absolute;
+	top: 0;
+	width: 0
+}
+#sideCatalog-catalog {
+  height: 325px;
+  padding-top: 18px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-left: 23px;
+  position: relative;
+}
+#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top {
+	cursor: pointer;
+	top: 0
+}
+#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-bottom {
+	bottom: 0
+}
+#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-top,#sideCatalog #sideCatalog-sidebar .sideCatalog-sidebar-bottom {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll 0 -199px transparent;
+	height: 10px;
+	left: -5px;
+	overflow: hidden;
+	position: absolute;
+	width: 10px
+}
+#sideCatalog li {
+	margin: 0px;
+	padding: 0 7px;
+	text-align: left;
+	position: relative
+}
+#sideCatalog li: hover {
+	background-color: #f5f5f5
+}
+#sideCatalog-catalog ul .active {
+	background-color: #f5f5f5
+}
+#sideCatalog-catalog .active a {
+	color: #519cea
+}
+#sideCatalog-catalog a: hover {
+	color: #519cea
+}
+#sideCatalog span: first-child {
+	color: #999;
+	font-family: Arial;
+	font-size: 14px;
+	font-weight: bold;
+	padding-right: 5px
+}
+#sideCatalog li.h2Offset {
+	padding-left: 45px;
+	text-indent: -25px
+}
+#sideCatalog li.h3Offset {
+	padding-left: 90px;
+	text-indent: -50px
+}
+#sideCatalog a {
+	text-decoration: none;
+	color: #555;
+	font-weight: bold
+}
+.sideCatalog-dot {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") repeat scroll 0 -222px transparent;
+	cursor: pointer;
+	font-size: 12px;
+	height: 10px;
+	left: -20px;
+	line-height: 12px;
+	overflow: hidden;
+	position: absolute;
+	top: 4px;
+	width: 6px
+}
+#sideCatalog .highlight .sideCatalog-dot {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll -271px -38px transparent;
+	height: 13px;
+	left: -23px;
+	top: 3px;
+	width: 18px
+}
+#sideCatalogBtn {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll 0 0 transparent;
+	cursor: pointer;
+	display: block;
+	height: 45px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	position: relative;
+	width: 45px;
+	margin-top: 10px;
+	outline: 0
+}
+#sideCatalogBtn: hover {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll -154px 0 transparent
+}
+.sideCatalogBtnDisable {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll -104px 0 transparent !important
+}
+#sideToolbar-up {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll -1px -62px transparent;
+	border-radius: 2px;
+	display: block;
+	height: 45px;
+	margin-left: 5px;
+	width: 45px;
+	outline: 0
+}
+#sideToolbar-up: hover {
+	background: url("https://images0.cnblogs.com/blog2015/294743/201503/111725133399017.gif") no-repeat scroll -74px -62px transparent
+}
+</style>
+
+<script type="text/javascript">
+
+  var a = $(document);
+  a.ready(function () {
+    var b = $('body'),
+        d = 'sideToolbar',
+        e = 'sideCatalog',
+        f = 'sideCatalog-catalog',
+        g = 'sideCatalogBtn',
+        h = 'sideToolbar-up',
+        i = '<div id="sideToolbar"style="display:none;">\<div class="sideCatalogBg"id="sideCatalog">\<div id="sideCatalog-sidebar">\<div class="sideCatalog-sidebar-top"></div>\<div class="sideCatalog-sidebar-bottom"></div>\</div>\<div id="sideCatalog-catalog">\<ul class="nav"style="width:225px;zoom:1">\</ul>\</div>\</div>\<a rel="nofollow noopener"  href="javascript:void(0);"id="sideCatalogBtn"class="sideCatalogBtnDisable"></a>\</div>',
+        j = '',
+        k = 200,
+        l = 0,
+        m = 0,
+        n = 0,
+        o, p = 113,
+        q = true,
+        r = true,
+        s = b;
+    if (s.length === 0) {
+      return
+    };
+    b.append(i);
+    o = s.find(':header');
+    if (o.length > p) {
+      r = false;
+      var t = s.find('h1');
+      var u = s.find('h2');
+      if (t.length + u.length > p) {
+        q = false
+      }
+    };
+
+if(o.length == 0) return;
+
+    o.each(function (t) {
+      var u = $(this),
+            v = u[0];
+
+      var title = u.text();
+      var text = u.text();
+
+      u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
+      //if (!u.attr('id')) {
+      //    u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
+      //};
+      if (v.localName === 'h1') {
+        l++;
+        m = 0;
+        if (text.length > 14) text = text.substr(0, 12) + "...";
+        j += '<li><span>' + l + '&nbsp&nbsp</span><a rel="nofollow noopener"  href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a><span class="sideCatalog-dot"></span></li>';
+      } else if (v.localName === 'h2') {
+        m++;
+        n = 0;
+        if (q) {
+          if (text.length > 12) text = text.substr(0, 10) + "...";
+          j += '<li class="h2Offset"><span>' + l + '.' + m + '&nbsp&nbsp</span><a rel="nofollow noopener"  href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a></li>';
+        }
+      } else if (v.localName === 'h3') {
+        n++;
+        if (r) {
+          j += '<li class="h3Offset"><span>' + l + '.' + m + '.' + n + '&nbsp&nbsp</span><a rel="nofollow noopener"  href="#' + u.attr('id') + '" title="' + title + '">' + u.text() + '</a></li>';
+        }
+      }
+    });
+    $('#' + f + '>ul').html(j);
+    b.data('spy', 'scroll');
+    b.data('target', '.sideCatalogBg');
+
+    $sideCatelog = $('#' + e);
+    $('#' + g).on('click', function () {
+      if ($(this).hasClass('sideCatalogBtnDisable')) {
+        $sideCatelog.css('display', 'none')
+      } else {
+        $sideCatelog.css('display', '')
+      };
+      $(this).toggleClass('sideCatalogBtnDisable')
+    });
+$('#sideCatalogBtn').removeClass('sideCatalogBtnDisable')
+ $sideCatelog.css('display', 'none');
+
+    $sideToolbar = $('#' + d);
+  $sideToolbar.css('display', 'block');
+
+
+
+  });
+
+
+</script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nowsXCaWb27Z0Ub7M2pCrq8nZfKStOPvu1r7K3RX-kdmxronIa2O2pojagQ1Np7IQuuZYTSzQ0-6tXDamX3dFWq1uUoHp574ruigd0I8DRv8v_fL0Hgi_qcNIJIvb3tro" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

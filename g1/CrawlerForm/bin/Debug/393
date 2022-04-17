@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>PENGJUNQIAO - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=1gj9-XJKL9BZFkjdvROYQPiPWjQXk-hsXXZGtqkfaSc" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=MM4QkBDNzquY4s9xTmGzFmRRoS_nQCVUE-vdF9dD-Uk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/QiaoPengjun/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/QiaoPengjun/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/QiaoPengjun/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 704098;
+        var currentBlogApp = 'QiaoPengjun';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'monokai-sublime';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-blacklowkey has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/QiaoPengjun/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/QiaoPengjun/">PENGJUNQIAO</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/QiaoPengjun/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/PENGJUNQIAO">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/QiaoPengjun/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16154604">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/QiaoPengjun/archive/2022/04/16.html">2022年4月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16154604.html">
+    <span>
+        GO语言学习——基本数据类型字符串
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16154604">
+摘要：            
+字符串 Go语言中的字符串以原生数据类型出现。 Go 语言里的字符串的内部实现使用UTF-8编码。 字符串的值为双引号(&quot;)中的内容，可以在Go语言的源码中直接添加非ASCII码字符 GO语言中字符串是用双引号包裹的 GO语言中单引号包裹的是字符 // 字符串 s := &quot;Hello 中国&quot; //         <a href="https://www.cnblogs.com/QiaoPengjun/p/16154604.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-16 22:59
+PENGJUNQIAO
+<span data-post-id="16154604" class="post-view-count">阅读(56)</span> 
+<span data-post-id="16154604" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16154604" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154604" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16144200">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/QiaoPengjun/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16144218.html">
+    <span>
+        字典按照key排序,只排序一层
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16144218">
+摘要：            
+字典按照key排序,只排序一层 点击查看代码 def sort_dict_by_key(self, data): # 字典按照key排序,只排序一层 return dict(OrderedDict(sorted(data.items(), key=lambda x: x[0])))        <a href="https://www.cnblogs.com/QiaoPengjun/p/16144218.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 13:58
+PENGJUNQIAO
+<span data-post-id="16144218" class="post-view-count">阅读(2)</span> 
+<span data-post-id="16144218" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144218" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144218" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16144212.html">
+    <span>
+        获取当前时间 yyyy-MM-dd HH:mm:ss
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16144212">
+摘要：            
+获取当前时间 yyyy-MM-dd HH:mm:ss 点击查看代码 def get_now_datetime(self): # 获取当前时间 yyyy-MM-dd HH:mm:ss return datetime.now().strftime(&quot;%Y-%m-%d %H:%M:%S&quot;)        <a href="https://www.cnblogs.com/QiaoPengjun/p/16144212.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 13:57
+PENGJUNQIAO
+<span data-post-id="16144212" class="post-view-count">阅读(3)</span> 
+<span data-post-id="16144212" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144212" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144212" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16144200.html">
+    <span>
+        提取文本中的汉字
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16144200">
+摘要：            
+提取文本中的汉字 点击查看代码 def extract_chinese_character(self, fields): &quot;&quot;&quot; 提取文本中的汉字 ^[\u4E00-\u9FFF]+$ 匹配简体和繁体 &quot;&quot;&quot; try: text = fields.get(&#39;text&#39;) style = fields        <a href="https://www.cnblogs.com/QiaoPengjun/p/16144200.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 13:55
+PENGJUNQIAO
+<span data-post-id="16144200" class="post-view-count">阅读(2)</span> 
+<span data-post-id="16144200" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144200" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144200" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16129379">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/QiaoPengjun/archive/2022/04/11.html">2022年4月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16129401.html">
+    <span>
+        WebSocket协议
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16129401">
+摘要：            
+WebSocket协议 当一个项目是一个互动频繁，并且有一定的即时性要求保证服务端的状态能及时同步到客户端的模块，所以如果继续基于http协议开发，那么需要通过ajax发送大量http请求，同时因为http本身属于单向通信，所以服务端无法主动发送信息提供给客户端。所以对于客户端使用来说，非常不友好，        <a href="https://www.cnblogs.com/QiaoPengjun/p/16129401.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 12:06
+PENGJUNQIAO
+<span data-post-id="16129401" class="post-view-count">阅读(7)</span> 
+<span data-post-id="16129401" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129401" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129401" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16129379.html">
+    <span>
+        Tornado进阶——路由进阶
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16129379">
+摘要：            
+路由进阶 路由语法和参数 在路由列表的路由成员中，我们一共可以设置4个参数 url(r&quot;/uri路径&quot;, 视图类, {&quot;参数名&quot;:&quot;参数值&quot;}, name=&quot;路由别名&quot;) server.py from tornado import web from tornado import ioloop set        <a href="https://www.cnblogs.com/QiaoPengjun/p/16129379.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 11:59
+PENGJUNQIAO
+<span data-post-id="16129379" class="post-view-count">阅读(2)</span> 
+<span data-post-id="16129379" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129379" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129379" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16127762">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/QiaoPengjun/archive/2022/04/10.html">2022年4月10日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16127893.html">
+    <span>
+        Django REST framework JWT
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16127893">
+摘要：            
+Django REST framework JWT 在用户注册或登录后，我们想记录用户的登录状态，或者为用户创建身份认证的凭证。我们不再使用Session认证机制，而使用Json Web Token认证机制。 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于        <a href="https://www.cnblogs.com/QiaoPengjun/p/16127893.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 22:28
+PENGJUNQIAO
+<span data-post-id="16127893" class="post-view-count">阅读(8)</span> 
+<span data-post-id="16127893" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16127893" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16127893" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16127819.html">
+    <span>
+        Node.js的安装
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16127819">
+摘要：            
+Node.js的安装 nvm工具安装node.js Vue CLI 需要 Node.js 8.9 或更高版本 (推荐 8.11.0+)。由于node.js的版本更新迭代很快，所以你可能会遇到同一台电脑来维护多个版本的node.js开发的项目，那么自己电脑上对于多个nodejs的解释器管理起来就比较困        <a href="https://www.cnblogs.com/QiaoPengjun/p/16127819.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 22:09
+PENGJUNQIAO
+<span data-post-id="16127819" class="post-view-count">阅读(1)</span> 
+<span data-post-id="16127819" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16127819" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16127819" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16127773.html">
+    <span>
+        前端学习之路一
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16127773">
+摘要：            
+前端 一、什么是前端 任何与用户直接打交道的操作界面都可以称之为前端。比如：电脑界面、手机界面、平板界面 什么是后端？ 暂时先理解成 幕后操作者 不直接与用户打交道 二、为什么要学前端 全栈开发工程师 三、前端学习之路 HTML 内容 网页的骨架 标签 CSS 外观 网页的样式 选择器 属性 Jav        <a href="https://www.cnblogs.com/QiaoPengjun/p/16127773.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 22:03
+PENGJUNQIAO
+<span data-post-id="16127773" class="post-view-count">阅读(8)</span> 
+<span data-post-id="16127773" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16127773" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16127773" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/QiaoPengjun/p/16127762.html">
+    <span>
+        GO语言学习——基本数据类型——整型、浮点型、复数、布尔值、fmt占位符
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16127762">
+摘要：            
+基本数据类型 整型 整型分为以下两个大类： 按长度分为：int8、int16、int32、int64 对应的无符号整型：uint8、uint16、uint32、uint64 其中，uint8就是我们熟知的byte型，int16对应C语言中的short型，int64对应C语言中的long型。 类型 描        <a href="https://www.cnblogs.com/QiaoPengjun/p/16127762.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 21:59
+PENGJUNQIAO
+<span data-post-id="16127762" class="post-view-count">阅读(28)</span> 
+<span data-post-id="16127762" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16127762" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16127762" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/QiaoPengjun/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 PENGJUNQIAO
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kXCt1E8n3n36MQFCARwmSrZ60so0b81E2udkXHsLdAVYWTxO8ClH9tB4EnBijMo0LTRaKgI6mZyx-Sg9rETYIQSuTCxQ3KZSfisT7JTLrgqGfFKG8Z-Jj0L9OOW_pUxG0" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

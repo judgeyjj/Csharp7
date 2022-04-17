@@ -1,0 +1,528 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Jaciot - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=7g5gOKcn7oN77JERPfnHYGtKZZ_9q-gZn4Sp6JkXL2w" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=qHpes9Ca8ImIRFkdtZRqyMOEED5ihHCnvYUfc-vbsbw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/jaciots/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/jaciots/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/jaciots/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 371930;
+        var currentBlogApp = 'jaciots';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-codinglife has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/jaciots/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/jaciots/">Jaciot℃</a>
+</h1>
+<h2>走上技术巅峰，笑看人间</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/jaciots/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Jaciot">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/jaciots/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16155257">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/jaciots/p/16155257.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Rust如何开发eBPF应用?(一)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16155257">
+摘要：            
+前言 eBPF是一项革命性的技术，可以在Linux内核中运行沙盒程序，而无需重新编译内核或加载内核模块。它能够在许多内核 hook 点安全地执行字节码，主要应用在云原生网络、安全、跟踪监控等方面。 eBPF 基金会 (https://ebpf.io) 是一个为 eBPF 技术而创建的非盈利性组织，隶        <a href="https://www.cnblogs.com/jaciots/p/16155257.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-17 11:18
+Jaciot
+<span data-post-id="16155257" class="post-view-count">阅读(13)</span> 
+<span data-post-id="16155257" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16155257" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16155257" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16155257">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/16155257.html">
+    <span>
+        Rust如何开发eBPF应用?(一)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16155257">
+摘要：            
+前言 eBPF是一项革命性的技术，可以在Linux内核中运行沙盒程序，而无需重新编译内核或加载内核模块。它能够在许多内核 hook 点安全地执行字节码，主要应用在云原生网络、安全、跟踪监控等方面。 eBPF 基金会 (https://ebpf.io) 是一个为 eBPF 技术而创建的非盈利性组织，隶        <a href="https://www.cnblogs.com/jaciots/p/16155257.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-17 11:18
+Jaciot
+<span data-post-id="16155257" class="post-view-count">阅读(13)</span> 
+<span data-post-id="16155257" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16155257" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16155257" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14770054">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2021/05/14.html">2021年5月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/14770054.html">
+    <span>
+        Pulsar部署和实践(一)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14770054">
+摘要：            
+前言 本地Docker部署Pulsar消息代理实现消息发布和消息订阅 介绍 相关概念，后面有时间再花时间整理下。 实践步骤 1.使用dokcer本地部署pulsar docker run -it \ -p 6650:6650 \ -p 8080:8080 \ --mount source=pulsa        <a href="https://www.cnblogs.com/jaciots/p/14770054.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-14 21:52
+Jaciot
+<span data-post-id="14770054" class="post-view-count">阅读(1236)</span> 
+<span data-post-id="14770054" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14770054" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14770054" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14761611">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2021/05/12.html">2021年5月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/14761611.html">
+    <span>
+        Rust操作MySQL数据库实践(一)查询数据表
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14761611">
+摘要：            
+前言 Rust操作MySQL数据库实践(一)查询数据表 内容 1.首先添加Rust MySql客户端依赖库，在Cargo.toml中加入mysql板条箱 [package] name = &quot;mysqlcon&quot; version = &quot;0.1.0&quot; edition = &quot;2018&quot; ​ # See mo        <a href="https://www.cnblogs.com/jaciots/p/14761611.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-12 20:35
+Jaciot
+<span data-post-id="14761611" class="post-view-count">阅读(3263)</span> 
+<span data-post-id="14761611" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14761611" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14761611" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_12830350">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2020/05/05.html">2020年5月5日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/12832468.html">
+    <span>
+        在Vue中使用iview的Select控件实现一个多级选项列表
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12832468">
+摘要：            
+前言 今天项目要实现一个多级选项列表,发现iview官网上没有写这个例子，于是自己就实现了，如果对你有帮助请点个赞 ‘ * ’!! 解决方法:下面我们就来使用V-for 来定义一个二级选项列表 ，代码如下: &lt;Select&gt; &lt;OptionGroup v-for=&quot;(group,index) in         <a href="https://www.cnblogs.com/jaciots/p/12832468.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-05-05 20:12
+Jaciot
+<span data-post-id="12832468" class="post-view-count">阅读(1956)</span> 
+<span data-post-id="12832468" class="post-comment-count">评论(0)</span> 
+<span data-post-id="12832468" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12832468" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/12830350.html">
+    <span>
+        解决Vue中文本输入框v-model双向绑定后数据不显示的问题 
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12830350">
+摘要：            
+前言 项目中遇到一个问题就是在Vue中双向绑定对象属性时，手动赋值属性后输入框的数据不实时更新的问题。 &lt;FormItem label=&quot;地址&quot; prop=&quot;eventAddress&quot;&gt; &lt;Input v-model=&quot;task.eventAddress&quot; :placeholder=&quot;L(&#39;地址&#39;)        <a href="https://www.cnblogs.com/jaciots/p/12830350.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-05-05 13:04
+Jaciot
+<span data-post-id="12830350" class="post-view-count">阅读(17764)</span> 
+<span data-post-id="12830350" class="post-comment-count">评论(1)</span> 
+<span data-post-id="12830350" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12830350" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_7456639">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2017/08/31.html">2017年8月31日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/7456639.html">
+    <span>
+        转载acm几何基础（2）
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_7456639">
+摘要：            
+判断两条线段是否相交： 矢量 如果一条线段的端点是有次序之分的话，那么这种线段就称为 有向线段，如果有向线段p1p2的起点p1在坐标的原点，则可以把它称为矢量p2 矢量的加减 设二维矢量&#160;P = (x1, y1), Q = (x2, y2)，则P + Q = (x1 + x2, y1 + y2),         <a href="https://www.cnblogs.com/jaciots/p/7456639.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2017-08-31 09:39
+Jaciot
+<span data-post-id="7456639" class="post-view-count">阅读(122)</span> 
+<span data-post-id="7456639" class="post-comment-count">评论(0)</span> 
+<span data-post-id="7456639" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7456639" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_7453822">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/jaciots/archive/2017/08/30.html">2017年8月30日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/jaciots/p/7453822.html">
+    <span>
+        开启博客之行
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_7453822">
+摘要：            
+欢迎大家关注我的博客园，感谢！！        <a href="https://www.cnblogs.com/jaciots/p/7453822.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2017-08-30 16:35
+Jaciot
+<span data-post-id="7453822" class="post-view-count">阅读(96)</span> 
+<span data-post-id="7453822" class="post-comment-count">评论(0)</span> 
+<span data-post-id="7453822" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=7453822" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 Jaciot
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nXKgkm9HJkL1HNtQ5aM_fhOr9NU3_Ziqomgzmb25-8sSlssRcn0YZMY8okxpnoghCZfUw4fSpbK-RvyLhNL61r0ZXfcIewer7uIwSqtxQK8tFAG_WE6kr2Gly-lR1bIp4" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

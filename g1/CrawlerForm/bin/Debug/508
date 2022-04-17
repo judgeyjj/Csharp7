@@ -1,0 +1,603 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>wayn111 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simplememory/bundle-simplememory.min.css?v=uknaX_hejnSu-njQgx4Hj1R0JiPLwUhFPUlwWNmWyB4" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/wayn111/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/wayn111/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/wayn111/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 657286;
+        var currentBlogApp = 'wayn111';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simplememory has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/wayn111/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/wayn111/">wayn111</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/wayn111/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/wayn111">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/wayn111/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16154844">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/16154844.html">
+    <span>
+        下单流程解耦新方案-你知道Spring事件监听机制吗
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16154844">
+摘要：            
+一、Spring事件监听介绍 Spring对事件监听是通过事件类型、事件类型监听和事件发布器3个部分来完成的 // 1. 自定义订单事件 public class OrderEvent extends ApplicationEvent { ... } // 2. 定义订单监听器 @Component        <a href="https://www.cnblogs.com/wayn111/p/16154844.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-17 00:59
+wayn111
+<span data-post-id="16154844" class="post-view-count">阅读(7)</span> 
+<span data-post-id="16154844" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16154844" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154844" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16124498">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2022/04/10.html">2022年4月10日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/16124498.html">
+    <span>
+        生产环境Redis连接，长时间无响应被服务器断开问题
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16124498">
+摘要：            
+上个月线上生产环境有几个接口出现异常响应，查看生产日志后发现，如下错误 线上Redis客户端使用的是SpringBoot默认的Lettuce客户端，并且没有指定连接池，connection reset by peer这个错误是当前客户端连接在不知情的情况下被服务端断开后产生，也就是说当前客户端Red        <a href="https://www.cnblogs.com/wayn111/p/16124498.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 01:02
+wayn111
+<span data-post-id="16124498" class="post-view-count">阅读(40)</span> 
+<span data-post-id="16124498" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16124498" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16124498" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16074466">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2022/03/29.html">2022年3月29日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/16074466.html">
+    <span>
+        可能是全网第一个使用RediSearch实战的项目
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16074466">
+摘要：            <img src="https://img2022.cnblogs.com/blog/1510857/202203/1510857-20220329232903652-1860270123.png" alt="可能是全网第一个使用RediSearch实战的项目" class="desc_img" />
+实战项目地址newbeemall，集成RediSearch，代码开源已上传，支持的话可以点个star&#128513; RediSearch 是基于 Redis 开发的支持二级索引、查询引擎和全文搜索的应用程序。在2.0的版本中，简单看下官网测试报告： 索引构建 在索引构建测试中，RediSearch 用221秒        <a href="https://www.cnblogs.com/wayn111/p/16074466.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-29 23:30
+wayn111
+<span data-post-id="16074466" class="post-view-count">阅读(54)</span> 
+<span data-post-id="16074466" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16074466" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16074466" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14998338">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/07/11.html">2021年7月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14998338.html">
+    <span>
+        多图流带你玩转CODING DevOps
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14998338">
+摘要：            
+首先介绍一下什么是CODING DevOps，这里套用官网介绍 依托业界领先的敏捷项目管理理念与 DevOps 体系方法论，我们将这些优秀的理念与工具融入至产品中，打通了研发过程中的工具链孤岛及协作壁垒。在 CODING 平台中您可以实现需求提交到产品迭代，产品代码管理、自动化测试、持续集成，构建物        <a href="https://www.cnblogs.com/wayn111/p/14998338.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-07-11 12:19
+wayn111
+<span data-post-id="14998338" class="post-view-count">阅读(109)</span> 
+<span data-post-id="14998338" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14998338" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14998338" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14771589">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/05/15.html">2021年5月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14771589.html">
+    <span>
+        waynboot商城发布啦，整合了Redis、RabbitMQ、ElasticSearch等常用中间件， 根据生产环境开发经验而来不断完善、优化、改进中
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14771589">
+摘要：            
+waynboot-mall项目 觉得有用的铁子们给个star就行了，求求你们啦&#128536;&#128525; waynboot-mall是一套全部开源的微商城项目，包含一个运营后台、h5商城和后台接口。 实现了一个商城所需的首页展示、商品分类、商品详情、sku详情、商品搜索、加入购物车、结算下单、订单状态流转、商品评论等        <a href="https://www.cnblogs.com/wayn111/p/14771589.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-05-15 15:03
+wayn111
+<span data-post-id="14771589" class="post-view-count">阅读(145)</span> 
+<span data-post-id="14771589" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14771589" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14771589" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14676979">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/04/19.html">2021年4月19日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14676979.html">
+    <span>
+        Springboot配置https，使用腾讯云免费证书
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14676979">
+摘要：            
+1. 申请腾讯云免费ssl证书 1.1 登陆腾讯云在我的证书列表页面点击申请免费证书 2.2 提交资料，必填证书绑定域名以及申请邮箱，绑定域名填写springboot项目部署的服务器域名 2.3 选择验证方式，默认即可 2.4 验证域名，一般2、3分钟就验证完毕了 2.5 验证完毕后在证书列表页面下        <a href="https://www.cnblogs.com/wayn111/p/14676979.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-04-19 15:18
+wayn111
+<span data-post-id="14676979" class="post-view-count">阅读(447)</span> 
+<span data-post-id="14676979" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14676979" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14676979" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14589725">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/03/28.html">2021年3月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14589725.html">
+    <span>
+        crowd-admin2.2.0版本发布啦，支持演示模式，接入cdn提升演示网站响应速度，首页新增echart图表展示
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14589725">
+摘要：            
+项目介绍 crowd-admin是一个后台权限管理系统脚手架，集成了rbac权限管理、消息推送、邮件发送、任务调度、代码生成、系统监控、elfinder文件管理等常用功能，系统内各个业务按照模块划分，前台使用H+模板。是一个java新人易于上手，学习之后能够快速融入企业开发的指导项目，如果你想找一个        <a href="https://www.cnblogs.com/wayn111/p/14589725.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-03-28 20:06
+wayn111
+<span data-post-id="14589725" class="post-view-count">阅读(63)</span> 
+<span data-post-id="14589725" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14589725" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14589725" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14331517">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/01/26.html">2021年1月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14331517.html">
+    <span>
+        2018-2021我的开源项目总结
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14331517">
+摘要：            
+corwd-admin 本人18年6月份毕业在武汉找了第一份java开发工作4500（面试时被hr压了500，武汉当时行情第一年5000）， 做的oa、库存管理相关系统，公司内系统架构主要是ssh，页面模板使用jsp&#128514;， 干了差不多大半年觉得提升有限，在19年3月份辞职，想着在家写一套自己的后台管        <a href="https://www.cnblogs.com/wayn111/p/14331517.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-01-26 17:20
+wayn111
+<span data-post-id="14331517" class="post-view-count">阅读(51)</span> 
+<span data-post-id="14331517" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14331517" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14331517" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14277835">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/wayn111/archive/2021/01/14.html">2021年1月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14277865.html">
+    <span>
+        springboot异常处理之404
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14277865">
+摘要：            
+ps: 推荐一下本人的通用后台管理项目crowd-admin 以及newbee-mall增强版，喜欢的话给个star就好 开始这篇博文的时候我们先回顾下spring异常处理的几种机制 异常处理机制 @ExceptionHandle 注解处理异常 处理单个controller内部抛出的指定异常 @Co        <a href="https://www.cnblogs.com/wayn111/p/14277865.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-01-14 16:15
+wayn111
+<span data-post-id="14277865" class="post-view-count">阅读(291)</span> 
+<span data-post-id="14277865" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14277865" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14277865" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/wayn111/p/14277835.html">
+    <span>
+        新蜂商城增强版来了，完善秒杀功能，添加秒杀单超期未支付任务，支持万人秒杀
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14277835">
+摘要：            
+本项目是在newbee-mall项目的基础上改造而来,将orm层由mybatis替换为mybatis-plus，添加了秒杀功能、优惠劵功能以及后台搜索功能，喜欢的话麻烦给我个star 简介 本人之前一直是在传统公司上班，接触的都是政企项目，公司各系统业务繁多数据库表设计复杂，多是业务逻辑庞大使用技术        <a href="https://www.cnblogs.com/wayn111/p/14277835.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-01-14 16:10
+wayn111
+<span data-post-id="14277835" class="post-view-count">阅读(70)</span> 
+<span data-post-id="14277835" class="post-comment-count">评论(0)</span> 
+<span data-post-id="14277835" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14277835" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/wayn111/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 wayn111
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4nSr2Dyc5LijB3TeqO7NSuHAV42uchiHRpNs5F4reuLtdiuPh-uf7swRpKegDjMNbnMMY3lGX3R8JLY3jCbr2vHp6B-rw2v3P6HIXlQm3MuxPrTU2p_7RLOlw_9wYUWLg0" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>WeiyiGeek - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/WeiyiGeek/custom.css?v=wB8XayPlrfyvSyTt9fTBjv3PUrw=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=WIiV_j5YxY6rt2_bcg1WyHYyTSCpsPcXyaA7POmlI5U" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/WeiyiGeek/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/WeiyiGeek/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/WeiyiGeek/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 637045;
+        var currentBlogApp = 'WeiyiGeek';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Custom';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 2;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'prism-vsc-dark-plus';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-custom no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <div class="dark-loading">
+  <div class="box">
+    <h2>Loading</h2>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/WeiyiGeek/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/WeiyiGeek/">WeiyiGeek</a>
+</h1>
+<h2>Always keep a beginner's mind, don't forget the beginner's mind.</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/WeiyiGeek/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/WeiyiGeek">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/WeiyiGeek/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16148564">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/WeiyiGeek/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16149405.html">
+    <span>
+        安全开发运维必备，如何进行Nginx代理Web服务器性能优化与安全加固配置，看这篇指南就够了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16149405">
+摘要：            
+本章目录 1.引言 1.1 目的 1.2 目标范围 1.3 读者对象 2.参考说明 2.1 帮助参考 2.2 参数说明 3.3 模块说明 3.服务优化 3.1 系统内核 3.2 编译优化 3.3 性能优化 3.4 运营优化 3.5 配置优化 4.安全配置 0.隐藏nginx服务及其版本 1.低权限用        <a href="https://www.cnblogs.com/WeiyiGeek/p/16149405.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 15:34
+WeiyiGeek
+<span data-post-id="16149405" class="post-view-count">阅读(0)</span> 
+<span data-post-id="16149405" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16149405" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16149405" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16148564.html">
+    <span>
+        小白入门学习Nginx代理服务器?看这篇最新Nginx进阶学习最佳配置实践指南就OK了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16148564">
+摘要：            
+前置基础知识学习 1.Nginx基础安装与配置详细 https://blog.weiyigeek.top/2019/9-1-121.html 2.Nginx进阶学习之最佳配置实践指南 https://blog.weiyigeek.top/2019/9-1-124.html 3.Nginx模块学习使用        <a href="https://www.cnblogs.com/WeiyiGeek/p/16148564.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 12:43
+WeiyiGeek
+<span data-post-id="16148564" class="post-view-count">阅读(5)</span> 
+<span data-post-id="16148564" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148564" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148564" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16143155">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/WeiyiGeek/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16143370.html">
+    <span>
+        删库到跑路?还得看这篇Redis数据库持久化与企业容灾备份恢复实战指南
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16143370">
+摘要：            
+本章目录 0x00 数据持久化 1.RDB 方式 2.AOF 方式 如何抉择 RDB OR AOF? 0x01 备份容灾 一、备份 1.手动备份redis数据库 2.迁移Redis指定db-数据库 3.Redis集群数据备份与迁移 二、恢复 1.系统Redis用户被删除后配置数据恢复流程 2.Kub        <a href="https://www.cnblogs.com/WeiyiGeek/p/16143370.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 10:24
+WeiyiGeek
+<span data-post-id="16143370" class="post-view-count">阅读(157)</span> 
+<span data-post-id="16143370" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143370" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143370" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16143155.html">
+    <span>
+        如何保证Redis性能与安全?看这篇Redis数据库性能测试及安全优化配置指南就够了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16143155">
+摘要：            
+本章目录 0x00 Redis 性能指标监控 (1) 性能指标 1.基本活动指标：Basic activity 2.性能指标：Performance 3.内存指标: Memory 4.持久性指标: Persistence 5.错误指标：Error 6.其他指标说明 (2) 性能测试工具 1.redi        <a href="https://www.cnblogs.com/WeiyiGeek/p/16143155.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 09:40
+WeiyiGeek
+<span data-post-id="16143155" class="post-view-count">阅读(10)</span> 
+<span data-post-id="16143155" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143155" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143155" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16128512">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/WeiyiGeek/archive/2022/04/11.html">2022年4月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16129309.html">
+    <span>
+        如何利用Shell脚本对Ubuntu操作系统进行常规初始化和系统优化及其安全加固(适用于等保2.0)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16129309">
+摘要：            
+Ubuntu 20.04 系统初始化安全加固 描述: 适用于企业内部 Ubuntu 系列服务器操作系统初始化、系统安全加固脚本，内容包含了，网络初始化设置，软件更新源替换以及内核版本升级 ,时间时区初始化设置 系统安全加固(等保三级操作系统主机检查项) 安全运维设置 系统内核参数 常用软件安装等 一        <a href="https://www.cnblogs.com/WeiyiGeek/p/16129309.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 11:47
+WeiyiGeek
+<span data-post-id="16129309" class="post-view-count">阅读(19)</span> 
+<span data-post-id="16129309" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129309" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129309" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16128888.html">
+    <span>
+        如何利用Shell脚本进行Linux服务器之CentOS7系统初始化及其安全加固(适用于等保2.0)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16128888">
+摘要：            
+CentOS7 系统初始化安全加固 描述: 适用于企业内部 CentOS7 系列服务器操作系统初始化、系统安全加固脚本，内容包含了，网络初始化设置，软件更新源替换以及内核版本升级 ,时间时区初始化设置 系统安全加固(符合等保三级主机测评项) 安全运维设置 、系统内核参数优化、 常用软件安装等 一系列        <a href="https://www.cnblogs.com/WeiyiGeek/p/16128888.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 10:31
+WeiyiGeek
+<span data-post-id="16128888" class="post-view-count">阅读(17)</span> 
+<span data-post-id="16128888" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16128888" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16128888" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16128512.html">
+    <span>
+        如何利用PowerShell完成的Windows服务器系统安全加固实践和基线检测
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16128512">
+摘要：            
+0x00 前言简述 最近单位在做等保测评，由本人从事安全运维方面的工作（PS:曾经做过等保等方面的安全服务），所以自然而然的与信安的测评人员一起对接相关业务系统的检查，在做主机系统测评检查时发现了系统中某些配置不符合等保要求，需要对不满足要求的主机做进一步整改，好在我们众多的系统基本都是运行在虚拟机        <a href="https://www.cnblogs.com/WeiyiGeek/p/16128512.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 08:48
+WeiyiGeek
+<span data-post-id="16128512" class="post-view-count">阅读(157)</span> 
+<span data-post-id="16128512" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16128512" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16128512" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16126288">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/WeiyiGeek/archive/2022/04/10.html">2022年4月10日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16127186.html">
+    <span>
+        Let&#39;sEncrypt快速颁发及自动续签泛域名证书实践指南
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16127186">
+摘要：            
+0x00 前言简述 描述: Let&#39;s Encrypt 是免费、开放和自动化的证书颁发机构由Linux基金会(Linux Foundation)进行日常管理维护，它为1.8亿个网站提供TLS证书的非盈利性证书颁发机构, 通过它我们可以免费申请网站证书，并您的网站上启用 HTTPS (SSL/TLS)        <a href="https://www.cnblogs.com/WeiyiGeek/p/16127186.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 19:38
+WeiyiGeek
+<span data-post-id="16127186" class="post-view-count">阅读(21)</span> 
+<span data-post-id="16127186" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16127186" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16127186" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16126834.html">
+    <span>
+        如何让HTTPS站点更加安全? 这篇HTTPS安全加固配置最佳实践指南就够了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16126834">
+摘要：            
+前置知识推荐了解 HTTPS原理介绍以及证书签名的申请配置 ( https://blog.weiyigeek.top/2019/10-21-10.html ) SSL与TLS协议原理和证书签名生成实践指南 ( https://blog.weiyigeek.top/2019/10-21-12.html        <a href="https://www.cnblogs.com/WeiyiGeek/p/16126834.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 17:47
+WeiyiGeek
+<span data-post-id="16126834" class="post-view-count">阅读(20)</span> 
+<span data-post-id="16126834" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16126834" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16126834" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/WeiyiGeek/p/16126288.html">
+    <span>
+        如何让HTTPS站点评级达到A+? 还得看这篇HTTPS安全优化配置最佳实践指南
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16126288">
+摘要：            
+0x00 前言简述 SSL/TLS 简单说明 描述: 当下越来越多的网站管理员为企业站点或自己的站点进行了SSL/TLS配置, SSL/TLS 是一种简单易懂的技术，它很容易部署及运行，但要对其进行安全部署的情况下通常是不容易。 如果想掌握如何配置一个安全的 web 服务器或应用，往往需要系统管理员        <a href="https://www.cnblogs.com/WeiyiGeek/p/16126288.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-10 16:13
+WeiyiGeek
+<span data-post-id="16126288" class="post-view-count">阅读(130)</span> 
+<span data-post-id="16126288" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16126288" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16126288" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/WeiyiGeek/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 WeiyiGeek
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script>
+  window.$silence = {
+    defaultMode: 'auto',
+    defaultTheme: 'a',
+    showNavAdmin: false,
+    hljsln: false,
+    catalog: {
+        enable: true,
+        index: true,
+        active: true,
+        levels: ['h2', 'h3', 'h4']
+    },
+    favicon: 'https://cdn.jsdelivr.net/gh/weiyigeek/weiyigeek/favicon.ico',
+    avatar: 'https://cdn.jsdelivr.net/gh/weiyigeek/weiyigeek.github.io/img/avatar.png',
+    github: 'https://github.com/weiyigeek',
+    navbars: [
+      {
+        title: '个人主页',
+        url: 'https://www.weiyigeek.top/'
+      },
+      {
+        title: '博客主页',
+        url: 'https://blog.weiyigeek.top/'
+      },
+      {
+      title: '文章标签',
+      url: 'https://blog.weiyigeek.top/tags/'
+      }, {
+        title: '其它链接',
+        chilren: [,{
+            title: 'Github',
+            target: '_blank',
+            url: 'https://github.com/WeiyiGeek',
+        },{
+            title: '微信公众号',
+            target: '_blank',
+            url: 'https://cdn.jsdelivr.net/gh/WeiyiGeek/WeiyiGeek/res//wechat-gzh.jpg',
+        }, {
+            title: 'Bilibili',
+            target: '_blank',
+            url: 'https://space.bilibili.com/385802642/article',
+        }, {
+            title: '知乎',
+            target: '_blank',
+            url: 'https://www.zhihu.com/people/weiyiSec',
+        },
+        
+        ]
+    }],
+    signature: {
+        enable: true,
+        author: 'WeiyiGeek',
+        license: ['署名-非商业性使用-相同方式共享 4.0 国际', 'https://creativecommons.org/licenses/by-nc-sa/4.0/'],
+        remark: '欢迎访问我的个人博客首页【https://weiyigeek.top】，更多干货尽在其中！',
+    },
+    sponsor: {
+        enable: true,
+        text: '人间三大情，点赞、转发、赞赏...',
+        wechat: 'https://cdn.jsdelivr.net/gh/weiyigeek/weiyigeek.github.io/img/reward-wechat.png',
+        alipay: 'https://cdn.jsdelivr.net/gh/weiyigeek/weiyigeek.github.io/img/reward-alipay.png'
+    }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/gh/esofar/cnblogs-theme-silence@3.0.0-beta4/dist/silence.min.js"></script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kU1C2PtGIcXTwGC2pE5VQLv_hY9kxJKxeSOqjLUOczTTIsIzb-strjSzlJoMNLh1NJNXxJy6g0KMx-cHJpx0K1DfisCfukEdamC7YHflrINYs0xtHXfmGBRcarevMiH0A" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

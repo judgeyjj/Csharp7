@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="本文作者：HelloGitHub-老荀 好久没更新 ZK 的文章了，我想死你们啦。之前发布的 HelloZooKeeper 系列文章完结后，项目收获了将近 600 个 star。这远远超过了我自己的预" />
+    <meta property="og:description" content="本文作者：HelloGitHub-老荀 好久没更新 ZK 的文章了，我想死你们啦。之前发布的 HelloZooKeeper 系列文章完结后，项目收获了将近 600 个 star。这远远超过了我自己的预" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>面试官问：ZooKeeper 有几种节点类型？别再说 4 种啦！ - 削微寒 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=Y1yBNCRf3ODEjYGJn208vPUnnX-rIyYVsZ75AvRbzGM" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=1gj9-XJKL9BZFkjdvROYQPiPWjQXk-hsXXZGtqkfaSc" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xueweihan/custom.css?v=RRRtuZg9tgADpy&#x2B;UPLStdn026o0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=zrVn_w7PYXoSvEFaixHbQGlNNXNZ3h27-9PpkXZLYns" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xueweihan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xueweihan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xueweihan/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 228315;
+        var currentBlogApp = 'xueweihan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+    </script>
+        <script>
+            var currentPostDateAdded = '2021-05-27 09:07';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=2Mic1VLeHXarpdzASbXqFMIMVLEBiWXNO5yiTHUcmhw"></script>
+    
+    
+    
+</head>
+<body class="has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.cnblogs.com/cmt/p/14797594.html" onclick="ga('send', 'event', 'Link', 'click', 'aliyun-summit-blog-bannerbar-mobile')">
+                <img src="https://img2020.cnblogs.com/blog/35695/202105/35695-20210522072302481-117260882.jpg" alt="" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding"><a href="https://www.cnblogs.com/" title="开发者的网上家园"><img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" /></a></li>
+                <li><a href="/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="ga('send', 'event', 'Link', 'click', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="text" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup/">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <a href="https://github.com/521xueweihan/HelloGitHub/"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png" alt="Fork me on GitHub" data-canonical-src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png"></a>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xueweihan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xueweihan/">削微寒的程序员之路</a>
+</h1>
+<h2>谦逊、专注，才能成长。</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xueweihan/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/xueweihan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/14816435.html">
+    <span>面试官问：ZooKeeper 有几种节点类型？别再说 4 种啦！</span>
+    
+
+
+
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<p><img src="https://img2020.cnblogs.com/blog/759200/202101/759200-20210124161622816-1605238160.png" alt="" loading="lazy"></p>
+<p align="center">本文作者：HelloGitHub-<strong>老荀</strong></p>
+<p>好久没更新 ZK 的文章了，我想死你们啦。之前发布的 <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzA5MzYyNzQ0MQ==&amp;action=getalbum&amp;album_id=1709315979568037891#wechat_redirect" target="_blank">HelloZooKeeper 系列文章</a>完结后，<a href="https://github.com/HelloGitHub-Team/HelloZooKeeper" target="_blank">项目</a>收获了将近 600 个 star。这远远超过了我自己的预期，在这里感谢大家的支持～</p>
+<p>后面会继续 ZooKeeper 的话题，通过单篇的形式就某个 ZK 的话题继续聊，今天我们先来看看 ZK 的节点类型。话不多说，我们进入今天的主题～</p>
+<h2 id="一、关于-zk-的节点类型">一、关于 ZK 的节点类型</h2>
+<p>大家如果刷过 ZK 相关面试题的话，就一定会刷到过 “ZK 有几种节点类型？”，大家通常背书的答案的话是：4 种！但其实 ZK （3.6.2）服务端支持 7 种节点类型，分别是：</p>
+<ul>
+<li>持久</li>
+<li>持久顺序</li>
+<li>临时</li>
+<li>临时顺序</li>
+<li>容器</li>
+<li>持久 TTL</li>
+<li>持久顺序 TTL</li>
+</ul>
+<p>这 7 种类型之前的文章中也有提到过，但是并没有展开讲。这次更新的单篇想要把这 7 种类型的节点，认认真真的讲一遍！Let's GO</p>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202105/759200-20210526204610020-1167054210.gif" alt="" loading="lazy"></p>
+<h2 id="二、简单介绍">二、简单介绍</h2>
+<h3 id="21-持久、临时">2.1 持久、临时</h3>
+<p><strong>持久</strong>不用我多说，是用的最多的一种类型，也是默认的节点类型，<strong>临时</strong>节点相较于<strong>持久</strong>节点来说，就是它会随着客户端会话结束而被删除，通常可以用在一些特定的场景，例如分布式锁释放，健康检查等。</p>
+<h3 id="22-持久顺序、临时顺序">2.2 持久顺序、临时顺序</h3>
+<p>这两种我放在一起介绍，因为他们相对于上面两种的特性就是 ZK 会自动在这两种节点之后增加一个数字的后缀，而路径 + 数字后缀是能保证唯一的，这数字后缀的应用场景可以实现诸如分布式队列，分布式公平锁等。</p>
+<h3 id="23-容器">2.3 容器</h3>
+<p><strong>容器</strong>节点是 3.5 以后新增的节点类型，只要在调用 <code>create</code> 方法时，指定 <code>CreateMode</code> 为 <code>CONTAINER</code> 即可创建<strong>容器</strong>的节点类型，<strong>容器</strong>节点的表现形式和持久节点是一样的，但是区别是 ZK 服务端启动后，会有一个单独的线程去扫描，所有的容器节点，当发现<strong>容器</strong>节点的子节点数量为 0 时，会自动删除该节点，除此之外和<strong>持久</strong>节点没有区别，官方注释给出的使用场景是 <code>Container nodes are special purpose nodes useful for recipes such as leader, lock, etc.</code> 说可以用在 leader 或者锁的场景中。</p>
+<h3 id="24-持久-ttl、持久顺序-ttl">2.4 持久 TTL、持久顺序 TTL</h3>
+<p>关于<strong>持久</strong>和<strong>顺序</strong>这两个关键字，不用我再解释了，这两种类型的节点重点是后面的 <strong>TTL</strong>，<strong>TTL</strong> 是 <code>time to live</code> 的缩写，指带有存活时间，简单来说就是当该节点下面没有子节点的话，超过了 <strong>TTL</strong> 指定时间后就会被自动删除，特性跟上面的<strong>容器</strong>节点很像，只是<strong>容器</strong>节点没有超时时间而已，但是 <strong>TTL</strong> 启用是需要额外的配置（这个之前也有提过）配置是 <code>zookeeper.extendedTypesEnabled</code> 需要配置成 <code>true</code>，否则的话创建 <strong>TTL</strong> 时会收到 <code>Unimplemented</code> 的报错</p>
+<h2 id="三、原理介绍">三、原理介绍</h2>
+<p>单纯的<strong>持久</strong>和<strong>临时</strong>节点我就不介绍了，之前的系列文章有讲</p>
+<h3 id="31-顺序关键字">3.1 顺序关键字</h3>
+<p>客户端创建一个<strong>顺序</strong>节点的时候，服务端得知当前节点是<strong>顺序</strong>节点的时候会自动给路径加上后缀，后缀就是父节点的 cversion，代表创建子节点的个数</p>
+<pre><code class="language-java">if (createMode.isSequential()) {
+  	path = path + String.format(Locale.ENGLISH, "%010d", parentCVersion);
+}
+</code></pre>
+<p>就是这么简单~</p>
+<h3 id="32-容器、ttl-关键字">3.2 容器、TTL 关键字</h3>
+<p>这两种其实可以放在一起讲，服务端在启动的时候会额外启动一个定时任务线程，会定期的扫描所有的<strong>容器</strong>和 <strong>TTL</strong> 的节点，逐一判断子节点的数量以及一些相关配置，来决定是否删除，首先整个逻辑是在 <code>ContainerManager</code> 中，定时任务是由 <code>TimeTask</code> 实现的，相关的配置有</p>
+<table>
+<thead>
+<tr>
+<th>配置项</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>znode.container.checkIntervalMs</td>
+<td>60000（毫秒）</td>
+<td>定时任务检查的间隔</td>
+</tr>
+<tr>
+<td>znode.container.maxPerMinute</td>
+<td>10000</td>
+<td>和上面的参数联合成为最小的检查间隔，每个节点间隔必须差 （60000 / 10000）毫秒（默认 6 毫秒）以上</td>
+</tr>
+<tr>
+<td>znode.container.maxNeverUsedIntervalMs</td>
+<td>0</td>
+<td>如果配置不为 0 的话，当<strong>容器</strong>和 <strong>TTL</strong> 节点最后一次更新的时间和当前时间戳的差超过这个值的话，也会被删除</td>
+</tr>
+</tbody>
+</table>
+<h2 id="四、小结">四、小结</h2>
+<ul>
+<li><strong>持久</strong>关键字：客户端不主动删除的话，节点数据会一直存在</li>
+<li><strong>临时</strong>关键字：客户端连接断开后，节点数据会被一起删除</li>
+<li><strong>顺序</strong>关键字：服务端会自动为该节点加数字后缀</li>
+<li><strong>容器</strong>：服务端会定期扫描这些节点，当该节点下面没有子节点时（或其他条件时）服务端会自动删除节点</li>
+<li><strong>TTL</strong>：需要额外配置才能启用，基本和<strong>容器</strong>相同，当超过 <strong>TTL</strong> 时间节点下面都没有再创建子节点时会被删除，但是当创建子节点会重置该超时时间</li>
+</ul>
+<hr>
+<p>ZKr～好久没更了，这次先挑一个简单的话题。后面大家想学哪些 ZK 的知识可以留言告诉我。</p>
+<p><img src="https://img2020.cnblogs.com/blog/759200/202105/759200-20210526204623014-1923575581.gif" alt="" loading="lazy"></p>
+<hr>
+<p>关注 <strong>HelloGitHub</strong> 公众号 第一时间收到更新。</p>
+<p>还有更多开源项目的介绍和宝藏项目等待你的发现。</p>
+
+</div>
+<div id="MySignature"></div>
+<div class="clear"></div>
+<div id="blog_post_info_block">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2021-05-27 09:07</span>&nbsp;
+<a href="https://www.cnblogs.com/xueweihan/">削微寒</a>&nbsp;
+阅读(<span id="post_view_count">117</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14816435" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(14816435);return false;">收藏</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+<script src="https://common.cnblogs.com/highlight/10.3.1/highlight.min.js"></script>
+<script>markdown_highlight();</script>
+<script>
+    var allowComments = true, cb_blogId = 228315, cb_blogApp = 'xueweihan', cb_blogUserGuid = '41673165-d8fd-e411-b908-9dcfd8948a71';
+    var cb_entryId = 14816435, cb_entryCreatedDate = '2021-05-27 09:07', cb_postType = 1;
+    updatePostStats(
+        [cb_entryId],
+        function(id, count) { $("#post_view_count").text(count) },
+        function(id, count) { $("#post_comment_count").text(count) })
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+</script>
+<a name="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="ad_t2"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+        <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+    <div id="cnblogs_c2" class="under-post-card">
+        <div id='div-gpt-ad-1592366332455-0' style='width: 468px; height: 60px;'></div>
+    </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+       var commentManager = new blogCommentManager();
+       commentManager.renderComments(0);
+       fixPostBody();
+       deliverBigBanner();
+setTimeout(function() { incrementViewCount(cb_entryId); }, 50);       deliverT2();
+       deliverC1C2();
+       loadNewsAndKb();
+       loadBlogSignature();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);       LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+       GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+       loadOptUnderPost();
+       GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2021 削微寒
+<br /><span id="poweredby">Powered by .NET 5.0 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8L-rpLgFVEJMgssCVvNUAjtmXTMZn8mC6o2wN3c0Yoi7Mw5wxz0G8BfiMoJo6w_FpViYr4uN4okFZvutRcQBK-hWik9HXE335bArbf70weDiv0AgLsvrFK4FaSbYj0U_B2CCuCfal0XwrDZgi-Q68gs" />
+</body>
+</html>

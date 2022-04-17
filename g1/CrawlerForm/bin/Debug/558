@@ -1,0 +1,1391 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>HelloLLLLL - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.min.css?v=eoZATbPKwJCL5eWVDTQIYC6CIxJPcFz191dkzN2tSyQ" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/HelloQLQ/custom.css?v=LK&#x2B;e7OqvN6mMbQH27ikJNEMeLBs=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.min.css?v=V0F9qEG_l23kJ7dpgRGJdquB9LSa6tvEkJLFcVX-LLE" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/HelloQLQ/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/HelloQLQ/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/HelloQLQ/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 487570;
+        var currentBlogApp = 'HelloQLQ';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'darkgreentrip';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-darkgreentrip no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <a href="https://gitee.com/dq_V/projects" target="_blank">  
+<img style="position: absolute; top: 0; right: 0; border: 0;" 
+    src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" 
+    alt="Fork me on GitHub" 
+    data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+</a>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/HelloQLQ/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/HelloQLQ/">HelloLLLLL</a>
+</h1>
+<h2><a rel="nofollow noopener"  href="https://gitee.com/dq_V/projects" target="_blank">我的码云</a>
+<a rel="nofollow noopener"  href="http://bbs.xdcad.net/?fromuser=LL_zZ" target="_blank">晓东CAD家园</a>
+<a rel="nofollow noopener"  href="http://www.mjtd.com/?fromuser=LL_Zz" target="_blank">明经CAD社区</a>
+
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/HelloQLQ/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/HelloLLLLL">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/HelloQLQ/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_14952368">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/06/29.html">2021年6月29日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/HelloQLQ/p/14952368.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        【C# mvc5】使用mvc5 +bootstrap+EF6搭建一个权限管理系统的心得体会
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_14952368">
+摘要：            
+开发心得体会        <a href="https://www.cnblogs.com/HelloQLQ/p/14952368.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-06-29 22:45
+HelloLLLLL
+<span data-post-id="14952368" class="post-view-count">阅读(123)</span> 
+<span data-post-id="14952368" class="post-comment-count">评论(2)</span> 
+<span data-post-id="14952368" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=14952368" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16154670">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/04/16.html">2022年4月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16154670.html">
+    <span>
+        电脑开机内存占用优化技巧
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16154670">
+摘要：            
+电脑开机内存占用优化技巧        <a href="https://www.cnblogs.com/HelloQLQ/p/16154670.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-16 23:18
+HelloLLLLL
+<span data-post-id="16154670" class="post-view-count">阅读(4)</span> 
+<span data-post-id="16154670" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16154670" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154670" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16151096">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16151096.html">
+    <span>
+        FMEA学习之PFMEA
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16151096">
+摘要：            
+FEMA之PFEMA学习笔记整理        <a href="https://www.cnblogs.com/HelloQLQ/p/16151096.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 21:45
+HelloLLLLL
+<span data-post-id="16151096" class="post-view-count">阅读(6)</span> 
+<span data-post-id="16151096" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16151096" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16151096" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16122039">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/04/09.html">2022年4月9日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16122039.html">
+    <span>
+        supersocket实际应用之你画我猜游戏(一)
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16122039">
+摘要：            
+supersocket这款组件，让不懂tcp/ip的人都能开发出网络应用。我们不必在开发与自己主要应用不相关的代码了，主要精力都能放在设计业务逻辑上面了。 现在使用现成又完备的组件，真是大大的提高了开发效率。我主要使用的是1.6.5版本的supersocket,用于编写.net framework下        <a href="https://www.cnblogs.com/HelloQLQ/p/16122039.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-09 14:54
+HelloLLLLL
+<span data-post-id="16122039" class="post-view-count">阅读(10)</span> 
+<span data-post-id="16122039" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16122039" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16122039" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16104041">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/04/05.html">2022年4月5日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16104041.html">
+    <span>
+        SuperSocket  AppServer.NewRequestReceived 不触发 接受不到字节
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16104041">
+摘要：            
+SuperSocket  AppServer.NewRequestReceived 不触发 接受不到字节        <a href="https://www.cnblogs.com/HelloQLQ/p/16104041.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-05 21:33
+HelloLLLLL
+<span data-post-id="16104041" class="post-view-count">阅读(5)</span> 
+<span data-post-id="16104041" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16104041" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16104041" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16041262">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/03/22.html">2022年3月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16041262.html">
+    <span>
+        C# EF 使用sqlite 数据库出现表名出现dbo的坑
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16041262">
+摘要：            
+当ef使用sqlite时，正常情况映射的表名是没有dbo开头的。这个dbo是映射的sa用户，而sqlite是没有用户的。所以映射出的sql语句是查不到数据的。 我在网上找半天解决方案，都不得行。后来，我用ef的querysql方法写原生sql，应该来说，是能有数据的，但是查出来依然没有数据。 这个时        <a href="https://www.cnblogs.com/HelloQLQ/p/16041262.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-22 20:45
+HelloLLLLL
+<span data-post-id="16041262" class="post-view-count">阅读(21)</span> 
+<span data-post-id="16041262" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16041262" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16041262" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16026426">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/03/19.html">2022年3月19日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/16026426.html">
+    <span>
+        C# 方块热力图
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16026426">
+摘要：            
+这张图右侧，0 3 6...... 30表示每个数字出现的次数，左侧就是每个数字出现次数的方块颜色图。 具体的思路是，找两个颜色 渐变的画出右侧的色条。 计算所有数字的最大最小次数，然后用他们色条的高度-1除以最值只差得到数字出现的单位次数对应的颜色条的位置。 最后遍历&lt;数字,数字出现的次数&gt;集合时        <a href="https://www.cnblogs.com/HelloQLQ/p/16026426.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-19 14:42
+HelloLLLLL
+<span data-post-id="16026426" class="post-view-count">阅读(18)</span> 
+<span data-post-id="16026426" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16026426" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16026426" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15998367">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/03/12.html">2022年3月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15998367.html">
+    <span>
+        重做贪吃蛇 万向移动型 蛇的移动和吃食部分C# wpf版
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15998367">
+摘要：            
+wpf 贪吃蛇 移动 吃食 万向版        <a href="https://www.cnblogs.com/HelloQLQ/p/15998367.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-12 20:46
+HelloLLLLL
+<span data-post-id="15998367" class="post-view-count">阅读(12)</span> 
+<span data-post-id="15998367" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15998367" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15998367" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15936167">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/02/25.html">2022年2月25日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15936875.html">
+    <span>
+        商业秘密保护学习
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15936875">
+摘要：            
+商业秘密的定义： 1.不为公众所知。 2.具有商业价值。 3采取保密措施。 4不具有排他性。 与专利的比较：专利具有排他性，但是是公开的。 商业秘密分为： 技术性的，比如软件源码，目标代码，可执行文件等。 经营性的：公司的客户档案，供应商档案，工资，凡是一切不公开的都算。 民法保护： 从原公司离职一        <a href="https://www.cnblogs.com/HelloQLQ/p/15936875.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-25 16:56
+HelloLLLLL
+<span data-post-id="15936875" class="post-view-count">阅读(21)</span> 
+<span data-post-id="15936875" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15936875" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15936875" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15936167.html">
+    <span>
+        C# 根据波形图片，提取测试数据点  Winform 
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15936167">
+摘要：            
+C# 从波形图片提取波形        <a href="https://www.cnblogs.com/HelloQLQ/p/15936167.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-25 15:09
+HelloLLLLL
+<span data-post-id="15936167" class="post-view-count">阅读(31)</span> 
+<span data-post-id="15936167" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15936167" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15936167" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15882518">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/02/11.html">2022年2月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15882518.html">
+    <span>
+        胃食管反流性咳嗽发病机制的研究进展
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15882518">
+摘要：            
+原文：https://www.wjgnet.com/1009-3079/full/v22/i19/2665.htm https://note.youdao.com/s/5wYMZ1iu 摘要 胃食管反流病(gastroesophageal reflux disease, GERD)导致的慢性咳嗽即为        <a href="https://www.cnblogs.com/HelloQLQ/p/15882518.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-11 11:31
+HelloLLLLL
+<span data-post-id="15882518" class="post-view-count">阅读(87)</span> 
+<span data-post-id="15882518" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15882518" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15882518" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15859600">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/02/01.html">2022年2月1日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15859600.html">
+    <span>
+        分享一个Byte KB MB GB 单位转换方法 从《C#本质论第三版》
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15859600">
+摘要：            
+Byte KB MB GB 单位转换        <a href="https://www.cnblogs.com/HelloQLQ/p/15859600.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-01 20:43
+HelloLLLLL
+<span data-post-id="15859600" class="post-view-count">阅读(37)</span> 
+<span data-post-id="15859600" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15859600" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15859600" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15836346">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/23.html">2022年1月23日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15836346.html">
+    <span>
+        线程同步介绍及 生产者消费者问题举例 C#版
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15836346">
+摘要：            
+C# 线程同步 生产者 消费者问题        <a href="https://www.cnblogs.com/HelloQLQ/p/15836346.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-23 14:28
+HelloLLLLL
+<span data-post-id="15836346" class="post-view-count">阅读(262)</span> 
+<span data-post-id="15836346" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15836346" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15836346" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15832006">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/21.html">2022年1月21日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15832006.html">
+    <span>
+        胃食管反流之 SAP分析（ in the Ohmega software）
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15832006">
+摘要：            
+胃食管反流报告之SAP的认识。        <a href="https://www.cnblogs.com/HelloQLQ/p/15832006.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-21 22:21
+HelloLLLLL
+<span data-post-id="15832006" class="post-view-count">阅读(113)</span> 
+<span data-post-id="15832006" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15832006" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15832006" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15807116">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/15.html">2022年1月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15807116.html">
+    <span>
+        C# 使用 运算符重载 隐式转换 对Point进行加减计算
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15807116">
+摘要：            
+C#关键词： operator implicit explicit的应用例子。        <a href="https://www.cnblogs.com/HelloQLQ/p/15807116.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-15 15:24
+HelloLLLLL
+<span data-post-id="15807116" class="post-view-count">阅读(33)</span> 
+<span data-post-id="15807116" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15807116" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15807116" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15778739">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/08.html">2022年1月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15778739.html">
+    <span>
+        C# winform GDI+ 五子棋 （一）：基本界面和胜负判断
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15778739">
+摘要：            
+五子棋 五连胜负判断        <a href="https://www.cnblogs.com/HelloQLQ/p/15778739.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-08 16:48
+HelloLLLLL
+<span data-post-id="15778739" class="post-view-count">阅读(94)</span> 
+<span data-post-id="15778739" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15778739" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15778739" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15762601">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/04.html">2022年1月4日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15762601.html">
+    <span>
+        胃食管反流疾病认识总结
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15762601">
+摘要：            
+胃食管反流 反流报告        <a href="https://www.cnblogs.com/HelloQLQ/p/15762601.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-04 15:17
+HelloLLLLL
+<span data-post-id="15762601" class="post-view-count">阅读(67)</span> 
+<span data-post-id="15762601" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15762601" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15762601" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15754917">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2022/01/01.html">2022年1月1日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15754918.html">
+    <span>
+        高分辨率食道测压（HRM）
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15754918">
+摘要：            
+高分辨率测压(High resolution Manometry) HRM的优势 高分辨率食管测压不但实现了从咽部到胃部的全程功能监测，而且插管无需牵拉，操作十分方便。更为重要的是，临床医生经过简单的培训后即可辨认HRM的基本图像。 由HRM获得的图像，可快速、高效地显示出食管动力的状态，可较好地反        <a href="https://www.cnblogs.com/HelloQLQ/p/15754918.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-01 08:54
+HelloLLLLL
+<span data-post-id="15754918" class="post-view-count">阅读(243)</span> 
+<span data-post-id="15754918" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15754918" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15754918" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15754917.html">
+    <span>
+        C# Datagridview combox列 初始化颜色
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15754917">
+摘要：            
+DataGridView 初始化完成后，在combox里显示颜色，如这样： DataGridView 注册 cellPainting事件： private void m_dataGridView_CellPainting(object sender, DataGridViewCellPainting        <a href="https://www.cnblogs.com/HelloQLQ/p/15754917.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-01 08:50
+HelloLLLLL
+<span data-post-id="15754917" class="post-view-count">阅读(73)</span> 
+<span data-post-id="15754917" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15754917" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15754917" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15706243">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/12/18.html">2021年12月18日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15706243.html">
+    <span>
+        C# 数独 解法
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15706243">
+摘要：            
+数独解法        <a href="https://www.cnblogs.com/HelloQLQ/p/15706243.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-18 22:20
+HelloLLLLL
+<span data-post-id="15706243" class="post-view-count">阅读(67)</span> 
+<span data-post-id="15706243" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15706243" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15706243" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15680618">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/12/12.html">2021年12月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15680618.html">
+    <span>
+        C# wpf 使用 polyline 做一个贪吃蛇游戏的小蛇移动吃食部分功能
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15680618">
+摘要：            
+wpf 使用 Polyline 完成 贪吃蛇 移动、吃食功能。        <a href="https://www.cnblogs.com/HelloQLQ/p/15680618.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-12 21:26
+HelloLLLLL
+<span data-post-id="15680618" class="post-view-count">阅读(43)</span> 
+<span data-post-id="15680618" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15680618" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15680618" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15643373">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/12/04.html">2021年12月4日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15643373.html">
+    <span>
+         C# ScottPlot 绘图控件 源码阅读心得体会
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15643373">
+摘要：            
+ScottPlot 绘图控件 是一款 开源的 使用C#语言编写的展示各种图型的 可用于 c/s的开源组件，性能十分强大 千万级数据都不在话下。        <a href="https://www.cnblogs.com/HelloQLQ/p/15643373.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-04 21:53
+HelloLLLLL
+<span data-post-id="15643373" class="post-view-count">阅读(733)</span> 
+<span data-post-id="15643373" class="post-comment-count">评论(2)</span> 
+<span data-post-id="15643373" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15643373" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15635575">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/12/02.html">2021年12月2日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15635575.html">
+    <span>
+        分享一个单机软件试用期计时思路
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15635575">
+摘要：            
+inline unsigned __int64 GetCycleCount()
+{
+__asm RDTSC
+}        <a href="https://www.cnblogs.com/HelloQLQ/p/15635575.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-02 21:56
+HelloLLLLL
+<span data-post-id="15635575" class="post-view-count">阅读(62)</span> 
+<span data-post-id="15635575" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15635575" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15635575" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15610141">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/11/26.html">2021年11月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15610141.html">
+    <span>
+        C# WPF 坦克大战
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15610141">
+摘要：            
+C# wpf版 坦克大战        <a href="https://www.cnblogs.com/HelloQLQ/p/15610141.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-26 23:52
+HelloLLLLL
+<span data-post-id="15610141" class="post-view-count">阅读(58)</span> 
+<span data-post-id="15610141" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15610141" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15610141" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15576531">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/11/19.html">2021年11月19日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15576531.html">
+    <span>
+        C# XML转Json Json转XML XML 转对象 对象转XML
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15576531">
+摘要：            
+C# XML转Json Json转XML XML 转对象 对象转XML        <a href="https://www.cnblogs.com/HelloQLQ/p/15576531.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-19 11:55
+HelloLLLLL
+<span data-post-id="15576531" class="post-view-count">阅读(121)</span> 
+<span data-post-id="15576531" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15576531" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15576531" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15553397">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/11/14.html">2021年11月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15553397.html">
+    <span>
+        C# 炸弹人 winform版
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15553397">
+摘要：            
+C# 炸弹人 winform版        <a href="https://www.cnblogs.com/HelloQLQ/p/15553397.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-14 21:18
+HelloLLLLL
+<span data-post-id="15553397" class="post-view-count">阅读(81)</span> 
+<span data-post-id="15553397" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15553397" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15553397" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15508321">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/11/04.html">2021年11月4日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15508321.html">
+    <span>
+        移位运算符 左移右移，与操作符 10进制数字 转高字节 低字节 数组
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15508321">
+摘要：            
+右移运算符 16进制  高低字节        <a href="https://www.cnblogs.com/HelloQLQ/p/15508321.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-04 15:17
+HelloLLLLL
+<span data-post-id="15508321" class="post-view-count">阅读(146)</span> 
+<span data-post-id="15508321" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15508321" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15508321" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15505765">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/11/03.html">2021年11月3日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15505765.html">
+    <span>
+        C# 【思路】分享 构造可进行单元测试的波形数据
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15505765">
+摘要：            
+需要单元测试自己写的识别特殊波峰的算法，所以必须构造波形数据。 一开始是自己在控件上手绘波形，虽然这种方便，但是能绘制的点太少，每次手画显得麻烦。 过后，又采用随机数构造波峰，这种虽说能构造很多点，产生很多随机的波峰波谷，但是对于特殊的波峰无法进行预期。 最后我就想到这种方法，先构造出一定范围的样例        <a href="https://www.cnblogs.com/HelloQLQ/p/15505765.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-11-03 21:14
+HelloLLLLL
+<span data-post-id="15505765" class="post-view-count">阅读(50)</span> 
+<span data-post-id="15505765" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15505765" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15505765" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15414708">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/10/16.html">2021年10月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15414708.html">
+    <span>
+        winform cefsharp chart.js 再winform上使用chart.js 绘制动态曲线
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15414708">
+摘要：            
+winform cefsharp chart.js        <a href="https://www.cnblogs.com/HelloQLQ/p/15414708.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-16 17:32
+HelloLLLLL
+<span data-post-id="15414708" class="post-view-count">阅读(138)</span> 
+<span data-post-id="15414708" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15414708" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15414708" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15413065">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/10/15.html">2021年10月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15413065.html">
+    <span>
+        Winform 动态画曲线 波峰波谷识别
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15413065">
+摘要：            
+winform 动态画曲线 波峰波谷        <a href="https://www.cnblogs.com/HelloQLQ/p/15413065.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-15 22:48
+HelloLLLLL
+<span data-post-id="15413065" class="post-view-count">阅读(232)</span> 
+<span data-post-id="15413065" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15413065" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15413065" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15368408">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/HelloQLQ/archive/2021/10/05.html">2021年10月5日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/HelloQLQ/p/15368408.html">
+    <span>
+        线程同步 进程同步 EventWaitHandle
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15368408">
+摘要：            
+线程同步 进程同步 static  EventWaitHandle eHandle = new  EventWaitHandle(false, EventResetMode.AutoReset,"LLLLL");        <a href="https://www.cnblogs.com/HelloQLQ/p/15368408.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-05 12:27
+HelloLLLLL
+<span data-post-id="15368408" class="post-view-count">阅读(22)</span> 
+<span data-post-id="15368408" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15368408" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15368408" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/HelloQLQ/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 HelloLLLLL
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kLJ0YGodxOi3RRWvT5m9EkbuPxKFiCFgdzWfBRT_pk_L7e45V9ZFTOdKAb29FdQX3k-eWA5wis6DmEb-kybWpjsTMEghHBH3C-RsLnvoHNjUdE_C0_Z-BJXwYVtomtC-Q" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

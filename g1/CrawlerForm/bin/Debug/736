@@ -1,0 +1,738 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>ChokCoco - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/coco1s/custom.css?v=SCJ0VP&#x2B;Hc05CAeo1nDstxoEELrY=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/thinkinside/bundle-thinkinside-mobile.min.css?v=vH1x0womjkmHTAza3hJR8eXJ2zxjj0PNYo2s53olb00" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/coco1s/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/coco1s/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/coco1s/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 177636;
+        var currentBlogApp = 'coco1s';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'ThinkInside';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-thinkinside no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <script>loadPageBeginHtml();</script>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/coco1s/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/coco1s/">ChokCoco</a>
+</h1>
+<h2>经不住流年似水, 逃不过此间少年</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/coco1s/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/ChokCoco">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/coco1s/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16143423">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16143423.html">
+    <span>
+        现代 CSS 解决方案：Modern CSS Reset
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16143423">
+摘要：            
+在早年间（其实也不是很早），写过几篇关于 CSS Reset 的文章 - reset.css 知多少。 详细描述了当时业界比较常用的，两个 CSS reset 方案：reset.css 与 Normalize.css。 以更为推荐的 Normalize.css 为例，它的核心思想是： 统一了一些元素        <a href="https://www.cnblogs.com/coco1s/p/16143423.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 10:32
+ChokCoco
+<span data-post-id="16143423" class="post-view-count">阅读(371)</span> 
+<span data-post-id="16143423" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143423" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143423" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16134088">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/04/12.html">2022年4月12日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16134088.html">
+    <span>
+        不借助 Javascript，利用 SVG 快速构建马赛克效果
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16134088">
+摘要：            <img src="https://img2022.cnblogs.com/blog/608782/202204/608782-20220412104940003-242058232.png" alt="不借助 Javascript，利用 SVG 快速构建马赛克效果" class="desc_img" />
+之前在公众号转发了好友 Vajoy 的一篇文章 -- 巧用 CSS 把图片马赛克风格化。 核心是利用了 CSS 中一个很有意思的属性 -- image-rendering，它可以用于设置图像缩放算法。 何为 image-rendering？ CSS 属性 image-rendering 用于设置图像        <a href="https://www.cnblogs.com/coco1s/p/16134088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-12 10:50
+ChokCoco
+<span data-post-id="16134088" class="post-view-count">阅读(311)</span> 
+<span data-post-id="16134088" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16134088" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16134088" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16110915">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/04/07.html">2022年4月7日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16110915.html">
+    <span>
+        巧用 background-clip 实现超强的文字动效
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16110915">
+摘要：            
+最近，有同学询问，如何使用 CSS 实现如下效果： 看起来是个很有意思的动效。 仔细思考一下，要想实现这类效果，其实用到的核心属性只有一个 -- background-clip: text。 有意思的 background-clip: text background-clip: text 之前也提到        <a href="https://www.cnblogs.com/coco1s/p/16110915.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-07 09:55
+ChokCoco
+<span data-post-id="16110915" class="post-view-count">阅读(1586)</span> 
+<span data-post-id="16110915" class="post-comment-count">评论(7)</span> 
+<span data-post-id="16110915" class="post-digg-count">推荐(34)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16110915" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16067026">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/28.html">2022年3月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16067026.html">
+    <span>
+        一道有意思的 CSS 面试题，FizzBu​​zz ~
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16067026">
+摘要：            
+FizzBu​​zz 是一道很有意思的题目。我们来看看题目： 如果遇见了 3 的倍数要说 Fizz，5 的倍数就说 Buzz，如果即是 3 的倍数又是 5 的倍数就说 FizzBuzz。 如果是在一些编程语言中，这是一道比较初级的题目，当然，稍微转换一下，我们就可以把它转换成一道有关 CSS 选择器        <a href="https://www.cnblogs.com/coco1s/p/16067026.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-28 14:41
+ChokCoco
+<span data-post-id="16067026" class="post-view-count">阅读(604)</span> 
+<span data-post-id="16067026" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16067026" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16067026" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16038513">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/22.html">2022年3月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16038513.html">
+    <span>
+        2022 年最受瞩目的新特性 CSS @layer 到底是个啥？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16038513">
+摘要：            
+步入 2022，CSS 的新特性层出不穷，而最近在 CSS 圈最受瞩目的新特性，非 CSS @layer 莫属。 本文，将用最简洁的语言，快速让读者们搞懂，到底什么是 CSS @layer 新规范。 过往 CSS 优先级中存在的问题 如果我们的页面上存在非常多的样式，譬如有我们开发页面的时候的自定义        <a href="https://www.cnblogs.com/coco1s/p/16038513.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-22 11:26
+ChokCoco
+<span data-post-id="16038513" class="post-view-count">阅读(585)</span> 
+<span data-post-id="16038513" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16038513" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16038513" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16012545">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/16.html">2022年3月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16012545.html">
+    <span>
+        神奇的 CSS，让文字智能适配背景颜色
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16012545">
+摘要：            
+最近几天，有好几个同学都问了同样一个问题。 页面上有一段文本，能否实现这段文本在不同背景色下展示不同的颜色？也就是俗称的智能变色。像是下面这样： 文本在黑色底色上表现为白色，在白色底色上表现为黑色。看似很复杂的一个效果，但是其实在 CSS 中非常好实现，今天就介绍这样一个小技巧，在 CSS 中，利用        <a href="https://www.cnblogs.com/coco1s/p/16012545.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-16 14:13
+ChokCoco
+<span data-post-id="16012545" class="post-view-count">阅读(2480)</span> 
+<span data-post-id="16012545" class="post-comment-count">评论(4)</span> 
+<span data-post-id="16012545" class="post-digg-count">推荐(13)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16012545" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16002977">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/14.html">2022年3月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/16002977.html">
+    <span>
+        巧用 CSS 构建渐变彩色二维码
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16002977">
+摘要：            
+今日，群里有个很有意思的问题，问我如何实现一个彩色的，带渐变的二维码，像是这样： 很有意思的问题，我们在百度谷歌，搜索 qrcode，能搜到非常多在线制作二维码的工具，它们其中一些也会带有制作渐变二维码的功能。但是它们大部分都是 Canvas 或者其它编程语言实现的。 如果我们现在已经有了一张白底黑        <a href="https://www.cnblogs.com/coco1s/p/16002977.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-14 10:07
+ChokCoco
+<span data-post-id="16002977" class="post-view-count">阅读(710)</span> 
+<span data-post-id="16002977" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16002977" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16002977" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15974744">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/07.html">2022年3月7日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/15974744.html">
+    <span>
+        革命性创新，动画杀手锏 @scroll-timeline
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15974744">
+摘要：            
+在 CSS 规范 Scroll-linked Animations 中，推出了一个划时代的 CSS 功能。也就是 -- The @scroll-timeline at-rule，直译过来就是滚动时间线。 本文，就将带大家一探究竟，从入门到学会使用 CSS @scroll-timeline。 何为 @        <a href="https://www.cnblogs.com/coco1s/p/15974744.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-07 10:18
+ChokCoco
+<span data-post-id="15974744" class="post-view-count">阅读(2041)</span> 
+<span data-post-id="15974744" class="post-comment-count">评论(9)</span> 
+<span data-post-id="15974744" class="post-digg-count">推荐(21)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15974744" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15958444">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/03/03.html">2022年3月3日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/15958444.html">
+    <span>
+        巧用 CSS 实现炫彩三角边框动画
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15958444">
+摘要：            
+最近有个小伙伴问我，在某个网站看到一个使用 SVG 实现的炫彩三角边框动画，问能否使用 CSS 实现： 很有意思的一个动画效果，立马让我想起了我在 CSS 奇思妙想边框动画 一文中介绍的边框动画，非常的类似： 其核心就是利用了角向渐变（conic-gradient），然后将图案的中心区域通过覆盖遮罩        <a href="https://www.cnblogs.com/coco1s/p/15958444.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-03 10:06
+ChokCoco
+<span data-post-id="15958444" class="post-view-count">阅读(1546)</span> 
+<span data-post-id="15958444" class="post-comment-count">评论(5)</span> 
+<span data-post-id="15958444" class="post-digg-count">推荐(23)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15958444" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15944634">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/coco1s/archive/2022/02/28.html">2022年2月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/coco1s/p/15944634.html">
+    <span>
+        突破限制，CSS font-variation 可变字体的魅力
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15944634">
+摘要：            
+今天，在 CodePen 上看到一个很有意思的效果 -- GSAP 3 ETC Variable Font Wave，借助了 JS 动画库 GSAP 实现，一起来看看： 我寻思着能否使用 CSS 复刻一版，鼓捣了一会，利用纯 CSS 成功实现了原效果。 上述效果，最核心的就是文字的动画，文字从较细贴        <a href="https://www.cnblogs.com/coco1s/p/15944634.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-02-28 10:51
+ChokCoco
+<span data-post-id="15944634" class="post-view-count">阅读(3362)</span> 
+<span data-post-id="15944634" class="post-comment-count">评论(8)</span> 
+<span data-post-id="15944634" class="post-digg-count">推荐(23)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15944634" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/coco1s/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 ChokCoco
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script>
+var href = location.href;
+
+if(/https/.test(href)) {
+     document.querySelectorAll('iframe').forEach(val => { 
+	val.src = 'https:' + val.src.split(':')[1];
+    });
+}
+
+var l = document.createElement('link');
+l.rel = "shortcut icon";
+l.href = "http://images.cnblogs.com/cnblogs_com/coco1s/965277/o_favicon.png";
+document.getElementsByTagName("head")[0].appendChild(l);
+
+</script>
+<div id="rocket"></div>
+<script>
+var cnzz_protocol = (("https:" == document.location.protocol) ? "https://" : "http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259286380'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259286380%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script>
+var i = 0,
+	deIframe = setInterval(function(){
+		i++;
+		$('#sideBar').find('iframe').parent().remove();
+		$('#sideBar>div').not('#sideBarMain').remove();
+		if(i == 10){
+			clearInterval(deIframe);
+		}
+	}, 200);
+</script>
+<script>
+var reward = (function(){
+	function dataInsert(){
+var data = '<div class="g-gongzhonghao">'
+    +    '<p><strong><span style="font-size: 14px; font-family: verdana, geneva;">想 Get 到最有意思的 CSS 资讯，千万不要错过我的 iCSS 公众号 😄 ：</span></strong></p>'
+    +    '<p><span style="font-size: 14px; font-family: verdana, geneva;"><a rel="nofollow noopener"  href="https://images.cnblogs.com/cnblogs_com/coco1s/965277/o_201030023049qrcode.png" target="_blank"><img src="https://images.cnblogs.com/cnblogs_com/coco1s/881614/o_20031002540054919342-6d0dfd00-4ef8-11e9-9ee8-fbae9241d89e.png" alt="image" width="180" height="144"></a></span></p>'
+    + '</div>'
+    + '<div class="m-reward">' 
+							+ '<div class="m-desc">如果觉得文章对您有用，请随意打赏。您的支持将鼓励我继续创作！</div>'
+							+ '<div class="reward-btn">打赏支持</div>'
+							+ '</div>'
+							+ '<div class="reward-wrap">'
+							+ '<div class="reward-btn-close">+</div>'
+							+ '<h2>(^_^)打个赏喝个咖啡(^_^)</h2>'
+							+ '<div class="wechat">'
+							+ '<img src="https://images.cnblogs.com/cnblogs_com/coco1s/881614/o_weixin.png" alt="微信支付" />'
+							+ '</div>'
+							+ '<div class="zhifubao">'
+							+ '<img src="https://images.cnblogs.com/cnblogs_com/coco1s/881614/o_zhifubao.png" alt="支付宝支付" />'
+							+ '</div>	'
+							+ '</div>';
+
+		if($('#cnblogs_post_body')){
+			$('#cnblogs_post_body').append(data);		
+			eventBind();
+		}					
+	}
+
+	function eventBind(){
+		$('.reward-btn').on('click', function(event) {
+			$('.reward-wrap').fadeIn(300);
+		});
+
+		$('.reward-btn-close').on('click', function(event) {
+			$('.reward-wrap').fadeOut(500);
+		});
+	}
+	
+	return{
+		init:function(){
+			dataInsert();
+		}
+	}
+})();
+reward.init();
+</script>
+<script>
+/** 侧边栏回到顶部 */
+var rocket = $('#rocket');
+
+$(window).on('scroll', debounce(slideTopSet, 300));
+
+function debounce(func, wait) {
+	var timeout;
+	return function() {
+		clearTimeout(timeout);
+		timeout = setTimeout(func, wait);
+	};
+};
+function slideTopSet() {
+	var top = $(document).scrollTop();
+
+	if (top > 200) {
+		rocket.addClass('show');
+	} else {
+		rocket.removeClass('show');
+	}
+}
+$(document).on('click', '#rocket', function(event) {
+	rocket.addClass('move');
+	$('body, html').animate({
+		scrollTop: 0
+	}, 800);
+});
+$(document).on('animationEnd', function() {
+	setTimeout(function() {
+		rocket.removeClass('move');
+	}, 400);
+
+});
+$(document).on('webkitAnimationEnd', function() {
+	setTimeout(function() {
+		rocket.removeClass('move');
+	}, 400);
+});
+</script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kpnOapCQqF4jTDLDU8WdC806LouiSQR3hlWtPSHF14tWFBJ9e-OCwpFPb5nI2dKNKQa9_y4oHYwuE6NTZtzzpK711sRxbfPB1FVTDqqgHdU6wzl7K9zUPaV_nSWATE_ag" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

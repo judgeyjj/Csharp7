@@ -1,0 +1,378 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="一、背景 一方面我在艰苦地准备拿手的JVM，另一方面却看到自己的博客被肆意转载、洗稿、篡改内容。 恰逢我处于人生阶段的重要分叉口，所以，我应该好好思考，并做出一些change。 二、博客经历 说起来，" />
+    <meta property="og:description" content="一、背景 一方面我在艰苦地准备拿手的JVM，另一方面却看到自己的博客被肆意转载、洗稿、篡改内容。 恰逢我处于人生阶段的重要分叉口，所以，我应该好好思考，并做出一些change。 二、博客经历 说起来，" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>博客生涯的反思 - 血夜之末 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=7g5gOKcn7oN77JERPfnHYGtKZZ_9q-gZn4Sp6JkXL2w" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/Tiancheng-Duan/custom.css?v=Ch7OkuCaMl3&#x2B;w0k5CIBRvf2X0Mk=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=qHpes9Ca8ImIRFkdtZRqyMOEED5ihHCnvYUfc-vbsbw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/Tiancheng-Duan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/Tiancheng-Duan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/Tiancheng-Duan/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 294506;
+        var currentBlogApp = 'Tiancheng-Duan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-15 01:40';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-codinglife has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/Tiancheng-Duan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/Tiancheng-Duan/">血夜之末</a>
+</h1>
+<h2>Stay Hungry,Stay Foolish</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/Tiancheng-Duan/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E8%A1%80%E5%A4%9C%E4%B9%8B%E6%9C%AB">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/Tiancheng-Duan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/Tiancheng-Duan/p/16147308.html">
+    <span role="heading" aria-level="2">博客生涯的反思</span>
+    
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<h1 id="一背景">一、背景</h1>
+<p>一方面我在艰苦地准备拿手的JVM，另一方面却看到自己的博客被肆意转载、洗稿、篡改内容。</p>
+<p>恰逢我处于人生阶段的重要分叉口，所以，我应该好好思考，并做出一些change。</p>
+<h1 id="二博客经历">二、博客经历</h1>
+<p>说起来，写技术博客也有快六年了。这点可以通过我的博客园的园龄确认。</p>
+<h2 id="1大学阶段">1.大学阶段</h2>
+<p>最早是在大学的时候，开始写博客的。一开始只是写写C语言编程。写了三四篇后，正好遇到乌@云网的事件，写了一篇小爆款（博客园5k+阅读）。不过现在，外部已经看不到了，只能自己看到（懂的小伙伴，都懂了）。</p>
+<p>那时候写博客，一方面是想释放自己的想法，另一方面是增加自己的工作机遇。前者是希望拥抱世界，结识更多同志。后者则是希望通过博客增加工作机会（确实借此得到了一些工作推荐机会），以及自我技术展示。</p>
+<h2 id="2初入职场">2.初入职场</h2>
+<p>再后来就是进入职场后，开始写一些有关前端和区块链的文章。这是因为毕业后，我并没有找到C语言开发的机会。为了能够在杭州这座城市生存下来，我选择了前端开发。于此同时，当时的区块链很火，我也算赶了一波时髦。当时写了一些有关以太坊的小爆款（2k+）文章。那时候学习研究了区块链底层技术，如Golang、共识算法、加解密，以及比特币、以太坊等。也是在那时候，做过前端讲师、区块链助教，也做过前端开发、项目管理、产品经理等等。</p>
+<p>那时候写博客，相较于初衷，则多了一份展现自我，多了一份通过输出总结自身技术的考量。</p>
+<h2 id="3渐入职场">3.渐入职场</h2>
+<p>再后来，就是我放弃前端，专注后端开发的时光。那时候的文章，开始聚焦于后端技术、架构设计等。其中开始出现了第二批爆款（5k+）文章，如软考-系统架构设计师、软考-系统分析师两个系列，以及后端技术侧的全局分布式唯一标识等文章。可以说那时候后端技术，我基本都学习过，不少还深入研究过。那两三年是我技术成长最快的两三年，尤其是第一年的成长（详见<a href="https://www.cnblogs.com/Tiancheng-Duan/p/15737585.html" target="_blank" rel="noopener">从零到阿里的三年</a>中物联网公司一年经历）。可以说那一年的成长，可能就超过很多人三年的成长。努力只是其中一部分，更多是机会好。老板直接让我负责整个系统大家，还带人。那一年从一开始天天回家熬夜看方案、学技术、实践方案，到年末自信离职，真的成长太多了。在后面的两年，更多是业务上的成长，以及在大厂打磨技术（并不是所有技术方案，都适用大厂的）。</p>
+<p>其实这三年写的博客最多，但阅读量真的让我有点怀疑自己。真的有技术含量、有技术深度的长文阅读量往往不高，最多也就一两千。而一些工具使用，技术含量较低的文章，则可以两三千，甚至5k+。所以后面的文章，可以看出我对博客内容的选材存在摇摆。</p>
+<p>那时候写博客，我一方面希望通过输出，倒逼自身学习&amp;成长。另一方面则希望一点点积累&amp;培养自身技术品牌。</p>
+<h2 id="4时值当下">4.时值当下</h2>
+<p>最近半年多，我的博客更多集中于分享自身经历&amp;想法。</p>
+<p>这时候写博客，我则有了一些分享自身经历，以供他人借鉴的想法。因为毕业后，我时常久违缺乏真实的经历指引，而不断挠头。</p>
+<h1 id="三恶性转载">三、恶性转载</h1>
+<p>简单来说，主要是我发的文章被人洗稿转载，并且没有透出作者名&amp;文章原始链接等。甚至为了避免读者找到原文，转载者甚至将文章内容涉及的引用，以及相关内容都进行了删除&amp;篡改。</p>
+<p>尤其是我关注了不少的技术公众号，所以就见得比较多了，尤其是最近。</p>
+<h2 id="1初次转载">1.初次转载</h2>
+<p>我第一次看到公众号转载我的文章，还是朋友告诉我的。犹记得，那是一篇有关RabbitMQ的安装文档-<a href="https://www.cnblogs.com/Tiancheng-Duan/p/12050007.html" target="_blank" rel="noopener">Rabbit安装（单机及集群，阿里云）</a>。</p>
+<p>不过那个公众号转载的时候，还是在文章开头标注了原作者，文章原地址。其实，那时候网上已经有那种专门的爬虫，进行文章爬取。我甚至有几次百度搜索自己文章标题时，前面几页都是别人转载我的文章。</p>
+<p>这时的我，满心欢喜，感觉受到了大家的认可&amp;鼓舞。</p>
+<h2 id="2不记名转载">2.不记名转载</h2>
+<p>再后来，我开始在微信公众号多次看到我的文章被不记名转载。文章转载了，但是全篇没有原作者和原文链接。尤其是前不久的<a href="https://www.cnblogs.com/Tiancheng-Duan/p/15737585.html" target="_blank" rel="noopener">从零到阿里的三年</a>，有很多的公众号都转载了，但不少公众号都是不记名转载。</p>
+<p>我相信，应该有不少小伙伴，在别的公众号看到过这篇文章内容（可能标题不一样，但内容是一致的）。</p>
+<p>这时的我，略有失落，感觉被人偷走了自己的贡献。</p>
+<h2 id="3洗稿转载">3.洗稿转载</h2>
+<p>直到前不久，我在微信公众号看到了一篇我最新写的<a href="https://www.cnblogs.com/Tiancheng-Duan/p/16002433.html" target="_blank" rel="noopener">外包的选择</a>。文章转载了，没有原作者&amp;原文链接。为了避免读者跳转到我的博客，转载者将文章中涉及跳转引用，全部删除。甚至调整文章内容，进行广告宣传，而这完全违背了我的意志。</p>
+<p>这时的我，有些气愤，感受到了一丝世界的恶意。</p>
+<h1 id="四反思">四、反思</h1>
+<h2 id="1第一反应">1.第一反应</h2>
+<p>刚认识到洗稿转载的我，想过要不要直接举报。但举报只能改变一时，改变不了永久。</p>
+<p>永久的方案，目前有两类。一类是直接寻找类似“维权骑士”这样的存在，去授权维权。方便，但很可能会伤害到那些想真正传播知识的小伙伴。另一类就是建立自己的微信公众号，这样微信公众号平台的机制将极大保证其他公众号无法洗稿转载我的文章。缺点是微信公众号是一个封闭知识圈，必须多平台维护。而我现在维护两个平台的发布，就已经比较辛苦了。</p>
+<p>我只是想简简单单写写文章、分享自己经验、知识、智慧，但为什么如此困难呢？虽然我有一堆的理论去解释这个现象，但我真的不想去论述。因为我只是想简单一些。就像生活中，明明很简单的事情，总会被弄得很复杂。</p>
+<h2 id="2过去三个月">2.过去三个月</h2>
+<p>前段时间比较繁忙，主要集中在三个方面：</p>
+<ul>
+<li>工作：毕竟大厂核心团队，业务很是复杂，需要尽快熟悉。而且由于组织结构变动，需要尽快熟悉多个应用代码。</li>
+<li>生活：主要是搬家、整理新家等。十个大箱子，七个箱子装的是书。囧</li>
+<li>学习：相较于过去印象笔记、MarginNote、Xmind等工具构成的传统学习流程，学习Notion、Obsidian、DevonThink、OmniFocus等工具，并尝试基于ZK、MOC、LYT的新学习方法。</li>
+</ul>
+<p>所以当时只能压下性子，暂时对转载事件不做思考&amp;处理。</p>
+<p>最近，工作方面完成转正，生活方面完成搬家和主要整理，学习方面完成对工具&amp;方法论的熟悉，所以算是稍微清闲一点。所以，我开始处理转载事件。</p>
+<h2 id="3现状未来">3.现状&amp;未来</h2>
+<p>如果是一年前，我可能就去寻找“维权骑士”这样的机构，或者直接整一个微信公众号。</p>
+<blockquote>
+<p>其实，我之前是有建立微信公众号。但是一直觉得比较浪费时间，所以一直没有放出来。</p>
+</blockquote>
+<p>而现阶段的我，处于人生的岔口。我接下来三到五年的决定，将会极大影响到我后续的人生。因为现阶段的我有着诸多看似可行的抉择：</p>
+<ul>
+<li>有人推荐我和她一样去国外考博，甚至推荐我去她所在导师团队【对他们导师的研究方向，我算是有接触，而且有实际工作经验】。</li>
+<li>有人推荐我沉下心，将过去三五年学到的理论，好好在工作中沉淀【过去三五年看了很多书，经常给周边人传输】。</li>
+<li>有人推荐我去国外大厂，甚至愿意做我的推荐人【国内互联网现状，大家都懂。我也比较能接受国外的面试】。</li>
+<li>有人推荐我停下脚步，好好找个女票，在杭州安定下来【朋友表示，另一半是人生最大的投资。我还是比较认同的】。</li>
+<li>有人推荐我进体制里，去年底我找工作的时候，就帮我找门路了【体制毕竟稳定。而且我之前考的软考，也比较受体制那边认可】。</li>
+<li>。。。</li>
+</ul>
+<p>但是，不同的选择，会带来完全不同的方向&amp;结果。我这段时间还是比较头疼的。而且接下里的一段时间，应该会继续头疼下去。</p>
+<p>所以，我得出的结论，并不是如何处理那些公众号。而是我需要确定，博客对我的价值。进而确定博客于我的定位，我该如何面对博客。</p>
+<h2 id="4深入思考">4.深入思考</h2>
+<p>在过去的近六年时间，博客给我的价值&amp;意义在不同阶段，是不同的，是不断迭代&amp;变化的。</p>
+<p>其中很多价值&amp;作用，其实已经不复存在了。比如博客给我带来的工作机会，其实真的越来越缺乏价值。因为过去近六年，真正给我发出有价值的工作邀请，就两个。而我现在也算在职场结识了一些大佬，博客带来的工作机会性价比太低。至于能力展现，可能还不如我在开源做的贡献。至少我目前在大厂的面试中，很少遇到面试官关注我的博客。倒是遇到不止一次，面试官去询问我的开源贡献（即使只是GCTT做过技术博客翻译）。</p>
+<p>其实，我并不是很擅长写文档。我写的每一篇文档，都是花费了很多时间&amp;精力，才写出来的。每一篇文章，我都有在努力写别人没有的内容，写能够帮助到别人的内容。我的每一篇文章都有在思索结构，不断尝试，去选择一个更容易被阅读和理解的结构。所以，我产出每一篇文章，都需要付出不小的时间&amp;精力。</p>
+<p>在现在这个重要的人生岔口，如果找不到博客对我的新价值，那么写博客则是一件ROI很低的事儿。</p>
+<p>所以，要么我找到博客对我的独到价值，要么改变现有的写博客模式（不再让写博客，成为自身的负担，较重的负担）。</p>
+<h1 id="五结论">五、结论</h1>
+<p>后续的文章，不做承诺，随性而发。</p>
+<h1 id="附录">附录</h1>
+<p>这里贴上两张原本为“JVM架构”文章准备的图。希望有一些帮助，但真的没有太大的动力，把“JVM架构”赶出来了。</p>
+<p><img src="https://img2022.cnblogs.com/blog/987666/202204/987666-20220415013733009-406213186.png" alt="" loading="lazy"></p>
+<p><img src="https://img2022.cnblogs.com/blog/987666/202204/987666-20220415013240363-1237983969.png" alt="" loading="lazy"></p>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2022-04-15 01:40</span>&nbsp;
+<a href="https://www.cnblogs.com/Tiancheng-Duan/">血夜之末</a>&nbsp;
+阅读(<span id="post_view_count">617</span>)&nbsp;
+评论(<span id="post_comment_count">14</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147308" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16147308);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16147308', targetLink: 'https://www.cnblogs.com/Tiancheng-Duan/p/16147308.html', title: '博客生涯的反思' })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var cb_entryId = 16147308, cb_entryCreatedDate = '2022-04-15 01:40', cb_postType = 1, cb_postTitle = '博客生涯的反思';
+    var allowComments = true, cb_blogId = 294506, cb_blogApp = 'Tiancheng-Duan', cb_blogUserGuid = '69c282c5-8442-e611-9fc1-ac853d9f53cc';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 血夜之末
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4l_ed_lOEQ9BV3cfBX9G1j5MunMBNvLSybWwdQsMDQQYABvhKszw1TjJ1XAEfNHJpNK9WwfvLppbHfGjOEph31YuR44erVrKNGBAYbV20w9M0ofbZGLQd13bPZBY3IXWjY" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

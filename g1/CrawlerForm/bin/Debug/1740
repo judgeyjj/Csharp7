@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="origin" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <title> 2020年4月24日 随笔档案 - 西西嘛呦 - 博客园</title>
+    <link type="text/css" rel="stylesheet" href="/bundles/blog-common.css?v=KOZafwuaDasEedEenI5aTy8aXH0epbm6VUJ0v3vsT_Q1"/>
+<link id="MainCss" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip.css?v=EjExWsdi8Ql8RA7Wdq4_YaeuMVhIAL6d2BSGbilapWY1"/>
+<link type="text/css" rel="stylesheet" href="/blog/customcss/465208.css?v=D4IoKl%2b7PkjpfB3bILTAl2I92ns%3d"/>
+<link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/darkgreentrip/bundle-darkgreentrip-mobile.css?v=UDjqx7Witj15lOavDDvYAPs4X-lKVDD-U7PDSLg1cK81"/>
+    <link title="RSS" type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xiximayou/rss"/>
+    <link title="RSD" type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xiximayou/rsd.xml"/>
+<link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xiximayou/wlwmanifest.xml"/>
+    <script src="//common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script>var currentBlogId=465208;var currentBlogApp='xiximayou',cb_enable_mathjax=false;var isLogined=false;</script>
+    <script src="/bundles/blog-common.js?v=smtcUT5dhdu_5eEO8CKHYoVc7DPLgEBGzp6zKkstlzg1" type="text/javascript"></script>
+</head>
+<body>
+<a name="top"></a>
+
+<!--PageBeginHtml Block Begin-->
+<script type="text/javascript">
+/* 鼠标特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+        var a = new Array("❤JAVA❤","❤C++❤","❤C❤","❤PYTHON❤","❤GO❤","❤LINUX❤","❤HTML❤","❤CSS❤","❤JS❤","❤PYTORCH❤","❤MXNET❤","❤TF❤");
+        var $i = $("<span></span>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+        var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+            "z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+            "top": y - 20,
+            "left": x,
+            "position": "absolute",
+            "font-weight": "bold",
+            "color": "rgb("+~~(255*Math.random())+","+~~(255*Math.random())+","+~~(255*Math.random())+")"
+        });
+        $("body").append($i);
+        $i.animate({
+            "top": y - 180,
+            "opacity": 0
+        },
+        1500,
+        function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<link  type="text/css" rel="stylesheet" href="https://files.cnblogs.com/files/hafiz/feedback.css">
+<!--PageBeginHtml Block End-->
+
+<!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+	<a id="lnkBlogLogo" href="https://www.cnblogs.com/xiximayou/"><img id="blogLogo" src="/Skins/custom/images/logo.gif" alt="返回主页" /></a>			
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle" href="https://www.cnblogs.com/xiximayou/">西西嘛呦</a></h1>
+<h2><br/>
+从自己能做到的开始，一件件来，缓慢而坚定地前进，尽力而为
+</h2>
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">博客园</a></li>
+<li><a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xiximayou/">首页</a></li>
+<li><a id="blog_nav_newpost" class="menu" rel="nofollow" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">新随笔</a></li>
+<li><a id="blog_nav_contact" class="menu" rel="nofollow" href="https://msg.cnblogs.com/send/%E8%A5%BF%E8%A5%BF%E5%98%9B%E5%91%A6">联系</a></li>
+<li>
+<!----></li>
+<li><a id="blog_nav_admin" class="menu" rel="nofollow" href="https://i.cnblogs.com/">管理</a></li>
+</ul>
+		<div class="blogStats">
+			
+			<div id="blog_stats">
+<span id="stats_post_count">随笔 - 884&nbsp; </span>
+<span id="stats_article_count">文章 - 9&nbsp; </span>
+<span id="stats-comment_count">评论 - 116</span>
+</div>
+			
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+        
+<!--done-->
+
+
+<div class="day">
+	<div class="dayTitle">
+		<a id="ArchiveDay1_SingleDay_ctl00_ImageLink" href="https://www.cnblogs.com/xiximayou/archive/2020/04/24.html">2020年4月24日</a>				  
+	</div>
+
+	
+			<div class="postTitle">
+				<a id="ArchiveDay1_SingleDay_ctl00_DayList_TitleUrl_0" class="postTitle2" href="https://www.cnblogs.com/xiximayou/p/12767929.html">【论文笔记】YOLOv4: Optimal Speed and Accuracy of Object Detection</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: 论文地址：https://arxiv.org/abs/2004.10934v1 github地址：https://github.com/AlexeyAB/darknet 摘要： 有很多特征可以提高卷积神经网络（CNN）的准确性。需要在大型数据集上对这些特征的组合进行实际测试，并需要对结果进行理论证明<a href="https://www.cnblogs.com/xiximayou/p/12767929.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-24 15:50 西西嘛呦 阅读(38) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12767929" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+			<div class="postSeparator"></div>
+		
+			<div class="postTitle">
+				<a id="ArchiveDay1_SingleDay_ctl00_DayList_TitleUrl_1" class="postTitle2" href="https://www.cnblogs.com/xiximayou/p/12766704.html">(HRNet)：Deep High-Resolution Representation Learning for Visual Recognition相关论文</a>
+			</div>
+			<div class="postCon"><div class="c_b_p_desc">摘要: github：https://github.com/HRNet 论文地址：https://arxiv.org/pdf/1908.07919 相关论文： 1.Deep High-Resolution Representation Learning for Human Pose Estimation(H<a href="https://www.cnblogs.com/xiximayou/p/12766704.html" class="c_b_p_desc_readmore">阅读全文</a></div></div>
+			<div class="clear"></div>
+			<div class="postDesc">posted @ 2020-04-24 12:41 西西嘛呦 阅读(3) 评论(0)  <a href ="https://i.cnblogs.com/EditPosts.aspx?postid=12766704" rel="nofollow">编辑</a></div>
+			<div class="clear"></div>
+		
+</div>
+
+
+    
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+
+	<div id="sideBar">
+		<div id="sideBarMain">
+			
+<!--done-->
+<div class="newsItem">
+<h3 class="catListTitle">公告</h3>
+	<div id="blog-news"></div><script type="text/javascript">loadBlogNews();</script>
+</div>
+
+			<div id="blog-calendar" style="display:none"></div><script type="text/javascript">loadBlogDefaultCalendar();</script>
+			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div><script type="text/javascript">loadBlogSideColumn();</script>
+			</div>
+			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		
+<!--done-->
+Copyright &copy;2020 西西嘛呦
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+<!--PageEndHtml Block Begin-->
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+<script>
+    L2Dwidget.init({
+        "model": {
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "right",
+            "width": 100,
+            "height": 200,
+            "hOffset": -17,
+            "vOffset": -10
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 0.7,
+            "opacityOnHover": 0.3
+        }
+    });
+</script>
+
+<script type="text/javascript">
+   window.onload = function () {
+                var minSize = 10; //最小字体
+                var maxSize = 20;//最大字体
+                var newOne = 600; //生成雪花间隔
+                var flakColor = "#f5f5f5fa"; //雪花颜色
+                var flak = $("<div></div>").css({position:"absolute","top":"0px"}).html("✽");//定义一个雪花
+                var dhight = $(window).height(); //定义视图高度
+                var dw =$(window).width()-80; //定义视图宽度
+                setInterval(function(){
+                var sizeflak = minSize+Math.random()*maxSize; //产生大小不等的雪花
+                var startLeft = Math.random()*dw; //雪花生成是随机的left值
+                var startOpacity = 0.7+Math.random()*0.3; //随机透明度
+                var endTop= dhight-100; //雪花停止top的位置
+                var endLeft= Math.random()*dw; //雪花停止的left位置
+                var durationfull = 5000+Math.random()*3000; //雪花飘落速度不同
+                flak.clone().appendTo($("body")).css({
+                "left":startLeft ,
+                "opacity":startOpacity,
+                "font-size":sizeflak,
+                "color":flakColor
+                }).animate({
+                "top":endTop,
+                "left":endLeft,
+                "apacity":0.1
+                },durationfull,function(){
+                $(this).remove()
+                });
+                },newOne);
+            }
+ </script>
+<script language="javascript" type="text/javascript">
+//生成目录索引列表
+function GenerateContentList()
+{
+    var jquery_h3_list = $('#cnblogs_post_body h3');//如果你的章节标题不是h3,只需要将这里的h3换掉即可
+    if(jquery_h3_list.length>0)
+    {
+        var content = '<a name="_labelTop"></a>';
+        content    += '<div id="navCategory">';
+        content    += '<p style="font-size:18px"><b>阅读目录</b></p>';
+        content    += '<ul>';
+        for(var i =0;i<jquery_h3_list.length;i++)
+        {
+            var go_to_top = '<div style="text-align: right"><a href="#_labelTop">回到顶部</a><a name="_label' + i + '"></a></div>';
+            $(jquery_h3_list[i]).before(go_to_top);
+            var li_content = '<li><a href="#_label' + i + '">' + $(jquery_h3_list[i]).text() + '</a></li>';
+            content += li_content;
+        }
+        content    += '</ul>';
+        content    += '</div>';
+        if($('#cnblogs_post_body').length != 0 )
+        {
+            $($('#cnblogs_post_body')[0]).prepend(content);
+        }
+    }    
+}
+GenerateContentList();
+</script>
+
+<script type="text/javascript">
+$(function(){
+    $('#blogTitle h1').addClass('bounceInLeft animated');
+    $('#blogTitle h2').addClass('bounceInRight animated');
+    // 删除反对按钮
+    //$('.buryit').remove();
+    initCommentData();
+});
+function initCommentData() {
+    $('.feedbackItem').each(function() {
+        var text = $(this).find('.feedbackListSubtitle .layer').text();
+        // 将楼层信息放到data里面
+        // $(this).find('.blog_comment_body').attr('data-louceng', text.replace(/^#/g, ''));
+        if($(this).find('.feedbackListSubtitle .louzhu').length>0) $(this).addClass('myself');
+        var avatar = $(this).find('> .feedbackCon > span').html() || 'http://pic.cnitblog.com/face/sample_face.gif';
+        $(this).find('> .feedbackCon > .blog_comment_body').append('<img class="user-avatar" src="'+avatar+'"/>')
+    });
+}
+
+$(document).ajaxComplete(function(event, xhr, settings) {
+  // 监听获取评论ajax事件
+  if(settings.url.indexOf('/mvc/blog/GetComments.aspx') >= 0) {
+    initCommentData();
+  }
+});
+</script>
+<span id="back-to-top"><a href="#top"><img id="mypic" src="https://images.cnblogs.com/cnblogs_com/xiximayou/1643158/t_200207035556top.png" /></a></span>
+<!--PageEndHtml Block End-->
+</body>
+</html>

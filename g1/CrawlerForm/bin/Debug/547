@@ -1,0 +1,620 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="添加Sring&#x2B;SpringMVC相关依赖 因为使用的maven，web容器使用的tomcat，所以先在pom.xml中加上： &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;g" />
+    <meta property="og:description" content="添加Sring&#x2B;SpringMVC相关依赖 因为使用的maven，web容器使用的tomcat，所以先在pom.xml中加上： &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;g" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>SSM框架整合过程解析 - a1oyss - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/a1oyss/custom.css?v=3EZWrRBImyZW1DaX6hcfd0NB&#x2B;JY=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/SimpleMemory/bundle-SimpleMemory-mobile.min.css" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/a1oyss/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/a1oyss/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/a1oyss/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 707549;
+        var currentBlogApp = 'a1oyss';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleMemory';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-17 00:04';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simplememory no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/a1oyss/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/a1oyss/">a1oyss</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/a1oyss/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/a1oyss">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/a1oyss/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		<div id="post_detail">
+    <!--done-->
+    <div id="topics">
+        <div class="post">
+            <h1 class = "postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/a1oyss/p/16154775.html">
+    <span role="heading" aria-level="2">SSM框架整合过程解析</span>
+    
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body cnblogs-markdown">
+<h1 id="添加sringspringmvc相关依赖">添加Sring+SpringMVC相关依赖</h1>
+<p>因为使用的maven，web容器使用的tomcat，所以先在pom.xml中加上：</p>
+<pre><code class="language-xml">&lt;packaging&gt;war&lt;/packaging&gt;
+</code></pre>
+<p>这样项目就会自动将依赖放进WEB-INF下面的lib中，否则会出现一系列NoClassFound等错误。<br>
+添加spring-webmvc依赖：</p>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-webmvc&lt;/artifactId&gt;
+  &lt;version&gt;${spring.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;!-- 方便查看源码 --&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;javax.servlet&lt;/groupId&gt;
+  &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt;
+  &lt;version&gt;4.0.1&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>只添加一个spring-webmvc就够了<br>
+<img src="https://img2022.cnblogs.com/blog/2459421/202204/2459421-20220417000347314-421760549.png" alt="image.png" loading="lazy"><br>
+可以看到已经将相关依赖全部加载进去了。<br>
+这里有一个问题，@Contoller和@GetMapping等注解是在spring-web中，然而只有这两个注解，不去配置DispatcherServlet是不会处理请求的，也就是说如果只导入spring-web依赖，而没有spring-webmvc，即使有@Controller，也只是个普通的注解。</p>
+<h1 id="配置spring">配置spring</h1>
+<p>在web.xml中配置</p>
+<pre><code class="language-xml">&lt;listener&gt;
+  &lt;listener-class&gt;org.springframework.web.context.ContextLoaderListener&lt;/listener-class&gt;
+&lt;/listener&gt;
+&lt;!-- 采用注解方式配置 --&gt;
+&lt;context-param&gt;
+  &lt;param-name&gt;contextClass&lt;/param-name&gt;
+  &lt;param-value&gt;
+    &lt;!-- 使用注解实现类 --&gt;
+    org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+  &lt;/param-value&gt;
+&lt;/context-param&gt;
+&lt;context-param&gt;
+  &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+  &lt;!-- 配置类 --&gt;
+  &lt;param-value&gt;com.sk.day31.config.ApplicationConfig&lt;/param-value&gt;
+&lt;/context-param&gt;
+</code></pre>
+<p>ContextLoaderListener实现了ServletContextListener接口，ServletContextListener在文档中的解释是</p>
+<blockquote>
+<p>该接口的实现可以接收关于它们所处的Web应用程序的Servlet上下文变化的通知。为了接收通知事件，必须在Web应用程序的部署描述符中配置该实现类。</p>
+</blockquote>
+<p>ServletContextListener 是 Java EE 标准接口之一，类似 Jetty，Tomcat，JBoss 等 java 容器启动时便会触发该接口的 contextInitialized。</p>
+<h2 id="spring加载流程">spring加载流程</h2>
+<ol>
+<li>在Web容器启动后，触发ContextLoaderListener，contextInitialized方法被调用，接着调用initWebApplicationContext方法，并将ServletContext当作参数传入</li>
+</ol>
+<pre><code class="language-java">@Override
+public void contextInitialized(ServletContextEvent event) {
+    initWebApplicationContext(event.getServletContext());
+}
+</code></pre>
+<ol start="2">
+<li>进入initWebApplicationContext方法后，调用createWebApplicationContext</li>
+</ol>
+<pre><code class="language-java">public WebApplicationContext initWebApplicationContext(ServletContext servletContext) {
+        ...
+		try {
+			// Store context in local instance variable, to guarantee that
+			// it is available on ServletContext shutdown.
+			if (this.context == null) {
+				this.context = createWebApplicationContext(servletContext);
+			}
+        ...
+	}
+</code></pre>
+<ol start="3">
+<li>进入createWebApplicationContext方法， 源码如下：</li>
+</ol>
+<pre><code class="language-java">protected WebApplicationContext createWebApplicationContext(ServletContext sc) {
+		Class&lt;?&gt; contextClass = determineContextClass(sc);
+		if (!ConfigurableWebApplicationContext.class.isAssignableFrom(contextClass)) {
+			throw new ApplicationContextException("Custom context class [" + contextClass.getName() +
+					"] is not of type [" + ConfigurableWebApplicationContext.class.getName() + "]");
+		}
+		return (ConfigurableWebApplicationContext) BeanUtils.instantiateClass(contextClass);
+	}
+</code></pre>
+<p>determineContextClass用来返回一个实现了WebApplicationContext接口的类：</p>
+<pre><code class="language-java">protected Class&lt;?&gt; determineContextClass(ServletContext servletContext) {
+		String contextClassName = servletContext.getInitParameter(CONTEXT_CLASS_PARAM);
+		if (contextClassName != null) {
+			try {
+				return ClassUtils.forName(contextClassName, ClassUtils.getDefaultClassLoader());
+			}
+			catch (ClassNotFoundException ex) {
+				throw new ApplicationContextException(
+						"Failed to load custom context class [" + contextClassName + "]", ex);
+			}
+		}
+		else {
+			contextClassName = defaultStrategies.getProperty(WebApplicationContext.class.getName());
+			try {
+				return ClassUtils.forName(contextClassName, ContextLoader.class.getClassLoader());
+			}
+			catch (ClassNotFoundException ex) {
+				throw new ApplicationContextException(
+						"Failed to load default context class [" + contextClassName + "]", ex);
+			}
+		}
+	}
+</code></pre>
+<p>determineContextClass根据web.xml中定义的contextClass，来决定返回的实现类，如果没有配置，则返回默认的XmlWebApplicationContext，最后通过BeanUtils.instantiateClass(contextClass)创建对象。<br>
+<strong>那么就出现一个问题，XmlWebApplicationContext是什么？</strong><br>
+首先要先讲一下BeanFactory，根据<a href="https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#spring-core" target="_blank" rel="noopener">官方文档</a>，BeanFactory接口提供了一个高级配置机制，能够管理任何类型的对象。简单来说就是Spring的容器，用来管理各种Bean。</p>
+<pre><code class="language-java">import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.xml.XmlBeanFactory;
+import org.springframework.core.io.ClassPathResource;
+public class MainApp {
+   public static void main(String[] args) {
+      XmlBeanFactory factory = new XmlBeanFactory(new ClassPathResource("Beans.xml"));
+      HelloWorld obj = (HelloWorld) factory.getBean("helloWorld");
+      obj.getMessage();
+   }
+}
+</code></pre>
+<p>上述例子就是用了BeanFactory的其中一个实现类XmlBeanFactory来创建Bean。<br>
+而ApplicationContext是BeanFactory的扩展，提供了更多的功能，例如：</p>
+<ul>
+<li>用于访问应用程序组件的Bean工厂方法。从ListableBeanFactory继承而来。</li>
+<li>以通用方式加载文件资源的能力。从ResourceLoader接口继承而来。</li>
+<li>向注册的听众发布事件的能力。从ApplicationEventPublisher接口继承而来。</li>
+<li>解决消息的能力，支持国际化。继承自MessageSource接口。</li>
+</ul>
+<p>ApplicationContext常用的实现类有ClassPathXmlApplicationContext，以及上面提到的WebApplicationContext，这些实现类相当于特化，比如ClassPathXmlApplicationContext就是从类路径中获取配置文件：</p>
+<pre><code class="language-java">public class TestSpring {
+    @Test
+    public void test(){
+        ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");         
+        Hello hello=(Hello)context.getBean("helloWorld");
+        hello.say();
+    }
+}
+</code></pre>
+<p>WebApplicationContext是专门为web应用准备的，它允许从相对于Web根目录的路径中装载资源配置文件完成初始化工作。而WebApplicationContext最常用的实现类也就是上面的XmlWebApplicationContext了，此实现类会默认从WEB-INF的目录下读取applicationContext.xml来创建容器，当然这个路径也可以自定义。</p>
+<ol start="4">
+<li>再回到前面，determineContextClass返回了XmlWebApplicationContext类，并实例化，将其强转为ConfigurableWebApplicationContext，并执行configureAndRefreshWebApplicationContext</li>
+</ol>
+<pre><code class="language-java">if (this.context instanceof ConfigurableWebApplicationContext) {
+				ConfigurableWebApplicationContext cwac = (ConfigurableWebApplicationContext) this.context;
+				if (!cwac.isActive()) {
+                    ...
+					configureAndRefreshWebApplicationContext(cwac, servletContext);
+				}
+			}
+</code></pre>
+<ol start="5">
+<li>进入configureAndRefreshWebApplicationContext方法，通过ServletContext获取web.xml中的contextConfigLocation值，设置到XmlWebApplicationContext中。</li>
+</ol>
+<pre><code class="language-java">String configLocationParam = sc.getInitParameter(CONFIG_LOCATION_PARAM);
+		if (configLocationParam != null) {
+			wac.setConfigLocation(configLocationParam);
+		}
+    ...
+    wac.refresh();
+</code></pre>
+<ol start="6">
+<li>执行refresh方法</li>
+</ol>
+<pre><code class="language-java">public void refresh() throws BeansException, IllegalStateException {
+    Object var1 = this.startupShutdownMonitor;
+    synchronized(this.startupShutdownMonitor) {
+       //容器预先准备，记录容器启动时间和标记
+      prepareRefresh();
+      //创建bean工厂，里面实现了BeanDefinition的装载
+      ConfigurableListableBeanFactory beanFactory = obtainFreshBeanFactory();
+      //配置bean工厂的上下文信息，如类装载器等
+      prepareBeanFactory(beanFactory);
+      try {
+        //在BeanDefinition被装载后，提供一个修改BeanFactory的入口
+        postProcessBeanFactory(beanFactory);
+        //在bean初始化之前，提供对BeanDefinition修改入口，PropertyPlaceholderConfigurer在这里被调用
+        invokeBeanFactoryPostProcessors(beanFactory);
+        //注册各种BeanPostProcessors，用于在bean被初始化时进行拦截，进行额外初始化操作
+        registerBeanPostProcessors(beanFactory);
+        //初始化MessageSource
+        initMessageSource();
+        //初始化上下文事件广播
+        initApplicationEventMulticaster();
+        //模板方法
+        onRefresh();
+        //注册监听器
+        registerListeners();
+        //初始化所有未初始化的非懒加载的单例Bean
+        finishBeanFactoryInitialization(beanFactory);
+        //发布事件通知
+        finishRefresh();
+        } catch (BeansException var5) {
+            if(this.logger.isWarnEnabled()) {
+                this.logger.warn("Exception encountered during context initialization - cancelling refresh attempt: " + var5);
+            }
+            this.destroyBeans();
+            this.cancelRefresh(var5);
+            throw var5;
+        }
+    }
+}
+</code></pre>
+<p>完成bean的加载。</p>
+<h2 id="javaconfig方式配置applicationconfig">JavaConfig方式配置ApplicationConfig</h2>
+<pre><code class="language-java">@Configuration
+@ComponentScan(basePackages = "com.sk.day31", excludeFilters = {@ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Controller.class)})
+public class ApplicationConfig {
+    
+}
+</code></pre>
+<p>效果类似</p>
+<pre><code class="language-xml">&lt;context:component-scan base-package="com.sk.day31"&gt;
+  &lt;context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/&gt;--&gt;
+&lt;/context:component-scan&gt;
+</code></pre>
+<h1 id="配置spring-webmvc">配置spring-webmvc</h1>
+<p>在web.xml中配置：</p>
+<pre><code class="language-xml">&lt;servlet&gt;
+  &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+  &lt;servlet-class&gt;org.springframework.web.servlet.DispatcherServlet&lt;/servlet-class&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;contextClass&lt;/param-name&gt;
+    &lt;param-value&gt;
+      &lt;!-- 使用注解实现类 --&gt;
+      org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+    &lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;init-param&gt;
+    &lt;param-name&gt;contextConfigLocation&lt;/param-name&gt;
+    &lt;param-value&gt;com.sk.day31.config.SpringMvcConfig&lt;/param-value&gt;
+  &lt;/init-param&gt;
+  &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+  &lt;servlet-name&gt;dispatcherServlet&lt;/servlet-name&gt;
+  &lt;url-pattern&gt;/&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+<pre><code class="language-java">@Configuration
+@ComponentScan(basePackages = "com.sk.day31.controller")
+@EnableWebMvc
+public class SpringMvcConfig implements WebMvcConfigurer {
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/resources/**")
+                .addResourceLocations("classpath:/static/")
+                .setCacheControl(CacheControl.maxAge(Duration.ofDays(365)));
+    }
+
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+    }
+}
+</code></pre>
+<p>@EnableWebMvc效果等于<a target="_blank" rel="noopener">mvc:annotation-driven/</a>。<br>
+configureDefaultServletHandling方法作用等于<a target="_blank" rel="noopener">mvc:default-servlet-handler/</a></p>
+<h1 id="配置mybatis">配置mybatis</h1>
+<h2 id="添加依赖">添加依赖</h2>
+<pre><code class="language-xml">&lt;dependency&gt;
+  &lt;groupId&gt;org.springframework&lt;/groupId&gt;
+  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;
+  &lt;version&gt;${spring.version}&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;mysql&lt;/groupId&gt;
+  &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+  &lt;version&gt;8.0.28&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;com.alibaba&lt;/groupId&gt;
+  &lt;artifactId&gt;druid&lt;/artifactId&gt;
+  &lt;version&gt;1.1.22&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis-spring&lt;/artifactId&gt;
+  &lt;version&gt;2.0.7&lt;/version&gt;
+&lt;/dependency&gt;
+&lt;dependency&gt;
+  &lt;groupId&gt;org.mybatis&lt;/groupId&gt;
+  &lt;artifactId&gt;mybatis&lt;/artifactId&gt;
+  &lt;version&gt;3.5.9&lt;/version&gt;
+&lt;/dependency&gt;
+</code></pre>
+<p>spring-jdbc必须添加，不然会报错java.lang.NoClassDefFoundError: org/springframework/dao/support/DaoSupport。</p>
+<h2 id="配置类">配置类</h2>
+<pre><code class="language-java">@Configuration
+@PropertySource("classpath:druid.properties")
+@MapperScan(basePackages = "com.sk.day31.mapper")
+public class MybatisConfig {
+    @Value("${jdbc.driver}")
+    private String driver;
+    @Value("${jdbc.url}")
+    private String url;
+    @Value("${jdbc.username}")
+    private String username;
+    @Value("${jdbc.password}")
+    private String password;
+
+    @Bean
+    public DruidDataSource dataSource(){
+        DruidDataSource dataSource=new DruidDataSource();
+        dataSource.setDriverClassName(driver);
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+        return dataSource;
+    }
+
+    @Bean
+    public SqlSessionFactory sqlSessionFactory() throws Exception {
+        SqlSessionFactoryBean factoryBean = new SqlSessionFactoryBean();
+        factoryBean.setTypeAliasesPackage("com.sk.day31.entity");
+        factoryBean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+        factoryBean.setDataSource(dataSource());
+        return factoryBean.getObject();
+    }
+}
+
+</code></pre>
+<p>到此就算是整合完毕了</p>
+
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2022-04-17 00:04</span>&nbsp;
+<a href="https://www.cnblogs.com/a1oyss/">a1oyss</a>&nbsp;
+阅读(<span id="post_view_count">3</span>)&nbsp;
+评论(<span id="post_comment_count">0</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154775" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16154775);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16154775', targetLink: 'https://www.cnblogs.com/a1oyss/p/16154775.html', title: 'SSM框架整合过程解析' })">举报</a></div>
+        </div>
+	    
+	    
+    </div><!--end: topics 文章、评论容器-->
+</div>
+
+<script>
+    var cb_entryId = 16154775, cb_entryCreatedDate = '2022-04-17 00:04', cb_postType = 1, cb_postTitle = 'SSM框架整合过程解析';
+    var allowComments = true, cb_blogId = 707549, cb_blogApp = 'a1oyss', cb_blogUserGuid = '9b92cf1e-4ed7-4b7c-e3fa-08d942d2fd4b';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+<a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 a1oyss
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kv-XT0B63o3Dzc7sxeswUvXm-zev5JtWDwOIjzEDKwmyul5pcqFRGrnsZ2qxHymQiJU3h1ODSPS5coWvqKpDPNBUec5pG-L7EHytF72Xluvov-GDXgGlhtJVVQbzok5l4" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

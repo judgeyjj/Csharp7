@@ -1,0 +1,1246 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>华为云开发者社区 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue.min.css?v=FSeEa-rFf0sIksBzbHaXW8Iv0NfilAepvltZw3cr-9k" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/simpleblue/bundle-simpleblue-mobile.min.css?v=rj2vgM9-SnOpGgktnrBKAhiwG7zaFNNydpmw5HBgjcQ" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/huaweiyun/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/huaweiyun/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/huaweiyun/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 602073;
+        var currentBlogApp = 'huaweiyun';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'SimpleBlue';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-simpleblue has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/huaweiyun/">华为云开发者社区</a>
+</div>
+<div class="subtitle"></div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/huaweiyun/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%8E%E4%B8%BA%E4%BA%91%E5%BC%80%E5%8F%91%E8%80%85%E7%A4%BE%E5%8C%BA">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/huaweiyun/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                
+
+
+
+
+
+
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16147858">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16148419.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        云图说丨叮咚，您有一份短信通关攻略待查收
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148419">
+摘要：            
+摘要：&#160;发送国内短信必须提前申请签名，将短信内容也申请为模板，平台根据运营商规范审核通过后，方可使用申请的签名和模板发送短信。今天为大家讲解一下如何通过签名和模板审核。 本文分享自华为云社区《【云图说】第238期 叮咚，您有一份短信通关攻略待查收——签名模板篇》，作者： 阅识风云。 发送国内短信必须        <a href="https://www.cnblogs.com/huaweiyun/p/16148419.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 11:47
+华为云开发者社区
+<span data-post-id="16148419" class="post-view-count">阅读(2)</span> 
+<span data-post-id="16148419" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148419" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148419" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16148328.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        教你用ab命令进行并发与压力测试
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148328">
+摘要：            
+摘要：今天给大家分享一篇如何使用ab进行并发与压力测试的文章 本文分享自华为云社区《【高并发】如何使用ab进行并发与压力测试？》，作者：冰 河。 今天给大家分享一篇如何使用ab进行并发与压力测试的文章。 工具使用示例如下： ab -n 1000 -c 50 http://localhost:8080        <a href="https://www.cnblogs.com/huaweiyun/p/16148328.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 11:33
+华为云开发者社区
+<span data-post-id="16148328" class="post-view-count">阅读(6)</span> 
+<span data-post-id="16148328" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148328" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148328" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16148013.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        JS/TS项目里的Module都是什么？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148013">
+摘要：            
+摘要：在日常进行JS/TS项目开发的时候，经常会遇到require某个依赖和module.exports来定义某个函数的情况。就很好奇Modules都代表什么和有什么作用呢。 本文分享自华为云社区《JS/TS项目里的Module都是什么？都有几种形式？loaders和bundlers的区别是什么？》        <a href="https://www.cnblogs.com/huaweiyun/p/16148013.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:45
+华为云开发者社区
+<span data-post-id="16148013" class="post-view-count">阅读(118)</span> 
+<span data-post-id="16148013" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148013" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148013" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16147858.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        STM32+华为云IoTDA，带你设计一个属于自己的动态密码锁
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16147858">
+摘要：            
+摘要：设计一款物联网智能电子密码锁，以STM32单片机为主控制器,由触摸矩阵键盘、ESP8266、步进电机等模块组成，具有远程控制、随机密码生成等功能。 本文分享自华为云社区《STM32+华为云IOT设计的动态密码锁》，作者：DS小龙哥。 1. 前言 随着人们生活水平的提高及科学技术的发展，个人信息        <a href="https://www.cnblogs.com/huaweiyun/p/16147858.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:22
+华为云开发者社区
+<span data-post-id="16147858" class="post-view-count">阅读(3)</span> 
+<span data-post-id="16147858" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16147858" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147858" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16143344">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16144416.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        独家下载！突破开源Redis，华为云十年自研内核修炼之路《企业级Redis技术与应用解读》重磅发布
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16144416">
+摘要：            
+摘要：互联网业务神器最新揭秘：GaussDB(for Redis)如何以自研架构，突破开源版本限制，带来企业级稳定可靠？通过入门篇、性能篇、测评篇、应用篇四个章节，聚焦问题解决、场景应用和开发实战，分享华为云GaussDB(for Redis)的技术创新与实践，重磅干货不容错过。 本文分享自华为云社        <a href="https://www.cnblogs.com/huaweiyun/p/16144416.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 14:32
+华为云开发者社区
+<span data-post-id="16144416" class="post-view-count">阅读(10)</span> 
+<span data-post-id="16144416" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144416" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144416" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16143760.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        CVE-2022-22965 漏洞分析，安全问题早发现
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143760">
+摘要：            
+摘要：Spring在进行参数绑定时调用的 BeanWrapperImpl在进行JavaBean操作时触发了此漏洞。 本文分享自华为云社区《CVE-2022-22965 漏洞分析》，作者：Xuuuu。 CVE-2022-22965 A Spring MVC or Spring WebFlux appl        <a href="https://www.cnblogs.com/huaweiyun/p/16143760.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 11:24
+华为云开发者社区
+<span data-post-id="16143760" class="post-view-count">阅读(27)</span> 
+<span data-post-id="16143760" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143760" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143760" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16143633.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        解构华为云HE2E项目中的容器技术应用
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143633">
+摘要：            
+摘要：本文从容器技术应用的角度解构了HE2E项目的代码仓库配置、镜像构建、及docker-compose的部署方式。希望通过本篇文章分享可以使更多的开发者了解容器技术和华为云。 本文分享自华为云社区《解构华为云HE2E项目中的容器技术应用》，作者： 敏捷小智。 华为云DevCloud HE2E De        <a href="https://www.cnblogs.com/huaweiyun/p/16143633.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 11:03
+华为云开发者社区
+<span data-post-id="16143633" class="post-view-count">阅读(94)</span> 
+<span data-post-id="16143633" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143633" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143633" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16143344.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        华为云NFT云宝限量开抢，区块链技术为你的数字资产保驾护航
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143344">
+摘要：            
+摘要：正是有这些底层的区块链技术支撑，才能让我们真正的“拥有”独属于自己的NFT数字资产。 本文分享自华为云社区《华为云独家NFT限量开抢，背后的这些技术你都知道吗？》，作者： 技术火炬手。 你抢到华为云独家潮玩——数字云宝了吗？ 就在最近，我们推出了基于NFT的数字云宝。通过华为云花瓣链与用户ID        <a href="https://www.cnblogs.com/huaweiyun/p/16143344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 10:19
+华为云开发者社区
+<span data-post-id="16143344" class="post-view-count">阅读(11)</span> 
+<span data-post-id="16143344" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143344" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143344" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16139163">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/13.html">2022年4月13日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16139490.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        SimpleDateFormat类的安全问题，这6个方案总有一个适合你
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16139490">
+摘要：            
+摘要：你使用的SimpleDateFormat类还安全吗？为什么说SimpleDateFormat类不是线程安全的？带着问题从本文中寻求答案。 本文分享自华为云社区《【高并发】SimpleDateFormat类的线程安全问题和解决方案（附6种解决方案）》，作者： 冰 河。 首先问下大家：你使用的Si        <a href="https://www.cnblogs.com/huaweiyun/p/16139490.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-13 11:35
+华为云开发者社区
+<span data-post-id="16139490" class="post-view-count">阅读(25)</span> 
+<span data-post-id="16139490" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16139490" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16139490" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16139232.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        上海理工大学：巧用数字技术打响智慧抗疫信息战
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16139232">
+摘要：            
+摘要：这不止是对抗新冠病毒的战役，更是一场防疫信息战役。 本文分享自华为云社区《上海理工大学：巧用数字技术打响智慧抗疫信息战》，作者： Qudaizi 。 自从上海进入准封闭管理，上海理工大学党（校）办、信息办抽调业务骨干迅速组成智慧校园推进办“抗疫先锋队”（以下简称“抗疫先锋队”），疫情迅猛，分秒        <a href="https://www.cnblogs.com/huaweiyun/p/16139232.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-13 10:51
+华为云开发者社区
+<span data-post-id="16139232" class="post-view-count">阅读(31)</span> 
+<span data-post-id="16139232" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16139232" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16139232" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16139163.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        要想推荐系统做的好，图技术少不了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16139163">
+摘要：            
+摘要：在电商平台，一个好的推荐系统能帮助用户发现好商品，也能使高质量的商品触达精准受众。 本文分享自华为云社区《推荐--用图分析！》，作者： 你好_TT。 导读 推荐系统被认为是一种用于提供给用户感兴趣的商品、内容或者服务的技术。图技术作为刻画事物之间深度链路关系的技术，常常被用来进行推荐系统的建模        <a href="https://www.cnblogs.com/huaweiyun/p/16139163.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-13 10:38
+华为云开发者社区
+<span data-post-id="16139163" class="post-view-count">阅读(12)</span> 
+<span data-post-id="16139163" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16139163" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16139163" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16134008">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/12.html">2022年4月12日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16135220.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        坐实大数据资源调度框架之王，Yarn为何这么牛
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16135220">
+摘要：            
+摘要：Yarn的出现伴随着Hadoop的发展，使Hadoop从一个单一的大数据计算引擎，成为大数据的代名词。 本文分享自华为云社区《Yarn为何能坐实资源调度框架之王？》，作者： JavaEdge。 Hadoop主要组成： 分布式文件系统HDFS 分布式计算框架MapReduce 分布式集群资源调度        <a href="https://www.cnblogs.com/huaweiyun/p/16135220.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-12 15:03
+华为云开发者社区
+<span data-post-id="16135220" class="post-view-count">阅读(105)</span> 
+<span data-post-id="16135220" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16135220" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16135220" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16135160.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        云图说丨不同区块链之间如何跨链交互？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16135160">
+摘要：            
+可信跨链服务是基于一系列制定的可信区块链标准跨链协议，保证跨链交易全栈可追溯、可扩展性及可靠性等，助力不同区块链可信互联，促进区块链产业生态可信融合。 可信跨链服务TCS介绍页入口，详情请点击：单击。 可信跨链服务TCS帮助中心入口，详情请点击：单击。 点击关注，第一时间了解华为云新鲜技术~        <a href="https://www.cnblogs.com/huaweiyun/p/16135160.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-12 14:52
+华为云开发者社区
+<span data-post-id="16135160" class="post-view-count">阅读(7)</span> 
+<span data-post-id="16135160" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16135160" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16135160" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16134294.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        如何使用参数化查询提高Cypher查询的性能
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16134294">
+摘要：            
+摘要：在DBMS中，参数化查询被视为一种有效预防SQL注入攻击的手段。 本文分享自华为云社区《使用参数化查询提高Cypher查询的性能：以华为云图引擎GES为例》，作者： 蜉蝣与海。 在DBMS中，参数化查询被视为一种有效预防SQL注入攻击的手段。华为云图引擎GES提供对gremlin和cypher        <a href="https://www.cnblogs.com/huaweiyun/p/16134294.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-12 11:25
+华为云开发者社区
+<span data-post-id="16134294" class="post-view-count">阅读(9)</span> 
+<span data-post-id="16134294" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16134294" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16134294" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16134008.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        从趋势到必选项，探讨企业数字化转型方式方法
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16134008">
+摘要：            
+摘要：通过数字化转型，实现跨层级、跨地域、跨系统、跨部门、跨业务的协同管理，打造组件化、松耦合的中台能力，将数字技术与企业需求相融合，释放数字化转型的真正价值。 本文分享自华为云社区《企业数字化转型方式方法的探讨》，作者： Uncle_Tom 。 1. 数字经济和数字化转型 1.1. 数字经济成为未        <a href="https://www.cnblogs.com/huaweiyun/p/16134008.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-12 10:37
+华为云开发者社区
+<span data-post-id="16134008" class="post-view-count">阅读(16)</span> 
+<span data-post-id="16134008" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16134008" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16134008" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16128803">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/11.html">2022年4月11日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16129748.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        都2022年了，HDFS为何还如此能战！
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16129748">
+摘要：            
+摘要：HDFS也许不是最好的大数据存储技术，但依然是最重要的大数据存储技术。 本文分享自华为云社区《HDFS为何在大数据领域经久不衰？》，作者： JavaEdge。 1、概述 1.1 简介 Hadoop实现的一个分布式文件系统（Hadoop Distributed File System），简称HD        <a href="https://www.cnblogs.com/huaweiyun/p/16129748.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-11 14:09
+华为云开发者社区
+<span data-post-id="16129748" class="post-view-count">阅读(61)</span> 
+<span data-post-id="16129748" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129748" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129748" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16129133.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        不写代码，带你徒手开发一个健康打卡应用
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16129133">
+摘要：            
+摘要：目前由于疫情重发，国内许多地方对疫情又加强了管控。为做好公司疫情防范，许多公司为企业员工制定了疫情打卡要求。本示例以创建AppCube健康打卡应用为例，介绍如何在AppCube上开发健康打卡应用功能。 本文分享自华为云社区《为企业在AppCube上创建健康打卡【玩转华为云】》，作者：y-wol        <a href="https://www.cnblogs.com/huaweiyun/p/16129133.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-11 11:20
+华为云开发者社区
+<span data-post-id="16129133" class="post-view-count">阅读(17)</span> 
+<span data-post-id="16129133" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129133" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129133" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16128938.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        华为云GaussDB(for Influx)揭秘第五期：最佳实践之子查询
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16128938">
+摘要：            
+摘要：&#160;GaussDB(for influx)提供灵活的子查询能力，满足海量数据场景下的高性能查询需求。 本文分享自华为云社区《华为云GaussDB(for Influx)揭秘第五期：最佳实践之子查询》，作者： GaussDB 数据库 。 &quot;告警了！告警了！&quot;。 &quot;什么告警了？&quot;正在睡梦中迷糊的小王        <a href="https://www.cnblogs.com/huaweiyun/p/16128938.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-11 10:41
+华为云开发者社区
+<span data-post-id="16128938" class="post-view-count">阅读(9)</span> 
+<span data-post-id="16128938" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16128938" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16128938" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16128803.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        为啥JS/TS里都会有&quot;use strict&quot;
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16128803">
+摘要：            
+摘要：在日常JS/TS项目开发过程中，经常会在文件开头看到&quot;use strcit&quot;字样，这里的“使用严格”是什么意思？ 本文分享自华为云社区《JS/TS里的&quot;use strict&quot;严格模式是什么？》，作者： gentle_zhou。 在日常JS/TS项目开发过程中，经常会在文件开头看到&quot; use s        <a href="https://www.cnblogs.com/huaweiyun/p/16128803.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-11 10:14
+华为云开发者社区
+<span data-post-id="16128803" class="post-view-count">阅读(11)</span> 
+<span data-post-id="16128803" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16128803" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16128803" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16116967">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/08.html">2022年4月8日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/huaweiyun/p/16116967.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        想减少代码量，快设置一个有感知的 Aware Spring Bean
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16116967">
+摘要：            
+摘要：正常情况下，Spring 中的 Bean 对 Spring 是无感知的，Spring 框架提供了这种扩展能力，能让一个 bean 成为有感知的。 本文分享自华为云社区《有感知的 Aware Spring Bean》，作者：陈皮的JavaLib。 有感知能力的 Spring Bean 正常情况下        <a href="https://www.cnblogs.com/huaweiyun/p/16116967.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-08 14:50
+华为云开发者社区
+<span data-post-id="16116967" class="post-view-count">阅读(45)</span> 
+<span data-post-id="16116967" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16116967" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16116967" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16147858">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16148419.html">
+    <span>
+        云图说丨叮咚，您有一份短信通关攻略待查收
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148419">
+摘要：            
+摘要：&#160;发送国内短信必须提前申请签名，将短信内容也申请为模板，平台根据运营商规范审核通过后，方可使用申请的签名和模板发送短信。今天为大家讲解一下如何通过签名和模板审核。 本文分享自华为云社区《【云图说】第238期 叮咚，您有一份短信通关攻略待查收——签名模板篇》，作者： 阅识风云。 发送国内短信必须        <a href="https://www.cnblogs.com/huaweiyun/p/16148419.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 11:47
+华为云开发者社区
+<span data-post-id="16148419" class="post-view-count">阅读(2)</span> 
+<span data-post-id="16148419" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148419" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148419" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16148328.html">
+    <span>
+        教你用ab命令进行并发与压力测试
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148328">
+摘要：            
+摘要：今天给大家分享一篇如何使用ab进行并发与压力测试的文章 本文分享自华为云社区《【高并发】如何使用ab进行并发与压力测试？》，作者：冰 河。 今天给大家分享一篇如何使用ab进行并发与压力测试的文章。 工具使用示例如下： ab -n 1000 -c 50 http://localhost:8080        <a href="https://www.cnblogs.com/huaweiyun/p/16148328.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 11:33
+华为云开发者社区
+<span data-post-id="16148328" class="post-view-count">阅读(6)</span> 
+<span data-post-id="16148328" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148328" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148328" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16148013.html">
+    <span>
+        JS/TS项目里的Module都是什么？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16148013">
+摘要：            
+摘要：在日常进行JS/TS项目开发的时候，经常会遇到require某个依赖和module.exports来定义某个函数的情况。就很好奇Modules都代表什么和有什么作用呢。 本文分享自华为云社区《JS/TS项目里的Module都是什么？都有几种形式？loaders和bundlers的区别是什么？》        <a href="https://www.cnblogs.com/huaweiyun/p/16148013.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:45
+华为云开发者社区
+<span data-post-id="16148013" class="post-view-count">阅读(118)</span> 
+<span data-post-id="16148013" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16148013" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16148013" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16147858.html">
+    <span>
+        STM32+华为云IoTDA，带你设计一个属于自己的动态密码锁
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16147858">
+摘要：            
+摘要：设计一款物联网智能电子密码锁，以STM32单片机为主控制器,由触摸矩阵键盘、ESP8266、步进电机等模块组成，具有远程控制、随机密码生成等功能。 本文分享自华为云社区《STM32+华为云IOT设计的动态密码锁》，作者：DS小龙哥。 1. 前言 随着人们生活水平的提高及科学技术的发展，个人信息        <a href="https://www.cnblogs.com/huaweiyun/p/16147858.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-15 10:22
+华为云开发者社区
+<span data-post-id="16147858" class="post-view-count">阅读(3)</span> 
+<span data-post-id="16147858" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16147858" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147858" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16143344">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16144416.html">
+    <span>
+        独家下载！突破开源Redis，华为云十年自研内核修炼之路《企业级Redis技术与应用解读》重磅发布
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16144416">
+摘要：            
+摘要：互联网业务神器最新揭秘：GaussDB(for Redis)如何以自研架构，突破开源版本限制，带来企业级稳定可靠？通过入门篇、性能篇、测评篇、应用篇四个章节，聚焦问题解决、场景应用和开发实战，分享华为云GaussDB(for Redis)的技术创新与实践，重磅干货不容错过。 本文分享自华为云社        <a href="https://www.cnblogs.com/huaweiyun/p/16144416.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 14:32
+华为云开发者社区
+<span data-post-id="16144416" class="post-view-count">阅读(10)</span> 
+<span data-post-id="16144416" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144416" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144416" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16143760.html">
+    <span>
+        CVE-2022-22965 漏洞分析，安全问题早发现
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143760">
+摘要：            
+摘要：Spring在进行参数绑定时调用的 BeanWrapperImpl在进行JavaBean操作时触发了此漏洞。 本文分享自华为云社区《CVE-2022-22965 漏洞分析》，作者：Xuuuu。 CVE-2022-22965 A Spring MVC or Spring WebFlux appl        <a href="https://www.cnblogs.com/huaweiyun/p/16143760.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 11:24
+华为云开发者社区
+<span data-post-id="16143760" class="post-view-count">阅读(27)</span> 
+<span data-post-id="16143760" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143760" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143760" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16143633.html">
+    <span>
+        解构华为云HE2E项目中的容器技术应用
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143633">
+摘要：            
+摘要：本文从容器技术应用的角度解构了HE2E项目的代码仓库配置、镜像构建、及docker-compose的部署方式。希望通过本篇文章分享可以使更多的开发者了解容器技术和华为云。 本文分享自华为云社区《解构华为云HE2E项目中的容器技术应用》，作者： 敏捷小智。 华为云DevCloud HE2E De        <a href="https://www.cnblogs.com/huaweiyun/p/16143633.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 11:03
+华为云开发者社区
+<span data-post-id="16143633" class="post-view-count">阅读(94)</span> 
+<span data-post-id="16143633" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143633" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143633" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16143344.html">
+    <span>
+        华为云NFT云宝限量开抢，区块链技术为你的数字资产保驾护航
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16143344">
+摘要：            
+摘要：正是有这些底层的区块链技术支撑，才能让我们真正的“拥有”独属于自己的NFT数字资产。 本文分享自华为云社区《华为云独家NFT限量开抢，背后的这些技术你都知道吗？》，作者： 技术火炬手。 你抢到华为云独家潮玩——数字云宝了吗？ 就在最近，我们推出了基于NFT的数字云宝。通过华为云花瓣链与用户ID        <a href="https://www.cnblogs.com/huaweiyun/p/16143344.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-14 10:19
+华为云开发者社区
+<span data-post-id="16143344" class="post-view-count">阅读(11)</span> 
+<span data-post-id="16143344" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16143344" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16143344" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+    
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16139232">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/huaweiyun/archive/2022/04/13.html">2022年4月13日</a>
+    </div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16139490.html">
+    <span>
+        SimpleDateFormat类的安全问题，这6个方案总有一个适合你
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16139490">
+摘要：            
+摘要：你使用的SimpleDateFormat类还安全吗？为什么说SimpleDateFormat类不是线程安全的？带着问题从本文中寻求答案。 本文分享自华为云社区《【高并发】SimpleDateFormat类的线程安全问题和解决方案（附6种解决方案）》，作者： 冰 河。 首先问下大家：你使用的Si        <a href="https://www.cnblogs.com/huaweiyun/p/16139490.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-13 11:35
+华为云开发者社区
+<span data-post-id="16139490" class="post-view-count">阅读(25)</span> 
+<span data-post-id="16139490" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16139490" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16139490" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/huaweiyun/p/16139232.html">
+    <span>
+        上海理工大学：巧用数字技术打响智慧抗疫信息战
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16139232">
+摘要：            
+摘要：这不止是对抗新冠病毒的战役，更是一场防疫信息战役。 本文分享自华为云社区《上海理工大学：巧用数字技术打响智慧抗疫信息战》，作者： Qudaizi 。 自从上海进入准封闭管理，上海理工大学党（校）办、信息办抽调业务骨干迅速组成智慧校园推进办“抗疫先锋队”（以下简称“抗疫先锋队”），疫情迅猛，分秒        <a href="https://www.cnblogs.com/huaweiyun/p/16139232.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="clear"></div>
+        <div class="postDesc">
+            posted @ 2022-04-13 10:51
+华为云开发者社区
+<span data-post-id="16139232" class="post-view-count">阅读(31)</span> 
+<span data-post-id="16139232" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16139232" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16139232" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+        <div class="clear"></div>
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/huaweiyun/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2022 华为云开发者社区
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4k-C1oEJqbkA8cXyQRf4y3727JfZX70V-z7LR3zt1ipX2hjLgfMVw-wcT23zzp2eFaMtIG_QgE7Oj8cq0ay1zUfAnMgR9lAl34j-GzfWjjN68g8DeAVrDW2EQD6WoxgfoI" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

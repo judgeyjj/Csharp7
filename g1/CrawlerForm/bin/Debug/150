@@ -1,0 +1,953 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>flydean - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/codinglife/bundle-codinglife.min.css?v=7g5gOKcn7oN77JERPfnHYGtKZZ_9q-gZn4Sp6JkXL2w" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/codinglife/bundle-codinglife-mobile.min.css?v=qHpes9Ca8ImIRFkdtZRqyMOEED5ihHCnvYUfc-vbsbw" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/flydean/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/flydean/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/flydean/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 595304;
+        var currentBlogApp = 'flydean';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'CodingLife';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-codinglife has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        
+<a href="https://github.com/ddean2009/www.flydean.com"><img style="position:absolute;top:0;right:0;border:0" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/flydean/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/flydean/">flydean程序那些事</a>
+</h1>
+<h2>最通俗的解读，最深刻的干货，最简洁的教程，众多你不知道的小技巧等你来发现！
+www.flydean.com
+</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/flydean/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+</li>
+<li>
+
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_12927951">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2020/05/21.html">2020年5月21日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/flydean/p/blockchain.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        区块链从入门到放弃系列教程-涵盖密码学,超级账本,以太坊,Libra,比特币等持续更新
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12927951">
+摘要：            
+简介 区块链是一种防篡改的共享数字分布式账本，可记录公共或私有对等网络中的交易。分布式账本分布到网络中的所有成员节点，以加密散列链接的块的顺序链，永久记录网络中对等点之间发生的资产交换的历史记录。 区块链的广为人知是从比特币开始的，但是区块链不是比特币，区块链只是比特币底层的技术基础。比特币可以看做        <a href="https://www.cnblogs.com/flydean/p/blockchain.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-05-21 07:02
+flydean
+<span data-post-id="12927951" class="post-view-count">阅读(839)</span> 
+<span data-post-id="12927951" class="post-comment-count">评论(1)</span> 
+<span data-post-id="12927951" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12927951" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_12921232">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2020/05/20.html">2020年5月20日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/flydean/p/learn-springboot2.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Spring Boot 2.X系列教程:七天从无到有掌握Spring Boot-持续更新
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12921235">
+摘要：            
+简介 自从Spring横空出世之后，Spring就成了事实上的J2EE标准。Spring作为一个轻量级的J2EE应用框架，就是针对EJB的复杂特性而设计的，最后毫无疑问，Spring凭借它的简洁，可理解性和可用性赢得了最后的胜利。 Spring从最初的xml配置到后面的注解配置，一直都在不断的进步，        <a href="https://www.cnblogs.com/flydean/p/learn-springboot2.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-05-20 06:59
+flydean
+<span data-post-id="12921235" class="post-view-count">阅读(924)</span> 
+<span data-post-id="12921235" class="post-comment-count">评论(0)</span> 
+<span data-post-id="12921235" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12921235" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/flydean/p/spring5.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        Spring 5.X系列教程:满足你对Spring5的一切想象-持续更新
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12921232">
+摘要：            
+简介 是什么让java世界变得更好，程序员变得更友爱，秃头率变得不是那么的高，让程序员不必再每天996，有时间找个女朋友？ 是Spring。 是什么让企业级java应用变得简单易懂，降低了java程序员的进入门槛，导致了现在遍地都是java程序员的窘境？ 是Spring。 是什么从无冕之王变成了事实        <a href="https://www.cnblogs.com/flydean/p/spring5.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-05-20 06:45
+flydean
+<span data-post-id="12921232" class="post-view-count">阅读(3743)</span> 
+<span data-post-id="12921232" class="post-comment-count">评论(1)</span> 
+<span data-post-id="12921232" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12921232" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_12689732">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2020/04/13.html">2020年4月13日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/flydean/p/java-roadmap-2020.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        java程序员从小工到专家成神之路（2020版）-持续更新中，附详细文章教程
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_12689732">
+摘要：            
+java作为第一大编程语言，可谓源远流长，一代又一代的java程序员前仆后继走在java学习的路上。java程序员的学习之路在2020年又有什么变化呢？本文详细附上了每一个部分所需知识的教程链接地址，并会持续更新，希望能够和大家一起进步！        <a href="https://www.cnblogs.com/flydean/p/java-roadmap-2020.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2020-04-13 10:20
+flydean
+<span data-post-id="12689732" class="post-view-count">阅读(2669)</span> 
+<span data-post-id="12689732" class="post-comment-count">评论(1)</span> 
+<span data-post-id="12689732" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=12689732" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16149048">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16149048.html">
+    <span>
+        java高级用法之:JNA类型映射应该注意的问题
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16149048">
+摘要：            
+简介 JNA提供JAVA类型和native类型的映射关系，但是这一种映射关系只是一个大概的映射，我们在实际的应用中还有很多需要注意的事项，本文将会为大家详细讲解在使用类型映射中可能会出现的问题。一起来看看吧。 String 首先是String的映射，JAVA中的String实际上对应的是两种nati        <a href="https://www.cnblogs.com/flydean/p/16149048.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 14:43
+flydean
+<span data-post-id="16149048" class="post-view-count">阅读(22)</span> 
+<span data-post-id="16149048" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16149048" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16149048" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16144692">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/14.html">2022年4月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16144692.html">
+    <span>
+        java高级用法之:在JNA中使用类型映射
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16144692">
+摘要：            
+简介 JNA中有很多种映射，library的映射，函数的映射还有函数参数和返回值的映射，libary和函数的映射比较简单，我们在之前的文章中已经讲解过了，对于类型映射来说，因为JAVA中的类型种类比较多，所以这里我们将JNA的类型映射提取出来单独讲解。 类型映射的本质 我们之前提到在JNA中有两种方        <a href="https://www.cnblogs.com/flydean/p/16144692.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-14 15:12
+flydean
+<span data-post-id="16144692" class="post-view-count">阅读(77)</span> 
+<span data-post-id="16144692" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16144692" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16144692" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16140203">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/13.html">2022年4月13日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16140203.html">
+    <span>
+        java高级用法之:在JNA中将本地方法映射到JAVA代码中
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16140203">
+摘要：            
+简介 不管是JNI还是JNA，最终调用的都是native的方法，但是对于JAVA程序来说，一定需要一个调用native方法的入口，也就是说我们需要在JAVA方法中定义需要调用的native方法。 对于JNI来说，我们可以使用native关键字来定义本地方法。那么在JNA中有那些在JAVA代码中定义本        <a href="https://www.cnblogs.com/flydean/p/16140203.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-13 14:50
+flydean
+<span data-post-id="16140203" class="post-view-count">阅读(206)</span> 
+<span data-post-id="16140203" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16140203" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16140203" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16129665">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/11.html">2022年4月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16129665.html">
+    <span>
+        计算机编码规则之:Base64编码
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16129665">
+摘要：            
+简介 我们知道计算机中的文件可以分为两种，一种是人肉眼可读的文本类文件，一种是肉眼不可读的二进制文件。一般来说二进制文件如果用文本编辑器打开的话会显示乱码，并且二进制文件和文本文件的存储和传输方式是不一样的，那么有没有什么办法将二进制文件转换成为文本文件进行传输或者存储呢？答案是肯定的。 这种编码方        <a href="https://www.cnblogs.com/flydean/p/16129665.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 13:50
+flydean
+<span data-post-id="16129665" class="post-view-count">阅读(235)</span> 
+<span data-post-id="16129665" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16129665" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16129665" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16119013">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/08.html">2022年4月8日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16119013.html">
+    <span>
+        netty系列之:java中的base64编码器
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16119013">
+摘要：            
+简介 什么是Base64编码呢？在回答这个问题之前，我们需要了解一下计算机中文件的分类，对于计算机来说文件可以分为两类，一类是文本文件，一类是二进制文件。 对于二进制文件来说，其内容是用二进制来表示的，对于人类是不可立马理解的。如果你尝试用文本编辑器打开二进制文件，可能会看到乱码。这是因为二进制文件        <a href="https://www.cnblogs.com/flydean/p/16119013.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-08 18:06
+flydean
+<span data-post-id="16119013" class="post-view-count">阅读(121)</span> 
+<span data-post-id="16119013" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16119013" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16119013" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16106495">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/06.html">2022年4月6日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16106495.html">
+    <span>
+        网络协议之:socket协议详解之Unix domain Socket
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16106495">
+摘要：            
+简介 之前的文章我们讲到了Socket中的Stream Socket和Datagram Socket，这两种Socket通常分别是基于tcp和udp协议来进行数据的传输。这两种Socket都有一个共同的特点，那就是需要一个IP地址和端口来建立客户端和服务器端的连接。 那么今天我们会来讲解一个特殊的s        <a href="https://www.cnblogs.com/flydean/p/16106495.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-06 15:06
+flydean
+<span data-post-id="16106495" class="post-view-count">阅读(161)</span> 
+<span data-post-id="16106495" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16106495" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16106495" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16088473">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/04/01.html">2022年4月1日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16088473.html">
+    <span>
+        网络协议之:socket协议详解之Datagram Socket
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16088473">
+摘要：            
+简介 上一篇文章我们讲解了Socket的分类和最常用到的Stream Socket，Stream Socket一般是基于TCP协议的，所以我们经常在web服务中能够看到他们的身影。当然TCP协议有个孪生兄弟叫做UDP，那么基于UDP来做传输协议的socket协议就叫做Datagram Socket，        <a href="https://www.cnblogs.com/flydean/p/16088473.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-01 18:33
+flydean
+<span data-post-id="16088473" class="post-view-count">阅读(199)</span> 
+<span data-post-id="16088473" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16088473" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16088473" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16079000">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/30.html">2022年3月30日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16079000.html">
+    <span>
+        网络协议之:socket协议详解之Socket和Stream Socket
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16079000">
+摘要：            
+简介 不管是在普通的网络编程中还是在netty中，都经常会提到一个词叫做socket，好像socket是一个神奇的东西，使用socket我们可以建立客户端到服务器端的连接，并且和进行客户端和服务器端的通讯，那么socket到底是什么呢？它有哪些分类呢？一起来看看吧。 Socket是什么 socket        <a href="https://www.cnblogs.com/flydean/p/16079000.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-30 20:39
+flydean
+<span data-post-id="16079000" class="post-view-count">阅读(211)</span> 
+<span data-post-id="16079000" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16079000" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16079000" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16068839">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/28.html">2022年3月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16068839.html">
+    <span>
+        java高级用法之:调用本地方法的利器JNA
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16068839">
+摘要：            
+简介 JAVA是可以调用本地方法的，官方提供的调用方式叫做JNI，全称叫做java native interface。要想使用JNI，我们需要在JAVA代码中定义native方法，然后通过javah命令创建C语言的头文件，接着使用C或者C++语言来实现这个头文件中的方法，编译源代码，最后将编译后的文        <a href="https://www.cnblogs.com/flydean/p/16068839.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-28 20:23
+flydean
+<span data-post-id="16068839" class="post-view-count">阅读(88)</span> 
+<span data-post-id="16068839" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16068839" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16068839" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16046527">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/23.html">2022年3月23日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16046527.html">
+    <span>
+        java高级用法之:无所不能的java,本地方法调用实况
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16046527">
+摘要：            
+简介 相信每个程序员都有一个成为C大师的梦想，毕竟C程序员处于程序员鄙视链的顶端，他可以俯视任何其他语言的程序员。 但事实情况是，无数的程序员从小白到放弃，鉴于C的难度，最后都投入了java的怀抱。JAVA以他宽广的胸怀接纳了一众无法登顶C的程序员。 开个玩笑，C和C++的优势在于和系统底层的交互和        <a href="https://www.cnblogs.com/flydean/p/16046527.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-23 20:05
+flydean
+<span data-post-id="16046527" class="post-view-count">阅读(185)</span> 
+<span data-post-id="16046527" class="post-comment-count">评论(2)</span> 
+<span data-post-id="16046527" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16046527" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16036421">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/21.html">2022年3月21日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16036421.html">
+    <span>
+        高级IO模型之kqueue和epoll
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16036421">
+摘要：            
+简介 任何一个程序都离不开IO，有些是很明显的IO，比如文件的读写，也有一些是不明显的IO,比如网络数据的传输等。那么这些IO都有那些模式呢？我们在使用中应该如何选择呢？高级的IO模型kqueue和epoll是怎么工作的呢？一起来看看吧。 block IO和nonblocking IO 大家先来了解        <a href="https://www.cnblogs.com/flydean/p/16036421.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-21 20:37
+flydean
+<span data-post-id="16036421" class="post-view-count">阅读(108)</span> 
+<span data-post-id="16036421" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16036421" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16036421" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16021307">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/18.html">2022年3月18日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16021307.html">
+    <span>
+        Github又悄悄升级了,这次的变化是大文件的存储方式
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16021307">
+摘要：            
+简介 github是大家常用的代码管理工具，也被戏称为世界上最大的程序员交友网站，它的每次升级都会影响很多用户。在我的个人github网站上，之前在做JAVA NIO demo的时候上传了一个自制的大文件，最近对这个项目进行了一些修改，但是却上传不上github网站了，查看报错的原因，就是说项目中有        <a href="https://www.cnblogs.com/flydean/p/16021307.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-18 12:54
+flydean
+<span data-post-id="16021307" class="post-view-count">阅读(819)</span> 
+<span data-post-id="16021307" class="post-comment-count">评论(2)</span> 
+<span data-post-id="16021307" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16021307" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16011575">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/16.html">2022年3月16日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16011575.html">
+    <span>
+        netty系列之:netty中各不同种类的channel详解
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16011575">
+摘要：            
+简介 channel是连接客户端和服务器端的桥梁，在netty中我们最常用的就是NIO，一般和NioEventLoopGroup配套使用的就是NioServerSocketChannel和NioSocketChannel，如果是UDP协议，那么配套使用的就是NioDatagramChannel，如果        <a href="https://www.cnblogs.com/flydean/p/16011575.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-16 09:47
+flydean
+<span data-post-id="16011575" class="post-view-count">阅读(271)</span> 
+<span data-post-id="16011575" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16011575" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16011575" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16004817">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/14.html">2022年3月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/16004817.html">
+    <span>
+        网络标准之:IANA定义的传输编码
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16004817">
+摘要：            
+简介 不同的系统或者协议可以接受的数据类型是不同的，如果要在那些不支持现有数据格式的系统或者协议中进行数据传输的话，就需要进行数据转换。 IANA的全称是The Internet Assigned Numbers Authority，也叫做互联网数字分配机构，是一个负责协调互联网的事务让Intern        <a href="https://www.cnblogs.com/flydean/p/16004817.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-14 17:01
+flydean
+<span data-post-id="16004817" class="post-view-count">阅读(238)</span> 
+<span data-post-id="16004817" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16004817" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16004817" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15992088">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/flydean/archive/2022/03/11.html">2022年3月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/flydean/p/15992088.html">
+    <span>
+        网络标准之:永远是1.0版本的MIME
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15992088">
+摘要：            
+简介 无规矩不成方圆，无标准不成网络通信。正是在各种网络协议和标准的基础之上，才构建了我们现在流行的互联网。今天给大家介绍的就是一个网络标准格式，叫做MIME，它的全称是Multipurpose Internet Mail Extensions,翻译过来就是多用途Internet邮件扩展。 那么有小        <a href="https://www.cnblogs.com/flydean/p/15992088.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-11 07:31
+flydean
+<span data-post-id="15992088" class="post-view-count">阅读(466)</span> 
+<span data-post-id="15992088" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15992088" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15992088" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/flydean/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 flydean
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4kH7gvw3NcxR_74zh1-IPKO4ja3vKwXNT-oOUaXR-e0ZSbhtFBXy_lMD6FyWL0TgTjtpDo_0E18gnwmI747lejTWXyQkimCeeAmxTlsjegRvvLgosN4zHpwBJzw3GzzTto" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

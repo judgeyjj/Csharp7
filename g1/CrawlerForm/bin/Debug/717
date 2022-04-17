@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    <meta name="description" content="热点随笔： &amp;#183;&amp;#160;换个数据结构，一不小心节约了 591 台机器！&amp;#160;(why技术)&amp;#183;&amp;#160;寒冬下的跑路与裁员...&amp;#160;(叶小钗)&amp;#183;&amp;#160" />
+    <meta property="og:description" content="热点随笔： &amp;#183;&amp;#160;换个数据结构，一不小心节约了 591 台机器！&amp;#160;(why技术)&amp;#183;&amp;#160;寒冬下的跑路与裁员...&amp;#160;(叶小钗)&amp;#183;&amp;#160" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>上周热点回顾（3.28-4.3） - 博客园团队 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright.min.css?v=4W7JFeW6yawmSvuAPXAMgmONTEeyjPHEBIN7uU-h2oo" />
+    <link id="highlighter-theme-cnblogs" type="text/css" rel="stylesheet" href="/css/hljs/cnblogs.css?v=yKPfCbE6NGwg5Jn8Cm5G98RHufDcX_NIbkGDyVPvWPQ" />
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/cmt/custom.css?v=xAH7zLsrA2Q2a7O8N3OLVW13VDA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/lessismoreright/bundle-lessismoreright-mobile.min.css?v=LOyhPk4LkjVgRjtP5CM7JRyi-Xi6LwDvnFflAjNT9jE" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/cmt/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/cmt/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/cmt/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 39258;
+        var currentBlogApp = 'cmt';
+        var cb_enable_mathjax = true;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'LessIsMoreRight';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+        <script>
+            var currentPostDateAdded = '2022-04-04 08:52';
+        </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']], processClass: 'math', processEscapes: true },
+        TeX: {
+        equationNumbers: { autoNumber: ['AMS'], useLabelIds: true },
+        extensions: ['extpfeil.js', 'mediawiki-texvc.js'],
+        Macros: {bm: "\\boldsymbol"}
+        },
+        'HTML-CSS': { linebreaks: { automatic: true } },
+        SVG: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script src="https://mathjax.cnblogs.com/2_7_5/MathJax.js?config=TeX-AMS-MML_HTMLorMML&amp;v=20200504"></script>
+    
+</head>
+<body class="skin-lessismoreright has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div id="home">
+    <div id="header">
+        <div id="blogTitle">
+            <div class="title"><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/cmt/">博客园官方博客</a>
+</div>
+<div class="subtitle">代码改变世界</div>
+
+        </div>
+        <div id="navigator">
+            
+<ul id="navList">
+    <li id="nav_sitehome"><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+    <li id="nav_myhome">
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/cmt/">
+首页</a>
+</li>
+    <li id="nav_newpost">
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+    <li id="nav_contact">
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E5%8D%9A%E5%AE%A2%E5%9B%AD%E5%9B%A2%E9%98%9F">
+联系</a></li>
+    <li id="nav_rss">
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/cmt/rss/">
+订阅</a></li>
+    <li id="nav_admin">
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+            <div class="blogStats">
+                <div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+            </div>
+        </div>
+    </div>
+    <div id="main">
+        <div id="mainContent">
+            <div class="forFlow">
+                <div id="post_detail">
+    <div id="topics">
+        <div class="post">
+            <h1 class="postTitle">
+                
+<a id="cb_post_title_url" class="postTitle2 vertical-middle" href="https://www.cnblogs.com/cmt/p/16098352.html">
+    <span role="heading" aria-level="2">上周热点回顾（3.28-4.3）</span>
+    
+</a>
+
+            </h1>
+            <div class="clear"></div>
+            <div class="postBody">
+                <div id="cnblogs_post_body" class="blogpost-body blogpost-body-html">
+<p>热点随笔：</p>
+<p>·&nbsp;<a href="https://www.cnblogs.com/thisiswhy/archive/2022/03/28/16066548.html" target="_blank" rel="noopener">换个数据结构，一不小心节约了 591 台机器！</a>&nbsp;(<a href="https://www.cnblogs.com/thisiswhy/" target="_blank" rel="noopener">why技术</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/yexiaochai/archive/2022/03/28/16066436.html" target="_blank" rel="noopener">寒冬下的跑路与裁员...</a>&nbsp;(<a href="https://www.cnblogs.com/yexiaochai/" target="_blank" rel="noopener">叶小钗</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/artech/archive/2022/03/31/inside-asp-net-core-6-32.html" target="_blank" rel="noopener">ASP.NET Core 在 IIS 下的两种部署模式</a>&nbsp;(<a href="https://www.cnblogs.com/artech/" target="_blank" rel="noopener">Artech</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/skychen1218/archive/2022/03/29/16068503.html" target="_blank" rel="noopener">记我第一次做线下技术分享的那些事</a>&nbsp;(<a href="https://www.cnblogs.com/skychen1218/" target="_blank" rel="noopener">陈珙</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/xiaolincoding/archive/2022/03/31/16081200.html" target="_blank" rel="noopener">趣说 ｜ 数据库和缓存如何保证一致性？</a>&nbsp;(<a href="https://www.cnblogs.com/xiaolincoding/" target="_blank" rel="noopener">小林coding</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/huangxincheng/archive/2022/04/01/16085461.html" target="_blank" rel="noopener">一个高频问题：异步操作会创建线程吗？</a>&nbsp;(<a href="https://www.cnblogs.com/huangxincheng/" target="_blank" rel="noopener">一线码农</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/haoxianrui/archive/2022/04/02/16090029.html" target="_blank" rel="noopener">基于 vue-element-admin 升级的 Vue3 +TS +Element-Plus 版本的从0到1构建说明，有来开源组织又一精心开源力作</a>&nbsp;(<a href="https://www.cnblogs.com/haoxianrui/" target="_blank" rel="noopener">有来技术团队</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/didispace/archive/2022/04/01/16084906.html" target="_blank" rel="noopener">Spring官宣网传大漏洞，并提供解决方案</a>&nbsp;(<a href="https://www.cnblogs.com/didispace/" target="_blank" rel="noopener">程序猿DD</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/wuhuacong/archive/2022/03/30/16077414.html" target="_blank" rel="noopener">如何快速开发基于Winform的应用系统</a>&nbsp;(<a href="https://www.cnblogs.com/wuhuacong/" target="_blank" rel="noopener">伍华聪</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/xueweihan/archive/2022/03/28/16065510.html" target="_blank" rel="noopener">《HelloGitHub》第 72 期</a>&nbsp;(<a href="https://www.cnblogs.com/xueweihan/" target="_blank" rel="noopener">削微寒</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/tibos/archive/2022/03/31/16081222.html" target="_blank" rel="noopener">设计一个简单的devops系统</a>&nbsp;(<a href="https://www.cnblogs.com/tibos/" target="_blank" rel="noopener">提伯斯</a>)<br>·&nbsp;<a href="https://www.cnblogs.com/artech/archive/2022/03/30/inside-asp-net-core-6-31.html" target="_blank" rel="noopener">KestrelServer详解[3]: 自定义一个迷你版的KestrelServer</a>&nbsp;(<a href="https://www.cnblogs.com/artech/" target="_blank" rel="noopener">Artech</a>)</p>
+<p>热点新闻：</p>
+<p>·&nbsp;<a href="https://news.cnblogs.com/n/717755/" target="_blank" rel="noopener">14人开发，采用自研引擎，西山居国风城建游戏惊艳亮相！</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/718009/" target="_blank" rel="noopener">华为自研编程语言「仓颉」火了，开启内测并被辟谣：不是中文编程</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717734/" target="_blank" rel="noopener">小学生们在B站讲算法，网友：我只会阿巴阿巴</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717898/" target="_blank" rel="noopener">离开英伟达仅19个月，他交出了一块国产全功能GPU</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717781/" target="_blank" rel="noopener">俄罗斯将上线国内应用商店以替代谷歌应用商店</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717640/" target="_blank" rel="noopener">冒犯人的广告，什么时候能停下来？</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717849/" target="_blank" rel="noopener">00后电竞女学霸直博中科院，本科武大王者荣耀全国16强</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717641/" target="_blank" rel="noopener">新发现颠覆存在20年的模型</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717984/" target="_blank" rel="noopener">鸿蒙3.0Beta版跳票！探访Harmony OS实验室，边洗脸边追剧的镜子也智能</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717690/" target="_blank" rel="noopener">安徽ETC宣布停止微信支付：因手续费不断上涨，与腾讯协商后无果</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/718038/" target="_blank" rel="noopener">人类基因组最后一块拼图完成！Science罕见6篇连发</a><br>·&nbsp;<a href="https://news.cnblogs.com/n/717721/" target="_blank" rel="noopener">NASA：美国计划2040年将人类送上火星</a></p>
+</div>
+<div class="clear"></div>
+<div id="blog_post_info_block" role="contentinfo">
+    <div id="blog_post_info"></div>
+    <div class="clear"></div>
+    <div id="post_next_prev"></div>
+</div>
+            </div>
+            <div class="postDesc">posted @ 
+<span id="post-date">2022-04-04 08:52</span>&nbsp;
+<a href="https://www.cnblogs.com/cmt/">博客园团队</a>&nbsp;
+阅读(<span id="post_view_count">402</span>)&nbsp;
+评论(<span id="post_comment_count">2</span>)&nbsp;
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16098352" rel="nofollow">编辑</a>&nbsp;
+<a href="javascript:void(0)" onclick="AddToWz(16098352);return false;">收藏</a>&nbsp;
+<a href="javascript:void(0)" onclick="reportManager.report({ currentUserId: '', targetType: 'blogPost', targetId: '16098352', targetLink: 'https://www.cnblogs.com/cmt/p/16098352.html', title: '上周热点回顾（3.28-4.3）' })">举报</a></div>
+        </div>
+        
+<script>
+    var cb_entryId = 16098352, cb_entryCreatedDate = '2022-04-04 08:52', cb_postType = 1, cb_postTitle = '上周热点回顾（3.28-4.3）';
+    var allowComments = true, cb_blogId = 39258, cb_blogApp = 'cmt', cb_blogUserGuid = 'bd42420b-63cf-dd11-9e4d-001cf0cd104b';
+    mermaidRender.render()
+    markdown_highlight()
+    zoomManager.apply("#cnblogs_post_body img:not(.code_img_closed):not(.code_img_opened)");
+    updatePostStats(
+            [cb_entryId],
+            function(id, count) { $("#post_view_count").text(count) },
+            function(id, count) { $("#post_comment_count").text(count) })
+</script>
+        <a id="!comments"></a>
+<div id="blog-comments-placeholder"></div>
+<div id="comment_form" class="commentform">
+    <a name="commentform"></a>
+    <div id="divCommentShow"></div>
+    <div id="comment_nav"><span id="span_refresh_tips"></span><a href="javascript:void(0);" onclick="return RefreshCommentList();" id="lnk_RefreshComments" runat="server" clientidmode="Static">刷新评论</a><a href="#" onclick="return RefreshPage();">刷新页面</a><a href="#top">返回顶部</a></div>
+    <div id="comment_form_container"></div>
+    <div class="ad_text_commentbox" id="ad_text_under_commentbox"></div>
+    <div id="cnblogs_ch"></div>
+    <div id="opt_under_post"></div>
+    <div id="cnblogs_c1" class="under-post-card">
+            <div id='div-gpt-ad-1592365906576-0' style='width: 300px; height: 250px;'></div>
+    </div>
+    <div id="under_post_card1"></div>
+        <div id="cnblogs_c2" class="under-post-card">
+            <a href="https://developer.huawei.com/consumer/cn/forum/topic/0202851788421280176?fid=23&amp;ha_source=bokeyuan&amp;ha_source=HeZuo30&amp;ha_sourceId=89000081" rel="nofollow" target="_blank" onclick="countCreativeClicks('C2-华为-codelabs')">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220413123003334-931328747.jpg" alt="" onload="countCreativeImpressions('C2-华为-codelabs')" />
+            </a>
+        </div>
+    <div id="under_post_card2"></div>
+    <div id="HistoryToday" class="under-post-card"></div>
+    <script type="text/javascript">
+        var commentManager = new blogCommentManager();
+        commentManager.renderComments(0);
+        fixPostBody();
+
+                        window.tocManager.displayDisableTocTips = false;
+                        window.tocManager.generateToc();
+            setTimeout(function() { incrementViewCount(cb_entryId); }, 50);        deliverT2();
+        deliverC1C2();
+        loadNewsAndKb();
+LoadPostCategoriesTags(cb_blogId, cb_entryId);        LoadPostInfoBlock(cb_blogId, cb_entryId, cb_blogApp, cb_blogUserGuid);
+        GetPrevNextPost(cb_entryId, cb_blogId, cb_entryCreatedDate, cb_postType);
+        loadOptUnderPost();
+        GetHistoryToday(cb_blogId, cb_blogApp, cb_entryCreatedDate);
+    </script>
+</div>
+
+    </div>
+</div>
+            </div>
+        </div>
+
+        <div id="sideBar">
+            <div id="sideBarMain">
+                <div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+                <div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                <script>loadBlogDefaultCalendar();</script>
+                <div id="leftcontentcontainer">
+                    <!-- begin:SingleColumn -->
+                    <div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+                    <!-- end:  SingleColumn -->
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+    <div id="footer">
+        <!--done-->
+Copyright &copy; 2022 博客园团队
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+    </div>
+</div>
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4mfF7Hd2PLjd5_iPqK9PwDgAjgYOT5e60NLHJ0aM1AIYasku9evx-zGM5l0_xX3VpWsDHk6v_2QKLNP6I3rvm6XM9nYqaMRylReYJXvC-7ug9jtMTUuPaqTsQLOPsDOE8Q" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

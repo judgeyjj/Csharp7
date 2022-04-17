@@ -1,0 +1,604 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sierra、 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/crstly/custom.css?v=W9SVgxWrRXg21Wk8P4mivS4CRQA=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/custom/bundle-custom-mobile.min.css?v=WIiV_j5YxY6rt2_bcg1WyHYyTSCpsPcXyaA7POmlI5U" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/crstly/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/crstly/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/crstly/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 679313;
+        var currentBlogApp = 'crstly';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'Custom';
+        var visitorUserId = '';
+        var hasCustomScript = true;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-custom no-navbar">
+    <a name="top"></a>
+    <div id="top_nav" class="navbar forpc navbar-custom">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <div class="light-loading">
+  <div class="box">
+    <h2>Loading</h2>
+    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+</div>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/crstly/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/crstly/">Sierra、</a>
+</h1>
+<h2></h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/crstly/">
+首页</a>
+</li>
+<li>
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+</li>
+<li>
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/Sierra%E3%80%81">
+联系</a></li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/crstly/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16154814">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2022/04/17.html">2022年4月17日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/16154814.html">
+    <span>
+        并发编程基础底层原理学习（一）
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16154814">
+摘要：            
+计算机基本构成 计算机主要由处理器，存储器，输入/输出设备组成。 处理器：控制计算机的操作，执行程序数据处理，只有一个处理器时，它通常指中央处理器 (CPU) 内存：存储数据和程序，该类存储器是易失性的，即计算机关机时存储器的内容会丢失，而磁盘存储器在计算机关闭时不会丢失 输入/输出模块：在计算机与        <a href="https://www.cnblogs.com/crstly/p/16154814.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-17 00:33
+Sierra、
+<span data-post-id="16154814" class="post-view-count">阅读(78)</span> 
+<span data-post-id="16154814" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16154814" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154814" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16032686">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2022/03/20.html">2022年3月20日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/16032686.html">
+    <span>
+        学习HashMap源码
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16032686">
+摘要：            
+HashMap简介 ​	HashMap是一种存储K-V类型的容器，HashMap底层数据结构为数组+链表+红黑树（jdk 1.8新增），它根据键的HashCode值存储数据，获取元素的时间复杂度为O(1)。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致        <a href="https://www.cnblogs.com/crstly/p/16032686.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-20 23:13
+Sierra、
+<span data-post-id="16032686" class="post-view-count">阅读(197)</span> 
+<span data-post-id="16032686" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16032686" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16032686" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15832291">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2022/01/22.html">2022年1月22日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15832291.html">
+    <span>
+        学习OAuth 2.0
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15832291">
+摘要：            
+认识OAuth 2.0 OAuth 2.0 是行业标准的授权协议。 OAuth 2.0 专注于客户端开发人员的简单性，同时为 Web 应用程序、桌面应用程序、移动设备提供特定的授权流程。 应用场景 有一个&quot;云冲印&quot;的网站，可以将用户储存在Google的照片，冲印出来。用户为了使用该服务，必须让&quot;云冲        <a href="https://www.cnblogs.com/crstly/p/15832291.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-01-22 02:28
+Sierra、
+<span data-post-id="15832291" class="post-view-count">阅读(194)</span> 
+<span data-post-id="15832291" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15832291" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15832291" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15732162">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2021/12/26.html">2021年12月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15733697.html">
+    <span>
+        LinkedList源码分析
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15733697">
+摘要：            
+LinkedList源码分析 LinkedList底层数据结构是双向链表，它同时实现了List和Deque两个接口，插入和删除元素的时间复杂度均为O(1), 相比于ArrayList它在插入和删除元素操作上具有明显优势，同样它也是非线程安全的容器。由于实现了deque接口，因此linkedList也        <a href="https://www.cnblogs.com/crstly/p/15733697.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-26 18:46
+Sierra、
+<span data-post-id="15733697" class="post-view-count">阅读(29)</span> 
+<span data-post-id="15733697" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15733697" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15733697" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15732162.html">
+    <span>
+        Java容器源码学习--ArrayList源码分析
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15732162">
+摘要：            
+ArrayList实现了List接口，它的底层数据结构是数组，因此获取容器中任意元素值的时间复杂度为O(1)，新增或删除元素的时间复杂度为O(N)。每一个ArrayList实例都有一个capacity变量，capacity是ArrayList用于存储元素的容器大小，当有新元素添加到容器时，capac        <a href="https://www.cnblogs.com/crstly/p/15732162.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-26 02:36
+Sierra、
+<span data-post-id="15732162" class="post-view-count">阅读(34)</span> 
+<span data-post-id="15732162" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15732162" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15732162" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15730355">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2021/12/25.html">2021年12月25日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15730355.html">
+    <span>
+        Kafka消费者组原理剖析
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15730355">
+摘要：            
+消费者组(Consumer Group)是什么 Consumer Group 是kafka提供的可扩展且具有容错性的消费者机制，消费者组内有多个消费者，它们被同一个ID所标识，这个ID被称为Group ID，组内所有的消费者通过协调机制一起消费订阅主题的分区，每个分区只能由一个消费者实例去消费。 消        <a href="https://www.cnblogs.com/crstly/p/15730355.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-12-25 13:37
+Sierra、
+<span data-post-id="15730355" class="post-view-count">阅读(109)</span> 
+<span data-post-id="15730355" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15730355" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15730355" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15412647">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2021/10/15.html">2021年10月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15412647.html">
+    <span>
+        Kafka生产者
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15412647">
+摘要：            
+Kafka生产者 生产者的首要功能就是向某个topic的某个分区发送一条消息，分区器决定了生产者要向topic的哪个分区写入消息。Kafaka producer提供了一个默认的分区器，如果发送的消息指定了key，那么分区器会根据key的哈希值选择目标分区，假如将要发送的消息没有指定key，分区器会采        <a href="https://www.cnblogs.com/crstly/p/15412647.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-10-15 20:52
+Sierra、
+<span data-post-id="15412647" class="post-view-count">阅读(33)</span> 
+<span data-post-id="15412647" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15412647" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15412647" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15339962">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2021/09/26.html">2021年9月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15339962.html">
+    <span>
+        Kafka分区策略
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15339962">
+摘要：            
+Kafka分区策略 **所谓分区策略是决定生产者将消息发送到哪个分区的算法。**Kafka 为我们提供了默认的分区策略，同时它也支持你自定义分区策略。 常见的分区策略包含以下几种：轮询策略、随机策略 、按消息键保序策略 轮询策略 将消息顺序分配到各个分区中，假设一个主题下有三个分区，第一条消息将被发        <a href="https://www.cnblogs.com/crstly/p/15339962.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-09-26 20:33
+Sierra、
+<span data-post-id="15339962" class="post-view-count">阅读(134)</span> 
+<span data-post-id="15339962" class="post-comment-count">评论(1)</span> 
+<span data-post-id="15339962" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15339962" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15316482">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/crstly/archive/2021/09/21.html">2021年9月21日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15318173.html">
+    <span>
+        Kafka基础入门
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15318173">
+摘要：            
+Kafka设计架构 Kafka由生产者（Producer）、消费者（Consumer）、Broker以及Zookeeper集群组成，Zookeeper负责集群元数据的管理以及控制的选举等操作，Producer将消息发送到Broker， Broker负责将受到的消息存储到磁盘中，而Consumer负责        <a href="https://www.cnblogs.com/crstly/p/15318173.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-09-21 23:04
+Sierra、
+<span data-post-id="15318173" class="post-view-count">阅读(113)</span> 
+<span data-post-id="15318173" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15318173" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15318173" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+            <div class="postSeparator"></div>
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/crstly/p/15316482.html">
+    <span>
+        Elaticsearch倒排索引
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_15316482">
+摘要：            
+ES倒排索引基本原理 索引（index）可以分为正序索引（Forward Indexes）和倒排索引（Inverted Index）两种。在关系型数据库中使用索引可以避免数据检索走全表扫描，将检索的时间复杂度从O(n)降到了O(logn)。例如，一本字典在开篇几页记录了每个字和所在页码的映射关系，当        <a href="https://www.cnblogs.com/crstly/p/15316482.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2021-09-21 13:41
+Sierra、
+<span data-post-id="15316482" class="post-view-count">阅读(207)</span> 
+<span data-post-id="15316482" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15316482" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15316482" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/crstly/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 Sierra、
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    <div id="page_end_html">
+        <script>
+  window.$silence = {
+  avatar: 'https://pic.cnblogs.com/avatar/2363445/20210809204756.png',
+  defaultTheme: 'e'
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/gh/esofar/cnblogs-theme-silence@3.0.0-beta3/dist/silence.min.js
+"></script>
+    </div>
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4mz9c29DariS1Eh4J0q2O6hR2iB7hCr-zslzoMttCYsqkZc2MLi-tnNoSmkZ94wFUf0XQ9zPHcAC_lnXW2uSXkhtpFqqmk4GXnqSO8pwZlPjXAe4vDnVuyUdlSgRnYXzpo" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

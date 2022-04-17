@@ -1,0 +1,31 @@
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.exe.config
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.exe
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\bin\Debug\CrawlerForm.pdb
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csprojAssemblyReference.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.Form1.resources
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.Properties.Resources.resources
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csproj.GenerateResource.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.csproj.CoreCompileInputs.cache
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.exe
+C:\Users\jiaxy\source\repos\SimpleCrawler\CrawlerForm\obj\Debug\CrawlerForm.pdb
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\bin\Debug\CrawlerForm.exe.config
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\bin\Debug\CrawlerForm.exe
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\bin\Debug\CrawlerForm.pdb
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.csprojAssemblyReference.cache
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.Form1.resources
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.Properties.Resources.resources
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.csproj.GenerateResource.cache
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.csproj.CoreCompileInputs.cache
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.exe
+C:\Users\Ghost\Desktop\simplecrawler (2)\CrawlerForm\obj\Debug\CrawlerForm.pdb
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\bin\Debug\CrawlerForm.exe.config
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\bin\Debug\CrawlerForm.exe
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\bin\Debug\CrawlerForm.pdb
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.csprojAssemblyReference.cache
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.Form1.resources
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.Properties.Resources.resources
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.csproj.GenerateResource.cache
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.exe
+C:\Users\MECHREV\Desktop\新建文件夹\work\HomeWork10\CrawlerForm\obj\Debug\CrawlerForm.pdb
+D:\Desktop\大二下\homework-master\g1\CrawlerForm\obj\Debug\CrawlerForm.exe
+D:\Desktop\大二下\homework-master\g1\CrawlerForm\obj\Debug\CrawlerForm.pdb

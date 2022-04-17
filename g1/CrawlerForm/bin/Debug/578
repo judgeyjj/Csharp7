@@ -1,0 +1,530 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>福音同学 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/stylepink/bundle-stylepink.min.css?v=mHxzKEHDpqxxUbLsFPVGPfm9xaEKDxDgvhF-QVXgZng" />
+    
+    
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/stylepink/bundle-stylepink-mobile.min.css?v=TE0Xtyve5s8otDT6hQBM2SmCQXhb2IX8KYFtivTe2Yc" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/dnboy/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/dnboy/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/dnboy/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 740396;
+        var currentBlogApp = 'dnboy';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'StylePink';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-stylepink has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <!--done-->
+<div id="banner">
+<!--done-->
+<div class="header">
+	<div class="headerText">
+		<a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/dnboy/">福音同学</a>
+<br>
+		<div class="headerDis"></div>
+	</div>
+</div>
+
+</div>
+<div id="main">
+	<!-- right starts -->
+	<div id="right">
+		<div id="right_content">
+			<DIV id="mystats">
+				
+					<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+				
+			</DIV>
+			<div id="mylinks">
+
+<a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+&nbsp;&nbsp;
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/dnboy/">
+首页</a>
+&nbsp;&nbsp;
+
+<a id="blog_nav_newpost" class="menu" href="https://i.cnblogs.com/EditPosts.aspx?opt=1">
+新随笔</a>
+&nbsp;&nbsp;
+<a id="blog_nav_contact" class="menu" href="https://msg.cnblogs.com/send/%E7%A6%8F%E9%9F%B3%E5%90%8C%E5%AD%A6">
+联系</a>&nbsp;&nbsp;
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+&nbsp;&nbsp;
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/dnboy/rss/">
+订阅</a>&nbsp;
+<a id="blog_nav_rss_image" href="https://www.cnblogs.com/dnboy/rss/">
+    <img src="/skins/stylepink/images/xml.gif" alt="订阅" />
+</a>
+
+</div>
+			<div id="topics">
+				
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16063814">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/03/27.html">
+            2022年3月27日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/dnboy/p/16063814.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        2分钟教你部署2048小游戏到云服务器
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16063814">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2784584/202203/2784584-20220327182439358-111308649.png" alt="2分钟教你部署2048小游戏到云服务器" class="desc_img" />
+奶奶看了都会的，2分钟教你部署2048小游戏到云服务器        <a href="https://www.cnblogs.com/dnboy/p/16063814.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-03-27 18:54
+福音同学
+<span data-post-id="16063814" class="post-view-count">阅读(13)</span> 
+<span data-post-id="16063814" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16063814" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16063814" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15995986">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/03/12.html">
+            2022年3月12日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/dnboy/p/15995986.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        R树判断点在多边形内-Java版本
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15995986">
+摘要：            
+1.什么是RTree 待补充 2.RTree java依赖 rtree的java开源版本在GitHub上：https://github.com/davidmoten/rtree 上面有详细的使用说明 最新版本的maven依赖可在中央仓库查到：https://mvnrepository.com/art        <a href="https://www.cnblogs.com/dnboy/p/15995986.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-03-12 00:46
+福音同学
+<span data-post-id="15995986" class="post-view-count">阅读(10)</span> 
+<span data-post-id="15995986" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15995986" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15995986" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16154645">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/04/16.html">
+            2022年4月16日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dnboy/p/16154645.html">
+    <span>
+        [奶奶看了都会]教你用脚本薅京东签到羊毛
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16154645">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2784584/202204/2784584-20220416230835678-1463178698.png" alt="[奶奶看了都会]教你用脚本薅京东签到羊毛" class="desc_img" />
+又到了周末的时间，每次周末都得整点花里胡哨的东西玩，今天就来说说怎么用Python脚本自动完成京东签到领京豆        <a href="https://www.cnblogs.com/dnboy/p/16154645.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-04-16 23:09
+福音同学
+<span data-post-id="16154645" class="post-view-count">阅读(3)</span> 
+<span data-post-id="16154645" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16154645" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16154645" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16133491">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/04/12.html">
+            2022年4月12日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dnboy/p/16133491.html">
+    <span>
+        看完复旦博士用Python统计核酸结果后，我照着也写了一个
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16133491">
+摘要：            
+前几天，人民日报公众号报道了复旦博士生自己写代码，通过OCR和正则表达式统计核酸截图结果。具体文章见：https://mp.weixin.qq.com/s/l8u9JifKDlRDoz32-jZWQg 行外人看热闹，行内人都知道很容易实现的，这里就只说在Mac上如何用Python来实现图片内容识别，        <a href="https://www.cnblogs.com/dnboy/p/16133491.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-04-12 08:40
+福音同学
+<span data-post-id="16133491" class="post-view-count">阅读(30)</span> 
+<span data-post-id="16133491" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16133491" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16133491" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16103109">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/04/05.html">
+            2022年4月5日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dnboy/p/16103109.html">
+    <span>
+        [RPC学习]Dubbo+nacos实现动态更新内存RTree
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16103109">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2784584/202204/2784584-20220405173928194-237007739.png" alt="[RPC学习]Dubbo&#x2B;nacos实现动态更新内存RTree" class="desc_img" />
+dubbo+nacos实现注册中心和配置中心，在分布式场景下动态更新内存RTree数据        <a href="https://www.cnblogs.com/dnboy/p/16103109.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-04-05 17:45
+福音同学
+<span data-post-id="16103109" class="post-view-count">阅读(7)</span> 
+<span data-post-id="16103109" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16103109" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16103109" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16063814">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/03/27.html">
+            2022年3月27日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dnboy/p/16063814.html">
+    <span>
+        2分钟教你部署2048小游戏到云服务器
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_16063814">
+摘要：            <img src="https://img2022.cnblogs.com/blog/2784584/202203/2784584-20220327182439358-111308649.png" alt="2分钟教你部署2048小游戏到云服务器" class="desc_img" />
+奶奶看了都会的，2分钟教你部署2048小游戏到云服务器        <a href="https://www.cnblogs.com/dnboy/p/16063814.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-03-27 18:54
+福音同学
+<span data-post-id="16063814" class="post-view-count">阅读(13)</span> 
+<span data-post-id="16063814" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16063814" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16063814" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_15995986">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/dnboy/archive/2022/03/12.html">
+            2022年3月12日
+        </a>
+    </div>
+
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/dnboy/p/15995986.html">
+    <span>
+        R树判断点在多边形内-Java版本
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+            
+
+    <div class="c_b_p_desc" id="postlist_description_15995986">
+摘要：            
+1.什么是RTree 待补充 2.RTree java依赖 rtree的java开源版本在GitHub上：https://github.com/davidmoten/rtree 上面有详细的使用说明 最新版本的maven依赖可在中央仓库查到：https://mvnrepository.com/art        <a href="https://www.cnblogs.com/dnboy/p/15995986.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+
+        </div>
+        <div class="postDesc">
+            posted @ 2022-03-12 00:46
+福音同学
+<span data-post-id="15995986" class="post-view-count">阅读(10)</span> 
+<span data-post-id="15995986" class="post-comment-count">评论(0)</span> 
+<span data-post-id="15995986" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=15995986" rel="nofollow">
+    编辑
+</a>
+
+        </div>
+
+</div>
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+			</div>
+		</div>
+	</div>
+	<!-- right ends -->
+	<!-- left starts -->
+	<div id="left">
+		<!-- 左侧工具部分 -->
+		<div id="left_content">
+			<div id="calendar"><div id="calendar"><div id="blog-calendar" style="display:none"></div></div>                
+                    <script>loadBlogDefaultCalendar();</script></div>
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			
+				<DIV id="leftcontentcontainer">
+					<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+				</DIV>
+			
+		</div>
+		<!-- //右侧工具部分 -->
+	</div>
+	<!-- left ends -->	
+	<div class="clear"></div>
+</div>
+<div id="footer">
+	<!--done-->
+Copyright &copy; 2022 福音同学
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+</div>
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4lhQMwPr8TJ7OcSOqSSWWbnAi7mCiK8IuBR-_EmS7tp35QFQXRg6IXA9wcy2Bdf31OG1lk8G09afJBE_RrpfbPMLLmf0Uw5qMxr8qLjZ1dMZoKCrhLjHy_xDKb1sjyn_6k" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>

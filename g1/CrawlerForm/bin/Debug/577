@@ -1,0 +1,689 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="origin-when-crossorigin" />
+    
+    
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>削微寒 - 博客园</title>
+    <link id="favicon" rel="shortcut icon" href="//common.cnblogs.com/favicon.svg" type="image/svg+xml" />
+    
+    <link rel="stylesheet" href="/css/blog-common.min.css?v=LdAfPG3EWG4o7Q_XIVJY6Bcod1YpBGSGJykht0T_GZw" />
+    <link id="MainCss" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey.min.css?v=1gj9-XJKL9BZFkjdvROYQPiPWjQXk-hsXXZGtqkfaSc" />
+    
+    <link type="text/css" rel="stylesheet" href="https://www.cnblogs.com/xueweihan/custom.css?v=RRRtuZg9tgADpy&#x2B;UPLStdn026o0=" />
+    <link id="mobile-style" media="only screen and (max-width: 767px)" type="text/css" rel="stylesheet" href="/skins/blacklowkey/bundle-blacklowkey-mobile.min.css?v=MM4QkBDNzquY4s9xTmGzFmRRoS_nQCVUE-vdF9dD-Uk" />
+    
+    <link type="application/rss+xml" rel="alternate" href="https://www.cnblogs.com/xueweihan/rss" />
+    <link type="application/rsd+xml" rel="EditURI" href="https://www.cnblogs.com/xueweihan/rsd.xml" />
+    <link type="application/wlwmanifest+xml" rel="wlwmanifest" href="https://www.cnblogs.com/xueweihan/wlwmanifest.xml" />
+    <script>
+        var currentBlogId = 228315;
+        var currentBlogApp = 'xueweihan';
+        var cb_enable_mathjax = false;
+        var isLogined = false;
+        var isBlogOwner = false;
+        var skinName = 'BlackLowKey';
+        var visitorUserId = '';
+        var hasCustomScript = false;
+        try {
+            if (hasCustomScript && document.referrer && document.referrer.indexOf('baidu.com') >= 0) {
+                Object.defineProperty(document, 'referrer', { value: '' });
+                Object.defineProperty(Document.prototype, 'referrer', { get: function(){ return ''; } });
+            }
+        } catch(error) { }
+        window.codeHighlightEngine = 1;
+        window.enableCodeLineNumber = false;
+        window.codeHighlightTheme = 'cnblogs';
+    </script>
+    <script src="https://common.cnblogs.com/scripts/jquery-2.2.0.min.js"></script>
+    <script src="/js/blog-common.min.js?v=KyayiYRvpSgg7du5WKccH8LB1LMuZAKgC9DVqUljgvA"></script>
+    
+    
+    
+</head>
+<body class="skin-blacklowkey has-navbar">
+    <a name="top"></a>
+        <div id="bannerbar" class="bannerbar-mobile formobile">
+            <a href="https://www.heapdump.cn/training/detail/4?source=bky" onclick="countCreativeClicks('M2-HeapDump')" rel="nofollow">
+                <img src="https://img2022.cnblogs.com/blog/35695/202204/35695-20220407182236380-944894887.jpg" alt="" onload="countCreativeImpressions('M2-HeapDump')" />
+            </a>
+        </div>
+    <div id="top_nav" class="navbar forpc">
+        <nav id="nav_main" class="navbar-main">
+            <ul id="nav_left" class="navbar-list navbar-left">
+                <li class="navbar-branding">
+                    <a href="https://www.cnblogs.com/" title="开发者的网上家园" role="banner">
+                        <img src="/images/logo.svg?v=R9M0WmLAIPVydmdzE2keuvnjl-bPR7_35oHqtiBzGsM" alt="博客园Logo" />
+                    </a>
+                </li>
+                <li><a href="/" onclick="countClicks('skin-navbar-sitehome')">首页</a></li>
+                <li><a href="https://news.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-news')">新闻</a></li>
+                <li><a href="https://q.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-q')">博问</a></li>
+                <li><a id="nav_brandzone" href="https://brands.cnblogs.com/huawei" onclick="countClicks('nav', 'skin-navbar-brands')">专区</a></li>
+                <li><a href="https://ing.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-ing')">闪存</a></li>
+                <li><a href="https://edu.cnblogs.com/" onclick="countClicks('nav', 'skin-navbar-edu')">班级</a></li>
+            </ul>
+            <ul id="nav_right" class="navbar-list navbar-right">
+                <li>
+                    <form id="zzk_search" class="navbar-search" action="https://zzk.cnblogs.com/s" method="get" role="search">
+                        <input name="w" id="zzk_search_input" placeholder="代码改变世界" type="search" tabindex="3" />
+                        <button type="submit" id="zzk_search_button">
+                            <img src="/images/aggsite/search.svg" alt="搜索" />
+                        </button>
+                    </form>
+                </li>
+                <li id="navbar_login_status" class="navbar-list">
+                    <a class="navbar-user-info navbar-blog" href="https://i.cnblogs.com/EditPosts.aspx?opt=1" alt="写随笔" title="写随笔">
+                        <img id="new_post_icon" class="navbar-icon" src="/images/aggsite/newpost.svg" alt="写随笔" />
+                    </a>
+                    <a id="navblog-myblog-icon" class="navbar-user-info navbar-blog" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx" alt="我的博客" title="我的博客">
+                        <img id="myblog_icon" class="navbar-icon" src="/images/aggsite/myblog.svg" alt="我的博客" />
+                    </a>
+                    <a class="navbar-user-info navbar-message navbar-icon-wrapper" href="https://msg.cnblogs.com/" alt="短消息" title="短消息">
+                        <img id="msg_icon" class="navbar-icon" src="/images/aggsite/message.svg?v=J0WS2P2iPgaIVgXxcAhliw4AFZIpaTWxtdoNAv9eiCA" alt="短消息" />
+                        <span id="msg_count" style="display: none"></span>
+                    </a>
+                    <a id="navbar_lite_mode_indicator" data-current-page="blog" style="display: none" href="javascript:void(0)" alt="简洁模式" title="简洁模式启用，您在访问他人博客时会使用简洁款皮肤展示">
+                        <img class="navbar-icon" src="/images/aggsite/lite-mode-on.svg" alt="简洁模式" />
+                    </a>
+                    <div id="user_info" class="navbar-user-info dropdown">
+                        <a class="dropdown-button" href="https://home.cnblogs.com/">
+                            <img id="user_icon" class="navbar-avatar" src="/images/aggsite/avatar-default.svg" alt="用户头像" />
+                        </a>
+                        <div class="dropdown-menu">
+                            <a id="navblog-myblog-text" href="https://passport.cnblogs.com/GetBlogApplyStatus.aspx">我的博客</a>
+                            <a href="https://home.cnblogs.com/">我的园子</a>
+                            <a href="https://account.cnblogs.com/settings/account">账号设置</a>
+                            <a href="javascript:void(0)" id="navbar_lite_mode_toggle" title="简洁模式会使用简洁款皮肤显示所有博客">
+    简洁模式 <img id="navbar_lite_mode_on" src="/images/lite-mode-check.svg" class="hide" /><span id="navbar_lite_mode_spinner" class="hide">...</span>
+</a>
+                            <a href="javascript:void(0)" onclick="account.logout();">退出登录</a>
+                        </div>
+                    </div>
+                    <a class="navbar-anonymous" href="https://account.cnblogs.com/signup">注册</a>
+                    <a class="navbar-anonymous" href="javascript:void(0);" onclick="account.login()">登录</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page_begin_html">
+        <a href="https://github.com/521xueweihan/HelloGitHub/"><img style="position: absolute; top: 0; right: 0; border: 0" src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png" alt="Fork me on GitHub" data-canonical-src="https://images.cnblogs.com/cnblogs_com/xueweihan/859919/o_200129100904forkme_right_green_007200.png"></a>
+    </div>
+    <!--done-->
+<div id="home">
+<div id="header">
+	<div id="blogTitle">
+        <a id="lnkBlogLogo" href="https://www.cnblogs.com/xueweihan/"><img id="blogLogo" src="/skins/custom/images/logo.gif" alt="返回主页" /></a>		
+		
+<!--done-->
+<h1><a id="Header1_HeaderTitle" class="headermaintitle HeaderMainTitle" href="https://www.cnblogs.com/xueweihan/">削微寒的程序员之路</a>
+</h1>
+<h2>谦逊、专注，才能成长。</h2>
+
+
+
+
+		
+	</div><!--end: blogTitle 博客的标题和副标题 -->
+	<div id="navigator">
+		
+<ul id="navList">
+<li><a id="blog_nav_sitehome" class="menu" href="https://www.cnblogs.com/">
+博客园</a>
+</li>
+<li>
+<a id="blog_nav_myhome" class="menu" href="https://www.cnblogs.com/xueweihan/">
+首页</a>
+</li>
+<li>
+
+
+</li>
+<li>
+</li>
+<li>
+<a id="blog_nav_rss" class="menu" href="javascript:void(0)" data-rss="https://www.cnblogs.com/xueweihan/rss/">
+订阅</a>
+<!--<partial name="./Shared/_XmlLink.cshtml" model="Model" /></li>--></li>
+<li>
+<a id="blog_nav_admin" class="menu" href="https://i.cnblogs.com/">
+管理</a>
+</li>
+</ul>
+
+
+		<div class="blogStats">
+			<div id="blog_stats_place_holder"><script>loadBlogStats();</script></div>
+		</div><!--end: blogStats -->
+	</div><!--end: navigator 博客导航栏 -->
+</div><!--end: header 头部 -->
+<div id="main">
+	<div id="mainContent">
+	<div class="forFlow">
+		
+
+
+
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16065510">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/28.html">2022年3月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/xueweihan/p/16065510.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        《HelloGitHub》第 72 期
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16065510">
+摘要：            
+兴趣是最好的老师，HelloGitHub 让你对编程感兴趣！ 简介 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。 https://github.com/521xueweihan/HelloGitHub 这里有实战项目、入门教程、黑科技、开源书籍、大厂开源项目等，涵盖多种编程        <a href="https://www.cnblogs.com/xueweihan/p/16065510.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-28 08:34
+削微寒
+<span data-post-id="16065510" class="post-view-count">阅读(1411)</span> 
+<span data-post-id="16065510" class="post-comment-count">评论(8)</span> 
+<span data-post-id="16065510" class="post-digg-count">推荐(13)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16065510" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_5220513">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2016/02/26.html">2016年2月26日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle pinned-post" href="https://www.cnblogs.com/xueweihan/p/5220513.html">
+    <span>
+            <span class="pinned-post-mark">[置顶]</span>
+        什么是真正的程序员？
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_5220513">
+摘要：            
+什么是真正的程序员 这篇文章的原文来自：A Little Printf Story作者仿照《小王子》中的情节，通过小printf遇见的不同类型的程序员，最后悟出什么才是真正的程序员！第一次翻译有很多不妥，欢迎留言指正。 文章略长，但是耐心读完，你肯定会受益良多！ 第一章 （推荐看完整篇文章，再回过头        <a href="https://www.cnblogs.com/xueweihan/p/5220513.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2016-02-26 15:12
+削微寒
+<span data-post-id="5220513" class="post-view-count">阅读(36020)</span> 
+<span data-post-id="5220513" class="post-comment-count">评论(49)</span> 
+<span data-post-id="5220513" class="post-digg-count">推荐(112)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=5220513" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16147462">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/04/15.html">2022年4月15日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16147462.html">
+    <span>
+        支持中文！秒建 wiki 知识库的开源项目，构建私人知识网络
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16147462">
+摘要：            
+不知道有没有人和我一样，觉得自建的东西是互联网上的“自留地”、私人空间，有一种自己的一亩三分地随心所欲的痛快。 比如自建的博客想写什么随笔就写什么，不用取悦读者可以自娱自乐；再比如自建的 wiki 有不会的知识点就可以直接记录，不用担心被嘲笑低级。抛开共建这块不聊，Wiki 不同于博客的随性，记录的        <a href="https://www.cnblogs.com/xueweihan/p/16147462.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-15 08:37
+削微寒
+<span data-post-id="16147462" class="post-view-count">阅读(895)</span> 
+<span data-post-id="16147462" class="post-comment-count">评论(9)</span> 
+<span data-post-id="16147462" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16147462" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16138554">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/04/13.html">2022年4月13日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16138554.html">
+    <span>
+        一款开源的文件搜索神器，终于不用记 find 命令了
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16138554">
+摘要：            
+这是 HelloGitHub 推出的《讲解开源项目》系列，用一篇文章带你快速上手有趣的开源项目。 今天给大家推荐一个好用+开源的文件搜索工具——fd 该工具支持大多数主流操作系统，快来更新你的工具箱感受开源项目带来的便利吧！ 一、fd 简介 你还在为寻找文件而烦恼吗？你还在为记不住 find 一大堆        <a href="https://www.cnblogs.com/xueweihan/p/16138554.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-13 08:36
+削微寒
+<span data-post-id="16138554" class="post-view-count">阅读(1043)</span> 
+<span data-post-id="16138554" class="post-comment-count">评论(4)</span> 
+<span data-post-id="16138554" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16138554" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16128499">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/04/11.html">2022年4月11日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16128499.html">
+    <span>
+        另类终端「GitHub 热点速览 v.22.15」
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16128499">
+摘要：            
+作者：HelloGitHub-小鱼干 除了编译器之外，终端也是我们日常打交道的软件之一。但，你用它看过股票吗？OpenBBTerminal 不仅能让你看股票，还能让你用科学的方法进行股票投资。说到投资，hackathon-starter 和 javascript-testing-best-pract        <a href="https://www.cnblogs.com/xueweihan/p/16128499.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-11 08:37
+削微寒
+<span data-post-id="16128499" class="post-view-count">阅读(472)</span> 
+<span data-post-id="16128499" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16128499" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16128499" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16104913">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/04/06.html">2022年4月6日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16104913.html">
+    <span>
+        一起来作画吧「GitHub 热点速览 v.22.14」
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16104913">
+摘要：            
+作者：HelloGitHub-小鱼干 又一个现象级、火爆社交媒体的项目——多人作画，把你想要放置的元素添加到某一个画布上，Reddit Place 便有了你的痕迹。在本周特推中 reddit-place-script-2022 能帮你快速绘制像素画，而另外个本周特推则侧重解决你的生产问题，帮你调度容        <a href="https://www.cnblogs.com/xueweihan/p/16104913.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-06 08:50
+削微寒
+<span data-post-id="16104913" class="post-view-count">阅读(487)</span> 
+<span data-post-id="16104913" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16104913" class="post-digg-count">推荐(2)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16104913" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16085085">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/04/01.html">2022年4月1日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16085085.html">
+    <span>
+        用一个文件，实现迷你 Web 框架
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16085085">
+摘要：            
+当下网络就如同空气一样在我们的周围，它以无数种方式改变着我们的生活，但要说网络的核心技术变化甚微。 随着开源文化的蓬勃发展，诞生了诸多优秀的开源 Web 框架，让我们的开发变得轻松。但同时也让我们不敢停下学习新框架的脚步，其实万变不离其宗，只要理解了 Web 框架的核心技术部分，当有一个新的框架出来        <a href="https://www.cnblogs.com/xueweihan/p/16085085.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-04-01 08:38
+削微寒
+<span data-post-id="16085085" class="post-view-count">阅读(871)</span> 
+<span data-post-id="16085085" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16085085" class="post-digg-count">推荐(5)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16085085" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16074827">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/30.html">2022年3月30日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16074827.html">
+    <span>
+        你也可以很硬核「GitHub 热点速览 v.22.13」
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16074827">
+摘要：            
+本周特推介绍了一个非常易上手，操作难度（主要难度在于机件购买）极低的硬件项目，SmartKnob 让你有个可玩性极高的控制仪。本周特推另外一个项目则是一个安全项目，打破你对 URL 是可靠、安全的认知。此外，周榜则注重培养你的“文化底蕴”，法律和经济知识了解一下。 以及，如果你在维护某个开源项目，一        <a href="https://www.cnblogs.com/xueweihan/p/16074827.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-30 08:37
+削微寒
+<span data-post-id="16074827" class="post-view-count">阅读(1048)</span> 
+<span data-post-id="16074827" class="post-comment-count">评论(2)</span> 
+<span data-post-id="16074827" class="post-digg-count">推荐(7)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16074827" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16065510">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/28.html">2022年3月28日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16065510.html">
+    <span>
+        《HelloGitHub》第 72 期
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16065510">
+摘要：            
+兴趣是最好的老师，HelloGitHub 让你对编程感兴趣！ 简介 HelloGitHub 分享 GitHub 上有趣、入门级的开源项目。 https://github.com/521xueweihan/HelloGitHub 这里有实战项目、入门教程、黑科技、开源书籍、大厂开源项目等，涵盖多种编程        <a href="https://www.cnblogs.com/xueweihan/p/16065510.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-28 08:34
+削微寒
+<span data-post-id="16065510" class="post-view-count">阅读(1411)</span> 
+<span data-post-id="16065510" class="post-comment-count">评论(8)</span> 
+<span data-post-id="16065510" class="post-digg-count">推荐(13)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16065510" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16042489">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/23.html">2022年3月23日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16042489.html">
+    <span>
+        一个文件的开源项目，开启你的开源之旅
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16042489">
+摘要：            
+你是否记得：刚学完编程基础那会儿，特别想写个东西，但动起手来却发现到处碰壁？ 你是否找到：一个好玩的开源项目，结果卡在了部署环境、安装依赖上？最后&quot;含恨而终&quot;！ 我刚学编程的时候，不止一次打开 IDE 看着闪动的光标发呆，大脑和空白的页面一样，一片空白毫无头绪。想写点东西根本无从下手，想玩别人的项目        <a href="https://www.cnblogs.com/xueweihan/p/16042489.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-23 08:39
+削微寒
+<span data-post-id="16042489" class="post-view-count">阅读(852)</span> 
+<span data-post-id="16042489" class="post-comment-count">评论(1)</span> 
+<span data-post-id="16042489" class="post-digg-count">推荐(1)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16042489" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16033171">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/21.html">2022年3月21日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16033171.html">
+    <span>
+        电子检索实体书「GitHub 热点速览 v.22.12」
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16033171">
+摘要：            
+不知道有没有小伙伴遇到实体书快速定位指定内容的问题，凭借着记忆里很难快速翻阅到正确的页数，但 paperless-ngx 也许能帮上你的忙，它除了能将你的实体书籍电子化变成文件库里的一员之外，还能帮你迅速找到想要的内容。一样能帮上忙的是让你专注了解 vue3 核心实现逻辑的 mini-vue，让你快        <a href="https://www.cnblogs.com/xueweihan/p/16033171.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-21 08:35
+削微寒
+<span data-post-id="16033171" class="post-view-count">阅读(648)</span> 
+<span data-post-id="16033171" class="post-comment-count">评论(4)</span> 
+<span data-post-id="16033171" class="post-digg-count">推荐(3)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16033171" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+		
+
+
+<div class="day" role="article" aria-describedby="postlist_description_16002720">
+    <div class="dayTitle">
+        <a href="https://www.cnblogs.com/xueweihan/archive/2022/03/14.html">2022年3月14日</a>
+    </div>
+
+        <div class="postTitle" role="heading" aria-level="2">
+            <a class="postTitle2 vertical-middle" href="https://www.cnblogs.com/xueweihan/p/16002720.html">
+    <span>
+        能动的电脑配件「GitHub 热点速览 v.22.11」
+    </span>
+    
+</a>
+        </div>
+        <div class="postCon">
+
+    <div class="c_b_p_desc" id="postlist_description_16002720">
+摘要：            
+看到这个标题就知道硬核的 B 站 UP 主稚晖君又更新了，本次带来的是一个造型可爱的小机器人。除了稚晖君这个一贯硬核的软硬件项目之外，本周也有很多有意思的新项目，像 Linux 服务监控小工具 Rayon，虽然工具本身很是吸引人，本周它还引起了一轮“争吵”，有兴趣的小伙伴可以去 issue 区查看。        <a href="https://www.cnblogs.com/xueweihan/p/16002720.html" class="c_b_p_desc_readmore">阅读全文</a>
+    </div>
+</div>
+        <div class="clear"></div>
+        <div class="postDesc">posted @ 2022-03-14 08:36
+削微寒
+<span data-post-id="16002720" class="post-view-count">阅读(863)</span> 
+<span data-post-id="16002720" class="post-comment-count">评论(0)</span> 
+<span data-post-id="16002720" class="post-digg-count">推荐(0)</span> 
+<a href="https://i.cnblogs.com/EditPosts.aspx?postid=16002720" rel="nofollow">
+    编辑
+</a>
+</div>
+        <div class="clear"></div>
+</div>
+
+
+
+<div class="topicListFooter">
+    <div id="nav_next_page">
+        
+    <a href="https://www.cnblogs.com/xueweihan/default.html?page=2">
+        下一页
+    </a>
+
+    </div>    
+</div>
+
+
+
+
+
+
+<script>
+    updatePostStats(
+        $(".post-view-count").map(function () { return this.dataset.postId }).get(),
+        function(id, count) { $(".post-view-count[data-post-id=" + id + "]").text("阅读(" + count + ")") },
+        function(id, count) { $(".post-comment-count[data-post-id=" + id + "]").text("评论(" + count + ")") },
+        function(id, count) { $(".post-digg-count[data-post-id=" + id + "]").text("推荐(" + count + ")") });
+</script>
+	</div><!--end: forFlow -->
+	</div><!--end: mainContent 主体内容容器-->
+	<div id="sideBar">
+		<div id="sideBarMain">
+			<div id="sidebar_news" class="newsItem">
+            <script>loadBlogNews();</script>
+</div>
+<div id="sidebar_c3"></div>
+			<div id="blog-calendar" style="display:none"></div><script>loadBlogDefaultCalendar();</script>			
+			<div id="leftcontentcontainer">
+				<div id="blog-sidecolumn"></div>
+                    <script>loadBlogSideColumn();</script>
+			</div>			
+		</div><!--end: sideBarMain -->
+	</div><!--end: sideBar 侧边栏容器 -->
+	<div class="clear"></div>
+	</div><!--end: main -->
+	<div class="clear"></div>
+	<div id="footer">
+		<!--done-->
+Copyright &copy; 2022 削微寒
+<br /><span id="poweredby">Powered by .NET 6 on Kubernetes</span>
+
+
+
+	</div><!--end: footer -->
+</div><!--end: home 自定义的最大容器 -->
+
+
+    
+
+    <input type="hidden" id="antiforgery_token" value="CfDJ8AuMt_3FvyxIgNOR82PHE4ndrUoz-6_rZNKq0dcZmXX0IPfK-yrzZPit6Cg2Y-p4MmB9CFwhFpicEufFpoqvQ9oPs22Eh6ZQv7okblZi3nPTEWtegyF06jXSO3C5oG1XRtgC7C3mhlBPAMA3j99Hefk" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-476124-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        var kv = getGACustom();
+        if (kv) {
+            gtag('set', kv);
+        }
+        gtag('config', 'UA-476124-1');
+    </script>
+<script defer src="https://hm.baidu.com/hm.js?866c9be12d4a814454792b1fd0fed295"></script>
+</body>
+</html>
